@@ -7,7 +7,7 @@ public class InputManagerInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Container.Bind<InputManager>().FromInstance(_inputManager).AsSingle();
+        Container.Bind<InputManager>().FromInstance(_inputManager).AsSingle().NonLazy();
     }
 
 }

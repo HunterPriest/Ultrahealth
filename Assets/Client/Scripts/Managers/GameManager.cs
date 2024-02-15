@@ -1,33 +1,32 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using Tools;
-using Unity.VisualScripting;
-using Zenject;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Manager, IInitializeGameListener, ILoadGameGameListner, IStartGameListener
 {
-    [Inject] private Player _player;
     private GameState _currentState;
 
-    public void Initialize()
+    void IInitializeGameListener.OnInitialize()
+    {
+        print("Inizialized");
+    }    
+
+    void ILoadGameGameListner.OnLoadGame()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        SceneManager.LoadScene("TestScene");
-        print("Inizialized");
-    }    
+        Time.timeScale = 0f;
+       // UpdateGameState(GameState.Game);
+    }
+
+    void IStartGameListener.OnStartGame()
+    {
+        Time.timeScale = 1f;
+    }
 
     public void UpdateGameState(GameState state)
     {
         if (state == _currentState) return;
-
-        switch(state)
-        {
-            case GameState.Bootstrap:
-                break;
-            case GameState.Game:
-                    _player.Initialize();
-                break;
-        }
+        _currentState = state;
     }
 }

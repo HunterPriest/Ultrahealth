@@ -1,40 +1,33 @@
 using UnityEngine;
+using Tools;
 using Zenject;
+using UnityEngine.InputSystem;
+using TMPro;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Manager, IInitializeGameListener
 {
-    private PlayerInput _playerInput;
-    [Inject] private Player _player;
+    private Input _playerInput;
+    private Input.PlayerActions _playerActions;
 
-    public void Initialize()
+    public Input.PlayerActions PlayerActions => _playerActions;
+
+    void IInitializeGameListener.OnInitialize()
     {
-        OnEnable();
+        _playerActions = _playerInput.Player;
 
-        _playerInput.Player.MousePosition.performed += context => _player.CameraMovement.RotateCamera(context.ReadValue<Vector2>());
-        _playerInput.Player.Recharge.performed += context => _player.Weapons.RechargeWeapon();
-        _playerInput.Player.Jump.performed += context => _player.Movement.Jump();
+        OnEnable();
         
-        print("Inizialized");
+        print("Inizialized");   
     }
 
     public void OnEnable()
     {
-        _playerInput = new PlayerInput();
+        _playerInput = new Input();
         _playerInput.Enable();
     }
 
     public void OnDisable()
     {
         _playerInput.Disable();
-    }
-
-    private void Update()
-    {
-        _player.Movement.Move(_playerInput.Player.Move.ReadValue<Vector2>());
-    }
-
-    private void OnMouseMovement(Vector2 mousePosition)
-    {
-        Debug.Log(mousePosition);
     }
 }

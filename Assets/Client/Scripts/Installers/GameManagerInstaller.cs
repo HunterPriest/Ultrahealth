@@ -7,6 +7,6 @@ public class GameManagerInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Container.Bind<GameManager>().FromInstance(_gameManager).AsSingle();
+        Container.Bind<GameManager>().FromInstance(_gameManager).AsSingle().NonLazy();
     }
 }

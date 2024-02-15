@@ -8,6 +8,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private float _jumpCoefficient;
 
     private Vector3 _playerVelocity;
+    private Vector3 _direction;
 
     private void OnValidate()
     {
@@ -17,27 +18,22 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    public void Initialize()
-    {
-
-    }
-
     private void Update()
     {
         _playerVelocity += Physics.gravity * Time.deltaTime;
-        _characterController.Move(_playerVelocity * Time.deltaTime);
+        _characterController.Move(_playerVelocity);
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
             _playerVelocity.y = -2f;
         }
-
+        _characterController.Move(_direction * _speed * Time.deltaTime);
     }
 
-    public void Move(Vector2 direction)
+    public void GetDirection(Vector2 direction)
     {
-        _characterController.Move(transform.TransformDirection(new Vector3(direction.x, 0, direction.y)) * _speed * Time.deltaTime);
+        _direction = transform.TransformDirection(new Vector3(direction.x, 0, direction.y));
     }
-    
+
     public void Jump()
     {
         if (!_characterController.isGrounded)
