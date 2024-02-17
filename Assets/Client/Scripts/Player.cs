@@ -1,6 +1,5 @@
 using UnityEngine;
 using Tools;
-using Zenject;
 
 public class Player : MonoBehaviour, IStartGameListener
 {
@@ -18,7 +17,7 @@ public class Player : MonoBehaviour, IStartGameListener
     void IStartGameListener.OnStartGame()
     {
         UpdatePlayerState(PlayerState.Idle);
-        _input.SubsctibePlayer(this);
+        _input.SubscribePlayer(this);
         print("Initialized");
     }
 

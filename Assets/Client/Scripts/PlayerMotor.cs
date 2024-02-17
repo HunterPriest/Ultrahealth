@@ -29,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
         _characterController.Move(_direction * _speed * Time.deltaTime);
     }
 
-    public void GetDirection(Vector2 direction)
+    public void ChangeDirection(Vector2 direction)
     {
         _direction = transform.TransformDirection(new Vector3(direction.x, 0, direction.y));
     }

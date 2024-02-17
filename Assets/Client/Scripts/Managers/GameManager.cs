@@ -1,4 +1,3 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using Tools;
 
@@ -13,10 +12,9 @@ public class GameManager : Manager, IInitializeGameListener, ILoadGameGameListne
 
     void ILoadGameGameListner.OnLoadGame()
     {
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Time.timeScale = 0f;
-       // UpdateGameState(GameState.Game);
     }
 
     void IStartGameListener.OnStartGame()

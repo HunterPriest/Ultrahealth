@@ -5,20 +5,12 @@ public class PlayerInput : MonoBehaviour
 {
     [Inject] private InputManager _input;
 
-    private Player _player;
-
-
-    public void SubsctibePlayer(Player player)
+    public void SubscribePlayer(Player player)
     { 
-        _player = player;
-
-        _input.PlayerActions.MousePosition.performed += context => _player.CameraMovement.RotateCamera(context.ReadValue<Vector2>());
-        _input.PlayerActions.Jump.performed += context => _player.Movement.Jump();
-        _input.PlayerActions.Recharge.performed += context => _player.Weapons.RechargeWeapon();
-    }
-
-    private void Update()
-    {
-        _player.Movement.GetDirection(_input.PlayerActions.Move.ReadValue<Vector2>());
+        _input.PlayerActions.MousePosition.performed += context => player.CameraMovement.RotateCamera(context.ReadValue<Vector2>());
+        _input.PlayerActions.Jump.performed += context => player.Movement.Jump();
+        _input.PlayerActions.Recharge.performed += context => player.Weapons.RechargeWeapon();
+        _input.PlayerActions.Move.started += context => player.Movement.ChangeDirection(context.ReadValue<Vector2>());
+        _input.PlayerActions.Move.canceled += context => player.Movement.ChangeDirection(context.ReadValue<Vector2>());
     }
 }
