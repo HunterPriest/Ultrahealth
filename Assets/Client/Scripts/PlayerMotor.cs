@@ -5,28 +5,20 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpHeight;
-    [SerializeField] private float _jumpCoefficient;
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
 
-    private void OnValidate()
-    {
-        if (_jumpCoefficient > 0)
-        {
-            _jumpCoefficient = -2f;
-        }
-    }
-
     private void Update()
     {
-        _playerVelocity += Physics.gravity * Time.deltaTime;
-        _characterController.Move(_playerVelocity);
+        _characterController.Move(_direction * _speed * Time.deltaTime);
+        _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
             _playerVelocity.y = -2f;
         }
-        _characterController.Move(_direction * _speed * Time.deltaTime);
+        _characterController.Move(_playerVelocity * Time.deltaTime);
+        print(_playerVelocity);
     }
 
     public void ChangeDirection(Vector2 direction)
@@ -36,7 +28,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void Jump()
     {
-        if (!_characterController.isGrounded)
+        if (_characterController.isGrounded)
         {
             _playerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * Physics.gravity.y);
         }
