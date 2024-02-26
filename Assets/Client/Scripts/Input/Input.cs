@@ -71,6 +71,24 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FirstWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c036521-e55c-411d-915c-e5b92a02d792"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""84e4a7c7-e50f-45dd-85c8-52fe238a3334"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +190,28 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Recharge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a2c22c8-4e6f-4242-81c3-938a2d4678f8"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aac46450-8ee5-4fb6-8a40-e62822d80d2c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -213,6 +253,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_DropWeapon = m_Player.FindAction("DropWeapon", throwIfNotFound: true);
         m_Player_Recharge = m_Player.FindAction("Recharge", throwIfNotFound: true);
+        m_Player_FirstWeapon = m_Player.FindAction("FirstWeapon", throwIfNotFound: true);
+        m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -279,6 +321,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_DropWeapon;
     private readonly InputAction m_Player_Recharge;
+    private readonly InputAction m_Player_FirstWeapon;
+    private readonly InputAction m_Player_SecondWeapon;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -288,6 +332,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @DropWeapon => m_Wrapper.m_Player_DropWeapon;
         public InputAction @Recharge => m_Wrapper.m_Player_Recharge;
+        public InputAction @FirstWeapon => m_Wrapper.m_Player_FirstWeapon;
+        public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -312,6 +358,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Recharge.started += instance.OnRecharge;
             @Recharge.performed += instance.OnRecharge;
             @Recharge.canceled += instance.OnRecharge;
+            @FirstWeapon.started += instance.OnFirstWeapon;
+            @FirstWeapon.performed += instance.OnFirstWeapon;
+            @FirstWeapon.canceled += instance.OnFirstWeapon;
+            @SecondWeapon.started += instance.OnSecondWeapon;
+            @SecondWeapon.performed += instance.OnSecondWeapon;
+            @SecondWeapon.canceled += instance.OnSecondWeapon;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -331,6 +383,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Recharge.started -= instance.OnRecharge;
             @Recharge.performed -= instance.OnRecharge;
             @Recharge.canceled -= instance.OnRecharge;
+            @FirstWeapon.started -= instance.OnFirstWeapon;
+            @FirstWeapon.performed -= instance.OnFirstWeapon;
+            @FirstWeapon.canceled -= instance.OnFirstWeapon;
+            @SecondWeapon.started -= instance.OnSecondWeapon;
+            @SecondWeapon.performed -= instance.OnSecondWeapon;
+            @SecondWeapon.canceled -= instance.OnSecondWeapon;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -373,5 +431,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDropWeapon(InputAction.CallbackContext context);
         void OnRecharge(InputAction.CallbackContext context);
+        void OnFirstWeapon(InputAction.CallbackContext context);
+        void OnSecondWeapon(InputAction.CallbackContext context);
     }
 }

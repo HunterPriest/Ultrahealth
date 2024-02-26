@@ -9,8 +9,10 @@ public class PlayerInput : MonoBehaviour
     { 
         _input.PlayerActions.MousePosition.performed += context => player.CameraMovement.RotateCamera(context.ReadValue<Vector2>());
         _input.PlayerActions.Jump.performed += context => player.Movement.Jump();
-        _input.PlayerActions.Recharge.performed += context => player.Weapons.RechargeWeapon();
+        _input.PlayerActions.Recharge.performed += context => player.Weapons.ReloadWeapon();
         _input.PlayerActions.Move.started += context => player.Movement.ChangeDirection(context.ReadValue<Vector2>());
         _input.PlayerActions.Move.canceled += context => player.Movement.ChangeDirection(context.ReadValue<Vector2>());
+        _input.PlayerActions.FirstWeapon.started += context => player.Weapons.ChooseWeapon(1);
+        _input.PlayerActions.SecondWeapon.started += context => player.Weapons.ChooseWeapon(2);
     }
 }

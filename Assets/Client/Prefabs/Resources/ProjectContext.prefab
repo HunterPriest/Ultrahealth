@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 4955118446660464019}
-  - {fileID: 5621022466882454007}
   - {fileID: 3094000383910272261}
+  - {fileID: 4955118446660464019}
   - {fileID: 5425013358799372958}
+  - {fileID: 5621022466882454007}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0

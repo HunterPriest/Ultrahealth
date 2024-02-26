@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class UIToolkitMenu : MonoBehaviour
 {
     [SerializeField] private VisualTreeAsset _settingsAsset;
+
+    [Inject] private GameMachine _gameMachine;
 
     private VisualElement _menu;
     private VisualElement _settings;
@@ -11,7 +14,7 @@ public class UIToolkitMenu : MonoBehaviour
     private VisualElement _doc;
     private VisualElement _container;
 
-    public void Initialize()
+    private void OnEnable()
     {
         _doc = GetComponent<UIDocument>().rootVisualElement;
 
@@ -29,9 +32,8 @@ public class UIToolkitMenu : MonoBehaviour
         Button settings = _container.Q<Button>("Settings");
         Button exit = _container.Q<Button>("Exit");
 
-        //start.clicked += () => ;
-        //settings.clicked += () => ;
-        //exit.clicked += () => ;
+        start.clicked += () => _gameMachine.LoadGame();
+        exit.clicked += () => Application.Quit();
     }
 
     private void ResetContainer(VisualElement nextElement)

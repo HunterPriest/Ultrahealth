@@ -18,7 +18,6 @@ public class PlayerMotor : MonoBehaviour
             _playerVelocity.y = -2f;
         }
         _characterController.Move(_playerVelocity * Time.deltaTime);
-        print(_playerVelocity);
     }
 
     public void ChangeDirection(Vector2 direction)

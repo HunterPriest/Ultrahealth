@@ -13,5 +13,6 @@ public class GameMachineInitializer : MonoBehaviour
         _gameMachine.AddListener(_gameManager);
         _gameMachine.AddListener(_inputManager);       
         _gameMachine.AddListener(_scenesManager);
+        _gameMachine.InitializeGame();
     }
 }

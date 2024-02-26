@@ -9,5 +9,6 @@ public class GameMachineGameInitializer : MonoBehaviour
     private void Start()
     {
         _gameMachine.AddListener(_player);
+        _gameMachine.StartGame();
     }
 }
