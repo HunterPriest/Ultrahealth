@@ -14,5 +14,6 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.Move.canceled += context => player.Movement.ChangeDirection(context.ReadValue<Vector2>());
         _input.PlayerActions.FirstWeapon.started += context => player.Weapons.ChooseWeapon(1);
         _input.PlayerActions.SecondWeapon.started += context => player.Weapons.ChooseWeapon(2);
+        _input.PlayerActions.Shoot.performed += context => player.Weapons.Shoot();
     }
 }

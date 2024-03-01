@@ -8,4 +8,9 @@ public class WeaponAnimations : MonoBehaviour
     {
         _animator.Play("Reload");
     }
+
+    public void Shoot()
+    {
+        _animator.Play("Shoot");
+    }
 }

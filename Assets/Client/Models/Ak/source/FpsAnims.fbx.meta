@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rig|AK_Dpose
-      takeName: Rig|AK_Dpose
+      name: Rig|AK_Reload_full
+      takeName: Rig|AK_Reload_full
       internalID: -1932556993916932158
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 210
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -56,7 +56,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: FinishReload
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -102,7 +109,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -120,18 +127,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rig|AK_Reload
-      takeName: Rig|AK_Reload
+      name: Rig|AK_Idle (2)
+      takeName: Rig|AK_Idle
       internalID: 8040410940017549286
       firstFrame: 0
-      lastFrame: 159
+      lastFrame: 119
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -143,7 +150,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: FinishReload
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -259,7 +273,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.20945036
+        functionName: PerformShot
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 33db03a38e7640a4ca550fdbafd97df0, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: FinishShot
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

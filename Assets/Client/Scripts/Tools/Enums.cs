@@ -15,4 +15,11 @@ namespace Tools
         PAUSE = 4,
         FINISH = 5,
     }
+
+    public enum WeaponState
+    {
+        Reload, 
+        Shoot, 
+        Idle
+    }
 }

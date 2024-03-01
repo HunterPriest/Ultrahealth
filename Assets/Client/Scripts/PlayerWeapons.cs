@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 public class PlayerWeapons : MonoBehaviour
 {
@@ -11,14 +10,19 @@ public class PlayerWeapons : MonoBehaviour
 
     public void Initialize(Transform fpsRig)
     {
-        _weapons.Add(Instantiate(_startedWeapons[_indexOfCurrentWeapon], fpsRig.position, Quaternion.identity, fpsRig).GetComponent<Weapon>());
-        _weapons[_indexOfCurrentWeapon].gameObject.SetActive(true);
+        SpawnWeapon(_indexOfCurrentWeapon, fpsRig, true);
 
         for(int i = 1; i < _startedWeapons.Length; i++)
         {
-            _weapons.Add(Instantiate(_startedWeapons[i], fpsRig.position, Quaternion.identity, fpsRig).GetComponent<Weapon>());
-            _weapons[i].gameObject.SetActive(false);
+            SpawnWeapon(i, fpsRig, false);
         }
+    }
+
+    private void SpawnWeapon(int indexInArray, Transform fpsRig, bool stateWeapon)
+    {
+        _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig.position, Quaternion.identity, fpsRig).GetComponent<Weapon>());
+        _weapons[indexInArray].Initialize();
+        _weapons[indexInArray].gameObject.SetActive(stateWeapon);
     }
 
     public void AddWeapon(Weapon _weapon)
@@ -28,7 +32,7 @@ public class PlayerWeapons : MonoBehaviour
 
     public void Shoot()
     {
-        
+        _weapons[_indexOfCurrentWeapon].Shoot();
     }
 
     public void ReloadWeapon()
@@ -39,6 +43,7 @@ public class PlayerWeapons : MonoBehaviour
     public void ChooseWeapon(int indexWeapon)
     {
         _weapons[_indexOfCurrentWeapon].gameObject.SetActive(false);
+        _weapons[_indexOfCurrentWeapon].RemoveWeapon();
         _indexOfCurrentWeapon = indexWeapon - 1;
         _weapons[_indexOfCurrentWeapon].gameObject.SetActive(true);
     }

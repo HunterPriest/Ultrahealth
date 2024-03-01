@@ -89,6 +89,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0f2a1ec-86f4-4e78-a527-a86b27c792f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""SecondWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac9f8b55-6a5e-478b-a334-60fb09c139af"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -255,6 +275,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_Recharge = m_Player.FindAction("Recharge", throwIfNotFound: true);
         m_Player_FirstWeapon = m_Player.FindAction("FirstWeapon", throwIfNotFound: true);
         m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -323,6 +344,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Recharge;
     private readonly InputAction m_Player_FirstWeapon;
     private readonly InputAction m_Player_SecondWeapon;
+    private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -334,6 +356,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @Recharge => m_Wrapper.m_Player_Recharge;
         public InputAction @FirstWeapon => m_Wrapper.m_Player_FirstWeapon;
         public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -364,6 +387,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @SecondWeapon.started += instance.OnSecondWeapon;
             @SecondWeapon.performed += instance.OnSecondWeapon;
             @SecondWeapon.canceled += instance.OnSecondWeapon;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -389,6 +415,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @SecondWeapon.started -= instance.OnSecondWeapon;
             @SecondWeapon.performed -= instance.OnSecondWeapon;
             @SecondWeapon.canceled -= instance.OnSecondWeapon;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -433,5 +462,6 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnRecharge(InputAction.CallbackContext context);
         void OnFirstWeapon(InputAction.CallbackContext context);
         void OnSecondWeapon(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }
