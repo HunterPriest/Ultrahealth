@@ -1,6 +1,4 @@
 using UnityEngine;
-using Tools;
-using Unity.VisualScripting.ReorderableList;
 
 public class PlayerLook : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class PlayerLook : MonoBehaviour
     {
         transform.Rotate(Vector3.up * mousePosition.x * Time.deltaTime * _sens);
         _xRotate -= mousePosition.y * Time.deltaTime * _sens;
-        Quaternion FPSRigRotation = Quaternion.Euler(Mathf.Clamp(_xRotate, -80f, 80f), 0, 0);
-        _fpsRig.localRotation = FPSRigRotation;
+        Quaternion fpsRigRotation = Quaternion.Euler(Mathf.Clamp(_xRotate, -80f, 80f), 0, 0);
+        _fpsRig.localRotation = fpsRigRotation;
     }
 }

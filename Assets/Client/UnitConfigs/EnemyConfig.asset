@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d46b515103c3840aab4192f837b221, type: 3}
   m_Name: EnemyConfig
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  MaxHealth: 100
+  RunSpeed: 0
+  Speed: 0

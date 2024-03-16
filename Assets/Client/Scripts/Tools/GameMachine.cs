@@ -1,147 +1,69 @@
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using Tools;
+using System.ComponentModel;
 
-
-public sealed class GameMachine : MonoBehaviour
+public class GameMachine
 {
-    public GameState GameState
+    private ScenesManager _scenesManager;
+    private InputManager _inputManager;
+
+    private GameState _currentState;
+
+    [Inject]
+    public GameMachine(ScenesManager scenesManager, InputManager inputManager)
     {
-        get { return _gameState; }
-    }
-    
-
-    private readonly List<object> listeners = new();
-
-    private GameState _gameState = GameState.INITIALIZE;
-    
-    [ContextMenu("Initialize Game")]
-    public void InitializeGame()
-    {
-        if (_gameState != GameState.INITIALIZE)
-        {
-            Debug.LogWarning($"You can start game only from {GameState.INITIALIZE} state!");
-            return;
-        }
-
-        _gameState = GameState.MENU;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is IInitializeGameListener startListener)
-            {
-                startListener.OnInitialize();
-            }
-        }
+        UpdateGameState(GameState.Bootstrap);
+        _scenesManager = scenesManager;
+        MonoBehaviour.print(scenesManager);
+        _inputManager = inputManager;
+        MonoBehaviour.print(inputManager);
     }
 
-    [ContextMenu("LoadGame")]
-    public void LoadGame()
+    public void Initialize()
     {
-        if (_gameState != GameState.MENU)
-        {
-            Debug.LogWarning($"You can start game only from {GameState.INITIALIZEGAME} state!");
-            return;
-        }
-
-        _gameState = GameState.INITIALIZEGAME;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is ILoadGameGameListner startListener)
-            {
-                startListener.OnLoadGame();
-            }
-        }
-    }
-    
-    [ContextMenu("Start Game")]
-    public void StartGame()
-    {
-        if (_gameState != GameState.INITIALIZEGAME)
-        {
-            Debug.LogWarning($"You can start game only from {GameState.MENU} state!");
-            return;
-        }
-
-        _gameState = GameState.PLAY;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is IStartGameListener startListener)
-            {
-                startListener.OnStartGame();
-            }
-        }
+        UpdateGameState(GameState.Initialize);
+        _inputManager.Initialize();
+        _scenesManager.OpenMenu();
+        UpdateGameState(GameState.Menu);
     }
 
-    [ContextMenu("Pause Game")]
-    public void PauseGame()
+    public void LoadLevel(int indexLevel)
     {
-        if (_gameState != GameState.PLAY)
-        {
-            Debug.LogWarning($"You can pause game only from {GameState.PLAY} state!");
-            return;
-        }
-
-       _gameState = GameState.PAUSE;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is IPauseGameListener pauseListener)
-            {
-                pauseListener.OnPauseGame();
-            }
-        }
+        UpdateGameState(GameState.LoadGame);
+        _scenesManager.OpenLevel(indexLevel);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UpdateGameState(GameState.Game);
     }
 
-    [ContextMenu("Resume Game")]
+    public void StopGame()
+    {
+        Time.timeScale = 0.0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        UpdateGameState(GameState.Pause);
+    }
+
     public void ResumeGame()
     {
-        if (_gameState != GameState.PAUSE)
-        {
-            Debug.LogWarning($"You can resume game only from {GameState.PAUSE} state!");
-            return;
-        }
-
-        _gameState = GameState.PLAY;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is IResumeGameListener resumeListener)
-            {
-                resumeListener.OnResumeGame();
-            }
-        }
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UpdateGameState(GameState.Game);
     }
 
-    [ContextMenu("Finish Game")]
     public void FinishGame()
     {
-        if (_gameState != GameState.PLAY)
-        {
-            Debug.LogWarning($"You can finish game only from {GameState.PLAY} state!");
-            return;
-        }
-
-        _gameState = GameState.FINISH;
-
-        foreach (var listener in this.listeners)
-        {
-            if (listener is IFinishGameListener finishListener)
-            {
-                finishListener.OnFinishGame();
-            }
-        }
+        UpdateGameState(GameState.Menu);
+        _scenesManager.OpenMenu();
     }
 
-    public void AddListener(object listener)
+    private void UpdateGameState(GameState gameState)
     {
-        listeners.Add(listener);
-    }
-
-    public void RemoveListener(object listener)
-    {
-        listeners.Remove(listener);
+        if(gameState != _currentState)
+        {
+            _currentState = gameState;
+        }
     }
 }

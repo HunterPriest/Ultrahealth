@@ -98,6 +98,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""ade19258-ffc2-49d8-911d-c901bcc3694c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +241,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a9bbd79-370a-4c6b-8e65-6a97db8520b3"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -276,6 +296,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_FirstWeapon = m_Player.FindAction("FirstWeapon", throwIfNotFound: true);
         m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -345,6 +366,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_FirstWeapon;
     private readonly InputAction m_Player_SecondWeapon;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Dash;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -357,6 +379,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @FirstWeapon => m_Wrapper.m_Player_FirstWeapon;
         public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -390,6 +413,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -418,6 +444,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -463,5 +492,6 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnFirstWeapon(InputAction.CallbackContext context);
         void OnSecondWeapon(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

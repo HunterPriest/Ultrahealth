@@ -1,16 +1,15 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
-using Tools;
+using UnityEngine.SceneManagement;
 
-public class ScenesManager : MonoBehaviour, ILoadGameGameListner, IInitializeGameListener
+public class ScenesManager
 {
-    void ILoadGameGameListner.OnLoadGame()
-    {
-        SceneManager.LoadScene("TEST");
-    }   
-
-    void IInitializeGameListener.OnInitialize()
+    public void OpenMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void OpenLevel(int numberOfLevel)
+    {
+        SceneManager.LoadScene("Level" + numberOfLevel);
     }
 }

@@ -76,11 +76,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67fc253b6bc2ca43bee488c79358895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerLook: {fileID: 4916741376896399690}
-  _playerMotor: {fileID: 8885624942802238563}
-  _playerWeapons: {fileID: 940230517997868436}
   _input: {fileID: 1281851924233549028}
   _fpsRig: {fileID: 7824536503448267402}
+  _movement: {fileID: 8885624942802238563}
+  _playerLook: {fileID: 4916741376896399690}
+  _weapons: {fileID: 940230517997868436}
 --- !u!114 &8885624942802238563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   _characterController: {fileID: 2375635947412665515}
   _speed: 8
   _jumpHeight: 3
+  _dashLength: 0
 --- !u!114 &4916741376896399690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 7657326656764830192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.424, z: 0.5583}
+  m_LocalPosition: {x: 0, y: 0.424, z: 0.563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

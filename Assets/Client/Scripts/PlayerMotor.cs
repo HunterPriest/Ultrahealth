@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
@@ -5,9 +6,11 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpHeight;
+    [SerializeField] private float _dashLength;
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
+    private float _stamina;
 
     private void Update()
     {
@@ -32,4 +35,6 @@ public class PlayerMotor : MonoBehaviour
             _playerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * Physics.gravity.y);
         }
     }
+
+
 }

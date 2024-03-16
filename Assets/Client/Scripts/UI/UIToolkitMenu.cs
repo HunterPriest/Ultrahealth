@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
@@ -5,6 +6,7 @@ using Zenject;
 public class UIToolkitMenu : MonoBehaviour
 {
     [SerializeField] private VisualTreeAsset _settingsAsset;
+    [SerializeField] private ChooseLevels _chooseLevels;
 
     [Inject] private GameMachine _gameMachine;
 
@@ -32,8 +34,14 @@ public class UIToolkitMenu : MonoBehaviour
         Button settings = _container.Q<Button>("Settings");
         Button exit = _container.Q<Button>("Exit");
 
-        start.clicked += () => _gameMachine.LoadGame();
-        exit.clicked += () => Application.Quit();
+        start.clicked += OpenChooseLevels;
+        exit.clicked += Application.Quit;
+    }
+
+    private void OpenChooseLevels()
+    {
+        _chooseLevels.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private void ResetContainer(VisualElement nextElement)
