@@ -12,6 +12,6 @@ public class CompleteLevel : MonoBehaviour
 
     public void LoadNextLevel()
     {
-
+        
     }
 }

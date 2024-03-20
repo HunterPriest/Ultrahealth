@@ -893,6 +893,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 1312593619}
   _completeLevel: {fileID: 189211252}
+  indexlevel: 2
 --- !u!1 &748584232
 GameObject:
   m_ObjectHideFlags: 0
