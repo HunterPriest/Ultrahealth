@@ -11,6 +11,7 @@ namespace Tools
         Bootstrap, 
         Initialize,
         Menu, 
+        Map,
         LoadGame,
         Game, 
         Pause
