@@ -1,21 +1,28 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
     <ui:VisualElement name="Fon" style="flex-grow: 1; width: auto; height: auto; background-color: rgba(0, 0, 0, 0.73); align-items: center; justify-content: center; flex-direction: column; left: auto; top: auto;">
-        <ui:Label tabindex="-1" text="Shoose level" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 121px; width: 1911px; color: rgb(207, 207, 207); -unity-text-align: upper-center; font-size: 111px;" />
+        <ui:Label tabindex="-1" text="Выбрать уровень" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 121px; width: 1911px; color: rgb(207, 207, 207); -unity-text-align: upper-center; font-size: 111px;" />
         <ui:VisualElement style="flex-grow: 1; min-width: auto; min-height: auto; width: 100%; height: 100%; flex-direction: row;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; width: auto; height: auto;">
-                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" style="width: 416px; align-items: center;">
-                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 257px;" />
-                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 257px;" />
-                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 257px;" />
-                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 257px;" />
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" style="width: 396px; align-items: center; height: 100%;">
+                    <ui:Button text="Человек" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Organizm1" class="defoltOldKallButtons" style="height: 257px; width: 380px;" />
+                    <ui:Button text="Крыска" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Organizm2" class="defoltOldKallButtons" style="height: 257px; width: 380px;" />
+                    <ui:Button text="Скоро...." parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallButtons" style="height: 257px; width: 380px; color: rgb(255, 255, 255); white-space: normal;" />
                 </ui:ScrollView>
-                <ui:VisualElement style="flex-grow: 1;" />
-                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" mode="Vertical" nested-interaction-kind="StopScrolling" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" name="Body" style="width: 836px; height: 987px; background-image: url(&apos;project://database/Assets/Client/Materials/Images/1657451291_3-flomaster-club-p-belii-chelovek-risunok-krasivo-3.png?fileID=2800000&amp;guid=8ee782fc39fa913419aaeb4b28a315fc&amp;type=3#1657451291_3-flomaster-club-p-belii-chelovek-risunok-krasivo-3&apos;); justify-content: center; align-items: center; align-self: center; flex-direction: column; left: 0; top: 0;">
-                    <ui:VisualElement style="flex-grow: 1; height: 528px; justify-content: center; align-items: center;">
-                        <ui:Button text="Орган" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Organ1" style="top: 155px; left: -39px; height: 61px; width: 108px;" />
+                <ui:VisualElement name="cont" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="About" style="flex-grow: 1; width: 135px; height: 100%;">
+                        <ui:Label tabindex="-1" text="Заболевания:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="height: 5%; font-size: 38px; -unity-text-align: upper-left;" />
+                        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Bolezni" class="defoltOldKallText" style="width: 90%; left: 10%; height: 188px; -unity-text-align: upper-left; font-size: 26px; white-space: normal;" />
+                        <ui:Label tabindex="-1" text="Начало:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="font-size: 38px; -unity-text-align: upper-left;" />
+                        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartPoint" class="defoltOldKallText" style="font-size: 26px; -unity-text-align: upper-left; width: 90%; left: 10%; white-space: normal;" />
+                        <ui:Label tabindex="-1" text="Пункт назначения:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="font-size: 38px; -unity-text-align: upper-left;" />
+                        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Finish" class="defoltOldKallText" style="font-size: 26px; -unity-text-align: upper-left; left: 10%; width: 90%; white-space: normal;" />
+                        <ui:VisualElement style="flex-grow: 1; width: 816px; flex-direction: column-reverse; height: 399px;">
+                            <ui:Button text="Начать" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Start" class="defoltOldKallButtons" style="top: 0; height: 132px; width: 802px; justify-content: flex-start; align-self: stretch;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
-                </ui:ScrollView>
+                    <ui:VisualElement name="MapInChoose" style="flex-grow: 1; height: 100%; background-image: none;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

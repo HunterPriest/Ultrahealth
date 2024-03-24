@@ -7,12 +7,16 @@
 }
 
 .defoltOldKallButtons {
-    font-size: 30px;
-    border-left-color: rgba(149, 149, 149, 0);
-    border-right-color: rgba(149, 149, 149, 0);
-    border-top-color: rgba(149, 149, 149, 0);
-    border-bottom-color: rgba(149, 149, 149, 0);
-    background-color: rgb(188, 188, 188);
-    color: rgb(0, 0, 0);
+    font-size: 64px;
+    border-left-color: rgb(142, 142, 142);
+    border-right-color: rgb(142, 142, 142);
+    border-top-color: rgb(142, 142, 142);
+    border-bottom-color: rgb(142, 142, 142);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
     width: 240px;
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    border-left-width: 12px;
 }
