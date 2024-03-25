@@ -6,7 +6,7 @@ public class ChooseLevelMenu : UIToolkitElement
     [SerializeField] private VisualTreeAsset _chooseLevelsAsset;
     
     [Header ("Maps")] 
-    [SerializeField] private Texture2D _human1;
+    [SerializeField] private MapsInChooseConfiguration _human1;
 
     private VisualElement _chooseLevel;
 
@@ -31,13 +31,13 @@ public class ChooseLevelMenu : UIToolkitElement
 
         human1.clicked += (() =>
         {
-            bolezni.text = "1) Ультракил головного мозга  " +
-            "2) мама пропала " +
-            "3) Артем из подвала не выпустил " +
-            "4) Был рядом с Шешуковым и теперь страдает публиками";
-            StartPoint.text = "Ротовая полость";
-            FinishPoint.text = "Легкие";
-            mapInChoose.style.backgroundImage = _human1;
+            for (int i = 0; i >= _human1.bolezni.Length; i++)
+            {
+                bolezni.text += _human1.bolezni[i];
+            };
+            StartPoint.text = _human1.startPointText;
+            FinishPoint.text = _human1.finishPointText;
+            mapInChoose.style.backgroundImage = _human1.texture;
             Start.clicked += () => _gameMachine.LoadLevel(1);
             cont.visible = true;
         }); // its a plan for bind button Human
