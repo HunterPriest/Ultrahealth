@@ -19,33 +19,32 @@ public class ChooseLevelMenu : UIToolkitElement
     {
         ResetContainer(_chooseLevel);
 
+        Button human1 = _container.Q<Button>("Organizm1");
+
+        human1.clicked += () => OpenOneofButtons(_human1);
+    }
+
+    private void OpenOneofButtons(MapsInChooseConfiguration ActiveMap)
+    {
         Label bolezni = _container.Q<Label>("Bolezni");
         Label StartPoint = _container.Q<Label>("StartPoint");
         Label FinishPoint = _container.Q<Label>("Finish");
         VisualElement mapInChoose = _container.Q<VisualElement>("MapInChoose");
         VisualElement cont = _container.Q<VisualElement>("cont");
         Button Start = _container.Q<Button>("Start");
-        Button human1 = _container.Q<Button>("Organizm1");
 
         cont.visible = false;
 
-        human1.clicked += (() =>
+        for (int i = 0; i >= ActiveMap.bolezni.Length; i++)
         {
-            for (int i = 0; i >= _human1.bolezni.Length; i++)
-            {
-                bolezni.text += _human1.bolezni[i];
-            };
-            StartPoint.text = _human1.startPointText;
-            FinishPoint.text = _human1.finishPointText;
-            mapInChoose.style.backgroundImage = _human1.texture;
-            Start.clicked += () => _gameMachine.LoadLevel(1);
-            cont.visible = true;
-        }); // its a plan for bind button Human
-    }
+            bolezni.text += ActiveMap.bolezni[i];
+        }
+        StartPoint.text = ActiveMap.startPointText;
+        FinishPoint.text = ActiveMap.finishPointText;
+        Start.clicked += () => _gameMachine.LoadLevel(1);
+        mapInChoose.style.backgroundImage = ActiveMap.texture;
 
-    private void OpenOrganMap()
-    {
-        
+        cont.visible = true;
     }
 
     protected override void ResetContainer(VisualElement element)

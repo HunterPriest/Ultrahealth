@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(123, 123, 123);">
+        <ui:Label tabindex="-1" text="Поздравляем" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="font-size: 105px;" />
+        <ui:Label tabindex="-1" text="Вы завершили уровень: " parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level" class="defoltOldKallText" style="font-size: 45px; top: 125px;" />
+        <ui:Button text="Выйти в меню" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitToMenu" class="defoltOldKallButtons" style="align-self: center; left: auto; top: 316px; width: 914px;" />
+    </ui:VisualElement>
+</ui:UXML>

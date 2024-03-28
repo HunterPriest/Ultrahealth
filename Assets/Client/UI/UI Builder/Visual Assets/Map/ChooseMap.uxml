@@ -1,10 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
-    <ui:VisualElement name="Fon" style="flex-grow: 1; width: auto; height: auto; background-color: rgba(0, 0, 0, 0.73); align-items: center; justify-content: center; flex-direction: column; left: auto; top: auto;">
-        <ui:Label tabindex="-1" text="Выбрать уровень" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 121px; width: 1911px; color: rgb(207, 207, 207); -unity-text-align: upper-center; font-size: 111px;" />
+    <ui:VisualElement name="Fon" style="flex-grow: 1; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.73); align-items: center; justify-content: center; flex-direction: column; left: auto; top: auto; position: relative;">
+        <ui:Label tabindex="-1" text="Выбрать уровень" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 120px; width: 100%; color: rgb(207, 207, 207); -unity-text-align: upper-center; font-size: 111px;" />
         <ui:VisualElement style="flex-grow: 1; min-width: auto; min-height: auto; width: 100%; height: 100%; flex-direction: row;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; width: auto; height: auto;">
-                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" style="width: 396px; align-items: center; height: 100%;">
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" style="width: 400px; align-items: center; height: 100%;">
                     <ui:Button text="Человек" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Organizm1" class="defoltOldKallButtons" style="height: 257px; width: 380px;" />
                     <ui:Button text="Крыска" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Organizm2" class="defoltOldKallButtons" style="height: 257px; width: 380px;" />
                     <ui:Button text="Скоро...." parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallButtons" style="height: 257px; width: 380px; color: rgb(255, 255, 255); white-space: normal;" />
@@ -21,7 +21,7 @@
                             <ui:Button text="Начать" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Start" class="defoltOldKallButtons" style="top: 0; height: 132px; width: 802px; justify-content: flex-start; align-self: stretch;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="MapInChoose" style="flex-grow: 1; height: 100%; background-image: none;" />
+                    <ui:VisualElement name="MapInChoose" style="flex-grow: 1; height: 100%; background-image: none; align-items: center; justify-content: center;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
