@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7005df1215556c4aa6cb3d578b43a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitConfig: {fileID: 11400000, guid: e6ba7c52be8234f45906b4f6b9f5a60a, type: 2}
+  _healthConfig: {fileID: 0}
   Health: 0
 --- !u!65 &1312593620
 BoxCollider:

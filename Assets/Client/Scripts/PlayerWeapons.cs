@@ -33,7 +33,7 @@ public class PlayerWeapons : MonoBehaviour
 
     public void Shoot()
     {
-        _weapons[_indexOfCurrentWeapon].Shoot();
+        _weapons[_indexOfCurrentWeapon].Attack();
     }
 
     public void ReloadWeapon()

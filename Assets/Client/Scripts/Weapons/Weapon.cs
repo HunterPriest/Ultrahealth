@@ -1,58 +1,61 @@
 using UnityEngine;
 using Tools;
-using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public Camera RigCamera;
     public int Damage;
 
-    [SerializeField] private WeaponAnimations _weaponAnimations;
-    
-    [SerializeField] protected WeaponState _currentState;
+    protected WeaponState _currentState;
 
     public void Initialize()
     {
-        _currentState = WeaponState.Idle;
+        UpdateState(WeaponState.Idle);
     }
 
-    public void Reload()
+    public virtual void FinishReload()
     {
-        if (_currentState != WeaponState.Idle)
-        {
-            return;
-        }
-
-        _currentState = WeaponState.Reload;
-        _weaponAnimations.Reload();
+        UpdateState(WeaponState.Idle);
     }
 
-    public void FinishReload()
+    public virtual void FinishAttack()
     {
-        _currentState = WeaponState.Idle;
+        UpdateState(WeaponState.Idle);
     }
 
-    public void Shoot()
+    public void RemoveWeapon()
+    {
+        UpdateState(WeaponState.Idle);
+    }
+
+    public virtual void Attack()
     {
         if(_currentState != WeaponState.Idle)
         {
             return;
         }
-        _currentState = WeaponState.Shoot;
-        _weaponAnimations.Shoot();
+        UpdateState(WeaponState.Attack);
     }
 
-    public virtual void PerformShot()
+    public abstract void PerformAttack();
+
+    public virtual void Reload()
     {
+
     }
 
-    public void FinishShot()
+    protected abstract void Accept(IWeaponVisitor weaponVisitor);
+
+    public WeaponState GetState()
     {
-        _currentState = WeaponState.Idle;
+        return _currentState;
     }
 
-    public void RemoveWeapon()
+    protected void UpdateState(WeaponState weaponState)
     {
-        _currentState = WeaponState.Idle;
+        if(_currentState != weaponState)
+        {
+            _currentState = weaponState;
+        }
     }
 }

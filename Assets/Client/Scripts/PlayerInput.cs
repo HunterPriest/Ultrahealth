@@ -16,25 +16,25 @@ public class PlayerInput : MonoBehaviour
     private void SubscribePlayer()
     { 
         _input.PlayerActions.MousePosition.performed += OnMousePosition;
-        _input.PlayerActions.Jump.performed += OnJump;
-        _input.PlayerActions.Recharge.performed += OnRecharge;
-        _input.PlayerActions.Move.started += OnChangeDirection;
+        _input.PlayerActions.Jump.started += OnJump;
+        _input.PlayerActions.Recharge.started += OnRecharge;
+        _input.PlayerActions.Move.performed += OnChangeDirection;
         _input.PlayerActions.Move.canceled += OnChangeDirection;
         _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
-        _input.PlayerActions.Shoot.performed += OnShoot;
+        _input.PlayerActions.Shoot.started += OnShoot;
     }
 
     public void UnsubscribePlayer()
     { 
         _input.PlayerActions.MousePosition.performed -= OnMousePosition;
-        _input.PlayerActions.Jump.performed -= OnJump;
-        _input.PlayerActions.Recharge.performed -= OnRecharge;
-        _input.PlayerActions.Move.started -= OnChangeDirection;
+        _input.PlayerActions.Jump.started -= OnJump;
+        _input.PlayerActions.Recharge.started -= OnRecharge;
+        _input.PlayerActions.Move.performed -= OnChangeDirection;
         _input.PlayerActions.Move.canceled -= OnChangeDirection;
         _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
-        _input.PlayerActions.Shoot.performed -= OnShoot;
+        _input.PlayerActions.Shoot.started -= OnShoot;
     }
 
     private void OnMousePosition(InputAction.CallbackContext context)

@@ -3,24 +3,24 @@ using Zenject;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private Unit[] _enemies;
+    [SerializeField] private Enemy[] _enemies;
     [SerializeField] private CompleteLevel _completeLevel;
     [SerializeField] private int indexlevel;
 
     private GameMachine _gameMachine;
 
     [Inject]
-    private void Construct(GameMachine gameMachine)
+    private void Construct(GameMachine gameMachine, Player player)
     {
-        InitializeEnemyes();
+        InitializeEnemyes(player.transform);
         _gameMachine = gameMachine;
     }
 
-    private void InitializeEnemyes()
+    private void InitializeEnemyes(Transform playerTransform)
     {
-        foreach(Unit unit in _enemies)
+        foreach(Enemy enemy in _enemies)
         {
-            unit.Initialize();
+            enemy.Initialize(playerTransform);
         }
     }
 

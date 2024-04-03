@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public UnitConfiguration UnitConfig;
+    [SerializeField] private HealthConfiguration _healthConfig;
     public int Health;
 
-    public virtual void Initialize()
+    public void Initialize()
     {
-        Health = UnitConfig.MaxHealth;
+        Health = _healthConfig.MaxHealth;
     }
 }

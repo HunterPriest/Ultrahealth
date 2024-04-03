@@ -14,6 +14,11 @@ public class UnitHitBox : HitBox, IWeaponVisitor
         RaycastVisit(automaton);
     }
 
+    public void Visit(BacteriaWeapon weapon)
+    {
+        _unit.TakeDamage(weapon.Damage);
+    }
+
     private void RaycastVisit(RaycastWeapon weapon)
     {
         _unit.TakeDamage(weapon.Damage);

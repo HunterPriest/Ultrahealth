@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMotor _movement;
     [SerializeField] private PlayerLook _playerLook;
     [SerializeField] private PlayerWeapons _weapons;
+    [SerializeField] private Unit _unit;
 
     private PlayerState _playerState;
 
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
         CameraMovement.Initialize(_fpsRig);
         Weapons.Initialize(_fpsRig);
         print("Initialized");
+        _unit.Initialize();
     }
 
     private void UpdatePlayerState(PlayerState playerState)
@@ -36,5 +38,10 @@ public class Player : MonoBehaviour
     {
         _input.UnsubscribePlayer();
         print("Dispose");
+    }
+
+    private void Update()
+    {
+        //print(_unit.Health);
     }
 }

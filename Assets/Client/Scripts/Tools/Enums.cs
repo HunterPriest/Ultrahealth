@@ -1,5 +1,12 @@
 namespace Tools
 {
+    public enum EnemyState
+    {
+        Moving, 
+        Idle, 
+        Attacking
+    }
+
     public enum PlayerState
     {
         Moving,
@@ -20,7 +27,7 @@ namespace Tools
     public enum WeaponState
     {
         Reload, 
-        Shoot, 
+        Attack, 
         Idle
     }
 }

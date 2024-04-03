@@ -1,13 +1,12 @@
 using UnityEngine;
 using Tools;
 
-public abstract class RaycastWeapon : Weapon
+public abstract class RaycastWeapon : FirearmWeapon
 {
     [SerializeField] private float _distance;
 
-    public override void PerformShot()
+    public override void PerformAttack()
     {
-        base.Shoot();
         if (Physics.Raycast(RigCamera.transform.position, RigCamera.transform.forward, out RaycastHit hit, _distance))
         {
             HitScan(hit);
@@ -21,6 +20,4 @@ public abstract class RaycastWeapon : Weapon
             Accept(weaponVisitor);
         }
     }
-
-    protected abstract void Accept(IWeaponVisitor weaponVisitor);
 }

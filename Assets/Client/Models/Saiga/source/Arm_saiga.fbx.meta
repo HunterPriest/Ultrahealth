@@ -58,14 +58,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.14349777
-        functionName: PerformShot
+        functionName: PerformAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 1
-        functionName: FinishShot
+        functionName: FinishAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
         floatParameter: 0
@@ -235,11 +235,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Saiga_Fire (1)
-      takeName: Armature|Saiga_Fire
+      name: Armature|Arms_FPS_Anim_OneShot (1)
+      takeName: Armature|Arms_FPS_Anim_OneShot
       internalID: 9179944253504053157
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -260,7 +260,7 @@ ModelImporter:
       curves: []
       events:
       - time: 1
-        functionName: FinishReload
+        functionName: FinishAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 33db03a38e7640a4ca550fdbafd97df0, type: 3}
         floatParameter: 0

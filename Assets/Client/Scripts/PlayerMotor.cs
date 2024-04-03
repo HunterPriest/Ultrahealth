@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
+    [SerializeField] private PlayerMovementConfiguration _playerMovementConfig;
     [SerializeField] private CharacterController _characterController;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _jumpHeight;
-    [SerializeField] private float _dashLength;
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
     private float _stamina;
 
+    public void Initialize()
+    {
+        _stamina = _playerMovementConfig.MaxStamina;
+    }
+
     private void Update()
     {
-        _characterController.Move(_direction * _speed * Time.deltaTime);
+        _characterController.Move(_direction * _playerMovementConfig.Speed * Time.deltaTime);
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
@@ -32,9 +35,12 @@ public class PlayerMotor : MonoBehaviour
     {
         if (_characterController.isGrounded)
         {
-            _playerVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * Physics.gravity.y);
+            _playerVelocity.y = Mathf.Sqrt(_playerMovementConfig.JumpForce * -2f * Physics.gravity.y);
         }
     }
 
+    public void Dash()
+    {
 
+    }
 }
