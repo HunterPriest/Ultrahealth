@@ -15,20 +15,20 @@ public class EnemyWeapons : MonoBehaviour, IStateEnemy
 
     public void Exit()
     {
+        _weapon.RemoveWeapon();
     }
 
     public void Enter()
+    {   
+    }
+
+    public void Loop()
     {   
         if(_weapon.GetState() == WeaponState.Idle)
         {
             _animations.Attack();
             _weapon.Attack();
-        } 
-    }
-
-    public void Loop()
-    {   
-                
+        }        
     }
 
     public WeaponState GetWeaponState()

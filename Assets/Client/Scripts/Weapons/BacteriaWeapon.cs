@@ -7,11 +7,7 @@ public class BacteriaWeapon : OverlapWeapon
         weaponVisitor?.Visit(this);
     }
 
-    public override void FinishAttack()
-    {
-        base.FinishAttack();
-        
-    }
+    
 
     protected override void TryAcceptWeaponVisitor(Collider collider)
     {

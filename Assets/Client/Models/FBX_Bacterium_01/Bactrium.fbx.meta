@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Move
-      takeName: Move
+      name: Armature|Attack (1)
+      takeName: Armature|Attack
       internalID: 1358262452650834379
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,7 +56,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: FinishAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -86,15 +93,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
-        functionName: FinishAttack
+      - time: 0.33783785
+        functionName: PerformAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.36036035
-        functionName: PerformAttack
+      - time: 1
+        functionName: FinishAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: b014add8d30b6d041b23925260ad7f22, type: 3}
         floatParameter: 0

@@ -71,4 +71,14 @@ public class PlayerInput : MonoBehaviour
     {
         _player.Weapons.Shoot();
     }
+
+    private void OnOpenPause(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private void OnOpenMap(InputAction.CallbackContext context)
+    {
+        
+    }
 }
