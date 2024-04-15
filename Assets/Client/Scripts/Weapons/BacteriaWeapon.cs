@@ -14,7 +14,6 @@ public class BacteriaWeapon : OverlapWeapon
         if(collider.gameObject.TryGetComponent(out PlayerHitBox weaponVisitor))
         {
             Accept(weaponVisitor);
-            print('t');
         }
     }
 }

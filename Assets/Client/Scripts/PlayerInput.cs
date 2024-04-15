@@ -23,6 +23,7 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
         _input.PlayerActions.Shoot.started += OnShoot;
+        _input.PlayerActions.Dash.started += OnDash;
     }
 
     public void UnsubscribePlayer()
@@ -35,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
         _input.PlayerActions.Shoot.started -= OnShoot;
+        _input.PlayerActions.Dash.started -= OnDash;
     }
 
     private void OnMousePosition(InputAction.CallbackContext context)
@@ -72,13 +74,8 @@ public class PlayerInput : MonoBehaviour
         _player.Weapons.Shoot();
     }
 
-    private void OnOpenPause(InputAction.CallbackContext context)
+    private void OnDash(InputAction.CallbackContext context)
     {
-
-    }
-
-    private void OnOpenMap(InputAction.CallbackContext context)
-    {
-        
+        _player.Movement.Dash();
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Cinemachine.Utility;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
@@ -17,7 +18,7 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        _characterController.Move(_direction * _playerMovementConfig.Speed * Time.deltaTime);
+        _characterController.Move(transform.TransformDirection(_direction) * _playerMovementConfig.Speed * Time.deltaTime);
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
@@ -28,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void ChangeDirection(Vector2 direction)
     {
-        _direction = transform.TransformDirection(new Vector3(direction.x, 0, direction.y));
+        _direction = new Vector3(direction.x, 0, direction.y);
     }
 
     public void Jump()
@@ -41,6 +42,27 @@ public class PlayerMotor : MonoBehaviour
 
     public void Dash()
     {
+        StartCoroutine(DashCorutine());
+    }
+
+    private IEnumerator DashCorutine()
+    {
+        Vector3 dashDirection;
+        if(_direction == Vector3.zero)
+        {
+            dashDirection = Vector3.forward;
+        }
+        else
+        {
+            dashDirection = _direction;
+        }
+
+        float startTime = Time.time;
+        while(Time.time < startTime + _playerMovementConfig.DashTime)
+        {
+            _characterController.Move(transform.TransformDirection(dashDirection) * _playerMovementConfig.DashSpeed * Time.deltaTime);
+            yield return null;  
+        }
 
     }
 }
