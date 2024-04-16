@@ -15,4 +15,5 @@ MonoBehaviour:
   Speed: 7
   JumpForce: 3
   MaxStamina: 1
-  DashForce: 2
+  DashSpeed: 12
+  DashTime: 0.25
