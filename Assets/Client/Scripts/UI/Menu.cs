@@ -7,7 +7,7 @@ public class Menu : UIToolkitElement
     [SerializeField] private ChooseLevelMenu _CLM;
 
     private VisualElement _menu;
-    
+
 
     protected override void Initialize()
     {
@@ -25,10 +25,5 @@ public class Menu : UIToolkitElement
 
         start.clicked += () => _CLM.OpenChooseLevelMenu();
         exit.clicked += () => Application.Quit();
-    }
-
-    protected override void ResetContainer(VisualElement element)
-    {
-        base.ResetContainer(element);
     }
 }

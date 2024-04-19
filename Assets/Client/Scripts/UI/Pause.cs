@@ -21,8 +21,4 @@ public class Pause : UIToolkitElement
 
         // bind Buttons
     }
-    protected override void ResetContainer(VisualElement element)
-    {
-        base.ResetContainer(element);
-    }
 }

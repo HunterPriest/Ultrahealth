@@ -46,9 +46,4 @@ public class ChooseLevelMenu : UIToolkitElement
 
         cont.visible = true;
     }
-
-    protected override void ResetContainer(VisualElement element)
-    {
-        base.ResetContainer(element);
-    }
 }

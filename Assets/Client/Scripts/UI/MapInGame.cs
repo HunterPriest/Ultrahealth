@@ -35,9 +35,4 @@ public class MapInGame : UIToolkitElement
             });
         }
     }
-    protected override void ResetContainer(VisualElement element)
-    {
-        base.ResetContainer(element);
-    }
-
 }
