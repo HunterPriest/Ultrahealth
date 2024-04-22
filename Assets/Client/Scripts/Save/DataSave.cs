@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace DataSave
 {
     [System.Serializable]
 
     public class PlayerCurrentData
     {
-        public int _maxLevelUnlocked;
-        public string _class;
-        public int _hp;
-        public int _dam;
-        public int _speed;
+        public int currentIndexLevel;
+        [Range(0, 2)] public int indexClassPlayer;
+        public int health;
+        public int damage;
+        public int speed;
     }
 }

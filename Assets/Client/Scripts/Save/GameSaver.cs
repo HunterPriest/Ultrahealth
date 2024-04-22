@@ -2,12 +2,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public static class GameSaver 
 {
-    public void SaveGame(int numberSave)
+    public static void SaveGame(int numberSave)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        string filePath = Application.persistentDataPath + "/savegame/" + numberSave.ToString()+ "save";
+        string filePath = Application.persistentDataPath + "/savegame/" + numberSave.ToString()+ ".save";
         FileStream fs = new FileStream(filePath, FileMode.Create);
 
         DataSave.PlayerCurrentData save = new DataSave.PlayerCurrentData();
@@ -15,9 +15,9 @@ public class SaveManager : MonoBehaviour
         fs.Close();
     }
 
-    public DataSave.PlayerCurrentData loadGameData(int numberSave)
+    public static DataSave.PlayerCurrentData loadGameData(int numberSave)
     {
-        string filePath = Application.persistentDataPath + "/savegame" + numberSave.ToString() + "save";
+        string filePath = Application.persistentDataPath + "/savegame" + numberSave.ToString() + ".save";
         if (!File.Exists(filePath)) return null;
 
         BinaryFormatter bf = new BinaryFormatter();

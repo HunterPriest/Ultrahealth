@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class Menu : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _MenuAsset;
-    [SerializeField] private ChooseLevelMenu _CLM;
+    [SerializeField] private ChooseSave _chooseSave;
 
     private VisualElement _menu;
 
@@ -23,7 +23,7 @@ public class Menu : UIToolkitElement
         Button settings = _container.Q<Button>("Settings");
         Button exit = _container.Q<Button>("Exit");
 
-        start.clicked += () => _CLM.OpenChooseLevelMenu();
+        start.clicked += () => _chooseSave.OpenSave();
         exit.clicked += () => Application.Quit();
     }
 }

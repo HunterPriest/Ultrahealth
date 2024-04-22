@@ -4,7 +4,7 @@ using Zenject;
 public class Level : MonoBehaviour
 {
     [SerializeField] private Enemy[] _enemies;
-    [SerializeField] private CompleteLevel _completeLevel;
+    [SerializeField] private Win _win;
     [SerializeField] private int indexlevel;
 
     private GameMachine _gameMachine;
@@ -27,6 +27,6 @@ public class Level : MonoBehaviour
     public void CompleteLevel()
     {
         _gameMachine.StopGame();
-        _completeLevel.gameObject.SetActive(true);
+        _win.StartWin(indexlevel);
     }
 }

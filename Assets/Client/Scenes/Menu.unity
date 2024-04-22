@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,6 +291,8 @@ GameObject:
   - component: {fileID: 1836095559}
   - component: {fileID: 1836095558}
   - component: {fileID: 1836095560}
+  - component: {fileID: 1836095561}
+  - component: {fileID: 1836095562}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -355,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MenuAsset: {fileID: 9197481963319205126, guid: 597c752cb146704498d69cf1e47fad22, type: 3}
-  _CLM: {fileID: 1836095560}
+  _chooseSave: {fileID: 1836095561}
 --- !u!114 &1836095560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +372,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chooseLevelsAsset: {fileID: 9197481963319205126, guid: 55ae06b1bd36ee544a03b6a1d9c3da2c, type: 3}
   _human1: {fileID: 11400000, guid: 92ca3c995f34cab419a3fa4b4b846eb1, type: 2}
+--- !u!114 &1836095561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836095555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba62af0efbfc5c4189311e3bd19578e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chooseSaveAsset: {fileID: 9197481963319205126, guid: 63e482a83820ac34492d1e58477a6bb0, type: 3}
+  _classChooser: {fileID: 1836095562}
+--- !u!114 &1836095562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836095555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e5668aefe00f24a94d4b91899ccb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chooseClassAsset: {fileID: 9197481963319205126, guid: 02232899c8c6983428469f05a815bbab, type: 3}
+  _chooseLevel: {fileID: 1836095560}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

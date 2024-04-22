@@ -12,13 +12,14 @@ public class Win : UIToolkitElement
         _win = WinAsset.CloneTree();
     }
 
-    public void StartWin()
+    public void StartWin(int indexLevel)
     {
         ResetContainer(_win);
         Label level = _container.Q<Label>("Level");
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
-        //bind
+        ExitToMenu.clicked += () => _gameMachine.FinishGame();
+        level.text = "Вы завершили уровень: " + indexLevel.ToString();
     }
 
     protected override void ResetContainer(VisualElement element)

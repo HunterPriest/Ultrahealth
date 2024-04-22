@@ -4,6 +4,7 @@
     color: rgb(255, 255, 255);
     -unity-font-style: normal;
     width: auto;
+    display: flex;
 }
 
 .defoltOldKallButtons {

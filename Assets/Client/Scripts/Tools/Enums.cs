@@ -30,4 +30,11 @@ namespace Tools
         Attack, 
         Idle
     }
+
+    public enum ClassesOfPlayer
+    {
+        Bacterium = 0,
+        NanoRobot = 1,
+        SingleCell = 2
+    }
 }
