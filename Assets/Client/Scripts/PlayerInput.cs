@@ -5,11 +5,13 @@ public class PlayerInput : MonoBehaviour
 {
     private InputManager _input;
     private Player _player;
+    private GameMachine _gameMachine;
 
-    public void Initialize(Player player, InputManager input)
+    public void Initialize(Player player, InputManager input, GameMachine gameMachine)
     {
         _player = player;
         _input = input;
+        _gameMachine = gameMachine;
         SubscribePlayer();
     }
 
@@ -24,6 +26,8 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
         _input.PlayerActions.Shoot.started += OnShoot;
         _input.PlayerActions.Dash.started += OnDash;
+        _input.PlayerActions.Map.started += OnMap;
+        _input.PlayerActions.Pause.started += OnPause;
     }
 
     public void UnsubscribePlayer()
@@ -37,6 +41,8 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
         _input.PlayerActions.Shoot.started -= OnShoot;
         _input.PlayerActions.Dash.started -= OnDash;
+        _input.PlayerActions.Map.started -= OnMap;
+        _input.PlayerActions.Pause.started -= OnPause;
     }
 
     private void OnMousePosition(InputAction.CallbackContext context)
@@ -77,5 +83,15 @@ public class PlayerInput : MonoBehaviour
     private void OnDash(InputAction.CallbackContext context)
     {
         _player.Movement.Dash();
+    }
+
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        _gameMachine.StopGame();
+    }
+
+    private void OnMap(InputAction.CallbackContext context)
+    {
+        _gameMachine.StopGame();
     }
 }

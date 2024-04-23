@@ -107,6 +107,24 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""97158de2-0ac2-4de2-8747-84d1aba7394d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9d8b050-6124-483b-a858-db65d699f3ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +270,28 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f4aebbf-162b-471e-9bea-b82b64af6347"",
+                    ""path"": ""<Keyboard>/M"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Map"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee3affad-e639-4686-9d31-c85fe612145d"",
+                    ""path"": ""<Keyboard>/Esc"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -297,6 +337,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -367,6 +409,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SecondWeapon;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_Map;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -380,6 +424,8 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @Map => m_Wrapper.m_Player_Map;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -416,6 +462,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Map.started += instance.OnMap;
+            @Map.performed += instance.OnMap;
+            @Map.canceled += instance.OnMap;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -447,6 +499,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Map.started -= instance.OnMap;
+            @Map.performed -= instance.OnMap;
+            @Map.canceled -= instance.OnMap;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -493,5 +551,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnSecondWeapon(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

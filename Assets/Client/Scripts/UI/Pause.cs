@@ -19,6 +19,10 @@ public class Pause : UIToolkitElement
         Button settings = _container.Q<Button>("Settings");
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
-        // bind Buttons
+        continion.clicked += () =>
+        {
+            _gameMachine.ResumeGame();
+        };
+        //ExitToMenu.clicked += () => 
     }
 }
