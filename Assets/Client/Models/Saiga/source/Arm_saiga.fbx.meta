@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Saiga_Fire (2)
-      takeName: Armature|Saiga_Fire
+      name: Armature|Saiga_Idle (2)
+      takeName: Armature|Saiga_Idle
       internalID: -6602077506968488408
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 119
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
