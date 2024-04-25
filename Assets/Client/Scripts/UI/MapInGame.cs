@@ -35,4 +35,9 @@ public class MapInGame : UIToolkitElement
             });
         }
     }
+
+    public void Close()
+    {
+        _container.Clear();
+    }
 }

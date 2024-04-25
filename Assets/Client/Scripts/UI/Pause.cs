@@ -1,11 +1,20 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class Pause : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _PauseAsset;
 
+    private GameUI _gameUI;
     private VisualElement _pause;
+    
+    [Inject]
+    private void Construct(GameUI gameUI)
+    {
+        _gameUI = gameUI;
+    }
+
     protected override void Initialize()
     {
         _pause = _PauseAsset.CloneTree();
@@ -15,14 +24,20 @@ public class Pause : UIToolkitElement
     {
         ResetContainer(_pause);
 
-        Button continion = _container.Q<Button>("Cont");
+        Button continueGame = _container.Q<Button>("Cont");
         Button settings = _container.Q<Button>("Settings");
-        Button ExitToMenu = _container.Q<Button>("ExitToMenu");
+        Button exitToMenu = _container.Q<Button>("ExitToMenu");
 
-        continion.clicked += () =>
+        continueGame.clicked += () =>
         {
-            _gameMachine.ResumeGame();
+            _gameUI.ClosePause();
         };
-        //ExitToMenu.clicked += () => 
+
+        exitToMenu.clicked += () => gameMachine.FinishGame();
+    }
+
+    public void Close()
+    {
+        _container.Clear();
     }
 }

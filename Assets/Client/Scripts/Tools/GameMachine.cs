@@ -1,14 +1,13 @@
 using UnityEngine;
 using Zenject;
 using Tools;
-using System.ComponentModel;
 
 public class GameMachine
 {
     private ScenesManager _scenesManager;
     private InputManager _inputManager;
 
-    private GameState _currentState;
+    public GameState currentState {get; private set; }
 
     [Inject]
     public GameMachine(ScenesManager scenesManager, InputManager inputManager)
@@ -37,12 +36,12 @@ public class GameMachine
         UpdateGameState(GameState.Game);
     }
 
-    public void StopGame()
+    public void StopGame(GameState gameState = GameState.Pause)
     {
         Time.timeScale = 0.0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        UpdateGameState(GameState.Pause);
+        UpdateGameState(gameState);
     }
 
     public void ResumeGame()
@@ -55,15 +54,16 @@ public class GameMachine
 
     public void FinishGame()
     {
+        Time.timeScale = 1;
         UpdateGameState(GameState.Menu);
         _scenesManager.OpenMenu();
     }
 
     private void UpdateGameState(GameState gameState)
     {
-        if(gameState != _currentState)
+        if(gameState != currentState)
         {
-            _currentState = gameState;
+            currentState = gameState;
         }
     }
 }

@@ -21,10 +21,10 @@ public class ChooseLevelMenu : UIToolkitElement
 
         Button human1 = _container.Q<Button>("Organizm1");
 
-        human1.clicked += () => OpenOneofButtons(_human1);
+        human1.clicked += () => OpenOneOfButtons(_human1);
     }
 
-    private void OpenOneofButtons(MapsInChooseConfiguration ActiveMap)
+    private void OpenOneOfButtons(MapsInChooseConfiguration ActiveMap)
     {
         Label bolezni = _container.Q<Label>("Bolezni");
         Label StartPoint = _container.Q<Label>("StartPoint");
@@ -41,7 +41,7 @@ public class ChooseLevelMenu : UIToolkitElement
         }
         StartPoint.text = ActiveMap.startPointText;
         FinishPoint.text = ActiveMap.finishPointText;
-        Start.clicked += () => _gameMachine.LoadLevel(1);
+        Start.clicked += () => gameMachine.LoadLevel(1);
         mapInChoose.style.backgroundImage = ActiveMap.texture;
 
         cont.visible = true;

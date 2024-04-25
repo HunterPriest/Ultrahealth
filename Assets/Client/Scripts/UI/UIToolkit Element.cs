@@ -4,7 +4,7 @@ using Zenject;
 
 public abstract class UIToolkitElement : MonoBehaviour
 {
-    [Inject] protected GameMachine _gameMachine;
+    [Inject] protected GameMachine gameMachine;
 
     private VisualElement _doc;
     protected VisualElement _container;

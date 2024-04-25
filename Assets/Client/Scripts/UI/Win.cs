@@ -18,8 +18,8 @@ public class Win : UIToolkitElement
         Label level = _container.Q<Label>("Level");
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
-        ExitToMenu.clicked += () => _gameMachine.FinishGame();
-        level.text = "Вы завершили уровень: " + indexLevel.ToString();
+        ExitToMenu.clicked += () => gameMachine.FinishGame();
+        level.text = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + indexLevel.ToString();
     }
 
     protected override void ResetContainer(VisualElement element)

@@ -20,7 +20,6 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void FinishAttack()
     {
-        print("sdd");
         UpdateState(WeaponState.Idle);
     }
 

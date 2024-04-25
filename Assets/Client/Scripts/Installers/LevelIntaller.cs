@@ -6,11 +6,14 @@ public class LevelIntaller : MonoInstaller
     [SerializeField] private GameObject _player;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Level _level;
+    [SerializeField] private MapInGame _map;
+    [SerializeField] private Pause _pause;
 
     public override void InstallBindings()
     {
+        InstallUI();
         InstallPlayer();
-        InstallLevel();
+        InstallLevel();    
     }
 
     private void InstallPlayer()
@@ -22,5 +25,10 @@ public class LevelIntaller : MonoInstaller
     private void InstallLevel()
     {
         Container.Bind<Level>().FromInstance(_level).AsSingle().NonLazy();
+    }
+
+    private void InstallUI()
+    {
+        Container.Bind<GameUI>().AsSingle().WithArguments(_map, _pause);
     }
 }

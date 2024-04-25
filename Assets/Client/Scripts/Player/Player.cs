@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
     public PlayerWeapons Weapons => _weapons;
 
     [Inject]
-    public void Construct(InputManager input)
+    public void Construct(InputManager input, GameUI gameUI)
     {   
         UpdatePlayerState(PlayerState.Idle);
-        _input.Initialize(this, input);
+        _input.Initialize(this, input, gameUI);
         CameraMovement.Initialize(_fpsRig);
         Weapons.Initialize(_fpsRig);
         print("Initialized");
@@ -37,11 +37,5 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         _input.UnsubscribePlayer();
-        print("Dispose");
-    }
-
-    private void Update()
-    {
-        //print(_unit.Health);
     }
 }
