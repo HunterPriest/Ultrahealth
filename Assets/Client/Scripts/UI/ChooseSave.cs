@@ -36,8 +36,10 @@ public class ChooseSave : UIToolkitElement
         if (GameSaver.loadGameData(index) == null)
         {
             _panelNewSave.visible = true;
+            PlayerPrefs.SetInt("CurrentSave", index);
             NewSave();
         }
+        else _classChooser.OpenChooseLevel();
     }
 
     private void NewSave()

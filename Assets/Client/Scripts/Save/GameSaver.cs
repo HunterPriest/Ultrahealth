@@ -7,7 +7,7 @@ public static class GameSaver
     public static void SaveGame(int numberSave)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        string filePath = Application.persistentDataPath + "/savegame/" + numberSave.ToString()+ ".save";
+        string filePath = Application.persistentDataPath + "/savegame." + numberSave.ToString()+ ".save";
         FileStream fs = new FileStream(filePath, FileMode.Create);
 
         DataSave.PlayerCurrentData save = new DataSave.PlayerCurrentData();
@@ -17,7 +17,7 @@ public static class GameSaver
 
     public static DataSave.PlayerCurrentData loadGameData(int numberSave)
     {
-        string filePath = Application.persistentDataPath + "/savegame" + numberSave.ToString() + ".save";
+        string filePath = Application.persistentDataPath + "/savegame." + numberSave.ToString() + ".save";
         if (!File.Exists(filePath)) return null;
 
         BinaryFormatter bf = new BinaryFormatter();

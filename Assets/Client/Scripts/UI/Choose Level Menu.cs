@@ -21,10 +21,10 @@ public class ChooseLevelMenu : UIToolkitElement
 
         Button human1 = _container.Q<Button>("Organizm1");
 
-        human1.clicked += () => OpenOneOfButtons(_human1);
+        human1.clicked += () => OpenOneOfButtons(_human1, 1);
     }
 
-    private void OpenOneOfButtons(MapsInChooseConfiguration ActiveMap)
+    private void OpenOneOfButtons(MapsInChooseConfiguration ActiveMap, int indexMap)
     {
         Label bolezni = _container.Q<Label>("Bolezni");
         Label StartPoint = _container.Q<Label>("StartPoint");
@@ -41,9 +41,14 @@ public class ChooseLevelMenu : UIToolkitElement
         }
         StartPoint.text = ActiveMap.startPointText;
         FinishPoint.text = ActiveMap.finishPointText;
-        Start.clicked += () => gameMachine.LoadLevel(1);
+        Start.clicked += () =>
+        {
+            GameSaver.SaveGame(PlayerPrefs.GetInt("CurrentSave"));
+            gameMachine.LoadLevel(indexMap);
+        };
         mapInChoose.style.backgroundImage = ActiveMap.texture;
 
         cont.visible = true;
+        save.currentIndexLevel = indexMap;
     }
 }

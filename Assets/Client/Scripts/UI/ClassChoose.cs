@@ -26,8 +26,12 @@ public class ClassChoose : UIToolkitElement
     }
     private void OnButton(int index)
     {
-        DataSave.PlayerCurrentData save = new();
         save.indexClassPlayer = index;
+        _chooseLevel.OpenChooseLevelMenu();
+    }
+
+    public void OpenChooseLevel()
+    {
         _chooseLevel.OpenChooseLevelMenu();
     }
 }

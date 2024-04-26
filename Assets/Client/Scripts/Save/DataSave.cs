@@ -8,8 +8,8 @@ namespace DataSave
     {
         public int currentIndexLevel;
         [Range(0, 2)] public int indexClassPlayer;
-        public int health;
-        public int damage;
-        public int speed;
+        public int Maxhealth;
+        public int Maxdamage;
+        public int Maxspeed;
     }
 }
