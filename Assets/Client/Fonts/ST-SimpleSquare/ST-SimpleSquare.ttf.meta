@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 481bdf527b52a2449b19c1cd427c64a2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - ST-SimpleSquare
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b7d4829be0ba5d54e8eeabdc43b85428, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 2
+  useLegacyBoundsCalculation: 1
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

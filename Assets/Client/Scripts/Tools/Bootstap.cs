@@ -3,10 +3,15 @@ using Zenject;
 
 public class Bootstap : MonoBehaviour
 {
-    [Inject]
     private GameMachine _gameMachine;
 
-    public void Start()
+    [Inject]
+    private void Construct(GameMachine gameMachine)
+    {
+        _gameMachine = gameMachine;
+    }
+
+    private void Start()
     {
         _gameMachine.Initialize();
     }

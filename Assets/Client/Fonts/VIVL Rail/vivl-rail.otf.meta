@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8d316594c84ddc74ebd61df36809d027
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 0
+  fontNames:
+  - VIVL Rail
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 0
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

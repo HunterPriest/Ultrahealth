@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class ClassChoose : UIToolkitElement
 {
@@ -7,6 +8,14 @@ public class ClassChoose : UIToolkitElement
     [SerializeField] private ChooseLevelMenu _chooseLevel;
 
     private VisualElement _chooseClass;
+
+    private PlayerSaver _playerSaver;
+
+    [Inject]
+    private void Construct(PlayerSaver playerSaver)
+    {
+        _playerSaver = playerSaver;
+    }
 
     protected override void Initialize()
     {
@@ -17,17 +26,18 @@ public class ClassChoose : UIToolkitElement
     {
         ResetContainer(_chooseClass);
 
-        Button bacterial = _container.Q<Button>("Bacterial");
+        Button bacteria = _container.Q<Button>("Bacteria");
+        Button nanoRobot = _container.Q<Button>("Nano-robot");
+        Button singlecell = _container.Q<Button>("Singlecell");
 
-        bacterial.clicked += () =>
-        {
-            OnButton(0);
-        };
+        bacteria.clicked += () => OnButton(0);
+        nanoRobot.clicked += () => OnButton(1);
+        singlecell.clicked += () => OnButton(2);
     }
-    private void OnButton(int index)
+    private void OnButton(int indexClass)
     {
-        save.indexClassPlayer = index;
-        _chooseLevel.OpenChooseLevelMenu();
+        _playerSaver.CreateNewCurrentSave(indexClass, _playerSaver.currentSave.currentIndexSave);
+        OpenChooseLevel();
     }
 
     public void OpenChooseLevel()

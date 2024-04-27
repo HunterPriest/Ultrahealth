@@ -1,5 +1,7 @@
 using UnityEngine.UIElements;
 using UnityEngine;
+using Zenject;
+using System.CodeDom.Compiler;
 
 public class ChooseSave : UIToolkitElement
 {
@@ -8,6 +10,15 @@ public class ChooseSave : UIToolkitElement
 
     private VisualElement _save;
     private VisualElement _panelNewSave;
+    private GameConfigInstaller.SavesSettings _savesSettings;
+    private PlayerSaver _playerSaver;
+
+    [Inject]
+    private void Construct(PlayerSaver playerSaver, GameConfigInstaller.SavesSettings savesSettings)
+    {
+        _playerSaver = playerSaver;
+        _savesSettings = savesSettings;
+    }
 
     protected override void Initialize()
     {
@@ -20,34 +31,56 @@ public class ChooseSave : UIToolkitElement
     {
         ResetContainer(_save);
 
-        Button save1 = _container.Q<Button>("Save1");
-        Button save2 = _container.Q<Button>("Save2");
-        Button save3 = _container.Q<Button>("Save3");
-        Button save4 = _container.Q<Button>("Save4");
+        Button[] buttonsSaves = new Button[_savesSettings.amountSaves];
+        int[] buttonsIndexes = new int[_savesSettings.amountSaves];
 
-        save1.clicked += () => OnSaveButton(1);
-        save2.clicked += () => OnSaveButton(2);
-        save3.clicked += () => OnSaveButton(3);
-        save4.clicked += () => OnSaveButton(4);
-    }
-
-    private void OnSaveButton(int index)
-    {
-        if (GameSaver.loadGameData(index) == null)
+        for(int i = 1; i < _savesSettings.amountSaves + 1; i++)
         {
-            _panelNewSave.visible = true;
-            PlayerPrefs.SetInt("CurrentSave", index);
-            NewSave();
+            buttonsIndexes[i - 1] = i;
+            buttonsSaves[i - 1] = _container.Q<Button>("Save" + i.ToString());
+            SubscribeButton(buttonsSaves[i - 1]);
         }
-        else _classChooser.OpenChooseLevel();
     }
 
-    private void NewSave()
+    private void SubscribeButton(Button button)
+    {
+        if(Saver.HasSave(button.tabIndex))
+        {
+            button.text = "Save " + button.tabIndex.ToString();
+            button.clicked += () => OnButtonWithSave(button.tabIndex);
+        }
+        else
+        {
+            button.clicked += () => OnButtonWithoutSave(button.tabIndex);
+        }
+    }
+
+    private void OnButtonWithSave(int indexSave)
+    {
+        DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
+        _playerSaver.ChangeCurrentPlayerData(playerData);
+        _classChooser.OpenChooseLevel();
+    }
+
+    private void OnButtonWithoutSave(int indexSave)
+    {
+        _panelNewSave.visible = true;
+        NewSave(indexSave);
+    }
+
+    private void NewSave(int indexSave)
     {
         Button yes = _container.Q<Button>("Yes");
         Button no = _container.Q<Button>("No");
 
-        yes.clicked += () => _classChooser.OpenClassChooser();
+        yes.clicked += () => OnClickYes(indexSave);
         no.clicked += () => _panelNewSave.visible = false;
     }
+
+    private void OnClickYes(int indexSave)
+    {
+        _playerSaver.ChangeCurrentPlayerData(indexSave);
+        _classChooser.OpenClassChooser();
+    }
+    
 }

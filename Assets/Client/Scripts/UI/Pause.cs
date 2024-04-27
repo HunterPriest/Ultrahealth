@@ -7,12 +7,14 @@ public class Pause : UIToolkitElement
     [SerializeField] private VisualTreeAsset _PauseAsset;
 
     private GameUI _gameUI;
+    private GameMachine _gameMachine;
     private VisualElement _pause;
     
     [Inject]
-    private void Construct(GameUI gameUI)
+    private void Construct(GameUI gameUI, GameMachine gameMachine)
     {
         _gameUI = gameUI;
+        _gameMachine = gameMachine;
     }
 
     protected override void Initialize()
@@ -33,7 +35,7 @@ public class Pause : UIToolkitElement
             _gameUI.ClosePause();
         };
 
-        exitToMenu.clicked += () => gameMachine.FinishGame();
+        exitToMenu.clicked += () => _gameMachine.FinishGame();
     }
 
     public void Close()

@@ -1,6 +1,4 @@
 using Tools;
-using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 
 public class GameUI
 {
@@ -19,7 +17,6 @@ public class GameUI
     {
         if(_gameMachine.currentState == GameState.Game)
         {
-            MonoBehaviour.print("OpenPause");
             _gameMachine.StopGame();
             _pause.OpenPause();
         }

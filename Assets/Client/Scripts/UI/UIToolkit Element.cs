@@ -4,11 +4,9 @@ using Zenject;
 
 public abstract class UIToolkitElement : MonoBehaviour
 {
-    [Inject] protected GameMachine gameMachine;
-
     private VisualElement _doc;
     protected VisualElement _container;
-    protected DataSave.PlayerCurrentData save;
+    protected DataSave.PlayerData save;
     protected abstract void Initialize();
 
     private void OnEnable()

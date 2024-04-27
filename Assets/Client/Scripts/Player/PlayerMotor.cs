@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    [SerializeField] private PlayerMovementConfiguration _playerMovementConfig;
+    [SerializeField] private ClassConfig _playerMovementConfig;
     [SerializeField] private CharacterController _characterController;
 
     private Vector3 _playerVelocity;
@@ -13,12 +13,12 @@ public class PlayerMotor : MonoBehaviour
 
     public void Initialize()
     {
-        _stamina = _playerMovementConfig.MaxStamina;
+        _stamina = _playerMovementConfig.maxStamina;
     }
 
     private void Update()
     {
-        _characterController.Move(transform.TransformDirection(_direction) * _playerMovementConfig.Speed * Time.deltaTime);
+        _characterController.Move(transform.TransformDirection(_direction) * _playerMovementConfig.speed * Time.deltaTime);
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
@@ -36,7 +36,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (_characterController.isGrounded)
         {
-            _playerVelocity.y = Mathf.Sqrt(_playerMovementConfig.JumpForce * -2f * Physics.gravity.y);
+            _playerVelocity.y = Mathf.Sqrt(_playerMovementConfig.jumpForce * -2f * Physics.gravity.y);
         }
     }
 
@@ -58,9 +58,9 @@ public class PlayerMotor : MonoBehaviour
         }
 
         float startTime = Time.time;
-        while(Time.time < startTime + _playerMovementConfig.DashTime)
+        while(Time.time < startTime + _playerMovementConfig.dashTime)
         {
-            _characterController.Move(transform.TransformDirection(dashDirection) * _playerMovementConfig.DashSpeed * Time.deltaTime);
+            _characterController.Move(transform.TransformDirection(dashDirection) * _playerMovementConfig.dashSpeed * Time.deltaTime);
             yield return null;  
         }
 

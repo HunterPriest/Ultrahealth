@@ -10,19 +10,20 @@ public static class GameSaver
         string filePath = Application.persistentDataPath + "/savegame." + numberSave.ToString()+ ".save";
         FileStream fs = new FileStream(filePath, FileMode.Create);
 
-        DataSave.PlayerCurrentData save = new DataSave.PlayerCurrentData();
+        DataSave.PlayerData save = new DataSave.PlayerData();
         bf.Serialize(fs, save);
         fs.Close();
+        MonoBehaviour.print("Save data: " + numberSave.ToString());
     }
 
-    public static DataSave.PlayerCurrentData loadGameData(int numberSave)
+    public static DataSave.PlayerData loadGameData(int numberSave)
     {
         string filePath = Application.persistentDataPath + "/savegame." + numberSave.ToString() + ".save";
         if (!File.Exists(filePath)) return null;
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream fs = new FileStream(filePath, FileMode.Open);
-        DataSave.PlayerCurrentData save = bf.Deserialize(fs) as DataSave.PlayerCurrentData;
+        DataSave.PlayerData save = bf.Deserialize(fs) as DataSave.PlayerData;
 
         fs.Close();
         return save;
