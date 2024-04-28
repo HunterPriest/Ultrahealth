@@ -43,3 +43,38 @@
     text-overflow: clip;
     flex-wrap: nowrap;
 }
+
+.defoltHoverButton:hover {
+    height: auto;
+    width: 240px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(137, 50, 43, 0.73);
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    border-left-width: 12px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.defoltFocusButton:focus {
+    height: auto;
+    width: 240px;
+    background-color: rgba(163, 83, 105, 0.82);
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    border-left-width: 12px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

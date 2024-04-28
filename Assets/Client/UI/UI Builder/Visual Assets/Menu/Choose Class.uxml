@@ -3,9 +3,9 @@
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.59);">
         <ui:Label tabindex="-1" text="Choose class" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="font-size: 90px;" />
         <ui:VisualElement style="flex-grow: 1; align-items: stretch; flex-direction: row;">
-            <ui:Button text="Bacteria" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Bacteria" class="defoltOldKallButtons" style="width: 628px; align-self: auto;" />
-            <ui:Button text="Nano-robot" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nano-robot" class="defoltOldKallButtons" style="width: 628px;" />
-            <ui:Button text="Singlecell" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Singlecell" class="defoltOldKallButtons" style="width: 628px; right: 0;" />
+            <ui:Button text="Bacteria" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Bacteria" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 628px; align-self: auto; -unity-text-align: middle-center;" />
+            <ui:Button text="Nano-robot" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nano-robot" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 628px; -unity-text-align: middle-center;" />
+            <ui:Button text="Singlecell" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Singlecell" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 628px; right: 0; -unity-text-align: middle-center;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

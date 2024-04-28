@@ -1,16 +1,20 @@
 using Tools;
+using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class GameUI
 {
     private MapInGame _map;
     private Pause _pause;
+    private LevelUI _levelUI;
     private GameMachine _gameMachine;
 
-    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine)
+    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, LevelUI levelUI)
     {
         _map = map;
         _pause = pause;
         _gameMachine = gameMachine;
+        _levelUI = levelUI;
     }
 
     public void OpenPause()
@@ -29,7 +33,7 @@ public class GameUI
     public void ClosePause()
     {
         _gameMachine.ResumeGame();
-        _pause.Close();
+        _levelUI.OpenLevelUI();
     }
 
     public void OpenMap()
@@ -48,6 +52,6 @@ public class GameUI
     public void CloseMap()
     {
         _gameMachine.ResumeGame();
-        _map.Close();
+        _levelUI.OpenLevelUI();
     }
 }

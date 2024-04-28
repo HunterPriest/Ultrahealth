@@ -37,9 +37,4 @@ public class Pause : UIToolkitElement
 
         exitToMenu.clicked += () => _gameMachine.FinishGame();
     }
-
-    public void Close()
-    {
-        _container.Clear();
-    }
 }

@@ -7,6 +7,7 @@ public class ChooseSave : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _chooseSaveAsset;
     [SerializeField] private ClassChoose _classChooser;
+    [SerializeField] private VisualTreeAsset _panelForSaveCreateAsset;
 
     private VisualElement _save;
     private VisualElement _panelNewSave;
@@ -23,8 +24,7 @@ public class ChooseSave : UIToolkitElement
     protected override void Initialize()
     {
         _save = _chooseSaveAsset.CloneTree();
-        _panelNewSave = _save.Q<VisualElement>("PanelForNewSave");
-        _panelNewSave.visible = false;
+        _panelNewSave = _panelForSaveCreateAsset.CloneTree();
     }
 
     public void OpenSave()
@@ -64,7 +64,7 @@ public class ChooseSave : UIToolkitElement
 
     private void OnButtonWithoutSave(int indexSave)
     {
-        _panelNewSave.visible = true;
+        _save.Add(_panelNewSave);
         NewSave(indexSave);
     }
 
@@ -74,7 +74,7 @@ public class ChooseSave : UIToolkitElement
         Button no = _container.Q<Button>("No");
 
         yes.clicked += () => OnClickYes(indexSave);
-        no.clicked += () => _panelNewSave.visible = false;
+        no.clicked += () => _save.Remove(_panelNewSave);
     }
 
     private void OnClickYes(int indexSave)

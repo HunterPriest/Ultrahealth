@@ -5,7 +5,6 @@ using Zenject;
 public class ChooseLevelMenu : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _chooseLevelsAsset;
-    [SerializeField] private Color _passedLevelButtonColor;
     
     [Header ("Maps")] 
     [SerializeField] private MapsInChooseConfiguration[] organisms;
@@ -71,9 +70,5 @@ public class ChooseLevelMenu : UIToolkitElement
     private void SubscribeButton(Button button)
     {
         button.clicked += () => OnButtonLevelClick(organisms[button.tabIndex - 1], button.tabIndex);
-        if(_playerSaver.currentSave.currentPlayerSave.currentIndexLevel > button.tabIndex)
-        {
-            button.style.backgroundColor = _passedLevelButtonColor;
-        }
     }
 }

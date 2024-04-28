@@ -20,24 +20,18 @@ public class MapInGame : UIToolkitElement
 
         VisualElement ForMap = _container.Q<VisualElement>("ForMap");
         ForMap.Add(_currentMapElement);
-        Button[] points = new Button[_currentMap._points];
         Label name = _container.Q<Label>("Name");
         Label Text = _container.Q<Label>("Text");
 
         name.text = _currentMap._name;
         for (int i = 0; i > _currentMap._points; i++)
         {
-            points[i] = _container.Q<Button>("Point" + (i + 1).ToString());
-            points[i].clicked += (() =>
+            Button point = _container.Q<Button>((i + 1).ToString());
+            point.clicked += (() =>
             {
                 name.text = _currentMap._pointsText[i];
                 Text.text = _currentMap._moreInfo[i];
             });
         }
-    }
-
-    public void Close()
-    {
-        _container.Clear();
     }
 }

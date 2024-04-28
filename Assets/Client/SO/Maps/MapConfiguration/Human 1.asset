@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asset: {fileID: 9197481963319205126, guid: d646ebe702366624882a0467cbeab7b3, type: 3}
   _pointsText:
-  - "\u0420\u043E\u0442\u043E\u0432\u0430\u044F \u043F\u043E\u043B\u043E\u0441\u0442\u044C"
-  - "\u041F\u0438\u0449\u0435\u0432\u043E\u0434"
-  - "\u0416\u0435\u043B\u0443\u0434\u043E\u043A"
+  - Mouth
+  - pishevod
+  - stomach
   _moreInfo: []
   _name: "\u0427\u0435\u043B\u043E\u0432\u0435\u043A"
   _points: 3
