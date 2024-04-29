@@ -12,18 +12,23 @@ public class Enemy : MonoBehaviour
     private PlayerDetector _playerDetector;
     private IStateEnemy _currentState;
     private EnemyState _currentStateType = EnemyState.Idle;
-    private Unit _unit;
+    private EnemyUnit _unit;
+    private EnemyAnimations _animations;
+
+    private void OnValidate()
+    {
+        _animations = GetComponent<EnemyAnimations>();
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        _unit = GetComponent<EnemyUnit>();
+        _playerDetector = GetComponent<PlayerDetector>();
+        agent.speed = _movementConfiguration.Speed;
+    }
 
     public void Initialize(Transform playerTransform)
     {
-        EnemyAnimations animations = GetComponent<EnemyAnimations>();
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        _unit = GetComponent<Unit>();
-        _playerDetector = GetComponent<PlayerDetector>();
-        agent.speed = _movementConfiguration.Speed;
-        _movement.Initialize(animations, playerTransform);
-        _weapons.Initialize(animations);
-        _idle.Intialize(animations);
+        _movement.Initialize(_animations, playerTransform);
+        _weapons.Initialize(_animations);
+        _idle.Intialize(_animations);
         _unit.Initialize();
         _playerDetector.PlayerInAttackRange += OnPlayerInAttackRange;
         _playerDetector.PlayerInChaseRange += OnPlayerInChaseRange;

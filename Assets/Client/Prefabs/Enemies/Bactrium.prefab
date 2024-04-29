@@ -774,7 +774,6 @@ GameObject:
   - component: {fileID: 4542365642361254092}
   - component: {fileID: 1566353263084748619}
   - component: {fileID: 2071701667326364980}
-  - component: {fileID: 6535416600723689535}
   - component: {fileID: 3189571133825708445}
   - component: {fileID: 6361379789688244328}
   - component: {fileID: 4959878334195863438}
@@ -782,6 +781,7 @@ GameObject:
   - component: {fileID: 4774475301387385540}
   - component: {fileID: 2286969733889482550}
   - component: {fileID: 8655945307520879039}
+  - component: {fileID: 4019270132557072591}
   m_Layer: 0
   m_Name: Bactrium
   m_TagString: Untagged
@@ -921,20 +921,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6535416600723689535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755114031596519289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7005df1215556c4aa6cb3d578b43a8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthConfig: {fileID: 11400000, guid: ad9a19bb436c6934b83009e54779e52a, type: 2}
-  Health: 0
 --- !u!114 &3189571133825708445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502b7149461e2474da7d9ed97f7cb7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unit: {fileID: 6535416600723689535}
+  _unit: {fileID: 4019270132557072591}
 --- !u!136 &6361379789688244328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1037,6 +1023,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc98b4d87cc0394d8bdc820bc4edf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4019270132557072591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755114031596519289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be9e27217684a74e945e85d1fd9da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthConfig: {fileID: 11400000, guid: ad9a19bb436c6934b83009e54779e52a, type: 2}
 --- !u!1 &8843404277632474495
 GameObject:
   m_ObjectHideFlags: 0

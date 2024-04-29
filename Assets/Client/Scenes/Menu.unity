@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chooseLevelsAsset: {fileID: 9197481963319205126, guid: 55ae06b1bd36ee544a03b6a1d9c3da2c, type: 3}
-  _passedLevelButtonColor: {r: 0.5377358, g: 0.1941284, b: 0.1699448, a: 0.7294118}
+  _passedLevelButtonColor: {r: 0, g: 0, b: 0, a: 0.6313726}
   organisms:
   - {fileID: 11400000, guid: 92ca3c995f34cab419a3fa4b4b846eb1, type: 2}
 --- !u!114 &1836095561

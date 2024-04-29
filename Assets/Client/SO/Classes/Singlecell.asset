@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Singlecell
   m_EditorClassIdentifier: 
   indexClassPlayer: 2
-  maxHealth: 10
-  maxStamina: 3
-  jumpForce: 3
+  maxHealth: 20
+  maxStamina: 2
+  jumpForce: 2
   dashTime: 1
   dashSpeed: 0.25
-  speed: 5
+  speed: 3

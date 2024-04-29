@@ -8,7 +8,7 @@ public class EnemyIdle : MonoBehaviour, IStateEnemy
    
    public void Intialize(EnemyAnimations animation)
    {
-        _animations = animation;;
+        _animations = animation;
    }
 
     public void Exit()

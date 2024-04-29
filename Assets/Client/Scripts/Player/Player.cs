@@ -2,6 +2,7 @@ using UnityEngine;
 using Tools;
 using Zenject;
 using System;
+using UnityEditor;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerInput _input;
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMotor _movement;
     [SerializeField] private PlayerLook _playerLook;
     [SerializeField] private PlayerWeapons _weapons;
-    [SerializeField] private Unit _unit;
+    [SerializeField] private PlayerUnit _unit;
 
     private PlayerState _playerState;
 
@@ -18,14 +19,18 @@ public class Player : MonoBehaviour
     public PlayerWeapons Weapons => _weapons;
 
     [Inject]
-    public void Construct(InputManager input, GameUI gameUI)
+    public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings, PlayerSaver playerSaver)
     {   
         UpdatePlayerState(PlayerState.Idle);
+        print(playerSaver);
+        playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.currentPlayerSave);
         _input.Initialize(this, input, gameUI);
-        CameraMovement.Initialize(_fpsRig);
+        CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
+        _unit.Initialize(playerSettings.healthSettings);
+        _movement.Initialize(playerSettings.movementSettings);
         Weapons.Initialize(_fpsRig);
+        print(playerSettings);
         print("Initialized");
-        _unit.Initialize();
     }
 
     private void UpdatePlayerState(PlayerState playerState)

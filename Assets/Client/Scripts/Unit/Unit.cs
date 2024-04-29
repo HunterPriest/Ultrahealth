@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField] private ClassConfig _healthConfig;
-    public int Health;
+    protected float health; 
 
-    public void Initialize()
+    public void TakeDamage(float damage)
     {
-        Health = _healthConfig.maxHealth;
+        health -= damage;
+        if(health <= 0)
+        {
+            Dead();
+        }
+    }
+
+    private void Dead()
+    {
+        Destroy(gameObject);
     }
 }

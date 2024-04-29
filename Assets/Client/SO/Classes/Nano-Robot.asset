@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Nano-Robot
   m_EditorClassIdentifier: 
   indexClassPlayer: 1
-  maxHealth: 10
-  maxStamina: 3
-  jumpForce: 3
-  dashTime: 1
+  maxHealth: 5
+  maxStamina: 4
+  jumpForce: 4
+  dashTime: 3
   dashSpeed: 0.25
-  speed: 5
+  speed: 7

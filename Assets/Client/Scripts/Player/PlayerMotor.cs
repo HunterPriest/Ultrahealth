@@ -1,24 +1,26 @@
 using System.Collections;
 using Cinemachine.Utility;
 using UnityEngine;
+using Zenject;
 
 public class PlayerMotor : MonoBehaviour
 {
-    [SerializeField] private ClassConfig _playerMovementConfig;
     [SerializeField] private CharacterController _characterController;
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
     private float _stamina;
+    private GameConfigInstaller.PlayerSettings.MovementSettings _movementSettings;
 
-    public void Initialize()
+    public void Initialize(GameConfigInstaller.PlayerSettings.MovementSettings movementSettings)
     {
-        _stamina = _playerMovementConfig.maxStamina;
+        _movementSettings = movementSettings;
+        _stamina = _movementSettings.maxStamina;
     }
 
     private void Update()
     {
-        _characterController.Move(transform.TransformDirection(_direction) * _playerMovementConfig.speed * Time.deltaTime);
+        _characterController.Move(transform.TransformDirection(_direction) * _movementSettings.speed * Time.deltaTime);
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
@@ -36,7 +38,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (_characterController.isGrounded)
         {
-            _playerVelocity.y = Mathf.Sqrt(_playerMovementConfig.jumpForce * -2f * Physics.gravity.y);
+            _playerVelocity.y = Mathf.Sqrt(_movementSettings.jumpForce * -2f * Physics.gravity.y);
         }
     }
 
@@ -58,9 +60,9 @@ public class PlayerMotor : MonoBehaviour
         }
 
         float startTime = Time.time;
-        while(Time.time < startTime + _playerMovementConfig.dashTime)
+        while(Time.time < startTime + _movementSettings.dashTime)
         {
-            _characterController.Move(transform.TransformDirection(dashDirection) * _playerMovementConfig.dashSpeed * Time.deltaTime);
+            _characterController.Move(transform.TransformDirection(dashDirection) * _movementSettings.dashSpeed * Time.deltaTime);
             yield return null;  
         }
 

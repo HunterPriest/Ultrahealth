@@ -2,7 +2,6 @@ public class PlayerSaver
 {
     public CurrentSave currentSave {get; private set; }
 
-
     private GameConfigInstaller.ClassesConfigs _classesConfigs;
 
     public PlayerSaver(GameConfigInstaller.ClassesConfigs classesConfigs)
@@ -10,12 +9,7 @@ public class PlayerSaver
         _classesConfigs = classesConfigs;
     }
 
-    public void ChangeCurrentPlayerData(int newIndexSave, DataSave.PlayerData newPlayerData)
-    {
-        currentSave = new CurrentSave(newIndexSave, newPlayerData);
-    }
-
-    public void ChangeCurrentPlayerData(DataSave.PlayerData newPlayerData)
+    public void ChangeCurrentSave(DataSave.PlayerData newPlayerData)
     {
         currentSave = new CurrentSave(newPlayerData);
     }
@@ -26,7 +20,7 @@ public class PlayerSaver
         currentSave = new CurrentSave(newIndexSave, playerData);
     }
 
-    public void ChangeCurrentPlayerData(int newIndexSave)
+    public void ChangeCurrentSave(int newIndexSave)
     {
         currentSave = new CurrentSave(newIndexSave);
     }

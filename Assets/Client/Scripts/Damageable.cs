@@ -6,15 +6,6 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _unit.Health -= damage;
-        if(_unit.Health <= 0)
-        {
-            Dead();
-        }
-    }
-
-    private void Dead()
-    {
-        Destroy(gameObject);
+        _unit.TakeDamage(damage);
     }
 }

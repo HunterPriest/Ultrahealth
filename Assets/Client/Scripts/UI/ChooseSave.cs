@@ -58,7 +58,7 @@ public class ChooseSave : UIToolkitElement
     private void OnButtonWithSave(int indexSave)
     {
         DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
-        _playerSaver.ChangeCurrentPlayerData(playerData);
+        _playerSaver.ChangeCurrentSave(playerData);
         _classChooser.OpenChooseLevel();
     }
 
@@ -79,7 +79,7 @@ public class ChooseSave : UIToolkitElement
 
     private void OnClickYes(int indexSave)
     {
-        _playerSaver.ChangeCurrentPlayerData(indexSave);
+        _playerSaver.ChangeCurrentSave(indexSave);
         _classChooser.OpenClassChooser();
     }
     
