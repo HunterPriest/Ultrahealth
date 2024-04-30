@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca397689eb0664499c389ce061bbe51, type: 3}
   m_Name: Bacteria Behaviour Configuration
   m_EditorClassIdentifier: 
-  ChaseRange: 10
+  ChaseRange: 40
   AttackRange: 2

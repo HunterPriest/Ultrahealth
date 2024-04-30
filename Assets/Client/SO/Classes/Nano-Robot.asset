@@ -16,6 +16,6 @@ MonoBehaviour:
   maxHealth: 5
   maxStamina: 4
   jumpForce: 4
-  dashTime: 3
-  dashSpeed: 0.25
+  dashTime: 0.4
+  dashSpeed: 24
   speed: 7
