@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
-    <ui:VisualElement style="flex-grow: 1; align-items: auto;">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 583px; justify-content: center; align-self: flex-end; align-items: center; background-color: rgba(0, 0, 0, 0.59);">
-            <ui:Label tabindex="-1" text="Choose save" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="height: 108px; width: 310px; -unity-text-align: middle-center; top: -46px; font-size: 64px; -unity-font-definition: initial;" />
+    <ui:VisualElement style="flex-grow: 1; align-items: center;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 583px; justify-content: center; align-self: center; align-items: center; background-color: rgba(0, 0, 0, 0.59); height: 1080px;">
+            <ui:Label tabindex="-1" text="Choose save" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="height: 108px; width: auto; -unity-text-align: middle-center; top: auto; font-size: 64px; -unity-font-definition: initial;" />
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save1" tabindex="1" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 350px;" />
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save2" tabindex="2" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 350px;" />
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save3" tabindex="3" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 350px;" />
