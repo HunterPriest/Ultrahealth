@@ -30,9 +30,9 @@ public class ClassChoose : UIToolkitElement
         Button nanoRobot = _container.Q<Button>("Nano-robot");
         Button singlecell = _container.Q<Button>("Singlecell");
 
-        bacteria.clicked += () => OnButton(0);
-        nanoRobot.clicked += () => OnButton(1);
-        singlecell.clicked += () => OnButton(2);
+        bacteria.clicked += () => OnButton(1);
+        nanoRobot.clicked += () => OnButton(2);
+        singlecell.clicked += () => OnButton(3);
     }
     private void OnButton(int indexClass)
     {

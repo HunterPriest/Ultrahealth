@@ -7,6 +7,7 @@
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save2" tabindex="2" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 350px;" />
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save3" tabindex="3" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 350px;" />
             <ui:Button text="Empty" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save4" tabindex="4" class="defoltOldKallButtons defoltFocusButton defoltHoverButton" style="width: 350px;" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" tabindex="0" class="defoltOldKallButtons defoltFocusButton defoltHoverButton" style="width: 350px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

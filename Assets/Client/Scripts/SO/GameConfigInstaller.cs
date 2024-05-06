@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -6,9 +7,10 @@ using Zenject;
 public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>
 {
     public SavesSettings savesSettings;
-    public ClassesConfigs classesConfigs;
+    public ClassesSettings classesConfigs;
     public GameSettings gameSettings;
     public PlayerSettings playerSettings;
+    public LevelUpSettings levelUpSettings;
 
     [Serializable]
     public class SavesSettings
@@ -42,7 +44,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
 
         public class HealthSettings
         {   
-            public int maxHealth {get; private set; }
+            public float maxHealth {get; private set; }
 
             public HealthSettings(DataSave.PlayerData playerData)
             {
@@ -60,7 +62,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
 
         public class MovementSettings
         {
-            public int maxStamina {get; private set; }
+            public float maxStamina {get; private set; }
             public int jumpForce {get; private set; }
             public float dashTime {get; private set; }
             public float dashSpeed {get; private set; }
@@ -81,24 +83,66 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
             healthSettings = new HealthSettings(playerData);
             movementSettings = new MovementSettings(playerData);
             weaponsSettings = new WeaponsSettings(playerData);
-            cameraSettings = new CameraSettings(4);
+            cameraSettings = new CameraSettings(1);
         }
     }
 
 
     [Serializable]
-    public class ClassesConfigs
+    public class ClassesSettings
     {
         public ClassConfig bacteria;
         public ClassConfig nanorobot;
         public ClassConfig singlecell;
     }
 
+    [Serializable]
+    public class LevelUpSettings
+    {
+
+        private BacteriaTree bacteriaTree;
+        private NanoRobotTree nanoRobotTreel;
+        private SinglecellTree singlecellTree;
+
+        public class Tree
+        {
+            public Skill[] skills;  
+        }
+
+        [Serializable]
+        public class BacteriaTree : Tree { }
+
+        [Serializable]
+        public class NanoRobotTree : Tree { }
+
+        [Serializable]
+        public class SinglecellTree : Tree { }
+
+        public Tree GetTree(int indexClass)
+        {
+            if(indexClass == 1)
+            {
+                return bacteriaTree;
+            }
+            else if(indexClass == 2)
+            {
+                return nanoRobotTreel;
+            }
+            else if(indexClass == 3)
+            {
+                return singlecellTree;
+            }
+
+            return null;
+        }
+    }
+
     public override void InstallBindings()
     {
         Container.Bind<SavesSettings>().FromInstance(savesSettings).NonLazy();
-        Container.Bind<ClassesConfigs>().FromInstance(classesConfigs).NonLazy();
+        Container.Bind<ClassesSettings>().FromInstance(classesConfigs).NonLazy();
         Container.Bind<GameSettings>().FromInstance(gameSettings).NonLazy();
         Container.Bind<PlayerSettings>().FromInstance(playerSettings).NonLazy();
+        Container.Bind<LevelUpSettings>().FromInstance(levelUpSettings).NonLazy();
     }
 }

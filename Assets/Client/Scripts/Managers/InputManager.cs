@@ -12,6 +12,8 @@ public class InputManager : MonoBehaviour
         _playerActions = _playerInput.Player;
 
         print("Initialize");
+        float i = 82 % 100;
+        print(i);
     }
 
     public void OnEnable()

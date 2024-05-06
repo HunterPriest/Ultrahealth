@@ -6,6 +6,8 @@ public class ChooseLevelMenu : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _chooseLevelsAsset;
     [SerializeField] private Color _passedLevelButtonColor;
+    [SerializeField] private ChooseSave _chooseSave;
+    [SerializeField] private levelUp _levelUp;
      
     [Header ("Maps")] 
     [SerializeField] private MapsInChooseConfiguration[] organisms;
@@ -43,6 +45,12 @@ public class ChooseLevelMenu : UIToolkitElement
             }
             SubscribeButton(buttonsLevels[i - 1]);
         }
+
+        Button exit = _container.Q<Button>("Exit");
+        exit.clicked += _chooseSave.OpenSave;
+
+        Button levelUp = _container.Q<Button>("LevelUp");
+        levelUp.clicked += _levelUp.OpenLevelUp;;
     }
 
     private void OnButtonLevelClick(MapsInChooseConfiguration ActiveMap, int indexMap)
@@ -69,7 +77,6 @@ public class ChooseLevelMenu : UIToolkitElement
         mapInChoose.style.backgroundImage = ActiveMap.texture;
 
         cont.visible = true;
-        save.currentIndexLevel = indexMap;
     }
 
     private void SubscribeButton(Button button)

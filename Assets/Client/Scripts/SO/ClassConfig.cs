@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ultrahealth/ClassConfig")]
 public class ClassConfig : ScriptableObject
 {
-    [Range(0, 2)] public int indexClassPlayer;
+    [Range(1, 3)] public int indexClassPlayer;
 
     [Header("Health")]
     public int maxHealth;

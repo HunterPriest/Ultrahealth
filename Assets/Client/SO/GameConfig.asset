@@ -20,3 +20,7 @@ MonoBehaviour:
     singlecell: {fileID: 11400000, guid: 3ec2b0bb62172bb4dad40c2f897384f4, type: 2}
   gameSettings:
     amountLevels: 1
+  levelUpConfig:
+    bacteriaTree:
+      skills:
+      - {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}

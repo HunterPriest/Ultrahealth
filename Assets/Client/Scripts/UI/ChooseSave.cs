@@ -8,6 +8,7 @@ public class ChooseSave : UIToolkitElement
     [SerializeField] private VisualTreeAsset _chooseSaveAsset;
     [SerializeField] private ClassChoose _classChooser;
     [SerializeField] private VisualTreeAsset _panelForSaveCreateAsset;
+    [SerializeField] private Menu _menu;
 
     private VisualElement _save;
     private VisualElement _panelNewSave;
@@ -40,6 +41,9 @@ public class ChooseSave : UIToolkitElement
             buttonsSaves[i - 1] = _container.Q<Button>("Save" + i.ToString());
             SubscribeButton(buttonsSaves[i - 1]);
         }
+
+        Button exit = _container.Q<Button>("Exit");
+        exit.clicked += _menu.OpenMenu;
     }
 
     private void SubscribeButton(Button button)
@@ -58,7 +62,7 @@ public class ChooseSave : UIToolkitElement
     private void OnButtonWithSave(int indexSave)
     {
         DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
-        _playerSaver.ChangeCurrentSave(playerData);
+        _playerSaver.ChangeCurrentSave(playerData, indexSave);
         _classChooser.OpenChooseLevel();
     }
 

@@ -22,32 +22,32 @@ public class Win : UIToolkitElement
         _win = WinAsset.CloneTree();
     }
 
-    public void StartWin(int indexLevel)
+    public void OpenWin(LevelSettings levelSettings)
     {
         ResetContainer(_win);
         Label level = _container.Q<Label>("Level");
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
-        ExitToMenu.clicked += () => OnExitToMenu(indexLevel);
+        ExitToMenu.clicked += () => OnExitToMenu(levelSettings);
 
-        level.text = "You passed the level: " + indexLevel.ToString();
+        level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
         print(_playerSaver.currentSave.currentIndexSave.ToString());
     }
 
-    private void OnExitToMenu(int indexLevel)
+    private void OnExitToMenu(LevelSettings levelSettings)
     {
-        _gameMachine.FinishGame();
-        if(indexLevel == _playerSaver.currentSave.currentPlayerSave.currentIndexLevel)
+        if(levelSettings.levelIndex == _playerSaver.currentSave.currentPlayerSave.currentIndexLevel)
         {
-            print(_playerSaver.currentSave.currentPlayerSave.currentIndexLevel.ToString());
-            _playerSaver.currentSave.currentPlayerSave.currentIndexLevel++;
-            _playerSaver.SavePlayerData(_playerSaver.currentSave.currentIndexSave, _playerSaver.currentSave.currentPlayerSave);
-            print(_playerSaver.currentSave.currentPlayerSave.currentIndexLevel.ToString());
+            _playerSaver.currentSave.currentPlayerSave.currentIndexLevel++;    
         }
+        _playerSaver.currentSave.currentPlayerSave.experience += levelSettings.gainedExperience;
+        _playerSaver.SaveCurrentSave();
+        _gameMachine.FinishGame();
     }
 
     protected override void ResetContainer(VisualElement element)
     {
         base.ResetContainer(element);
     }
-}
+    
+}    

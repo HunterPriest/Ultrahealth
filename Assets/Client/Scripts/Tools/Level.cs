@@ -5,7 +5,7 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private Win _win;
-    [SerializeField] private int indexlevel;
+    [SerializeField] private LevelSettings _levelSettings;
 
     private GameMachine _gameMachine;
 
@@ -27,6 +27,7 @@ public class Level : MonoBehaviour
     public void CompleteLevel()
     {
         _gameMachine.StopGame();
-        _win.StartWin(indexlevel);
+        _win.OpenWin(_levelSettings);
+
     }
 }

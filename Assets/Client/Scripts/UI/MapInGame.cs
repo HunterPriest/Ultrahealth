@@ -8,10 +8,11 @@ public class MapInGame : UIToolkitElement
 
     private VisualElement _mapInGame;
     private VisualElement _currentMapElement;
+    
     protected override void Initialize()
     {
         _mapInGame = _MapInGameAsset.CloneTree();
-        _currentMapElement = _currentMap._asset.CloneTree();
+        _currentMapElement = _currentMap.asset.CloneTree();
     }
 
     public void ShowMap()
@@ -23,15 +24,20 @@ public class MapInGame : UIToolkitElement
         Label name = _container.Q<Label>("Name");
         Label Text = _container.Q<Label>("Text");
 
-        name.text = _currentMap._name;
-        for (int i = 0; i > _currentMap._points; i++)
+        name.text = _currentMap.nameOrganism;
+        for (int i = 0; i > _currentMap.points; i++)
         {
             Button point = _container.Q<Button>((i + 1).ToString());
             point.clicked += (() =>
             {
-                name.text = _currentMap._pointsText[i];
-                Text.text = _currentMap._moreInfo[i];
+                name.text = _currentMap.pointsText[i];
+                Text.text = _currentMap.moreInfo[i];
             });
         }
+    }
+
+    public void Close()
+    {
+        _container.Clear();
     }
 }

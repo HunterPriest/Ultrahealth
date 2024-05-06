@@ -5,9 +5,9 @@ using UnityEngine.UIElements;
 
 public class MapConfiguration : ScriptableObject
 {
-    public VisualTreeAsset _asset;
-    public string[] _pointsText;
-    public string[] _moreInfo;
-    public string _name;
-    public int _points;
+    public VisualTreeAsset asset;
+    public string[] pointsText;
+    public string[] moreInfo;
+    public string nameOrganism;
+    public int points;
 }

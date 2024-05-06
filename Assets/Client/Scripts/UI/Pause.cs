@@ -4,7 +4,7 @@ using Zenject;
 
 public class Pause : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _PauseAsset;
+    [SerializeField] private VisualTreeAsset _pauseAsset;
 
     private GameUI _gameUI;
     private GameMachine _gameMachine;
@@ -19,7 +19,7 @@ public class Pause : UIToolkitElement
 
     protected override void Initialize()
     {
-        _pause = _PauseAsset.CloneTree();
+        _pause = _pauseAsset.CloneTree();
     }
 
     public void OpenPause()
@@ -36,5 +36,10 @@ public class Pause : UIToolkitElement
         };
 
         exitToMenu.clicked += () => _gameMachine.FinishGame();
+    }
+
+    public void ClosePause()
+    {
+        _container.Clear();
     }
 }

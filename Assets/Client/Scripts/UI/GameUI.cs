@@ -1,20 +1,24 @@
 using Tools;
-using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
+using Zenject;
 
-public class GameUI
+public class GameUI : IInitializable
 {
     private MapInGame _map;
     private Pause _pause;
-    private LevelUI _levelUI;
     private GameMachine _gameMachine;
+    private GameplayUI _gameplayUI;
 
-    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, LevelUI levelUI)
+    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, GameplayUI gameplayUI)
     {
         _map = map;
         _pause = pause;
+        _gameplayUI = gameplayUI;
         _gameMachine = gameMachine;
-        _levelUI = levelUI;
+    }
+
+    void IInitializable.Initialize()
+    {
+        _gameplayUI.Open();
     }
 
     public void OpenPause()
@@ -23,6 +27,7 @@ public class GameUI
         {
             _gameMachine.StopGame();
             _pause.OpenPause();
+            _gameplayUI.Close();
         }
         else if(_gameMachine.currentState == GameState.Pause)
         {
@@ -33,7 +38,8 @@ public class GameUI
     public void ClosePause()
     {
         _gameMachine.ResumeGame();
-        _levelUI.OpenLevelUI();
+        _pause.ClosePause();
+        _gameplayUI.Open();
     }
 
     public void OpenMap()
@@ -52,6 +58,6 @@ public class GameUI
     public void CloseMap()
     {
         _gameMachine.ResumeGame();
-        _levelUI.OpenLevelUI();
+        _map.Close();
     }
 }

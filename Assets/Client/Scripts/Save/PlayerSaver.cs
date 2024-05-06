@@ -2,16 +2,21 @@ public class PlayerSaver
 {
     public CurrentSave currentSave {get; private set; }
 
-    private GameConfigInstaller.ClassesConfigs _classesConfigs;
+    private GameConfigInstaller.ClassesSettings _classesConfigs;
 
-    public PlayerSaver(GameConfigInstaller.ClassesConfigs classesConfigs)
+    public PlayerSaver(GameConfigInstaller.ClassesSettings classesConfigs)
     {
         _classesConfigs = classesConfigs;
     }
 
-    public void ChangeCurrentSave(DataSave.PlayerData newPlayerData)
+    public void ChangeCurrentSave(DataSave.PlayerData newPlayerData, int indexSave)
     {
-        currentSave = new CurrentSave(newPlayerData);
+        currentSave = new CurrentSave(indexSave, newPlayerData);
+    }
+
+    public void SaveCurrentSave()
+    {
+        SavePlayerData(currentSave.currentIndexSave, currentSave.currentPlayerSave);
     }
 
     public void CreateNewCurrentSave(int indexClass, int newIndexSave)
@@ -37,15 +42,15 @@ public class PlayerSaver
         DataSave.PlayerData playerData = new();
         ClassConfig classConfig = null;
 
-        if(indexClass == 0)
+        if(indexClass == 1)
         {
             classConfig = _classesConfigs.bacteria;
         }
-        else if(indexClass == 1)
+        else if(indexClass == 2)
         {
             classConfig = _classesConfigs.nanorobot;
         }
-        else if(indexClass == 2)
+        else if(indexClass == 3)
         {
             classConfig = _classesConfigs.singlecell;
         }
@@ -58,6 +63,8 @@ public class PlayerSaver
         playerData.maxHealth = classConfig.maxHealth;   
         playerData.indexClassPlayer = indexClass;
         playerData.speed = classConfig.speed;
+        playerData.experience = 0;
+        playerData.currentTree = new int[3] {1, 1, 1};
 
         return playerData;
     }

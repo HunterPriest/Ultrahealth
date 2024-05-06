@@ -1,7 +1,7 @@
 public class CurrentSave
 {
     public int currentIndexSave { get; private set; }
-    public DataSave.PlayerData currentPlayerSave {get; set; }
+    public DataSave.PlayerData currentPlayerSave { get; set; }
 
     public CurrentSave(int indexSave, DataSave.PlayerData playerData)
     {

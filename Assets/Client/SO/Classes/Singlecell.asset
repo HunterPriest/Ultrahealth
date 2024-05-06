@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33b3cc6d106e8e44adcd76f6f2833d1, type: 3}
   m_Name: Singlecell
   m_EditorClassIdentifier: 
-  indexClassPlayer: 2
+  indexClassPlayer: 3
   maxHealth: 20
   maxStamina: 2
   jumpForce: 2
