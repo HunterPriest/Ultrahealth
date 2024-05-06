@@ -2,14 +2,16 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 
+
 public class Pause : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _pauseAsset;
 
+    private VisualElement _pause;
+
     private GameUI _gameUI;
     private GameMachine _gameMachine;
-    private VisualElement _pause;
-    
+
     [Inject]
     private void Construct(GameUI gameUI, GameMachine gameMachine)
     {
@@ -36,10 +38,5 @@ public class Pause : UIToolkitElement
         };
 
         exitToMenu.clicked += () => _gameMachine.FinishGame();
-    }
-
-    public void ClosePause()
-    {
-        _container.Clear();
     }
 }

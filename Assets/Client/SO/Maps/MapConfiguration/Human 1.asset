@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9befd5f7e884f49458959af7d0a3a6e9, type: 3}
   m_Name: Human 1
   m_EditorClassIdentifier: 
-  _asset: {fileID: 9197481963319205126, guid: d646ebe702366624882a0467cbeab7b3, type: 3}
-  _pointsText:
-  - Mouth
-  - pishevod
-  - stomach
-  _moreInfo: []
-  _name: "\u0427\u0435\u043B\u043E\u0432\u0435\u043A"
-  _points: 3
+  asset: {fileID: 9197481963319205126, guid: d646ebe702366624882a0467cbeab7b3, type: 3}
+  pointsText:
+  - "\u0420\u043E\u0442"
+  - "\u043A\u0438\u0448\u043A\u0438"
+  - "\u0436\u0435\u043B\u0443\u0434\u043E\u043A"
+  moreInfo:
+  - 00001
+  - ----1
+  - 010890289128
+  nameOrganism: human

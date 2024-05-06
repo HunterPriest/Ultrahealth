@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using Zenject;
 
 public abstract class UIToolkitElement : MonoBehaviour
 {
     private VisualElement _doc;
     protected VisualElement _container;
-    
+
     protected abstract void Initialize();
 
     private void OnEnable()

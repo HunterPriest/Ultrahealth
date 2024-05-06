@@ -27,7 +27,6 @@ public class GameUI : IInitializable
         {
             _gameMachine.StopGame();
             _pause.OpenPause();
-            _gameplayUI.Close();
         }
         else if(_gameMachine.currentState == GameState.Pause)
         {
@@ -38,7 +37,6 @@ public class GameUI : IInitializable
     public void ClosePause()
     {
         _gameMachine.ResumeGame();
-        _pause.ClosePause();
         _gameplayUI.Open();
     }
 
@@ -58,6 +56,6 @@ public class GameUI : IInitializable
     public void CloseMap()
     {
         _gameMachine.ResumeGame();
-        _map.Close();
+        _gameplayUI.Open();
     }
 }

@@ -9,5 +9,4 @@ public class MapConfiguration : ScriptableObject
     public string[] pointsText;
     public string[] moreInfo;
     public string nameOrganism;
-    public int points;
 }

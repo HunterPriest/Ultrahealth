@@ -64,10 +64,7 @@ public class ChooseLevelMenu : UIToolkitElement
 
         cont.visible = false;
 
-        for (int i = 0; i >= ActiveMap.bolezni.Length; i++)
-        {
-            bolezni.text += ActiveMap.bolezni[i];
-        }
+        bolezni.text = ActiveMap.bolezni;
         StartPoint.text = ActiveMap.startPointText;
         FinishPoint.text = ActiveMap.finishPointText;
         Start.clicked += () =>
