@@ -64,7 +64,8 @@ public class PlayerSaver
         playerData.indexClassPlayer = indexClass;
         playerData.speed = classConfig.speed;
         playerData.experience = 0;
-        playerData.currentTree = new int[3] {1, 1, 1};
+        playerData.currentTree = new int[3];
+        
 
         return playerData;
     }

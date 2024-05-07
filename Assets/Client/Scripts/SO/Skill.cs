@@ -2,25 +2,13 @@ using UnityEngine;
 
 public abstract class Skill : ScriptableObject
 {       
-    private Skill _previousSkill;
-    public int branchFloor;
+    public Skill _previousSkill;
     public int branchIndex;
+    public int branchFloor;
 
     public virtual void Buy(PlayerSaver playerSaver)
     {
+        playerSaver.currentSave.currentPlayerSave.currentTree[branchIndex - 1] = branchFloor;
         playerSaver.SaveCurrentSave();
-    }
-
-    public bool CheckUnlocking()
-    {
-        if(_previousSkill == null)
-        {
-            return true;
-        }
-        else if(_previousSkill.CheckUnlocking())
-        {
-            return true;
-        }
-        return false;
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
+using System;
 
 public class levelUp : UIToolkitElement
 {
@@ -22,7 +23,6 @@ public class levelUp : UIToolkitElement
     protected override void Initialize()
     {
         _levelUp = _levelUpAsset.CloneTree();
-
     }
 
     public void OpenLevelUp()
@@ -43,16 +43,27 @@ public class levelUp : UIToolkitElement
         for(int i = 0; i < levelUpButtons.Length; i++)
         {
             levelUpButtons[i] = _container.Q<Button>(_currentClassTree.skills[i].branchIndex.ToString() + _currentClassTree.skills[i].branchFloor.ToString());
-
+            SubscribeSkillButton(levelUpButtons[i], _currentClassTree.skills[i].branchFloor, _currentClassTree.skills[i].branchIndex, i);
         }
     }
 
-    private void SubscribeSkillButton(Button button, Skill skill)
+    private void SubscribeSkillButton(Button button, int branchFloor, int branchIndex, int indexSkill)
     {
-        // if(_playerSaver.currentSave.currentPlayerSave.currentTree[skill.branchIndex] >= button.text.at)
+        if(_playerSaver.currentSave.currentPlayerSave.currentTree[branchIndex - 1] < branchFloor)
         {
-
+            button.clicked += () => OnClickSkillButton(button, indexSkill);
         }
+        else
+        {
+            button.style.backgroundColor = Color.gray;
+        }
+    }
+
+    private void OnClickSkillButton(Button button, int indexSkill)
+    {
+        _currentClassTree.skills[indexSkill].Buy(_playerSaver);
+        button.style.backgroundColor = Color.gray;
+        button.clickable.activators.Clear();
     }
 
     protected override void ResetContainer(VisualElement element)

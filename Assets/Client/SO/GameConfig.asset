@@ -20,7 +20,16 @@ MonoBehaviour:
     singlecell: {fileID: 11400000, guid: 3ec2b0bb62172bb4dad40c2f897384f4, type: 2}
   gameSettings:
     amountLevels: 1
-  levelUpConfig:
+  levelUpSettings:
     bacteriaTree:
       skills:
       - {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
+      - {fileID: 11400000, guid: 8307a740b8be2294fafea38a29b177bd, type: 2}
+      - {fileID: 11400000, guid: f9e8f1b71fbc24d40b23e768baa2dbab, type: 2}
+      - {fileID: 11400000, guid: 303a1719959fbdc4db2ccee17b770b73, type: 2}
+    nanoRobotTreel:
+      skills:
+      - {fileID: 0}
+    singlecellTree:
+      skills:
+      - {fileID: 0}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb61e9b0aea1dc4f8354dd5ab75c171, type: 3}
+  m_Name: BacteriaImproveStamina1
+  m_EditorClassIdentifier: 
+  _previousSkill: {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
+  branchIndex: 1
+  branchFloor: 2
+  _addedStamina: 10

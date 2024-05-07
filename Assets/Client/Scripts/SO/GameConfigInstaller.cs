@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -100,10 +99,11 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
     public class LevelUpSettings
     {
 
-        private BacteriaTree bacteriaTree;
-        private NanoRobotTree nanoRobotTreel;
-        private SinglecellTree singlecellTree;
+        [SerializeField] private BacteriaTree bacteriaTree;
+        [SerializeField] private NanoRobotTree nanoRobotTreel;
+        [SerializeField] private SinglecellTree singlecellTree;
 
+        [Serializable]
         public class Tree
         {
             public Skill[] skills;  

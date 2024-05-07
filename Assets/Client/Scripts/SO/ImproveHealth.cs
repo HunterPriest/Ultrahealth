@@ -10,5 +10,6 @@ public class ImproveHealth : Skill
         playerSaver.currentSave.currentPlayerSave.maxHealth += _addedHealth;
 
         base.Buy(playerSaver);
+        
     }
 }

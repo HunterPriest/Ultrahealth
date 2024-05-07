@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08967af260223e24eaa738d1367beca1, type: 3}
+  m_Name: BacteriaImproveHealth2
+  m_EditorClassIdentifier: 
+  _previousSkill: {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
+  branchIndex: 2
+  branchFloor: 2
+  _addedHealth: 10
