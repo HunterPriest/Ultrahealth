@@ -5,6 +5,7 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private Win _win;
+    [SerializeField] private DeathUI _death;
     [SerializeField] private LevelSettings _levelSettings;
 
     private GameMachine _gameMachine;
@@ -22,6 +23,11 @@ public class Level : MonoBehaviour
         {
             enemy.Initialize(playerTransform);
         }
+    }
+
+    public void Death()
+    {
+        _death.Death(_levelSettings);
     }
 
     public void CompleteLevel()
