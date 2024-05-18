@@ -28,6 +28,5 @@ public class Level : MonoBehaviour
     {
         _gameMachine.StopGame();
         _win.OpenWin(_levelSettings);
-
     }
 }

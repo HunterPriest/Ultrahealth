@@ -1,0 +1,11 @@
+.StaminaBar .unity-progress-bar__progress {
+    background-color: rgb(4, 97, 255);
+    height: 43px;
+}
+
+.StaminaBar .unity-progress-bar__background {
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    background-color: rgb(0, 0, 0);
+}
