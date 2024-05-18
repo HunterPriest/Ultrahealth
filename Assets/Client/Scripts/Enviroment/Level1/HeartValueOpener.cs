@@ -2,43 +2,33 @@ using UnityEngine;
 
 public class HeartValueOpener : MonoBehaviour
 {
-    [SerializeField] private Collider[] _heartValueColliderRight;
-    [SerializeField] private Collider[] _heartValueColliderLeft;
+    [SerializeField] private MeshCollider _heartValueColliderRight;
+    [SerializeField] private SkinnedMeshRenderer _heartValueMeshRight;
+    [SerializeField] private MeshCollider _heartValueColliderLeft;
+    [SerializeField] private SkinnedMeshRenderer _heartValueMeshLeft;
 
     public void OpenRight()
     {
-        foreach(Collider collider in _heartValueColliderRight)
-        {
-            collider.enabled = false;
-        }
-        print("OpenRight");
+        _heartValueColliderRight.sharedMesh = null;
+        _heartValueColliderRight.sharedMesh = _heartValueMeshRight.sharedMesh;
     }
 
     public void CloseRight()
     {
-        foreach(Collider collider in _heartValueColliderRight)
-        {
-            collider.enabled = true;
-        }
-        print("CloseRight");
+        _heartValueColliderRight.sharedMesh = null;
+        _heartValueColliderRight.sharedMesh = _heartValueMeshRight.sharedMesh;
     }
 
-        public void OpenLeft()
+    public void OpenLeft()
     {
-        foreach(Collider collider in _heartValueColliderLeft)
-        {
-            collider.enabled = false;
-        }
-        print("OpenLeft");
+        _heartValueColliderLeft.sharedMesh = null;
+        _heartValueColliderLeft.sharedMesh = _heartValueMeshLeft.sharedMesh;
     }
 
     public void CloseLeft()
     {
-        foreach(Collider collider in _heartValueColliderLeft)
-        {
-            collider.enabled = true;
-        }
-        print("CloseLeft");
+        _heartValueColliderLeft.sharedMesh = null;
+        _heartValueColliderLeft.sharedMesh = _heartValueMeshLeft.sharedMesh;
     }
 
 }

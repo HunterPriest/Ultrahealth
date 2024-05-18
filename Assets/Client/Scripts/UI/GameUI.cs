@@ -1,12 +1,14 @@
 using Tools;
 using Zenject;
 
-public class GameUI : IInitializable
+public class GameUI
 {
     private MapInGame _map;
     private Pause _pause;
     private GameMachine _gameMachine;
     private GameplayUI _gameplayUI;
+
+    public GameplayUI gameplayUI => _gameplayUI;
 
     public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, GameplayUI gameplayUI)
     {
@@ -14,11 +16,6 @@ public class GameUI : IInitializable
         _pause = pause;
         _gameplayUI = gameplayUI;
         _gameMachine = gameMachine;
-    }
-
-    void IInitializable.Initialize()
-    {
-        _gameplayUI.Open();
     }
 
     public void OpenPause()

@@ -22,15 +22,13 @@ public class Player : MonoBehaviour
     public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings, PlayerSaver playerSaver)
     {   
         UpdatePlayerState(PlayerState.Idle);
-        print(playerSaver);
         playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave);
         _input.Initialize(this, input, gameUI);
         CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
         _unit.Initialize(playerSettings.healthSettings);
         _movement.Initialize(playerSettings.movementSettings);
         Weapons.Initialize(_fpsRig);
-        print(playerSettings);
-        print("Initialized");
+        gameUI.gameplayUI.InitializeValues(playerSettings);
     }
 
     private void UpdatePlayerState(PlayerState playerState)

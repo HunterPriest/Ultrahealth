@@ -39,7 +39,6 @@ public class Win : UIToolkitElement
         ExitToMenu.clicked += () => OnExitToMenu(levelSettings);
 
         level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
-        print(_playerSaver.currentSave.currentIndexSave.ToString());
     }
 
     private Color ChangeGradeColor(int score)

@@ -30,6 +30,6 @@ public class LevelIntaller : MonoInstaller
 
     private void InstallUI()
     {
-        Container.BindInterfacesAndSelfTo<GameUI>().AsSingle().WithArguments(_map, _pause, _gameplayUI);
+        Container.Bind<GameUI>().AsSingle().WithArguments(_map, _pause, _gameplayUI);
     }
 }
