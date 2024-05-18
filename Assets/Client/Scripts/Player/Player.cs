@@ -25,10 +25,12 @@ public class Player : MonoBehaviour
         playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave);
         _input.Initialize(this, input, gameUI);
         CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
-        _unit.Initialize(playerSettings.healthSettings);
-        _movement.Initialize(playerSettings.movementSettings);
+        _unit.Initialize(playerSettings.healthSettings, playerSettings.movementSettings);
+        _movement.Initialize(_unit, playerSettings.movementSettings);
         Weapons.Initialize(_fpsRig);
         gameUI.gameplayUI.InitializeValues(playerSettings);
+        _unit.ChangeHealth += gameUI.gameplayUI.UpdateHealthBarValue;
+        _unit.ChangeStamina += gameUI.gameplayUI.UpdateStaminahBarValue;
     }
 
     private void UpdatePlayerState(PlayerState playerState)

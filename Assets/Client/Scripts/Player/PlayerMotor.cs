@@ -1,7 +1,5 @@
 using System.Collections;
-using Cinemachine.Utility;
 using UnityEngine;
-using Zenject;
 
 public class PlayerMotor : MonoBehaviour
 {
@@ -9,13 +7,13 @@ public class PlayerMotor : MonoBehaviour
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
-    private float _stamina;
+    private PlayerUnit _playerUnit;
     private GameConfigInstaller.PlayerSettings.MovementSettings _movementSettings;
 
-    public void Initialize(GameConfigInstaller.PlayerSettings.MovementSettings movementSettings)
+    public void Initialize(PlayerUnit playerUnit, GameConfigInstaller.PlayerSettings.MovementSettings movementSettings)
     {
+        _playerUnit = playerUnit;
         _movementSettings = movementSettings;
-        _stamina = _movementSettings.maxStamina;
     }
 
     private void Update()
@@ -36,6 +34,11 @@ public class PlayerMotor : MonoBehaviour
 
     public void Jump()
     {
+        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenJumping <= 0))
+        {
+            return;
+        }
+        _playerUnit.LowerStamina(_movementSettings.staminaConsumedWhenJumping);
         if (_characterController.isGrounded)
         {
             _playerVelocity.y = Mathf.Sqrt(_movementSettings.jumpForce * -2f * Physics.gravity.y);
@@ -43,12 +46,17 @@ public class PlayerMotor : MonoBehaviour
     }
 
     public void Dash()
-    {
+    {        
+        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenDashing <= 0))
+        {
+            return;
+        }
         StartCoroutine(DashCorutine());
     }
 
     private IEnumerator DashCorutine()
     {
+
         Vector3 dashDirection;
         if(_direction == Vector3.zero)
         {
@@ -58,6 +66,7 @@ public class PlayerMotor : MonoBehaviour
         {
             dashDirection = _direction;
         }
+        _playerUnit.LowerStamina(_movementSettings.staminaConsumedWhenDashing);
 
         float startTime = Time.time;
         while(Time.time < startTime + _movementSettings.dashTime)

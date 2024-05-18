@@ -15,6 +15,7 @@ public class ClassConfig : ScriptableObject
     public float dashTime;
     public float dashSpeed;
     public float speed;
-
-    
+    public float rateOfIncreaseStamina;
+    public float staminaConsumedWhenDashing;
+    public float staminaConsumedWhenJumping;
 }

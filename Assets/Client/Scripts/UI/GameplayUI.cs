@@ -34,7 +34,21 @@ public class GameplayUI : UIToolkitElement
         _staminaBar = _container.Q<ProgressBar>("Stamina");
         _healthBar.lowValue = 0;
         _healthBar.highValue = maxHealth;
+        _healthBar.title = _healthBar.highValue.ToString() + "/" + _healthBar.highValue.ToString();
         _staminaBar.lowValue = 0;
         _staminaBar.highValue = maxStamina;
+        _staminaBar.title = _staminaBar.highValue.ToString() + "/" + _staminaBar.highValue.ToString();
+    }
+
+    public void UpdateHealthBarValue(float value)
+    {
+        _healthBar.value = value;
+        _healthBar.title = _healthBar.value.ToString() + "/" + _healthBar.highValue.ToString();
+    }
+
+    public void UpdateStaminahBarValue(float value)
+    {
+        _staminaBar.value = value;
+        _staminaBar.title = _staminaBar.value.ToString() + "/" + _staminaBar.highValue.ToString();
     }
 }

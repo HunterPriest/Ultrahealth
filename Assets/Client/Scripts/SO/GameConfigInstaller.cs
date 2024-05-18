@@ -61,11 +61,14 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
 
         public class MovementSettings
         {
-            public float maxStamina {get; private set; }
-            public int jumpForce {get; private set; }
-            public float dashTime {get; private set; }
-            public float dashSpeed {get; private set; }
-            public float speed {get; private set; }
+            public float maxStamina { get; private set; }
+            public int jumpForce { get; private set; }
+            public float dashTime { get; private set; }
+            public float dashSpeed { get; private set; }
+            public float speed { get; private set; }
+            public float rateOfIncreaseStamina { get; private set; }
+            public float staminaConsumedWhenDashing { get; private set; }
+            public float staminaConsumedWhenJumping { get; private set; }
 
             public MovementSettings(DataSave.PlayerData playerData)
             {
@@ -74,7 +77,10 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
                 dashTime = playerData.dashTime;
                 dashSpeed = playerData.dashSpeed;
                 speed = playerData.speed;
-            }
+                rateOfIncreaseStamina = playerData.rateOfIncreaseStamina;
+                staminaConsumedWhenDashing = playerData.staminaConsumedWhenDashing;
+                staminaConsumedWhenJumping = playerData.staminaConsumedWhenJumping;
+                }
         }
 
         public PlayerSettings(DataSave.PlayerData playerData)
