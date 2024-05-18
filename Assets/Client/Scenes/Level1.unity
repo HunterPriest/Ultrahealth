@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemies:
   - {fileID: 1107043631}
-  _win: {fileID: 238878280044401616}
+  _win: {fileID: 2052241662}
   _levelSettings: {fileID: 11400000, guid: f342bbcb721ec4c4aa72777401fcb5a2, type: 2}
 --- !u!4 &758764921
 Transform:
@@ -1140,6 +1140,18 @@ PrefabInstance:
       propertyPath: _currentMap
       value: 
       objectReference: {fileID: 11400000, guid: 90aae26d94c9aff4eb1eda908fdf9d04, type: 2}
+    - target: {fileID: 6888363425400673970, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+      propertyPath: sourceAsset
+      value: 
+      objectReference: {fileID: 9197481963319205126, guid: 7bcffcb10cc33ce43a8f0a8e58856bee, type: 3}
+    - target: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+      propertyPath: WinAsset
+      value: 
+      objectReference: {fileID: 9197481963319205126, guid: 4fee27b1cd497cd418c8b14105ac43fb, type: 3}
+    - target: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+      propertyPath: ColorGrade.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1178,6 +1190,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e36e4a942d1014dad96cd5c35899ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2052241662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+  m_PrefabInstance: {fileID: 2052241658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3f739694ccefc499b3a31cf84dde03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &152726791277526246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,20 +1217,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &238878280044401616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3f739694ccefc499b3a31cf84dde03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinAsset: {fileID: 0}
-  ColorGrade: []
 --- !u!1 &282496000367000926
 GameObject:
   m_ObjectHideFlags: 0

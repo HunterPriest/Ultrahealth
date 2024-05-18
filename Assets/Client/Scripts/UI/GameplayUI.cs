@@ -37,9 +37,4 @@ public class GameplayUI : UIToolkitElement
         _staminaBar.lowValue = 0;
         _staminaBar.highValue = maxStamina;
     }
-
-    public void Close()
-    {
-        _container.Clear();
-    }
 }
