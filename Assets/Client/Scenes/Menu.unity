@@ -421,6 +421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelUpAsset: {fileID: 9197481963319205126, guid: 0b11dcb00d86a0f47b601c2bef4a8e4a, type: 3}
   _chooseLevelMenu: {fileID: 1836095560}
+  _skillButtonColor: {r: 1, g: 0, b: 0, a: 0.22352941}
+  _buyedSkillButtonColor: {r: 0, g: 0, b: 0, a: 0.5882353}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

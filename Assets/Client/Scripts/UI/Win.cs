@@ -31,16 +31,16 @@ public class Win : UIToolkitElement
         ExitToMenu.clicked += () => OnExitToMenu(levelSettings);
 
         level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
-        print(_playerSaver.currentSave.currentIndexSave.ToString());
+        print(_playerSaver.currentSave.indexSave.ToString());
     }
 
     private void OnExitToMenu(LevelSettings levelSettings)
     {
-        if(levelSettings.levelIndex == _playerSaver.currentSave.currentPlayerSave.currentIndexLevel)
+        if(levelSettings.levelIndex == _playerSaver.currentSave.playerSave.currentIndexLevel)
         {
-            _playerSaver.currentSave.currentPlayerSave.currentIndexLevel++;    
+            _playerSaver.currentSave.playerSave.currentIndexLevel++;    
         }
-        _playerSaver.currentSave.currentPlayerSave.experience += levelSettings.gainedExperience;
+        _playerSaver.currentSave.playerSave.experience += levelSettings.gainedExperience;
         _playerSaver.SaveCurrentSave();
         _gameMachine.FinishGame();
     }

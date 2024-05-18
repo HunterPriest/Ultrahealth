@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33b3cc6d106e8e44adcd76f6f2833d1, type: 3}
   m_Name: PlayerConf
   m_EditorClassIdentifier: 
-  indexClassPlayer: 0
+  indexClassPlayer: 1
   maxHealth: 0
   maxStamina: 0
   jumpForce: 0

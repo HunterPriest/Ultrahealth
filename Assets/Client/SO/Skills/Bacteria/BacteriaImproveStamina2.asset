@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb61e9b0aea1dc4f8354dd5ab75c171, type: 3}
   m_Name: BacteriaImproveStamina2
   m_EditorClassIdentifier: 
-  _previousSkill: {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
+  nextSkills: []
   branchIndex: 3
   branchFloor: 2
+  description: Add 10 Stamina
+  id: 3
+  _price: 500
   _addedStamina: 10

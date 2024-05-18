@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {   
         UpdatePlayerState(PlayerState.Idle);
         print(playerSaver);
-        playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.currentPlayerSave);
+        playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave);
         _input.Initialize(this, input, gameUI);
         CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
         _unit.Initialize(playerSettings.healthSettings);

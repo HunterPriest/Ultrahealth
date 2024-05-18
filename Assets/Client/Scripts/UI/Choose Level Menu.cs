@@ -39,7 +39,7 @@ public class ChooseLevelMenu : UIToolkitElement
         for (int i = 1; i < _gameSettings.amountLevels + 1; i++)
         {
             buttonsLevels[i - 1] = _container.Q<Button>("Level" + i.ToString());
-            if(_playerSaver.currentSave.currentPlayerSave.currentIndexLevel > i)
+            if(_playerSaver.currentSave.playerSave.currentIndexLevel > i)
             {
                 buttonsLevels[i - 1].style.backgroundColor = _passedLevelButtonColor;
             }

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08967af260223e24eaa738d1367beca1, type: 3}
   m_Name: BacteriaImproveHealth2
   m_EditorClassIdentifier: 
-  _previousSkill: {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
-  branchIndex: 2
+  nextSkills: []
+  branchIndex: 1
   branchFloor: 2
-  _addedHealth: 10
+  description: Add 10 Health
+  id: 1
+  _price: 500
+  addedHealth: 10

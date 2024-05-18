@@ -26,7 +26,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: b7f16e5ae0ada1a44be418e09cb81f43, type: 2}
       - {fileID: 11400000, guid: 8307a740b8be2294fafea38a29b177bd, type: 2}
       - {fileID: 11400000, guid: f9e8f1b71fbc24d40b23e768baa2dbab, type: 2}
-      - {fileID: 11400000, guid: 303a1719959fbdc4db2ccee17b770b73, type: 2}
+      - {fileID: 11400000, guid: 9964c95ad153744448088bb6c7dd43a0, type: 2}
     nanoRobotTreel:
       skills:
       - {fileID: 0}

@@ -36,7 +36,7 @@ public class ClassChoose : UIToolkitElement
     }
     private void OnButton(int indexClass)
     {
-        _playerSaver.CreateNewCurrentSave(indexClass, _playerSaver.currentSave.currentIndexSave);
+        _playerSaver.CreateNewCurrentSave(indexClass, _playerSaver.currentSave.indexSave);
         OpenChooseLevel();
     }
 

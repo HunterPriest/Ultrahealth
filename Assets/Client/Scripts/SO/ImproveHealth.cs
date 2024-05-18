@@ -3,13 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ultrahealth/ImproveHealth")]
 public class ImproveHealth : Skill
 {
-    [SerializeField] private float _addedHealth;
+    public float addedHealth;
 
-    public override void Buy(PlayerSaver playerSaver)
+    protected override void BuySkill(PlayerSaver playerSaver)
     {
-        playerSaver.currentSave.currentPlayerSave.maxHealth += _addedHealth;
-
-        base.Buy(playerSaver);
-        
+        playerSaver.currentSave.playerSave.maxHealth += addedHealth;
     }
 }

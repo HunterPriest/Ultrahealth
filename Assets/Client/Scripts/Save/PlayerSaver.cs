@@ -16,7 +16,7 @@ public class PlayerSaver
 
     public void SaveCurrentSave()
     {
-        SavePlayerData(currentSave.currentIndexSave, currentSave.currentPlayerSave);
+        SavePlayerData(currentSave.indexSave, currentSave.playerSave);
     }
 
     public void CreateNewCurrentSave(int indexClass, int newIndexSave)
@@ -33,7 +33,7 @@ public class PlayerSaver
     private DataSave.PlayerData SaveNewPlayerData(int indexClass)
     {
         DataSave.PlayerData playerData = CreateNewPlayerData(indexClass);
-        Saver.Save<DataSave.PlayerData>(currentSave.currentIndexSave, playerData);
+        Saver.Save<DataSave.PlayerData>(currentSave.indexSave, playerData);
         return playerData;
     }
 
