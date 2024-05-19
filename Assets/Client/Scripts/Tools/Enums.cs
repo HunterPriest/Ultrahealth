@@ -21,7 +21,8 @@ namespace Tools
         Map,
         LoadGame,
         Game, 
-        Pause
+        Pause, 
+        Death
     }
 
     public enum WeaponState
@@ -36,5 +37,14 @@ namespace Tools
         Bacterium = 0,
         NanoRobot = 1,
         SingleCell = 2
+    }
+
+    public enum LevelGrade
+    {
+        S,
+        A,
+        B,
+        C,
+        D
     }
 }

@@ -11,15 +11,22 @@ public abstract class Skill : ScriptableObject
 
     public bool TryBuy(PlayerSaver playerSaver)
     {
-        if(playerSaver.currentSave.playerSave.experience < _price || playerSaver.currentSave.playerSave.currentTree[branchIndex - 1] > branchFloor)
+        if(playerSaver.currentSave.playerSave.experience < _price || playerSaver.currentSave.playerSave.tree[branchIndex - 1] > branchFloor)
         {
             return false;
         }
         playerSaver.currentSave.playerSave.experience -= _price;
         BuySkill(playerSaver);
-        for(int i = 0; i < nextSkills.Length; i++)
+        if(nextSkills == null || nextSkills.Length == 0)
         {
-            playerSaver.currentSave.playerSave.currentTree[nextSkills[i].branchIndex - 1] = branchFloor;
+            playerSaver.currentSave.playerSave.tree[branchIndex - 1] = branchFloor;
+        }
+        else
+        {
+            for(int i = 0; i < nextSkills.Length; i++)
+            {
+                playerSaver.currentSave.playerSave.tree[nextSkills[i].branchIndex - 1] = branchFloor;
+            }
         }
         playerSaver.SaveCurrentSave();
         return true;

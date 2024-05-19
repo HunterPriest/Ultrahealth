@@ -19,3 +19,6 @@ MonoBehaviour:
   dashTime: 0.25
   dashSpeed: 20
   speed: 5
+  rateOfIncreaseStamina: 0.1
+  staminaConsumedWhenDashing: 2
+  staminaConsumedWhenJumping: 2

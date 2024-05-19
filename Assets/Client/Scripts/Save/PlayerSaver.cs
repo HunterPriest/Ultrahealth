@@ -64,7 +64,7 @@ public class PlayerSaver
         playerData.indexClassPlayer = indexClass;
         playerData.speed = classConfig.speed;
         playerData.experience = 0;
-        playerData.currentTree = new int[3];
+        playerData.tree = new int[3];
         playerData.rateOfIncreaseStamina = classConfig.rateOfIncreaseStamina;
         playerData.staminaConsumedWhenDashing = classConfig.staminaConsumedWhenDashing;
         playerData.staminaConsumedWhenJumping = classConfig.staminaConsumedWhenJumping;

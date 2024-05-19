@@ -17,7 +17,6 @@ public class EnemyChase : MonoBehaviour, IStateEnemy
    public void Enter()
    {
         _animations.Move();
-        print("c");
    }
 
     public void Loop()

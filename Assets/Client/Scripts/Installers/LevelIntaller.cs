@@ -9,6 +9,7 @@ public class LevelIntaller : MonoInstaller
     [SerializeField] private MapInGame _map;
     [SerializeField] private Pause _pause;
     [SerializeField] private GameplayUI _gameplayUI;
+    [SerializeField] private DeathPlayer _deathPlayer;
 
     public override void InstallBindings()
     {
@@ -30,6 +31,6 @@ public class LevelIntaller : MonoInstaller
 
     private void InstallUI()
     {
-        Container.Bind<GameUI>().AsSingle().WithArguments(_map, _pause, _gameplayUI);
+        Container.Bind<GameUI>().AsSingle().WithArguments(_map, _pause, _gameplayUI, _deathPlayer);
     }
 }

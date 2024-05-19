@@ -44,7 +44,10 @@ public abstract class Weapon : MonoBehaviour
 
     }
 
-    protected abstract void Accept(IWeaponVisitor weaponVisitor);
+    protected virtual void Accept(IWeaponVisitor weaponVisitor)
+    {
+        
+    }
 
     public WeaponState GetState()
     {

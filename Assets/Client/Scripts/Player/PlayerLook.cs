@@ -11,7 +11,6 @@ public class PlayerLook : MonoBehaviour
     {
         _fpsRig = fpsRig;
         _cameraSettings = cameraSettings;
-        print(cameraSettings);
     }
 
     public void RotateCamera(Vector2 mousePosition)

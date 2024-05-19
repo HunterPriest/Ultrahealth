@@ -15,7 +15,7 @@ namespace DataSave
         public float speed;
         public float maxHealth;
         public int experience;
-        public int[] currentTree;
+        public int[] tree;
         public float rateOfIncreaseStamina; 
         public float staminaConsumedWhenDashing;
         public float staminaConsumedWhenJumping;

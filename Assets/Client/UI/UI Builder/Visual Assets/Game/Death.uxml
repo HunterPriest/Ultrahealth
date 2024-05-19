@@ -5,7 +5,7 @@
             <ui:Label tabindex="-1" text="you are dead" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="-unity-text-align: upper-center; height: 172px; font-size: 150px; top: 60px;" />
             <ui:Label tabindex="-1" text="would you like to repeat the passage?" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="top: 57px; -unity-text-align: upper-center; font-size: 42px;" />
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; top: 86px; height: auto; align-items: flex-start;">
-                <ui:Button text="Repeate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Repeate" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 174px;" />
+                <ui:Button text="Repeate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Repeat" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 174px;" />
                 <ui:Button text="exit to menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 522px;" />
             </ui:VisualElement>
         </ui:VisualElement>

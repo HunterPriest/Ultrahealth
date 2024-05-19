@@ -19,6 +19,11 @@ public class UnitHitBox : HitBox, IWeaponVisitor
         _unit.TakeDamage(weapon.Damage);
     }
 
+    public void Visit(ProjectileWeapon weapon)
+    {
+        _unit.TakeDamage(weapon.Damage);
+    }
+
     private void RaycastVisit(RaycastWeapon weapon)
     {
         _unit.TakeDamage(weapon.Damage);

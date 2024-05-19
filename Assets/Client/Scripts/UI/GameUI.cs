@@ -7,15 +7,18 @@ public class GameUI
     private Pause _pause;
     private GameMachine _gameMachine;
     private GameplayUI _gameplayUI;
+    private DeathPlayer  _deathPlayer;
 
     public GameplayUI gameplayUI => _gameplayUI;
+    public DeathPlayer deathPlayer => _deathPlayer;
 
-    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, GameplayUI gameplayUI)
+    public GameUI(MapInGame map, Pause pause, GameMachine gameMachine, GameplayUI gameplayUI, DeathPlayer deathPlayer)
     {
         _map = map;
         _pause = pause;
         _gameplayUI = gameplayUI;
         _gameMachine = gameMachine;
+        _deathPlayer = deathPlayer;
     }
 
     public void OpenPause()

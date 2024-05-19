@@ -40,9 +40,6 @@ public class levelUp : UIToolkitElement
         ResetContainer(_levelUp);
 
         _currentClassTree = _levelUpSettings.GetTree(_playerSaver.currentSave.playerSave.indexClassPlayer);
-        _playerSaver.currentSave.playerSave.experience = 500000;
-        _playerSaver.currentSave.playerSave.currentTree = new int[3]{0, 0, 0};
-        _playerSaver.SaveCurrentSave();
 
         _playerStats = _container.Q<Label>("PlayerStats");
         UpdatePlayerStats();
@@ -73,7 +70,7 @@ public class levelUp : UIToolkitElement
 
     private void SubscribeSkillButton(Button button, int branchFloor, int branchIndex, int indexSkill)
     {
-        if(_playerSaver.currentSave.playerSave.currentTree[branchIndex - 1] == branchFloor - 1)
+        if(_playerSaver.currentSave.playerSave.tree[branchIndex - 1] == branchFloor - 1)
         {
             button.clicked += () => OnClickSkillButton(button, indexSkill);
         }
