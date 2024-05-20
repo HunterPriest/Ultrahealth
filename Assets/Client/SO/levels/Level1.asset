@@ -26,3 +26,39 @@ MonoBehaviour:
       Value: 60
     - Key: 4
       Value: 70
+  _levelEnemiesKillCount:
+    _serializedList:
+    - Key: 0
+      Value: 50
+    - Key: 1
+      Value: 25
+    - Key: 2
+      Value: 10
+    - Key: 3
+      Value: 5
+    - Key: 4
+      Value: 0
+  _levelFinnalyGrade:
+    _serializedList:
+    - Key: 0
+      Value: 0
+    - Key: 1
+      Value: 1
+    - Key: 2
+      Value: 2
+    - Key: 3
+      Value: 3
+    - Key: 4
+      Value: 4
+  _levelScore:
+    _serializedList:
+    - Key: 0
+      Value: 0
+    - Key: 1
+      Value: 0
+    - Key: 2
+      Value: 0
+    - Key: 3
+      Value: 0
+    - Key: 4
+      Value: 0

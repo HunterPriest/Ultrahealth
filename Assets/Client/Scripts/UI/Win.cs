@@ -9,7 +9,7 @@ public class Win : UIToolkitElement
     [SerializeField] private VisualTreeAsset WinAsset;
 
     [SerializedDictionary("Level grade", "Color")]
-    [SerializeField] private SerializedDictionary<LevelGrade, Color> _levelGradeTime;
+    [SerializeField] private SerializedDictionary<LevelGrade, Color> _levelGrade;
 
     private VisualElement _win;
     private GameMachine _gameMachine;
@@ -28,7 +28,7 @@ public class Win : UIToolkitElement
         _win = WinAsset.CloneTree();
     }
 
-    public void OpenWin(LevelSettings levelSettings, float timeOfAdventure)
+    public void OpenWin(LevelSettings levelSettings, float timeOfAdventure, int killEnemy)
     {
         ResetContainer(_win);
 
@@ -36,14 +36,23 @@ public class Win : UIToolkitElement
         Label time = _container.Q<Label>("Time");
         Label timeRang = _container.Q<Label>("TimeRang");
         Label enemyKill = _container.Q<Label>("EnemyKill");
+        Label enemyKillGrade = _container.Q<Label>("EnemyKillRang");
         Label score = _container.Q<Label>("Score");
         Label grade = _container.Q<Label>("Grade");
 
         time.text = timeOfAdventure.ToString();
         LevelGrade timeGrade = levelSettings.GetGradeTime(timeOfAdventure);
+        timeRang.style.color = _levelGrade[timeGrade];
         timeRang.text = timeGrade.ToString();
-        print(timeGrade.ToString());
-        timeRang.style.color = _levelGradeTime[timeGrade];
+
+        enemyKill.text = killEnemy.ToString();
+        LevelGrade killgrade = levelSettings.GetGradeKillEnemies(killEnemy);
+        enemyKillGrade.text = killgrade.ToString();
+        enemyKillGrade.style.color = _levelGrade[killgrade];
+
+        LevelGrade Grade = levelSettings.GetFinalyGrade((int)timeGrade, (int)killgrade);
+        grade.text = Grade.ToString();
+        grade.style.color = _levelGrade[Grade];
 
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 

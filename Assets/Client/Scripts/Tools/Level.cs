@@ -36,6 +36,6 @@ public class Level : MonoBehaviour
     public void CompleteLevel()
     {
         _gameMachine.StopGame();
-        _win.OpenWin(_levelSettings, Time.time - _startTime);
+        _win.OpenWin(_levelSettings, Time.time - _startTime, 0);
     }
 }
