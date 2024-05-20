@@ -1,6 +1,8 @@
 .HPBar .unity-progress-bar__progress {
     background-color: rgb(255, 0, 0);
     height: 43px;
+    font-size: 84px;
+    color: rgb(255, 0, 0);
 }
 
 .HPBar .unity-progress-bar__background {
@@ -8,4 +10,11 @@
     max-height: 50px;
     min-height: 50px;
     background-color: rgb(0, 0, 0);
+    font-size: 139px;
+    color: rgb(255, 0, 0);
+}
+
+.HPBar .unity-progress-bar__title {
+    font-size: 30px;
+    color: rgb(0, 255, 20);
 }

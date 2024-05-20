@@ -9,3 +9,8 @@
     min-height: 50px;
     background-color: rgb(0, 0, 0);
 }
+
+.StaminaBar .unity-progress-bar__title {
+    font-size: 30px;
+    color: rgb(255, 163, 0);
+}
