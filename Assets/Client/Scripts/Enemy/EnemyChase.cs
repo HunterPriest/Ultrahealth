@@ -1,17 +1,19 @@
 using UnityEngine.AI;
 using UnityEngine;
 using Tools;
+using System;
 
-public class EnemyChase : MonoBehaviour, IStateEnemy
+public class EnemyChase : IStateEnemy
 {
-    [SerializeField] private NavMeshAgent _agent;
+    private NavMeshAgent _agent;
     private EnemyAnimations _animations;
     private Transform _playerTransform;
    
-   public void Initialize(EnemyAnimations animation, Transform playerTransform)
+   public EnemyChase(EnemyAnimations animation, Transform playerTransform, NavMeshAgent navMeshAgent)
    {
         _animations = animation;
         _playerTransform = playerTransform;
+        _agent = navMeshAgent;
    }
 
    public void Enter()
@@ -21,13 +23,13 @@ public class EnemyChase : MonoBehaviour, IStateEnemy
 
     public void Loop()
     {
-        transform.LookAt(_playerTransform);
+        _agent.transform.LookAt(_playerTransform);
         _agent.SetDestination(_playerTransform.position);
     }
 
     public void Exit()
     {
-        _agent.SetDestination(transform.position);
+        _agent.SetDestination(_agent.transform.position);
     }
 
     public bool StateCompleted()

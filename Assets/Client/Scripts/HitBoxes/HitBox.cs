@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class HitBox : MonoBehaviour
 {
-    [SerializeField] protected Damageable _unit;
+    [SerializeField] protected Damageable damageable;
 }

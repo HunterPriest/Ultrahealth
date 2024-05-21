@@ -1,6 +1,7 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Zenject;
 
 public class GameplayUI : UIToolkitElement
 {
@@ -9,6 +10,7 @@ public class GameplayUI : UIToolkitElement
     private VisualElement _gameplayUI;
     private ProgressBar _healthBar;
     private ProgressBar _staminaBar;
+    private ProgressBar _bossHealthBar;
     private GameConfigInstaller.PlayerSettings _playerSettings;
 
     public void InitializeValues(GameConfigInstaller.PlayerSettings playerSettings)
@@ -32,6 +34,7 @@ public class GameplayUI : UIToolkitElement
     {
         _healthBar = _container.Q<ProgressBar>("Health");
         _staminaBar = _container.Q<ProgressBar>("Stamina");
+        _bossHealthBar = _container.Q<ProgressBar>("BossHP");
         _healthBar.lowValue = 0;
         _healthBar.highValue = maxHealth;
         _healthBar.title = _healthBar.highValue.ToString() + "/" + _healthBar.highValue.ToString();
@@ -42,13 +45,34 @@ public class GameplayUI : UIToolkitElement
 
     public void UpdateHealthBarValue(float value)
     {
-        _healthBar.value = value;
-        _healthBar.title = _healthBar.value.ToString() + "/" + _healthBar.highValue.ToString();
+        UpdateProgressBarWithTitle(value, _healthBar);
     }
 
     public void UpdateStaminahBarValue(float value)
     {
-        _staminaBar.value = value;
-        _staminaBar.title = _staminaBar.value.ToString() + "/" + _staminaBar.highValue.ToString();
+        UpdateProgressBarWithTitle(value, _staminaBar);
+    }
+
+    private void UpdateProgressBarWithTitle(float value, ProgressBar progressBar)
+    {
+        progressBar.value = value;
+        progressBar.title = Math.Round((decimal)progressBar.value, 2).ToString() + "/" + progressBar.highValue.ToString();
+    }
+
+    public void OpenBossHealthBar(float maxHealth)
+    {
+        _bossHealthBar.visible = true;
+        _bossHealthBar.highValue = maxHealth;
+        _bossHealthBar.value = _bossHealthBar.highValue;
+    }
+
+    public void UpdateBossHealthBar(float value)
+    {
+        _bossHealthBar.value = value;
+    }
+
+    public void CloseBossHealthBar()
+    {
+        _bossHealthBar.visible = false;
     }
 }

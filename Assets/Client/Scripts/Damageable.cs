@@ -4,7 +4,7 @@ public class Damageable : MonoBehaviour
 {
     [SerializeField] private Unit _unit;
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _unit.TakeDamage(damage);
     }

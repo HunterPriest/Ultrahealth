@@ -2,15 +2,15 @@ using Tools;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyIdle : MonoBehaviour, IStateEnemy
+public class EnemyIdle : IStateEnemy
 {
     private EnemyAnimations _animations;
    
-   public void Intialize(EnemyAnimations animation)
-   {
-        _animations = animation;
-   }
-
+    public EnemyIdle(EnemyAnimations animations)
+    {
+        _animations = animations;
+    }
+    
     public void Exit()
     {
     }

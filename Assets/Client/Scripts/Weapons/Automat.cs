@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Automaton : RaycastWeapon
+public class Automat : RaycastWeapon
 {
 
     protected override void Accept(IWeaponVisitor weaponVisitor)

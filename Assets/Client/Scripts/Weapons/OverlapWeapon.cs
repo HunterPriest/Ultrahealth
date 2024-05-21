@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class OverlapWeapon : Weapon
+public abstract class OverlapWeapon : DamagingWeapon
 {
     [SerializeField] private float _attackRange;
     [SerializeField] private int _hitColliders;
@@ -27,7 +27,6 @@ public abstract class OverlapWeapon : Weapon
         if(collider.gameObject.TryGetComponent(out IWeaponVisitor weaponVisitor))
         {
             Accept(weaponVisitor);
-            print('x');
         }
     }
 

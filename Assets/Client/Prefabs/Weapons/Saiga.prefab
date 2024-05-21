@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5172b3efe72585438d22d8730572a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  _damage: 10
   RigCamera: {fileID: 8667656654599154953}
   _weaponAnimations: {fileID: 8832981367735100918}
   _distance: 50

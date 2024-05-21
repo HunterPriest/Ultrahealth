@@ -4,11 +4,9 @@ using Unity.VisualScripting;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public int Damage;
-
     protected WeaponState _currentState;
 
-    public void Initialize()
+    public virtual void Initialize()
     {
         UpdateState(WeaponState.Idle);
     }

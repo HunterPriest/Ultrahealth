@@ -2,6 +2,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using Zenject;
 using System.CodeDom.Compiler;
+using System.Collections;
 
 public class ChooseSave : UIToolkitElement
 {
@@ -83,8 +84,8 @@ public class ChooseSave : UIToolkitElement
 
     private void OnClickYes(int indexSave)
     {
+        _save.Remove(_panelNewSave);
         _playerSaver.ChangeCurrentSave(indexSave);
         _classChooser.OpenClassChooser();
     }
-    
 }

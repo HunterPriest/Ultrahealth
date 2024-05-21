@@ -776,12 +776,8 @@ GameObject:
   - component: {fileID: 3189571133825708445}
   - component: {fileID: 6361379789688244328}
   - component: {fileID: 4959878334195863438}
-  - component: {fileID: 7457407916476414130}
-  - component: {fileID: 4774475301387385540}
-  - component: {fileID: 2286969733889482550}
-  - component: {fileID: 8655945307520879039}
   - component: {fileID: 4019270132557072591}
-  - component: {fileID: 3891459967985154268}
+  - component: {fileID: 8236474513823433765}
   m_Layer: 0
   m_Name: Bactrium
   m_TagString: Untagged
@@ -875,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef866f82d86cc648b57cdaef51e3194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  _damage: 10
   _attackRange: 2.4
   _hitColliders: 5
 --- !u!54 &2071701667326364980
@@ -953,60 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7f7d0a3140a014881cd01bec11a3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unit: {fileID: 3189571133825708445}
---- !u!114 &7457407916476414130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755114031596519289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8d162ccdcdda4448d7d55d2a3452b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyBehaviourConfiguration: {fileID: 11400000, guid: c32d9e692de6db24c95affec70ed351f, type: 2}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
---- !u!114 &4774475301387385540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755114031596519289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33621971612e2d149ab0236e6a6d1273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agent: {fileID: 4542365642361254092}
---- !u!114 &2286969733889482550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755114031596519289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1294e0045b011ec4383e660399387962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8655945307520879039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755114031596519289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc98b4d87cc0394d8bdc820bc4edf00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damageable: {fileID: 3189571133825708445}
 --- !u!114 &4019270132557072591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthConfig: {fileID: 11400000, guid: ad9a19bb436c6934b83009e54779e52a, type: 2}
---- !u!114 &3891459967985154268
+--- !u!114 &8236474513823433765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1032,10 +975,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cecdf4e7d38a8409918fffac84794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idle: {fileID: 2286969733889482550}
   _movementConfiguration: {fileID: 11400000, guid: 925bcc4696effa741bff2da6e8e1d112, type: 2}
-  _movement: {fileID: 4774475301387385540}
-  _weapons: {fileID: 8655945307520879039}
+  _enemyBehaviourConfiguration: {fileID: 11400000, guid: c32d9e692de6db24c95affec70ed351f, type: 2}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _weapon: {fileID: 1566353263084748619}
 --- !u!1 &8843404277632474495
 GameObject:
   m_ObjectHideFlags: 0

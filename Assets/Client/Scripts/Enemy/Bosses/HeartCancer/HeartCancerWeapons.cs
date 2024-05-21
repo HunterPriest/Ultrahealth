@@ -1,37 +1,38 @@
 using UnityEngine;
 
-public class HeartCancerWeapons : MonoBehaviour, IStateEnemy
+public class HeartCancerWeapons : IStateEnemy
 {
-    private EnemyAnimations _animations;
-    private Weapon _spawnEnemyWeapon;
-    [SerializeField] private Weapon _projectileWeapon;
-    private float _nextTimeShoot;
+    private ProjectileWeapon _projectileWeapon;
+    private int _amountProjectileForRoundAttack;
+    private float _delayBetweenAttacksPlayer;
+    private ProjectileWeapon _spawnEnemyWeapon;
+    private FirstPhaseHeartCancer _firstPhaseHeartCancer;
+    private IPhase _currentPhase;
 
-    public void Initialize()
+    public HeartCancerWeapons(Transform playerTransform, ProjectileWeapon projectileWeapon, int amountProjectileForRoundAttack,
+    float delayBetweenAttacksPlayer, MonoBehaviour monoBehaviour)
     {
+        _projectileWeapon = projectileWeapon;
+        _amountProjectileForRoundAttack = amountProjectileForRoundAttack;
+        _delayBetweenAttacksPlayer = delayBetweenAttacksPlayer;
         _projectileWeapon.Initialize();
+        _firstPhaseHeartCancer = new FirstPhaseHeartCancer(_projectileWeapon, _amountProjectileForRoundAttack,
+        playerTransform, _delayBetweenAttacksPlayer, monoBehaviour);
+        _currentPhase = _firstPhaseHeartCancer;
     }
 
-    public void Enter()
-    {
-        _projectileWeapon.Attack();
-    }
+    public void Enter() {   }
 
-    public void Exit()
-    {
-    }
+    public void Exit() {   }
 
     public void Loop()
     {
-        if (Time.time > _nextTimeShoot)
-        {
-            _projectileWeapon.Attack();
-            _nextTimeShoot = Time.time + 1f;
-        }
+        _firstPhaseHeartCancer.Loop();
     }
 
     public bool StateCompleted()
     {
         return false;
     }
+
 }

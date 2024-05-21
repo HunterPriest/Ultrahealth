@@ -1,15 +1,15 @@
 using Tools;
 using UnityEngine;
 
-public class EnemyWeapons : MonoBehaviour, IStateEnemy
+public class EnemyWeapons : IStateEnemy
 {
     private EnemyAnimations _animations;
     private Weapon _weapon;
    
-   public void Initialize(EnemyAnimations animation)
+   public EnemyWeapons(EnemyAnimations animation, Weapon weapon)
    {
         _animations = animation;
-        _weapon = GetComponent<Weapon>();
+        _weapon = weapon;
         _weapon.Initialize();
    }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Tools;
 
-public abstract class FirearmWeapon : Weapon
+public abstract class FirearmWeapon : DamagingWeapon
 {
     public Camera RigCamera;
 

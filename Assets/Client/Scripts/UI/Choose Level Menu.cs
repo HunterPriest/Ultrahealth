@@ -33,6 +33,7 @@ public class ChooseLevelMenu : UIToolkitElement
     public void OpenChooseLevelMenu()
     {
         ResetContainer(_chooseLevel);
+        print(_playerSaver.currentSave.indexSave);
 
         Button[] buttonsLevels = new Button[_gameSettings.amountLevels];
         

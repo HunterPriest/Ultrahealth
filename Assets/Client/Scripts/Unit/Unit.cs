@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    protected float health; 
+    public float health { get; protected set; }
+
+    public Action<float> ChangeHealth; 
+
+    private Character _character;
+
+    public void SetCharacter(Character character)
+    {
+        _character = character;
+    }
 
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
         if(health <= 0)
         {
-            Dead();
+            _character.Dead();
         }
+        ChangeHealth?.Invoke(health);
+        print(health);
     }
-
-    protected virtual void Dead()
-    {
-        Destroy(gameObject);
-    }
+    
 }
