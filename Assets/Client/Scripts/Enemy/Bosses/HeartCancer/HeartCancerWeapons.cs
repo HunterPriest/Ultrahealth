@@ -1,23 +1,22 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class HeartCancerWeapons : IStateEnemy
 {
-    private ProjectileWeapon _projectileWeapon;
-    private int _amountProjectileForRoundAttack;
-    private float _delayBetweenAttacksPlayer;
-    private ProjectileWeapon _spawnEnemyWeapon;
-    private FirstPhaseHeartCancer _firstPhaseHeartCancer;
+    [SerializeField] private FirstPhaseHeartCancerWeapons _firstPhaseHeartCancer;
+
     private IPhase _currentPhase;
 
-    public HeartCancerWeapons(Transform playerTransform, ProjectileWeapon projectileWeapon, int amountProjectileForRoundAttack,
-    float delayBetweenAttacksPlayer, MonoBehaviour monoBehaviour)
+    public void Initialize(Transform playerTransform)
     {
-        _projectileWeapon = projectileWeapon;
-        _amountProjectileForRoundAttack = amountProjectileForRoundAttack;
-        _delayBetweenAttacksPlayer = delayBetweenAttacksPlayer;
-        _projectileWeapon.Initialize();
-        _firstPhaseHeartCancer = new FirstPhaseHeartCancer(_projectileWeapon, _amountProjectileForRoundAttack,
-        playerTransform, _delayBetweenAttacksPlayer, monoBehaviour);
+        _firstPhaseHeartCancer.Initialize(playerTransform);
+        _currentPhase.Enter();
+    }
+
+    public void Initialize(MonoBehaviour monoBehaviour)
+    {
+        _firstPhaseHeartCancer.Initialize(monoBehaviour);
         _currentPhase = _firstPhaseHeartCancer;
     }
 
@@ -27,7 +26,7 @@ public class HeartCancerWeapons : IStateEnemy
 
     public void Loop()
     {
-        _firstPhaseHeartCancer.Loop();
+        _currentPhase.Loop();
     }
 
     public bool StateCompleted()
@@ -35,4 +34,10 @@ public class HeartCancerWeapons : IStateEnemy
         return false;
     }
 
+    public void SetPhase(IPhase phase)
+    {
+        _currentPhase.Exit();
+        _currentPhase = phase;
+        _currentPhase.Enter();
+    }
 }

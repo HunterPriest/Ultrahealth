@@ -155,10 +155,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec102d49e3833904ea3830693b02b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileWeapon: {fileID: 3000726238605645864}
-  _amountProjectileForRoundAttack: 12
-  _delayBetweenAttacksPlayer: 2
-  _spawnEnemyWeapon: {fileID: 0}
+  _weapons:
+    _firstPhaseHeartCancer:
+      _amountProjectileForRoundAttack: 24
+      _fireRate: 1.5
+      _delayBetweenAttacksPlayer: 0.5
+      _maxAmountShots: 7
+      _minAmountShots: 4
+      _maxAmountRoundShoot: 1
+      _minAmountRoundShoot: 2
+      _projectileWeapon: {fileID: 3000726238605645864}
 --- !u!114 &638799230746514214
 MonoBehaviour:
   m_ObjectHideFlags: 0

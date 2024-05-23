@@ -19,6 +19,7 @@ public class BossTrigger : MonoBehaviour
         if(other.gameObject.TryGetComponent<PlayerHitBox>(out PlayerHitBox playerHitBox))
         {
             _boss.Acivate();
+            Destroy(gameObject);
         }
     }
 }
