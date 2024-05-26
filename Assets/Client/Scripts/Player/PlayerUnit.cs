@@ -28,11 +28,11 @@ public class PlayerUnit : Unit
     {
         _stamina -= a;
 
-        StopCoroutine(IncreaseStamina());
-        StartCoroutine(IncreaseStamina());
+        StopCoroutine(DecreaseStamina());
+        StartCoroutine(DecreaseStamina());
     }
 
-    private IEnumerator IncreaseStamina()
+    private IEnumerator DecreaseStamina()
     {
         while(_stamina < _movementSettings.maxStamina)
         {   

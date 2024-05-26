@@ -1,10 +1,12 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
 public class Level : MonoBehaviour
 {
     [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private Boss _boss;
     [SerializeField] private Win _win;
     [SerializeField] private LevelSettings _levelSettings;
 
@@ -12,11 +14,13 @@ public class Level : MonoBehaviour
     private float _startTime;
 
     public LevelSettings levelSettings => _levelSettings;
+    public Boss boss => _boss;
 
     [Inject]
-    private void Construct(GameMachine gameMachine, Player player)
+    private void Construct(GameMachine gameMachine, Player player, ComboCounter comboCounter)
     {
-        InitializeEnemyes(player.transform);
+        InitializeEnemyes(player.transform, comboCounter);
+        _boss.Initialize(player.transform, comboCounter);
         _gameMachine = gameMachine;
     }
 
@@ -25,11 +29,11 @@ public class Level : MonoBehaviour
         _startTime = Time.time;
     }
 
-    private void InitializeEnemyes(Transform playerTransform)
+    private void InitializeEnemyes(Transform playerTransform, ComboCounter comboCounter)
     {
         foreach(Enemy enemy in _enemies)
         {
-            enemy.Initialize(playerTransform);
+            enemy.Initialize(playerTransform, comboCounter);
         }
     }
 

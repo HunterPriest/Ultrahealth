@@ -20,6 +20,18 @@ MonoBehaviour:
     singlecell: {fileID: 11400000, guid: 3ec2b0bb62172bb4dad40c2f897384f4, type: 2}
   gameSettings:
     amountLevels: 1
+    rangGradeColor:
+      _serializedList:
+      - Key: 0
+        Value: {r: 1, g: 0, b: 0, a: 1}
+      - Key: 1
+        Value: {r: 1, g: 0.36862746, b: 0, a: 1}
+      - Key: 2
+        Value: {r: 1, g: 1, b: 0, a: 1}
+      - Key: 3
+        Value: {r: 0, g: 1, b: 0, a: 1}
+      - Key: 4
+        Value: {r: 0, g: 0, b: 1, a: 1}
   levelUpSettings:
     bacteriaTree:
       skills:
@@ -33,3 +45,29 @@ MonoBehaviour:
     singlecellTree:
       skills:
       - {fileID: 0}
+  comboSetting:
+    rangGradeAmountCombo:
+      _serializedList:
+      - Key: 0
+        Value: 10
+      - Key: 1
+        Value: 20
+      - Key: 2
+        Value: 30
+      - Key: 3
+        Value: 40
+      - Key: 4
+        Value: 50
+    rangGradeColor:
+      _serializedList:
+      - Key: 4
+        Value: {r: 1, g: 0, b: 0, a: 1}
+      - Key: 3
+        Value: {r: 1, g: 0.36862746, b: 0, a: 1}
+      - Key: 2
+        Value: {r: 1, g: 1, b: 0, a: 1}
+      - Key: 1
+        Value: {r: 0, g: 1, b: 0, a: 1}
+      - Key: 0
+        Value: {r: 0, g: 0, b: 1, a: 1}
+    timeOfDescreaseCombo: 0.5

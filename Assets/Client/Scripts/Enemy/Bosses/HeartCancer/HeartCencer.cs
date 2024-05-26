@@ -22,9 +22,9 @@ public class HeartCencer : Boss
         _currentState = _idle;
     }
 
-    public override void Initialize(Transform playerTransform)
+    public override void Initialize(Transform playerTransform, ComboCounter comboCounter)
     {
-        base.Initialize(playerTransform);      
+        base.Initialize(playerTransform, comboCounter);      
         _weapons.Initialize(playerTransform);
         _currentState.Enter();
     }
@@ -35,12 +35,19 @@ public class HeartCencer : Boss
         SetState(_weapons, EnemyState.Attacking);
         _unit.Initialize(this);
         _gameUI.gameplayUI.OpenBossHealthBar(_unit.health);
-        _unit.ChangeHealth += _gameUI.gameplayUI.UpdateBossHealthBar;
+        _unit.OnTakenDamage += _gameUI.gameplayUI.UpdateBossHealthBar;
     }
 
     public override void Dead()
     {
         _gameUI.gameplayUI.CloseBossHealthBar();
         base.Dead();
+    }
+
+    public void LookAt(Transform target)
+    {
+        transform.LookAt(target);
+        Quaternion quaternion = Quaternion.Euler(new Vector3(90f, -90f, 0));
+        transform.rotation *= quaternion;
     }
 }

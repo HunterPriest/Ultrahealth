@@ -1,11 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
-    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; width: 1920px; height: 1080px;">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; width: 100%; height: 100%; top: 50%;">
         <ui:VisualElement style="flex-grow: 1; height: 481px; background-color: rgba(0, 0, 0, 0.67);">
             <ui:Label tabindex="-1" text="you are dead" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="-unity-text-align: upper-center; height: 172px; font-size: 150px; top: 60px;" />
             <ui:Label tabindex="-1" text="would you like to repeat the passage?" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="top: 57px; -unity-text-align: upper-center; font-size: 42px;" />
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; top: 86px; height: auto; align-items: flex-start;">
-                <ui:Button text="Repeate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Repeat" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 174px;" />
+                <ui:Button text="Repeat" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Repeat" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 174px;" />
                 <ui:Button text="exit to menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="height: 98px; width: 600px; align-self: flex-start; left: 522px;" />
             </ui:VisualElement>
         </ui:VisualElement>

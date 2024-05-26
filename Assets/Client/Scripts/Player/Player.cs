@@ -33,8 +33,11 @@ public class Player : Character
         _movement.Initialize(_unit, playerSettings.movementSettings);
         Weapons.Initialize(_fpsRig);
         _gameUI.gameplayUI.InitializeValues(playerSettings);
+
+        _gameMachine.StopGameAction += _input.UnsubscribeGamplayButtons;
+        _gameMachine.ResumeGameAction += _input.SubscribeGamplayButtons;
         
-        _unit.ChangeHealth += _gameUI.gameplayUI.UpdateHealthBarValue;
+        _unit.OnTakenDamage += _gameUI.gameplayUI.UpdateHealthBarValue;
         _unit.ChangeStamina += _gameUI.gameplayUI.UpdateStaminahBarValue;
     }
 

@@ -1,4 +1,4 @@
-public class UnitHitBox : HitBox, IWeaponVisitor
+public class EnemyHitBox : HitBox, IWeaponVisitor
 {
 
     public void Visit(Saiga weapon)
@@ -13,7 +13,6 @@ public class UnitHitBox : HitBox, IWeaponVisitor
 
     public void Visit(BacteriaWeapon weapon)
     {
-        damageable.TakeDamage(weapon.damage);
     }
 
     public void Visit(HeartCancerProjectile heartCancerProjectile)

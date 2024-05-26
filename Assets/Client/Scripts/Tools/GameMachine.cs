@@ -1,9 +1,13 @@
 using UnityEngine;
 using Zenject;
 using Tools;
+using System;
 
 public class GameMachine
 {
+    public Action StopGameAction;
+    public Action ResumeGameAction;
+
     private ScenesManager _scenesManager;
     private InputManager _inputManager;
 
@@ -41,6 +45,7 @@ public class GameMachine
         Time.timeScale = 0.0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        StopGameAction.Invoke();
         UpdateGameState(gameState);
     }
 
@@ -50,6 +55,7 @@ public class GameMachine
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         UpdateGameState(GameState.Game);
+        ResumeGameAction.Invoke();
     }
 
     public void FinishGame()

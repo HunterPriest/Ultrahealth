@@ -16,9 +16,6 @@ public class LevelSettings : ScriptableObject
     [SerializedDictionary("Level grade", "Count kill enemies")]
     [SerializeField] private SerializedDictionary<LevelGrade, int> _levelEnemiesKillCount;
 
-    [SerializedDictionary("Level grade", "Grade")]
-    [SerializeField] private SerializedDictionary<LevelGrade, float> _levelFinnalyGrade;
-
     [SerializedDictionary("Level grade", "Score")]
     [SerializeField] private SerializedDictionary<LevelGrade, float> _levelScore;
 
@@ -27,7 +24,7 @@ public class LevelSettings : ScriptableObject
         for(int i = 0; i < (int) LevelGrade.D; i++)
         {
             LevelGrade grade = (LevelGrade) i;
-            if(time < _levelGradeTime[grade])
+            if(time <= _levelGradeTime[grade])
             {
                 return grade;
             }
@@ -36,12 +33,12 @@ public class LevelSettings : ScriptableObject
         return LevelGrade.D;
    }
 
-    public LevelGrade GetGradeKillEnemies(int enemies)
+    public LevelGrade GetGradeKilledEnemies(int amountEnemies)
     {
         for (int i = 0; i < (int)LevelGrade.D; i++)
         {
             LevelGrade grade = (LevelGrade)i;
-            if (enemies > _levelEnemiesKillCount[grade])
+            if (amountEnemies >= _levelEnemiesKillCount[grade])
             {
                 return grade;
             }
@@ -54,7 +51,7 @@ public class LevelSettings : ScriptableObject
         for (int i = 0; i < (int)LevelGrade.D; i++)
         {
             LevelGrade grade = (LevelGrade)i;
-            if (score < _levelScore[grade])
+            if (score <= _levelScore[grade])
             {
                 return grade;
             }
@@ -67,10 +64,10 @@ public class LevelSettings : ScriptableObject
     {
         for (int i = 0; i < (int)LevelGrade.D; i++)
         {
-            LevelGrade grader = (LevelGrade)i;
-            if (((timeGrade + killGrade)/2) < _levelFinnalyGrade[grader])
+            LevelGrade grade = (LevelGrade)i;
+            if (((timeGrade + killGrade)/2) <= (int)grade)
             {
-                return grader;
+                return grade;
             }
         }
 

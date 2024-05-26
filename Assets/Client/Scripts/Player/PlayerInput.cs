@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
         SubscribePlayer();
     }
 
-    private void SubscribePlayer()
+    public void SubscribePlayer()
     { 
         _input.PlayerActions.MousePosition.performed += OnMousePosition;
         _input.PlayerActions.Jump.started += OnJump;
@@ -43,6 +43,32 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.Dash.started -= OnDash;
         _input.PlayerActions.Map.started -= OnMap;
         _input.PlayerActions.Pause.started -= OnPause;
+    }
+
+    public void UnsubscribeGamplayButtons()
+    {
+        _input.PlayerActions.MousePosition.performed -= OnMousePosition;
+        _input.PlayerActions.Jump.started -= OnJump;
+        _input.PlayerActions.Recharge.started -= OnRecharge;
+        _input.PlayerActions.Move.performed -= OnChangeDirection;
+        _input.PlayerActions.Move.canceled -= OnChangeDirection;
+        _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
+        _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
+        _input.PlayerActions.Shoot.started -= OnShoot;
+        _input.PlayerActions.Dash.started -= OnDash;
+    }
+
+    public void SubscribeGamplayButtons()
+    {
+        _input.PlayerActions.MousePosition.performed += OnMousePosition;
+        _input.PlayerActions.Jump.started += OnJump;
+        _input.PlayerActions.Recharge.started += OnRecharge;
+        _input.PlayerActions.Move.performed += OnChangeDirection;
+        _input.PlayerActions.Move.canceled += OnChangeDirection;
+        _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
+        _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
+        _input.PlayerActions.Shoot.started += OnShoot;
+        _input.PlayerActions.Dash.started += OnDash;
     }
 
     private void OnMousePosition(InputAction.CallbackContext context)

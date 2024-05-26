@@ -29,27 +29,15 @@ MonoBehaviour:
   _levelEnemiesKillCount:
     _serializedList:
     - Key: 0
-      Value: 50
-    - Key: 1
-      Value: 25
-    - Key: 2
-      Value: 10
-    - Key: 3
-      Value: 5
-    - Key: 4
-      Value: 0
-  _levelFinnalyGrade:
-    _serializedList:
-    - Key: 0
       Value: 0
     - Key: 1
-      Value: 1
+      Value: 0
     - Key: 2
-      Value: 2
+      Value: 0
     - Key: 3
-      Value: 3
+      Value: 0
     - Key: 4
-      Value: 4
+      Value: 0
   _levelScore:
     _serializedList:
     - Key: 0

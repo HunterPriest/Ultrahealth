@@ -14,6 +14,7 @@ public class LevelIntaller : MonoInstaller
     public override void InstallBindings()
     {
         InstallUI();
+        InstallComboCounter();
         InstallPlayer();
         InstallLevel();    
     }
@@ -32,5 +33,10 @@ public class LevelIntaller : MonoInstaller
     private void InstallUI()
     {
         Container.Bind<GameUI>().AsSingle().WithArguments(_map, _pause, _gameplayUI, _deathPlayer);
+    }
+
+    private void InstallComboCounter()
+    {
+        Container.Bind<ComboCounter>().AsSingle().WithArguments(this);
     }
 }

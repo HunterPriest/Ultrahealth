@@ -1,6 +1,7 @@
 using UnityEngine;
 using Tools;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 
 public class Enemy : Character
 {
@@ -13,7 +14,10 @@ public class Enemy : Character
         _unit = GetComponent<EnemyUnit>();
     }
 
-    public virtual void Initialize(Transform playerTransform)  {   }
+    public virtual void Initialize(Transform playerTransform, ComboCounter comboCounter)
+    {
+        _unit.OnTakenDamage += comboCounter.AddCombo;
+    }
 
     protected virtual void Update()
     {

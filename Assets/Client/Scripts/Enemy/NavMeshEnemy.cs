@@ -38,9 +38,9 @@ public class NavMeshEnemy : Enemy
         base.Update();
     }
 
-    public override void Initialize(Transform playerTransform)
+    public override void Initialize(Transform playerTransform, ComboCounter comboCounter)
     {
-        base.Initialize(playerTransform);
+        base.Initialize(playerTransform, comboCounter);
         _agent.speed = _movementConfiguration.speed;
         _movement = new EnemyChase(_animations, playerTransform, _agent);
         _playerDetector.PlayerInChaseRange += OnPlayerInChaseRange;

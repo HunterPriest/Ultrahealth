@@ -14,9 +14,9 @@ public class HeartCancerWeapons : IStateEnemy
         _currentPhase.Enter();
     }
 
-    public void Initialize(MonoBehaviour monoBehaviour)
+    public void Initialize(HeartCencer heartCancer)
     {
-        _firstPhaseHeartCancer.Initialize(monoBehaviour);
+        _firstPhaseHeartCancer.Initialize(heartCancer);
         _currentPhase = _firstPhaseHeartCancer;
     }
 

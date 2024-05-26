@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using Zenject;
+using AYellowpaper.SerializedCollections;
+using Tools;
 
 [CreateAssetMenu(fileName = "GameConfigInstaller", menuName = "Installers/GameConfigInstaller")]
 public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>
@@ -10,6 +12,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
     public GameSettings gameSettings;
     public PlayerSettings playerSettings;
     public LevelUpSettings levelUpSettings;
+    public ComboSetting comboSetting;
 
     [Serializable]
     public class SavesSettings
@@ -22,6 +25,34 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
     public class GameSettings
     {
         public int amountLevels;
+
+        [SerializedDictionary("Level grade", "Color")]
+        public SerializedDictionary<LevelGrade, Color> rangGradeColor;
+    }
+
+    [Serializable]
+    public class ComboSetting
+    {
+        [SerializedDictionary("Index", "AmountCombo")]
+        [SerializeField] private SerializedDictionary<int, int> rangGradeAmountCombo;
+
+        [SerializedDictionary("Index", "Color")]
+        [SerializeField] private SerializedDictionary<int, Color> rangGradeColor;
+
+        public float timeOfDescreaseCombo;
+
+        public Color GetColorCombo(int amountCombo)
+        {
+            for(int i = 0; i < rangGradeAmountCombo.Count; i++)
+            {
+                if(rangGradeAmountCombo[i] >= amountCombo)
+                {
+                    return rangGradeColor[i];
+                }
+            }
+
+            return rangGradeColor[4];
+        }
     }
 
     public class PlayerSettings
@@ -88,7 +119,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
             healthSettings = new HealthSettings(playerData);
             movementSettings = new MovementSettings(playerData);
             weaponsSettings = new WeaponsSettings(playerData);
-            cameraSettings = new CameraSettings(1);
+            cameraSettings = new CameraSettings(0.5f);
         }
     }
 
@@ -150,5 +181,6 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
         Container.Bind<GameSettings>().FromInstance(gameSettings).NonLazy();
         Container.Bind<PlayerSettings>().FromInstance(playerSettings).NonLazy();
         Container.Bind<LevelUpSettings>().FromInstance(levelUpSettings).NonLazy();
+        Container.Bind<ComboSetting>().FromInstance(comboSetting).NonLazy();
     }
 }

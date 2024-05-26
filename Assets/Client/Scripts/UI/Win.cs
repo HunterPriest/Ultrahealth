@@ -1,26 +1,24 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
-using AYellowpaper.SerializedCollections;
 using Tools;
 
 public class Win : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset WinAsset;
 
-    [SerializedDictionary("Level grade", "Color")]
-    [SerializeField] private SerializedDictionary<LevelGrade, Color> _levelGrade;
-
     private VisualElement _win;
     private GameMachine _gameMachine;
     private PlayerSaver _playerSaver;
+    private GameConfigInstaller.GameSettings _gameSettings;
     
 
     [Inject]
-    private void Construct(GameMachine gameMachine, PlayerSaver playerSaver)
+    private void Construct(GameMachine gameMachine, PlayerSaver playerSaver, GameConfigInstaller.GameSettings gameSettings)
     {
         _gameMachine = gameMachine;
         _playerSaver = playerSaver;
+        _gameSettings = gameSettings;
     }
 
     protected override void Initialize()
@@ -42,17 +40,17 @@ public class Win : UIToolkitElement
 
         time.text = timeOfAdventure.ToString();
         LevelGrade timeGrade = levelSettings.GetGradeTime(timeOfAdventure);
-        timeRang.style.color = _levelGrade[timeGrade];
+        timeRang.style.color = _gameSettings.rangGradeColor[timeGrade];
         timeRang.text = timeGrade.ToString();
 
         enemyKill.text = killEnemy.ToString();
-        LevelGrade killgrade = levelSettings.GetGradeKillEnemies(killEnemy);
+        LevelGrade killgrade = levelSettings.GetGradeKilledEnemies(killEnemy);
         enemyKillGrade.text = killgrade.ToString();
-        enemyKillGrade.style.color = _levelGrade[killgrade];
+        enemyKillGrade.style.color = _gameSettings.rangGradeColor[killgrade];
 
         LevelGrade Grade = levelSettings.GetFinalyGrade((int)timeGrade, (int)killgrade);
         grade.text = Grade.ToString();
-        grade.style.color = _levelGrade[Grade];
+        grade.style.color = _gameSettings.rangGradeColor[Grade];
 
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 

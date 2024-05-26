@@ -12,6 +12,7 @@ public class GameplayUI : UIToolkitElement
     private ProgressBar _staminaBar;
     private ProgressBar _bossHealthBar;
     private GameConfigInstaller.PlayerSettings _playerSettings;
+    private Label _combo;
 
     public void InitializeValues(GameConfigInstaller.PlayerSettings playerSettings)
     {
@@ -41,6 +42,7 @@ public class GameplayUI : UIToolkitElement
         _staminaBar.lowValue = 0;
         _staminaBar.highValue = maxStamina;
         _staminaBar.title = _staminaBar.highValue.ToString() + "/" + _staminaBar.highValue.ToString();
+        _combo = _container.Q<Label>("Combo");
     }
 
     public void UpdateHealthBarValue(float value)
@@ -74,5 +76,16 @@ public class GameplayUI : UIToolkitElement
     public void CloseBossHealthBar()
     {
         _bossHealthBar.visible = false;
+    }
+
+    public void SetCombo(int amountCombo, Color color)
+    {
+        _combo.text = "Combo: X" + amountCombo.ToString();
+        _combo.style.color = color;
+    }
+
+    public void SetComboVisible(bool state)
+    {
+        _combo.visible = state;
     }
 }

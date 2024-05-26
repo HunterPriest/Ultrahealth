@@ -4,14 +4,14 @@ using Zenject;
 
 public class BossTrigger : MonoBehaviour
 {
-    [SerializeField] private Boss _boss;
-
+    private Boss _boss;
     private Transform _transformPlayer;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(Player player, Level level)
     {
         _transformPlayer = player.transform;
+        _boss = level.boss;
     }
 
     private void OnTriggerEnter(Collider other)
