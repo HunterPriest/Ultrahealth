@@ -15,16 +15,16 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   mode:
     overrideState: 1
     value: 0
   intensity:
     overrideState: 1
-    value: 2.19
+    value: 2.74
   color:
     overrideState: 1
-    value: {r: 1, g: 0.86377347, b: 0.2783019, a: 1}
+    value: {r: 1, g: 0.763299, b: 0, a: 1}
   ambientOnly:
     overrideState: 1
     value: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     value: 0
   radius:
     overrideState: 1
-    value: 3.11
+    value: 145.3
   quality:
     overrideState: 1
     value: 0
@@ -1492,35 +1492,35 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 76.84
+    value: 67.15
   threshold:
     overrideState: 1
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.66
+    value: 0.69
   clamp:
     overrideState: 1
-    value: 100
+    value: 160.4
   diffusion:
     overrideState: 1
-    value: 4
+    value: 3.3
   anamorphicRatio:
     overrideState: 1
-    value: -0.1
+    value: -1
   color:
     overrideState: 1
-    value: {r: 0.4245283, g: 0.050191116, b: 0, a: 1}
+    value: {r: 0.5, g: 0.07789648, b: 0, a: 1}
   fastMode:
     overrideState: 1
-    value: 1
+    value: 0
   dirtTexture:
     overrideState: 1
     value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 1
+    value: 27
 --- !u!114 &5173548411628289769
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1542,16 +1542,16 @@ MonoBehaviour:
     value: {x: 1, y: 98.99999}
   minLuminance:
     overrideState: 1
-    value: 0.9
+    value: -0.1
   maxLuminance:
     overrideState: 1
     value: 9
   keyValue:
     overrideState: 1
-    value: 0.57
+    value: 0.38
   eyeAdaptation:
     overrideState: 1
-    value: 0
+    value: 1
   speedUp:
     overrideState: 1
     value: 14.34

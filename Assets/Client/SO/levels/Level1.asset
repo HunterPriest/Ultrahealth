@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b9614121e631b4c8d7dfb4872b8668, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  gainedExperience: 500
-  levelIndex: 1
+  _levelIndex: 0
   _levelGradeTime:
     _serializedList:
     - Key: 0
@@ -38,15 +37,27 @@ MonoBehaviour:
       Value: 0
     - Key: 4
       Value: 0
-  _levelScore:
+  _levelCombo:
     _serializedList:
     - Key: 0
-      Value: 0
+      Value: 50
     - Key: 1
-      Value: 0
+      Value: 40
     - Key: 2
-      Value: 0
+      Value: 30
     - Key: 3
-      Value: 0
+      Value: 20
     - Key: 4
-      Value: 0
+      Value: 10
+  _levelExp:
+    _serializedList:
+    - Key: 0
+      Value: 5000
+    - Key: 1
+      Value: 2500
+    - Key: 2
+      Value: 1000
+    - Key: 3
+      Value: 500
+    - Key: 4
+      Value: 250
