@@ -81,7 +81,15 @@ public class GameplayUI : UIToolkitElement
     public void SetCombo(int amountCombo, Color color)
     {
         _combo.text = "Combo: X" + amountCombo.ToString();
+        if(_combo.style.color != color)
+        {
+        }
         _combo.style.color = color;
+    }
+
+    public void SetOutlineComboColor(Color color)
+    {
+        _combo.style.unityTextOutlineColor = color;
     }
 
     public void SetComboVisible(bool state)

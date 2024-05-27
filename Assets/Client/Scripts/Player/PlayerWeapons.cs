@@ -23,6 +23,10 @@ public class PlayerWeapons : MonoBehaviour
     {
         _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig.position, Quaternion.identity, fpsRig).GetComponent<Weapon>());
         _weapons[indexInArray].Initialize();
+        if(_weapons[indexInArray] is FirearmWeapon)
+        {
+            _weapons[indexInArray].SetDirection(fpsRig);
+        }
         _weapons[indexInArray].gameObject.SetActive(stateWeapon);
     }
 

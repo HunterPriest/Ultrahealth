@@ -12,6 +12,7 @@ public class Level : MonoBehaviour
 
     private GameMachine _gameMachine;
     private float _startTime;
+    private ComboCounter _comboCounter;
 
     public LevelSettings levelSettings => _levelSettings;
     public Boss boss => _boss;
@@ -22,6 +23,7 @@ public class Level : MonoBehaviour
         InitializeEnemyes(player.transform, comboCounter);
         _boss.Initialize(player.transform, comboCounter);
         _gameMachine = gameMachine;
+        _comboCounter = comboCounter;
     }
 
     private void Start()
@@ -40,6 +42,6 @@ public class Level : MonoBehaviour
     public void CompleteLevel()
     {
         _gameMachine.StopGame();
-        _win.OpenWin(_levelSettings, Time.time - _startTime, 0);
+        _win.OpenWin(_levelSettings, Time.time - _startTime, 0, _comboCounter.GetAmountComboInEndLevel());
     }
 }

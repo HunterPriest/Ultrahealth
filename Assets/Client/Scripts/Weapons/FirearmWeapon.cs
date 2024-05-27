@@ -3,9 +3,14 @@ using Tools;
 
 public abstract class FirearmWeapon : DamagingWeapon
 {
-    public Camera RigCamera;
-
     [SerializeField] private WeaponAnimations _weaponAnimations;
+
+    protected Transform direction;
+
+    public override void SetDirection(Transform transform)
+    {
+        direction = transform;
+    }
     
     public override void Reload()
     {

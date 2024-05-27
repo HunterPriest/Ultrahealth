@@ -7,7 +7,7 @@ public abstract class RaycastWeapon : FirearmWeapon
 
     public override void PerformAttack()
     {
-        if (Physics.Raycast(RigCamera.transform.position, RigCamera.transform.forward, out RaycastHit hit, _distance))
+        if (Physics.Raycast(direction.position, direction.forward, out RaycastHit hit, _distance))
         {
             HitScan(hit);
         }

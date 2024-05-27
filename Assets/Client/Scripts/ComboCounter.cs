@@ -22,6 +22,7 @@ public class ComboCounter
         if(_currentAmountCombo == 0)
         {
             _gameUI.gameplayUI.SetComboVisible(true);
+            _gameUI.gameplayUI.SetOutlineComboColor(Color.black);
         }
         _currentAmountCombo++;
         _gameUI.gameplayUI.SetCombo(_currentAmountCombo, _comboSetting.GetColorCombo(_currentAmountCombo));
@@ -34,14 +35,34 @@ public class ComboCounter
         _amountCombo++;
         _currentAmountCombo--;
         _gameUI.gameplayUI.SetCombo(_currentAmountCombo, _comboSetting.GetColorCombo(_currentAmountCombo));
-        _comboSetting.GetColorCombo(_currentAmountCombo);
         if(_currentAmountCombo == 0)
         {
-            _gameUI.gameplayUI.SetComboVisible(false);
+            _monoBehaviour.StartCoroutine(HideZeroCombo());
         }
         else if(_currentAmountCombo > 0)
         {
             _monoBehaviour.StartCoroutine(RemoveCombo());
         }
     }   
+
+    public void ResetToZero(float damage)
+    {
+        _monoBehaviour.StopAllCoroutines();
+        _currentAmountCombo = 0;
+        _monoBehaviour.StartCoroutine(HideZeroCombo());
+    }
+
+    private IEnumerator HideZeroCombo()
+    {   
+        _gameUI.gameplayUI.SetCombo(_currentAmountCombo, Color.black);
+        _gameUI.gameplayUI.SetOutlineComboColor(Color.red);
+        yield return new WaitForSeconds(_comboSetting.timeOfHideZeroCombo);
+        _gameUI.gameplayUI.SetComboVisible(false);
+        _gameUI.gameplayUI.SetOutlineComboColor(Color.black);
+    }
+
+    public int GetAmountComboInEndLevel()
+    {
+        return _amountCombo + _currentAmountCombo;
+    }
 }

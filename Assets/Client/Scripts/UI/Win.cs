@@ -11,6 +11,7 @@ public class Win : UIToolkitElement
     private GameMachine _gameMachine;
     private PlayerSaver _playerSaver;
     private GameConfigInstaller.GameSettings _gameSettings;
+    private int _exp;
     
 
     [Inject]
@@ -26,7 +27,7 @@ public class Win : UIToolkitElement
         _win = WinAsset.CloneTree();
     }
 
-    public void OpenWin(LevelSettings levelSettings, float timeOfAdventure, int killEnemy)
+    public void OpenWin(LevelSettings levelSettings, float timeOfAdventure, int killEnemy, int amountCombo)
     {
         ResetContainer(_win);
 
@@ -35,8 +36,10 @@ public class Win : UIToolkitElement
         Label timeRang = _container.Q<Label>("TimeRang");
         Label enemyKill = _container.Q<Label>("EnemyKill");
         Label enemyKillGrade = _container.Q<Label>("EnemyKillRang");
-        Label score = _container.Q<Label>("Score");
-        Label grade = _container.Q<Label>("Grade");
+        Label resultRang = _container.Q<Label>("ResultRang");
+        Label exp = _container.Q<Label>("Exp");
+        Label combo = _container.Q<Label>("AmountCombo");
+        Label comboRang = _container.Q<Label>("ComboRang");
 
         time.text = timeOfAdventure.ToString();
         LevelGrade timeGrade = levelSettings.GetGradeTime(timeOfAdventure);
@@ -48,9 +51,16 @@ public class Win : UIToolkitElement
         enemyKillGrade.text = killgrade.ToString();
         enemyKillGrade.style.color = _gameSettings.rangGradeColor[killgrade];
 
-        LevelGrade Grade = levelSettings.GetFinalyGrade((int)timeGrade, (int)killgrade);
-        grade.text = Grade.ToString();
-        grade.style.color = _gameSettings.rangGradeColor[Grade];
+        combo.text = amountCombo.ToString();
+        LevelGrade comboGrade = levelSettings.GetGradeCombo(amountCombo);
+        comboRang.text = comboGrade.ToString();
+        comboRang.style.color = _gameSettings.rangGradeColor[comboGrade];
+
+        LevelGrade finalyGrade = levelSettings.GetFinalyGrade((int)timeGrade, (int)killgrade, (int)comboGrade);
+        _exp = levelSettings.GetAmountExp(finalyGrade);
+        exp.text = _exp.ToString();
+        resultRang.text = finalyGrade.ToString();
+        resultRang.style.color = _gameSettings.rangGradeColor[finalyGrade];
 
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
@@ -65,7 +75,7 @@ public class Win : UIToolkitElement
         {
             _playerSaver.currentSave.playerSave.currentIndexLevel++;    
         }
-        _playerSaver.currentSave.playerSave.experience += levelSettings.gainedExperience;
+        _playerSaver.currentSave.playerSave.experience += _exp;
         _playerSaver.SaveCurrentSave();
         _gameMachine.FinishGame();
     }

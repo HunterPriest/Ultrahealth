@@ -40,6 +40,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
         [SerializeField] private SerializedDictionary<int, Color> rangGradeColor;
 
         public float timeOfDescreaseCombo;
+        public float timeOfHideZeroCombo;
 
         public Color GetColorCombo(int amountCombo)
         {

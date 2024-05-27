@@ -59,4 +59,9 @@ public abstract class Weapon : MonoBehaviour
             _currentState = weaponState;
         }
     }
+
+    public virtual void SetDirection(Transform transform)
+    {
+        
+    }
 }

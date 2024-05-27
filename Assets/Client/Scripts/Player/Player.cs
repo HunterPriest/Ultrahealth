@@ -20,7 +20,7 @@ public class Player : Character
 
     [Inject]
     public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,
-    PlayerSaver playerSaver, GameMachine gameMachine)
+    PlayerSaver playerSaver, GameMachine gameMachine, ComboCounter comboCounter)
     {   
         UpdatePlayerState(PlayerState.Idle);
         _gameUI = gameUI;
@@ -38,6 +38,7 @@ public class Player : Character
         _gameMachine.ResumeGameAction += _input.SubscribeGamplayButtons;
         
         _unit.OnTakenDamage += _gameUI.gameplayUI.UpdateHealthBarValue;
+        _unit.OnTakenDamage += comboCounter.ResetToZero;
         _unit.ChangeStamina += _gameUI.gameplayUI.UpdateStaminahBarValue;
     }
 
