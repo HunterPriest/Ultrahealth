@@ -47,32 +47,37 @@ public class FirstPhaseHeartCancerWeapons : IPhase
     {
         if (Time.time > _nextTimeShoot)
         {
-            if(_amountShotsAttack == 0 && _amountShotsRoundAttack == 0)
-            {
-                if(_amountShotsAttack == 0 && _attackIsRound)
-                {
-                    _amountShotsAttack = UnityEngine.Random.Range(_minAmountShots, _maxAmountShots);
-                    _attackIsRound = false;
-                }
-                else if(_amountShotsRoundAttack == 0 && !_attackIsRound)
-                {
-                    _amountShotsRoundAttack = UnityEngine.Random.Range(_minAmountRoundShoot, _maxAmountRoundShoot);
-                    _attackIsRound = true;
-                }
-            }
-
-            if(_amountShotsAttack != 0)
-            {
-                Attack();
-                _amountShotsAttack--;
-            }
-            else if(_amountShotsRoundAttack != 0)
-            {
-                RoundAttack();
-                _amountShotsRoundAttack--;
-            }
+            FirstPhaseAttack();
             
             _nextTimeShoot = Time.time + _fireRate;
+        }
+    }
+
+    public void FirstPhaseAttack()
+    {
+        if(_amountShotsAttack == 0 && _amountShotsRoundAttack == 0)
+        {
+            if(_amountShotsAttack == 0 && _attackIsRound)
+            {
+                _amountShotsAttack = UnityEngine.Random.Range(_minAmountShots, _maxAmountShots);
+                _attackIsRound = false;
+            }
+            else if(_amountShotsRoundAttack == 0 && !_attackIsRound)
+            {
+                _amountShotsRoundAttack = UnityEngine.Random.Range(_minAmountRoundShoot, _maxAmountRoundShoot);
+                _attackIsRound = true;
+            }
+        }
+
+        if(_amountShotsAttack != 0)
+        {
+            Attack();
+            _amountShotsAttack--;
+        }
+        else if(_amountShotsRoundAttack != 0)
+        {
+            RoundAttack();
+            _amountShotsRoundAttack--;
         }
     }
 

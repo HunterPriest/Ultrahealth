@@ -1,37 +1,37 @@
 using UnityEngine;
 using Tools;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
+using System;
 
 public class Enemy : Character
 {
-    protected EnemyState _currentStateType = EnemyState.Idle;
-    protected IStateEnemy _currentState;
-    protected EnemyUnit _unit;
+    protected EnemyState currentStateType = EnemyState.Idle;
+    protected IStateEnemy currentState;
 
-    protected virtual void OnValidate()
-    {
-        _unit = GetComponent<EnemyUnit>();
-    }
+    public Action OnDead;
 
-    public virtual void Initialize(Transform playerTransform, ComboCounter comboCounter)
-    {
-        _unit.OnTakenDamage += comboCounter.AddCombo;
-    }
+    protected virtual void OnValidate() {   }
+
+    public virtual void Initialize(Transform playerTransform, ComboCounter comboCounter) {   }
 
     protected virtual void Update()
     {
-        _currentState.Loop();
+        currentState.Loop();
     }
 
     protected void SetState(IStateEnemy state, EnemyState nextStateType)
     {
-        if(_currentState.StateCompleted() && _currentState != state)
+        if(currentState.StateCompleted() && currentState != state)
         {
-            _currentStateType = nextStateType;
-            _currentState.Exit();
-            _currentState = state;
-            _currentState.Enter();
+            currentStateType = nextStateType;
+            currentState.Exit();
+            currentState = state;
+            currentState.Enter();
         }
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        OnDead?.Invoke();
     }
 }

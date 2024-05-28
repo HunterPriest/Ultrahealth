@@ -84,7 +84,7 @@ public class LevelSettings : ScriptableObject
             return LevelGrade.S;
         }
 
-        float avarage = (timeGrade + 1 + killGrade + 1 + comboGrade + 1)/3;
+        float avarage = (timeGrade + 3 + killGrade + comboGrade)/3;
         for (int i = 0; i < (int)LevelGrade.D; i++)
         {
             LevelGrade grade = (LevelGrade)i;

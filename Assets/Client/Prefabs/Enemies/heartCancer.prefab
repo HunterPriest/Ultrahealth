@@ -42,12 +42,13 @@ GameObject:
   - component: {fileID: 2375015763429287095}
   - component: {fileID: 2640349345196533642}
   - component: {fileID: 983685092838248254}
-  - component: {fileID: 6756873389579819744}
   - component: {fileID: 638799230746514214}
+  - component: {fileID: 6756873389579819744}
   - component: {fileID: 6398791710670168377}
-  - component: {fileID: 3877386103269369326}
   - component: {fileID: 3000726238605645864}
   - component: {fileID: 2481759960117899574}
+  - component: {fileID: -7448661476887484825}
+  - component: {fileID: 4383523578702113640}
   m_Layer: 0
   m_Name: HeartCancer
   m_TagString: Untagged
@@ -121,28 +122,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6756873389579819744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2908748347594182891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec102d49e3833904ea3830693b02b348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weapons:
-    _firstPhaseHeartCancer:
-      _amountProjectileForRoundAttack: 24
-      _fireRate: 1.5
-      _delayBetweenAttacksPlayer: 0.5
-      _maxAmountShots: 7
-      _minAmountShots: 4
-      _maxAmountRoundShoot: 0
-      _minAmountRoundShoot: 0
-      _projectileWeapon: {fileID: 3000726238605645864}
 --- !u!114 &638799230746514214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +135,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: {fileID: 6398791710670168377}
+--- !u!114 &6756873389579819744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908748347594182891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec102d49e3833904ea3830693b02b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossUnit: {fileID: -7448661476887484825}
+  _weapons:
+    _firstPhaseHeartCancer:
+      _amountProjectileForRoundAttack: 24
+      _fireRate: 1.5
+      _delayBetweenAttacksPlayer: 0.5
+      _maxAmountShots: 7
+      _minAmountShots: 4
+      _maxAmountRoundShoot: 1
+      _minAmountRoundShoot: 3
+      _projectileWeapon: {fileID: 3000726238605645864}
+    _secondPhaseHeartCancer:
+      _spawnEnemyWeapon: {fileID: 4383523578702113640}
+      _fireRate: 0.7
+  _bossBehaviourConfig: {fileID: 11400000, guid: deaad75e76444c34687d75b14a3ed961, type: 2}
 --- !u!114 &6398791710670168377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,20 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502b7149461e2474da7d9ed97f7cb7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unit: {fileID: 3877386103269369326}
---- !u!114 &3877386103269369326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2908748347594182891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be9e27217684a74e945e85d1fd9da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthConfig: {fileID: 11400000, guid: 55bd5c3944811004aaf53e237fa286d7, type: 2}
+  _unit: {fileID: -7448661476887484825}
 --- !u!114 &3000726238605645864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,3 +211,31 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.014521421
   m_Center: {x: 0.0009602713, y: 0.0019238194, z: -0.0062896414}
+--- !u!114 &-7448661476887484825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908748347594182891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c0a51f0c69004cbde40ce375b4bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthConfig: {fileID: 11400000, guid: 55bd5c3944811004aaf53e237fa286d7, type: 2}
+--- !u!114 &4383523578702113640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908748347594182891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2866619729d390d4c824e1cb44173c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints: []
+  _enemyies:
+  - {fileID: 7755114031596519289, guid: 0c3d2d25d9f05464fb46ccd19c70adfd, type: 3}

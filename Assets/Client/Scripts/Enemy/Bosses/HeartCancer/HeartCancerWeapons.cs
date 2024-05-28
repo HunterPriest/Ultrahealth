@@ -5,18 +5,22 @@ using UnityEngine;
 public class HeartCancerWeapons : IStateEnemy
 {
     [SerializeField] private FirstPhaseHeartCancerWeapons _firstPhaseHeartCancer;
+    [SerializeField] private SecondPhaseHeartCancerWeapons _secondPhaseHeartCancer;
 
     private IPhase _currentPhase;
 
-    public void Initialize(Transform playerTransform)
+    public void Initialize(Transform playerTransform, ComboCounter comboCounter)
     {
         _firstPhaseHeartCancer.Initialize(playerTransform);
+        _secondPhaseHeartCancer.Initialize(playerTransform, comboCounter);
         _currentPhase.Enter();
     }
 
     public void Initialize(HeartCencer heartCancer)
     {
         _firstPhaseHeartCancer.Initialize(heartCancer);
+        _secondPhaseHeartCancer.Initialize(_firstPhaseHeartCancer);
+        heartCancer.OnDead += _secondPhaseHeartCancer.Dead;
         _currentPhase = _firstPhaseHeartCancer;
     }
 
@@ -34,10 +38,10 @@ public class HeartCancerWeapons : IStateEnemy
         return false;
     }
 
-    public void SetPhase(IPhase phase)
+    public void SetPhaseToSecond()
     {
         _currentPhase.Exit();
-        _currentPhase = phase;
+        _currentPhase = _secondPhaseHeartCancer;
         _currentPhase.Enter();
     }
 }

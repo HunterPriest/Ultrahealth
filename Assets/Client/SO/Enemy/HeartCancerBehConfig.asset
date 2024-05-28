@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca397689eb0664499c389ce061bbe51, type: 3}
-  m_Name: HeartCancer Behaviour Configuration
+  m_Script: {fileID: 11500000, guid: e0a6a3ed2e2ed744ead1b1defbbb2686, type: 3}
+  m_Name: HeartCancerBehConfig
   m_EditorClassIdentifier: 
-  ChaseRange: 0
-  AttackRange: 15
+  _phases:
+    _serializedList:
+    - Key: 1
+      Value: 375

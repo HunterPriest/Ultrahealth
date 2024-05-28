@@ -1,4 +1,15 @@
-public class Boss : Enemy
+using UnityEngine;
+
+public abstract class Boss : Enemy
 {
-    public virtual void Acivate() {   }
+    [SerializeField] protected BossUnit bossUnit;
+
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+        bossUnit = GetComponent<BossUnit>();
+    }
+    public abstract void Acivate();
+
+    public abstract void SetPhase(float damage);
 }

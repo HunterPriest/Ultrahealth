@@ -17,19 +17,11 @@ public class NavMeshEnemy : Enemy
     private PlayerDetector _playerDetector;
     private EnemyAnimations _animations;
     private NavMeshAgent _agent;
+    private EnemyUnit _unit;
 
     protected override void OnValidate()
     {
-        base.OnValidate();
-        _agent = GetComponent<NavMeshAgent>();
-        _animations = GetComponent<EnemyAnimations>();
-        _playerDetector = new PlayerDetector(_enemyBehaviourConfiguration, _playerLayer, transform);
-        _weapon = GetComponent<Weapon>();
-        _idle = new EnemyIdle(_animations);
-        _weapons = new EnemyWeapons(_animations, _weapon);
-        _currentState = _idle;
-        _weapon = GetComponent<Weapon>();
-        _unit.Initialize(this);
+        Init();
     }
 
     protected override void Update()
@@ -38,15 +30,32 @@ public class NavMeshEnemy : Enemy
         base.Update();
     }
 
+    private void Init()
+    {
+        base.OnValidate();
+        _agent = GetComponent<NavMeshAgent>();
+        _animations = GetComponent<EnemyAnimations>();
+        _playerDetector = new PlayerDetector(_enemyBehaviourConfiguration, _playerLayer, transform);
+        _weapon = GetComponent<Weapon>();
+        _idle = new EnemyIdle(_animations);
+        _weapons = new EnemyWeapons(_animations, _weapon);
+        currentState = _idle;
+        _weapon = GetComponent<Weapon>();
+        _unit = GetComponent<EnemyUnit>();
+        _unit.Initialize(this);
+    }
+
     public override void Initialize(Transform playerTransform, ComboCounter comboCounter)
     {
+        Init();
         base.Initialize(playerTransform, comboCounter);
         _agent.speed = _movementConfiguration.speed;
         _movement = new EnemyChase(_animations, playerTransform, _agent);
+        _unit.OnTakenDamage += comboCounter.AddCombo;
         _playerDetector.PlayerInChaseRange += OnPlayerInChaseRange;
         _playerDetector.PlayerInAttackRange += OnPlayerInAttackRange;
         _playerDetector.PlayerOutChaseRange += OnPlayerOutChaseRange;
-        _currentState.Enter();
+        currentState.Enter();
     }
 
     private void OnPlayerInChaseRange()
