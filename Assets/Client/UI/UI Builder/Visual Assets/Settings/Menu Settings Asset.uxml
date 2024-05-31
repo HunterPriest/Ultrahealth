@@ -5,11 +5,11 @@
             <ui:Label tabindex="-1" text="Настройки" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="defoltOldKallText" style="font-size: 70%;" />
             <ui:VisualElement name="SettingsContainer" style="flex-grow: 1; top: 10%; flex-direction: row; width: 94%;">
                 <ui:VisualElement name="SettingsButtons" style="flex-grow: 1;">
-                    <ui:Button text="Главное" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallButtons" style="color: rgb(0, 0, 0);" />
-                    <ui:Button text="Управление" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallButtons" />
-                    <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallButtons" />
+                    <ui:Button text="Главное" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Main" class="defoltOldKallButtons defoltHoverButton defoltFocusButton defoltOldKallText" style="color: rgb(255, 255, 255); font-size: 35px; width: 320px;" />
+                    <ui:Button text="Управление" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Control" class="defoltOldKallButtons" style="font-size: 35px; width: 320px;" />
+                    <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="defoltOldKallButtons" style="font-size: 35px; width: 320px;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="SetSettings" style="flex-grow: 1; width: 75%;" />
+                <ui:VisualElement name="SetSettings" style="flex-grow: 1; width: 75%; height: 588px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

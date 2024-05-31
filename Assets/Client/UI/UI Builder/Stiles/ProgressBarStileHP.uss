@@ -1,5 +1,5 @@
 .HPBar .unity-progress-bar__progress {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 7, 0);
     height: 43px;
     font-size: 84px;
     color: rgb(255, 0, 0);
