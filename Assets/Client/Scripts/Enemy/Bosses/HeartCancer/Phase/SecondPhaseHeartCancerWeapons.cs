@@ -16,9 +16,9 @@ public class SecondPhaseHeartCancerWeapons : IPhase
         _firstPhaseHeartCancerWeapons = firstPhaseHeartCancerWeapons;
     }
 
-    public void Initialize(Transform playerTransform, ComboCounter comboCounter)
+    public void Initialize(Transform playerTransform, ComboCounter comboCounter, KillCounter killCounter)
     {
-        _spawnEnemyWeapon.Initialize(playerTransform, comboCounter);
+        _spawnEnemyWeapon.Initialize(playerTransform, comboCounter, killCounter);
         _spawnEnemyWeapon.OnDeadAllEnemies += _spawnEnemyWeapon.Attack;
     }
 

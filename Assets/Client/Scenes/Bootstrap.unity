@@ -240,15 +240,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35948515
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.357344
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.238504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -280,11 +280,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1853094968961178454, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: field of view
-      value: 68
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: -1853094968961178454, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_FOVAxisMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -1853094968961178454, guid: 62d69ca420b47a1409dfc5b70a98856b, type: 3}
       propertyPath: m_projectionMatrixMode

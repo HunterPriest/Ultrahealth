@@ -45,10 +45,13 @@ public class NavMeshEnemy : Enemy
         _unit.Initialize(this);
     }
 
-    public override void Initialize(Transform playerTransform, ComboCounter comboCounter)
+    public override void Initialize(Transform playerTransform, ComboCounter comboCounter, KillCounter killCounter)
     {
-        Init();
-        base.Initialize(playerTransform, comboCounter);
+        if(_agent == null)
+        {
+            Init();
+        }
+        base.Initialize(playerTransform, comboCounter, killCounter);
         _agent.speed = _movementConfiguration.speed;
         _movement = new EnemyChase(_animations, playerTransform, _agent);
         _unit.OnTakenDamage += comboCounter.AddCombo;

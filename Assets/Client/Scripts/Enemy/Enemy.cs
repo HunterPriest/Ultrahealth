@@ -11,7 +11,10 @@ public class Enemy : Character
 
     protected virtual void OnValidate() {   }
 
-    public virtual void Initialize(Transform playerTransform, ComboCounter comboCounter) {   }
+    public virtual void Initialize(Transform playerTransform, ComboCounter comboCounterm, KillCounter killCounter)
+    { 
+        OnDead += killCounter.AddKill;
+    }
 
     protected virtual void Update()
     {

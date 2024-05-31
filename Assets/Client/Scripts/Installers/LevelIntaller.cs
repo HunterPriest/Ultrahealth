@@ -15,6 +15,7 @@ public class LevelIntaller : MonoInstaller
     {
         InstallUI();
         InstallComboCounter();
+        InstallKillCounter();
         InstallPlayer();
         InstallLevel();    
     }
@@ -38,5 +39,10 @@ public class LevelIntaller : MonoInstaller
     private void InstallComboCounter()
     {
         Container.Bind<ComboCounter>().AsSingle().WithArguments(this);
+    }
+    
+    private void InstallKillCounter()
+    {
+        Container.Bind<KillCounter>().AsSingle();
     }
 }

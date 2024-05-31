@@ -31,12 +31,12 @@ public class HeartCencer : Boss
         _weapons.Initialize(this);
     }
 
-    public override void Initialize(Transform playerTransform, ComboCounter comboCounter)
+    public override void Initialize(Transform playerTransform, ComboCounter comboCounter, KillCounter killCounter)
     {
-        base.Initialize(playerTransform, comboCounter);      
+        base.Initialize(playerTransform, comboCounter, killCounter);      
         bossUnit.OnTakenDamage += comboCounter.AddCombo;
         bossUnit.OnTakenDamage += SetPhase;
-        _weapons.Initialize(playerTransform, comboCounter);
+        _weapons.Initialize(playerTransform, comboCounter, killCounter);
         currentState.Enter();
     }
 

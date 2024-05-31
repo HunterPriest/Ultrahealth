@@ -11,11 +11,13 @@ public class SpawnEnemyWeapon : Weapon
     private int _amountEnemy;
     private Transform _playerTransform;
     private ComboCounter _comboCounter;
+    private KillCounter _killCounter;
 
-    public void Initialize(Transform transform, ComboCounter comboCounter)
+    public void Initialize(Transform transform, ComboCounter comboCounter, KillCounter killCounter)
     {
         _playerTransform = transform;
         _comboCounter = comboCounter;
+        _killCounter = killCounter;
     }
 
     public override void PerformAttack()
@@ -26,7 +28,7 @@ public class SpawnEnemyWeapon : Weapon
             _spawnPoints[i].position, Quaternion.identity);
             _amountEnemy++;
             Enemy enemy = enemyObj.GetComponent<Enemy>();
-            enemy.Initialize(_playerTransform, _comboCounter);
+            enemy.Initialize(_playerTransform, _comboCounter, _killCounter);
             enemy.OnDead += DeadEnemy;
         }
     }

@@ -9,10 +9,10 @@ public class HeartCancerWeapons : IStateEnemy
 
     private IPhase _currentPhase;
 
-    public void Initialize(Transform playerTransform, ComboCounter comboCounter)
+    public void Initialize(Transform playerTransform, ComboCounter comboCounter, KillCounter killCounter)
     {
         _firstPhaseHeartCancer.Initialize(playerTransform);
-        _secondPhaseHeartCancer.Initialize(playerTransform, comboCounter);
+        _secondPhaseHeartCancer.Initialize(playerTransform, comboCounter, killCounter);
         _currentPhase.Enter();
     }
 
