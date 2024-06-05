@@ -9,8 +9,18 @@ public class WeaponAnimations : MonoBehaviour
         _animator.Play("Reload");
     }
 
-    public void Shoot()
+    public void Attack()
     {
-        _animator.Play("Shoot");
+        _animator.Play("Attack");
+    }
+
+    public void Take()
+    {
+        _animator.Play("Take");
+    }
+
+    public void PutAway()
+    {
+        _animator.Play("PutAway");
     }
 }

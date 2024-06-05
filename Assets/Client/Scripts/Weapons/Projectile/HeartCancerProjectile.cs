@@ -6,4 +6,9 @@ public class HeartCancerProjectile : Projectile
     {
         weaponVisitor.Visit(this);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Attack(other.gameObject);
+    }
 }

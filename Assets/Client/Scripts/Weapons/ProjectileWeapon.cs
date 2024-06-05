@@ -11,7 +11,6 @@ public abstract class ProjectileWeapon : Weapon
     public override void Attack()
     {
         base.Attack();
-        PerformAttack();
     }
     
     public override void PerformAttack()

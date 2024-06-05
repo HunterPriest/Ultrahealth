@@ -5,7 +5,7 @@
         <ui:VisualElement name="TextField" style="flex-grow: 1; width: 200px; height: 1080px;">
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="height: 76px; font-size: 44px; -unity-text-align: upper-left;" />
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" class="defoltOldKallText" style="font-size: 24px; -unity-text-align: upper-left; width: 100%; height: 90%;" />
-            <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="left: auto; top: -84px; width: 700px;" />
+            <ui:Button text="Выйти" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="left: auto; top: -84px; width: 700px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

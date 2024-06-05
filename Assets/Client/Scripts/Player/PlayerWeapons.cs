@@ -1,13 +1,15 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
 public class PlayerWeapons : MonoBehaviour
 {
-    [SerializeField] private Weapon[] _startedWeapons;
+    [SerializeField] private GameObject[] _startedWeapons;
 
-    private List<Weapon> _weapons = new List<Weapon>();
+    private List<IPlayerWeapon> _weapons = new List<IPlayerWeapon>();
     private int _indexOfCurrentWeapon;
+    private int _previousIndexWeapon;
 
     public void Initialize(Transform fpsRig)
     {
@@ -21,35 +23,42 @@ public class PlayerWeapons : MonoBehaviour
 
     private void SpawnWeapon(int indexInArray, Transform fpsRig, bool stateWeapon)
     {
-        _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig.position, Quaternion.identity, fpsRig).GetComponent<Weapon>());
-        _weapons[indexInArray].Initialize();
-        if(_weapons[indexInArray] is FirearmWeapon)
+        _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig.position + _startedWeapons[indexInArray].transform.position, 
+        Quaternion.identity, fpsRig).GetComponent<IPlayerWeapon>());
+        _weapons[indexInArray].weapon.Initialize();
+        if(_weapons[indexInArray] is RaycastWeapon)
         {
-            _weapons[indexInArray].SetDirection(fpsRig);
+            RaycastWeapon raycastWeapon = _weapons[indexInArray].ConvertTo<RaycastWeapon>();
+            raycastWeapon.SetDirection(fpsRig);
         }
-        _weapons[indexInArray].gameObject.SetActive(stateWeapon);
+        _weapons[indexInArray].OnPutAway += TakeWeapon;
+        _weapons[indexInArray].weapon.gameObject.SetActive(stateWeapon);
     }
-
-    public void AddWeapon(Weapon _weapon)
-    {
-        
-    }
-
+    
     public void Shoot()
     {
-        _weapons[_indexOfCurrentWeapon].Attack();
+        _weapons[_indexOfCurrentWeapon].weapon.Attack();
     }
 
     public void ReloadWeapon()
     {
-        _weapons[_indexOfCurrentWeapon].Reload();
+        _weapons[_indexOfCurrentWeapon].weapon.Reload();
     }
 
     public void ChooseWeapon(int indexWeapon)
     {
-        _weapons[_indexOfCurrentWeapon].gameObject.SetActive(false);
-        _weapons[_indexOfCurrentWeapon].RemoveWeapon();
-        _indexOfCurrentWeapon = indexWeapon - 1;
-        _weapons[_indexOfCurrentWeapon].gameObject.SetActive(true);
+        if(indexWeapon - 1 == _indexOfCurrentWeapon)
+        {
+            return;
+        }
+        _weapons[_indexOfCurrentWeapon].weapon.RemoveWeapon();
+        _previousIndexWeapon = _indexOfCurrentWeapon;
+        _indexOfCurrentWeapon = indexWeapon -1;
+    }
+
+    private void TakeWeapon()
+    {
+        _weapons[_previousIndexWeapon].weapon.gameObject.SetActive(false);
+        _weapons[_indexOfCurrentWeapon].weapon.gameObject.SetActive(true);
     }
 }

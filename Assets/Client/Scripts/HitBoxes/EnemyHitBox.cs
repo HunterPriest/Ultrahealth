@@ -19,4 +19,9 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
     {
         damageable.TakeDamage(heartCancerProjectile.damage);
     }
+
+    public void Visit(Grenade grenade)
+    {
+        damageable.TakeDamage(grenade.damage);
+    }
 }

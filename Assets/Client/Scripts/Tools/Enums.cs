@@ -29,7 +29,9 @@ namespace Tools
     {
         Reload, 
         Attack, 
-        Idle
+        Idle,
+        Take,
+        PutAway
     }
 
     public enum ClassesOfPlayer

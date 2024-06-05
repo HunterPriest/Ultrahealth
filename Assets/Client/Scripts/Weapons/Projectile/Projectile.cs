@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -19,15 +20,14 @@ public abstract class Projectile : MonoBehaviour
         Destroy(gameObject, 10f);
     }
 
-    protected virtual void Accept(IWeaponVisitor visitor) {   }
-
-    private void OnTriggerEnter(Collider other)
+    protected virtual void Attack(GameObject gameObject)
     {
-        if(other.gameObject.TryGetComponent<IWeaponVisitor>(out IWeaponVisitor visitor))
+        if (gameObject.TryGetComponent(out IWeaponVisitor weaponVisitor))
         {
-            Accept(visitor);
-            return;
+            Accept(weaponVisitor);
         }
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
+
+    protected virtual void Accept(IWeaponVisitor visitor) {   }
 }

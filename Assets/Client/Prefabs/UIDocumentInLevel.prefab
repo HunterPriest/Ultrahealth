@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MapInGameAsset: {fileID: 9197481963319205126, guid: 8e6f209eb65063e43beb334ad3627160, type: 3}
-  _currentMap: {fileID: 0}
+  _currentMap: {fileID: 11400000, guid: 90aae26d94c9aff4eb1eda908fdf9d04, type: 2}
 --- !u!114 &3568293702885248390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,12 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinAsset: {fileID: 9197481963319205126, guid: 4fee27b1cd497cd418c8b14105ac43fb, type: 3}
-  ColorGrade:
-  - {r: 0, g: 0.108670235, b: 1, a: 0}
-  - {r: 0.043376923, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0.9342736, b: 0, a: 0}
-  - {r: 1, g: 0.59621036, b: 0, a: 0}
-  - {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &1661442404051786615
 MonoBehaviour:
   m_ObjectHideFlags: 0

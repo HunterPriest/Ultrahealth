@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25972090bba137848b5650387ef00067, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.429976
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25972090bba137848b5650387ef00067, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25972090bba137848b5650387ef00067, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.122686386
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 25972090bba137848b5650387ef00067, type: 3}
       propertyPath: m_LocalRotation.w
@@ -909,9 +909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  RigCamera: {fileID: 0}
-  _weaponAnimations: {fileID: 3569190772212333399}
   _distance: 25
+  _animations: {fileID: 3569190772212333399}
 --- !u!114 &3569190772212333399
 MonoBehaviour:
   m_ObjectHideFlags: 0

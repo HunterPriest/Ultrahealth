@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Tools;
 
 public class SpawnEnemyWeapon : Weapon
 {
@@ -46,5 +47,10 @@ public class SpawnEnemyWeapon : Weapon
     {
         base.Attack();
         PerformAttack();
+    }
+
+    public override void Initialize()
+    {
+        UpdateState(WeaponState.Idle);
     }
 }

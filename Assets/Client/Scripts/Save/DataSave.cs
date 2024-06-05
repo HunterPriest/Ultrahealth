@@ -19,5 +19,6 @@ namespace DataSave
         public float rateOfIncreaseStamina; 
         public float staminaConsumedWhenDashing;
         public float staminaConsumedWhenJumping;
+        public float sens;
     }
 }

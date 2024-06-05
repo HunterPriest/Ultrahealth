@@ -68,6 +68,7 @@ public class PlayerSaver
         playerData.rateOfIncreaseStamina = classConfig.rateOfIncreaseStamina;
         playerData.staminaConsumedWhenDashing = classConfig.staminaConsumedWhenDashing;
         playerData.staminaConsumedWhenJumping = classConfig.staminaConsumedWhenJumping;
+        playerData.sens = 0.5f;
         
 
         return playerData;

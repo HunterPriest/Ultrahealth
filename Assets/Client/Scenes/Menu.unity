@@ -289,11 +289,12 @@ GameObject:
   - component: {fileID: 1836095557}
   - component: {fileID: 1836095556}
   - component: {fileID: 1836095559}
-  - component: {fileID: 1836095558}
   - component: {fileID: 1836095560}
   - component: {fileID: 1836095561}
   - component: {fileID: 1836095562}
   - component: {fileID: 1836095563}
+  - component: {fileID: 1836095565}
+  - component: {fileID: 1836095564}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -332,19 +333,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1836095558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836095555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e0d97bbf9496a4da947403c9cf7739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _settingsAsset: {fileID: 9197481963319205126, guid: 7f69a02b9e8d6524a940613f1c02da2e, type: 3}
 --- !u!114 &1836095559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MenuAsset: {fileID: 9197481963319205126, guid: 597c752cb146704498d69cf1e47fad22, type: 3}
   _chooseSave: {fileID: 1836095561}
+  _settingsUI: {fileID: 1836095565}
 --- !u!114 &1836095560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +412,35 @@ MonoBehaviour:
   _chooseLevelMenu: {fileID: 1836095560}
   _skillButtonColor: {r: 1, g: 0, b: 0, a: 0.22352941}
   _buyedSkillButtonColor: {r: 0, g: 0, b: 0, a: 0.5882353}
+--- !u!114 &1836095564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836095555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6127bfef622fa134a84d234fb85003e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainSettingsAsset: {fileID: 9197481963319205126, guid: 407308f67ba43e14981522a995f0edfa, type: 3}
+  _settingsUI: {fileID: 1836095565}
+--- !u!114 &1836095565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836095555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d66bec6180b0ed43a16384ff9ec291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsAsset: {fileID: 9197481963319205126, guid: 7f69a02b9e8d6524a940613f1c02da2e, type: 3}
+  _mainSettingsUI: {fileID: 1836095564}
+  _menu: {fileID: 1836095559}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAnimations : MonoBehaviour
+public class PlayerAnimations : WeaponAnimations
 {
     [SerializeField] private Animator _animator;
 

@@ -1,15 +1,11 @@
 using UnityEngine;
 using Tools;
-using Unity.VisualScripting;
 
 public abstract class Weapon : MonoBehaviour
 {
     protected WeaponState _currentState;
 
-    public virtual void Initialize()
-    {
-        UpdateState(WeaponState.Idle);
-    }
+    public abstract void Initialize();
 
     public virtual void FinishReload()
     {
@@ -21,7 +17,7 @@ public abstract class Weapon : MonoBehaviour
         UpdateState(WeaponState.Idle);
     }
 
-    public void RemoveWeapon()
+    public virtual void RemoveWeapon()
     {
         UpdateState(WeaponState.Idle);
     }
@@ -37,15 +33,7 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract void PerformAttack();
 
-    public virtual void Reload()
-    {
-
-    }
-
-    protected virtual void Accept(IWeaponVisitor weaponVisitor)
-    {
-        
-    }
+    public virtual void Reload() {   }
 
     public WeaponState GetState()
     {
@@ -60,8 +48,8 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    public virtual void SetDirection(Transform transform)
+    public virtual void SetDirection(Transform direction)
     {
-        
+
     }
 }

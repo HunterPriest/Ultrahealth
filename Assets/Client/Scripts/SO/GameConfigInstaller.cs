@@ -112,7 +112,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
                 rateOfIncreaseStamina = playerData.rateOfIncreaseStamina;
                 staminaConsumedWhenDashing = playerData.staminaConsumedWhenDashing;
                 staminaConsumedWhenJumping = playerData.staminaConsumedWhenJumping;
-                }
+            }
         }
 
         public PlayerSettings(DataSave.PlayerData playerData)
@@ -120,7 +120,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
             healthSettings = new HealthSettings(playerData);
             movementSettings = new MovementSettings(playerData);
             weaponsSettings = new WeaponsSettings(playerData);
-            cameraSettings = new CameraSettings(0.5f);
+            cameraSettings = new CameraSettings(playerData.sens);
         }
     }
 

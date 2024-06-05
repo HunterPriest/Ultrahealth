@@ -1,9 +1,16 @@
 using UnityEngine;
 using Tools;
 
-public abstract class RaycastWeapon : FirearmWeapon
+public abstract class RaycastWeapon : DamagingWeapon
 {
     [SerializeField] private float _distance;
+    protected Transform direction;
+    
+    public override void SetDirection(Transform transform)
+    {
+        direction = transform;
+    }
+
 
     public override void PerformAttack()
     {
