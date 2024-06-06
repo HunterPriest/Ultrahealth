@@ -49,8 +49,8 @@ public class Saiga : RaycastWeapon, IPlayerWeapon
         OnPutAway.Invoke();
     }
 
-    protected override void Accept(IWeaponVisitor weaponVisitor)
+    protected override void Accept(IWeaponVisitor weaponVisitor, RaycastHit hit)
     {
-        weaponVisitor?.Visit(this);
+        weaponVisitor?.Visit(this, hit);
     }
 }

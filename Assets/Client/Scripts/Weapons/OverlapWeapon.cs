@@ -28,4 +28,5 @@ public abstract class OverlapWeapon : DamagingWeapon
         }
     }
 
+    protected abstract void Accept(IWeaponVisitor weaponVisitor);
 }

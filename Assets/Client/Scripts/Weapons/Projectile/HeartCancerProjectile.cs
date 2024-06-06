@@ -11,4 +11,10 @@ public class HeartCancerProjectile : Projectile
     {
         Attack(other.gameObject);
     }
+
+    protected override void Attack(GameObject gameObject)
+    {
+        base.Attack(gameObject);
+        Destroy(this.gameObject);
+    }
 }

@@ -1,14 +1,19 @@
+using UnityEngine;
+
 public class EnemyHitBox : HitBox, IWeaponVisitor
 {
+    [SerializeField] private Decal _decal;
 
-    public void Visit(Saiga weapon)
+    public void Visit(Saiga weapon, RaycastHit hit)
     {
         damageable.TakeDamage(weapon.damage);
+        SpawnDecal(hit);
     }
     
-    public void Visit(Automat weapon)
+    public void Visit(Automat weapon, RaycastHit hit)
     {
         damageable.TakeDamage(weapon.damage);
+        SpawnDecal(hit);
     }
 
     public void Visit(BacteriaWeapon weapon)
@@ -23,5 +28,10 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
     public void Visit(Grenade grenade)
     {
         damageable.TakeDamage(grenade.damage);
+    }
+
+    private void SpawnDecal(RaycastHit hit)
+    {
+        Instantiate(_decal.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
     }
 }

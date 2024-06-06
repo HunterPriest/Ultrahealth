@@ -24,7 +24,9 @@ public abstract class RaycastWeapon : DamagingWeapon
     {
         if(hit.transform.gameObject.TryGetComponent<IWeaponVisitor>(out IWeaponVisitor weaponVisitor))
         {
-            Accept(weaponVisitor);
+            Accept(weaponVisitor, hit);
         }
     }
+
+    protected abstract void Accept(IWeaponVisitor weaponVisitor, RaycastHit hit);
 }

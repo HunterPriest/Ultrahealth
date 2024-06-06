@@ -48,9 +48,9 @@ public class Automat : RaycastWeapon, IPlayerWeapon
         UpdateState(WeaponState.Idle);
         OnPutAway.Invoke();
     }
-    protected override void Accept(IWeaponVisitor weaponVisitor)
+    
+    protected override void Accept(IWeaponVisitor weaponVisitor, RaycastHit hit)
     {
-        weaponVisitor?.Visit(this);
+        weaponVisitor?.Visit(this, hit);
     }
-
 }
