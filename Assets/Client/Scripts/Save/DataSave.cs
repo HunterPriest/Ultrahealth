@@ -19,6 +19,11 @@ namespace DataSave
         public float rateOfIncreaseStamina; 
         public float staminaConsumedWhenDashing;
         public float staminaConsumedWhenJumping;
+    }
+
+    [System.Serializable]
+    public class SettingsData
+    {
         public float sens;
     }
 }

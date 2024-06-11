@@ -25,7 +25,7 @@ public class SpawnEnemyWeapon : Weapon
     {
         for(int i = 0; i < _spawnPoints.Length; i++)
         {
-            GameObject enemyObj = Instantiate(_enemyies[UnityEngine.Random.Range(0, _enemyies.Length)] , 
+            GameObject enemyObj = Instantiate(_enemyies[UnityEngine.Random.Range(0, _enemyies.Length)], 
             _spawnPoints[i].position, Quaternion.identity);
             _amountEnemy++;
             Enemy enemy = enemyObj.GetComponent<Enemy>();

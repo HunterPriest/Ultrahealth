@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7772860015023190492}
   - component: {fileID: 1661442404051786615}
   - component: {fileID: 2485016960099941281}
+  - component: {fileID: -407094666595737227}
+  - component: {fileID: 7282887786983119981}
   m_Layer: 5
   m_Name: UIDocumentInLevel
   m_TagString: Untagged
@@ -80,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseAsset: {fileID: 9197481963319205126, guid: 0a7f04bfd6561984783806101c10378c, type: 3}
+  _settingsUI: {fileID: 0}
 --- !u!114 &7772860015023190492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,3 +122,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathPlayerAsset: {fileID: 9197481963319205126, guid: 303fd5bca7d472c43aab9e4b0dd032d8, type: 3}
+--- !u!114 &-407094666595737227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963197534754371702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d66bec6180b0ed43a16384ff9ec291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsAsset: {fileID: 9197481963319205126, guid: 7f69a02b9e8d6524a940613f1c02da2e, type: 3}
+  _mainSettingsUI: {fileID: 7282887786983119981}
+  _menu: {fileID: 0}
+  _pause: {fileID: 3568293702885248390}
+--- !u!114 &7282887786983119981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963197534754371702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6127bfef622fa134a84d234fb85003e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainSettingsAsset: {fileID: 9197481963319205126, guid: 407308f67ba43e14981522a995f0edfa, type: 3}
+  _settingsUI: {fileID: -407094666595737227}

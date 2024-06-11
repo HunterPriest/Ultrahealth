@@ -2,17 +2,17 @@ using UnityEngine;
 
 public static class Saver
 {
-    public static void Save<T>(int indexSave, T saveData)
+    public static void Save<T>(string name, T saveData)
     {
         string jsonDataName = JsonUtility.ToJson(saveData, true);
-        PlayerPrefs.SetString(indexSave.ToString(), jsonDataName);
+        PlayerPrefs.SetString(name, jsonDataName);
     }
 
-    public static T Load<T>(int indexSave) where T: new()
+    public static T Load<T>(string name) where T: new()
     {
-        if (PlayerPrefs.HasKey(indexSave.ToString()))
+        if (PlayerPrefs.HasKey(name))
         {
-            string jsonDataName = PlayerPrefs.GetString(indexSave.ToString());
+            string jsonDataName = PlayerPrefs.GetString(name);
             return JsonUtility.FromJson<T>(jsonDataName);
         }
         else
@@ -21,9 +21,9 @@ public static class Saver
         }
     }
 
-    public static bool HasSave(int indexSave)
+    public static bool HasSave(string name)
     {
-        if (PlayerPrefs.HasKey(indexSave.ToString()))
+        if (PlayerPrefs.HasKey(name))
         {
             return true;
         }

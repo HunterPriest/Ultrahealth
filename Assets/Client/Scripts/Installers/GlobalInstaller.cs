@@ -11,6 +11,7 @@ public class GlobalInstaller : MonoInstaller
         BindInputManager();
         BindGameMachine();
         BindPlayerSaver();
+        BindSettingsSave();
     }
 
     private void BindInputManager()
@@ -31,5 +32,10 @@ public class GlobalInstaller : MonoInstaller
     private void BindPlayerSaver()
     {
         Container.Bind<PlayerSaver>().AsSingle().NonLazy();
+    }
+
+    private void BindSettingsSave()
+    {
+        Container.Bind<SettingsSaver>().AsSingle().NonLazy();
     }
 }

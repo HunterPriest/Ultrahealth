@@ -1193,6 +1193,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296971243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -407094666595737227, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+  m_PrefabInstance: {fileID: 2052241658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d66bec6180b0ed43a16384ff9ec291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1828312170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3568293702885248390, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
+      propertyPath: _settingsUI
+      value: 
+      objectReference: {fileID: 1296971243}
     - target: {fileID: 4963197534754371702, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
       propertyPath: m_Name
       value: UIDocumentInLevel

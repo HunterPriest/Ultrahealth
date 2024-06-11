@@ -49,7 +49,7 @@ public class ChooseSave : UIToolkitElement
 
     private void SubscribeButton(Button button)
     {
-        if(Saver.HasSave(button.tabIndex))
+        if(Saver.HasSave(button.tabIndex.ToString()))
         {
             button.text = "Save " + button.tabIndex.ToString();
             button.clicked += () => OnButtonWithSave(button.tabIndex);

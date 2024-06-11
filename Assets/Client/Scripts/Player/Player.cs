@@ -20,13 +20,14 @@ public class Player : Character
 
     [Inject]
     public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,
-    PlayerSaver playerSaver, GameMachine gameMachine, ComboCounter comboCounter)
+    PlayerSaver playerSaver, GameMachine gameMachine, ComboCounter comboCounter, SettingsSaver settingsSaver)
     {   
+        gameUI.SetSettingsSaverAndPlayer(this, settingsSaver);
         UpdatePlayerState(PlayerState.Idle);
         _gameUI = gameUI;
         _gameMachine = gameMachine;
 
-        playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave);
+        playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave, settingsSaver.currentSave);
         _input.Initialize(this, input, gameUI);
         CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
         _unit.Initialize(playerSettings.healthSettings, playerSettings.movementSettings, this);

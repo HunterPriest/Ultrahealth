@@ -35,8 +35,11 @@ public class Pill : ProjectileWeapon, IPlayerWeapon
 
     public override void RemoveWeapon()
     {
-        UpdateState(WeaponState.PutAway);
-        _animations.PutAway();
+        if(currentState != WeaponState.PutAway)
+        {
+            UpdateState(WeaponState.PutAway);
+            _animations.PutAway();
+        }
     }
 
     void IPlayerWeapon.FinishPutAway()

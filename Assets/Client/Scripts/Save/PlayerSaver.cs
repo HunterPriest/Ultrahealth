@@ -33,7 +33,7 @@ public class PlayerSaver
     private DataSave.PlayerData SaveNewPlayerData(int indexClass)
     {
         DataSave.PlayerData playerData = CreateNewPlayerData(indexClass);
-        Saver.Save<DataSave.PlayerData>(currentSave.indexSave, playerData);
+        Saver.Save<DataSave.PlayerData>(currentSave.indexSave.ToString(), playerData);
         return playerData;
     }
 
@@ -68,8 +68,6 @@ public class PlayerSaver
         playerData.rateOfIncreaseStamina = classConfig.rateOfIncreaseStamina;
         playerData.staminaConsumedWhenDashing = classConfig.staminaConsumedWhenDashing;
         playerData.staminaConsumedWhenJumping = classConfig.staminaConsumedWhenJumping;
-        playerData.sens = 0.5f;
-        
 
         return playerData;
     }
@@ -77,11 +75,11 @@ public class PlayerSaver
 
     public DataSave.PlayerData LoadPlayerData(int indexSave)
     {
-        return Saver.Load<DataSave.PlayerData>(indexSave);
+        return Saver.Load<DataSave.PlayerData>(indexSave.ToString());
     }
 
     public void SavePlayerData(int indexSave, DataSave.PlayerData playerData)
     {
-        Saver.Save<DataSave.PlayerData>(indexSave, playerData);
+        Saver.Save<DataSave.PlayerData>(indexSave.ToString(), playerData);
     }
 }

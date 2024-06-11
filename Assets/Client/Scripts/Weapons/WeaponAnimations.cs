@@ -19,6 +19,11 @@ public class WeaponAnimations : MonoBehaviour
         _animator.Play("Take");
     }
 
+    public void Idle()
+    {
+        _animator.Play("Idle");
+    }
+
     public void PutAway()
     {
         _animator.Play("PutAway");

@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: {fileID: 3189571133825708445}
-  _decal: {fileID: 8442520870542493243, guid: 57f94382a974bc04982ddc5816b44e00, type: 3}
+  _decal: {fileID: -5408592197705883677, guid: 64cb16b819dd594468e6e770a500fdcf, type: 3}
 --- !u!114 &4019270132557072591
 MonoBehaviour:
   m_ObjectHideFlags: 0

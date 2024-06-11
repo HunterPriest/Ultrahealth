@@ -6,6 +6,7 @@ public class SettingsUI : UIToolkitElement
     [SerializeField] private VisualTreeAsset _settingsAsset;
     [SerializeField] private MainSettingsUI _mainSettingsUI;
     [SerializeField] private Menu _menu;
+    [SerializeField] private Pause _pause;
 
     private VisualElement _settings;
 
@@ -21,7 +22,17 @@ public class SettingsUI : UIToolkitElement
         Button back = _container.Q<Button>("Back");
 
         mainSettings.clicked += _mainSettingsUI.Open;
-        back.clicked += _menu.OpenMenu;
+        back.clicked += () =>
+        {
+            if(_menu != null)
+            {
+                _menu.OpenMenu();
+            }
+            else if(_pause != null)
+            {
+                _pause.OpenPause();
+            }
+        };
     }
 
     protected override void ResetContainer(VisualElement element)

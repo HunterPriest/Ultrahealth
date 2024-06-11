@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startedWeapons:
-  - {fileID: 2511184665411357152, guid: 1ddb82f8a1d8c9c49b8bf594fd541b8d, type: 3}
   - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
+  - {fileID: 3142940249253135695, guid: eb5d13bd9cb66a249a18be81d4081bd1, type: 3}
   - {fileID: 6699234126277893134, guid: 130fd8f64eecd1b45bedf0d7ed30a4e4, type: 3}
 --- !u!1 &7657326656764830192
 GameObject:

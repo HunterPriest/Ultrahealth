@@ -6,6 +6,14 @@ public class PlayerLook : MonoBehaviour
     private GameConfigInstaller.PlayerSettings.CameraSettings _cameraSettings;
     private Transform _fpsRig;
     private float _xRotate;
+
+    public void UpdateCameraSettings(GameConfigInstaller.PlayerSettings.CameraSettings cameraSettings)
+    {
+        if(_cameraSettings != cameraSettings)
+        {
+            _cameraSettings = cameraSettings;
+        }
+    }
     
     public void Initialize(Transform fpsRig, GameConfigInstaller.PlayerSettings.CameraSettings cameraSettings)
     {

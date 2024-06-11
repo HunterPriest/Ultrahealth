@@ -6,6 +6,7 @@ using Zenject;
 public class Pause : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _pauseAsset;
+    [SerializeField] private SettingsUI _settingsUI;
 
     private VisualElement _pause;
 
@@ -32,11 +33,8 @@ public class Pause : UIToolkitElement
         Button settings = _container.Q<Button>("Settings");
         Button exitToMenu = _container.Q<Button>("ExitToMenu");
 
-        continueGame.clicked += () =>
-        {
-            _gameUI.ClosePause();
-        };
-
-        exitToMenu.clicked += () => _gameMachine.FinishGame();
+        continueGame.clicked += _gameUI.ClosePause;
+        settings.clicked += _settingsUI.Open;
+        exitToMenu.clicked += _gameMachine.FinishGame;
     }
 }

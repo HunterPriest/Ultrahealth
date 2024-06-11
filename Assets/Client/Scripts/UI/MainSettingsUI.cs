@@ -8,13 +8,13 @@ public class MainSettingsUI : UIToolkitElement
     [SerializeField] private SettingsUI _settingsUI;
 
     private VisualElement _settings;
-    private PlayerSaver _playerSaver;
+    private SettingsSaver _settingsSaver;
     private Slider _sens;
 
     [Inject]
-    private void Construct(PlayerSaver playerSaver)
+    private void Construct(SettingsSaver settingsSaver)
     {
-        _playerSaver = playerSaver;
+        _settingsSaver = settingsSaver;
     }
 
     protected override void Initialize()
@@ -29,7 +29,7 @@ public class MainSettingsUI : UIToolkitElement
         Button back = _container.Q<Button>("Back");
 
         _sens.highValue = 1;
-        _sens.value = _playerSaver.currentSave.playerSave.sens;
+        _sens.value = _settingsSaver.currentSave.sens;
         _sens.lowValue = 0;
 
         back.clicked += _settingsUI.Open;
@@ -38,7 +38,7 @@ public class MainSettingsUI : UIToolkitElement
 
     private void Save()
     {
-        _playerSaver.currentSave.playerSave.sens = _sens.value;
-        _playerSaver.SaveCurrentSave();
+        _settingsSaver.currentSave.sens = _sens.value;
+        _settingsSaver.SaveCurrentSave();
     }
 }

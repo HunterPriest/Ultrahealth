@@ -3,7 +3,7 @@ using Tools;
 
 public abstract class Weapon : MonoBehaviour
 {
-    protected WeaponState _currentState;
+    protected WeaponState currentState;
 
     public abstract void Initialize();
 
@@ -24,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        if(_currentState != WeaponState.Idle)
+        if(currentState != WeaponState.Idle)
         {
             return;
         }
@@ -37,14 +37,14 @@ public abstract class Weapon : MonoBehaviour
 
     public WeaponState GetState()
     {
-        return _currentState;
+        return currentState;
     }
 
     protected void UpdateState(WeaponState weaponState)
     {
-        if(_currentState != weaponState)
+        if(currentState != weaponState)
         {
-            _currentState = weaponState;
+            currentState = weaponState;
         }
     }
 

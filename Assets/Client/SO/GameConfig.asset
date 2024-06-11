@@ -72,3 +72,5 @@ MonoBehaviour:
         Value: {r: 0, g: 0, b: 1, a: 1}
     timeOfDescreaseCombo: 0.5
     timeOfHideZeroCombo: 5
+  standartSettings:
+    sens: 0.5

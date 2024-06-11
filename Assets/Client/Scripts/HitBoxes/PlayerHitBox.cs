@@ -20,4 +20,6 @@ public class PlayerHitBox : HitBox, IWeaponVisitor
     {
         damageable.TakeDamage(grenade.damage);
     }
+
+    public void Visit(Syrnage syrnage, RaycastHit hit) {   }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 using Zenject;
 using AYellowpaper.SerializedCollections;
 using Tools;
+using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "GameConfigInstaller", menuName = "Installers/GameConfigInstaller")]
 public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>
@@ -13,6 +14,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
     public PlayerSettings playerSettings;
     public LevelUpSettings levelUpSettings;
     public ComboSetting comboSetting;
+    public StandartSettings standartSettings;
 
     [Serializable]
     public class SavesSettings
@@ -27,17 +29,17 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
         public int amountLevels;
 
         [SerializedDictionary("Level grade", "Color")]
-        public SerializedDictionary<LevelGrade, Color> rangGradeColor;
+        public AYellowpaper.SerializedCollections.SerializedDictionary<LevelGrade, Color> rangGradeColor;
     }
 
     [Serializable]
     public class ComboSetting
     {
         [SerializedDictionary("Index", "AmountCombo")]
-        [SerializeField] private SerializedDictionary<int, int> rangGradeAmountCombo;
+        [SerializeField] private AYellowpaper.SerializedCollections.SerializedDictionary<int, int> rangGradeAmountCombo;
 
         [SerializedDictionary("Index", "Color")]
-        [SerializeField] private SerializedDictionary<int, Color> rangGradeColor;
+        [SerializeField] private AYellowpaper.SerializedCollections.SerializedDictionary<int, Color> rangGradeColor;
 
         public float timeOfDescreaseCombo;
         public float timeOfHideZeroCombo;
@@ -65,11 +67,11 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
 
         public class CameraSettings
         {
-            public float sens {get; private set; }
+            public float sens { get; private set; }
 
-            public CameraSettings(float sensCam)
+            public CameraSettings(DataSave.SettingsData settingsData)
             {
-                sens = sensCam;
+                sens = settingsData.sens;
             }
         }
 
@@ -115,12 +117,12 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
             }
         }
 
-        public PlayerSettings(DataSave.PlayerData playerData)
+        public PlayerSettings(DataSave.PlayerData playerData, DataSave.SettingsData settingsData)
         {
             healthSettings = new HealthSettings(playerData);
             movementSettings = new MovementSettings(playerData);
             weaponsSettings = new WeaponsSettings(playerData);
-            cameraSettings = new CameraSettings(playerData.sens);
+            cameraSettings = new CameraSettings(settingsData);
         }
     }
 
@@ -131,6 +133,13 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
         public ClassConfig bacteria;
         public ClassConfig nanorobot;
         public ClassConfig singlecell;
+    }
+
+    [Serializable]
+    public class StandartSettings
+    {
+        [Header("Main")]
+        public float sens;
     }
 
     [Serializable]
@@ -183,5 +192,6 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
         Container.Bind<PlayerSettings>().FromInstance(playerSettings).NonLazy();
         Container.Bind<LevelUpSettings>().FromInstance(levelUpSettings).NonLazy();
         Container.Bind<ComboSetting>().FromInstance(comboSetting).NonLazy();
+        Container.Bind<StandartSettings>().FromInstance(standartSettings).NonLazy();
     }
 }

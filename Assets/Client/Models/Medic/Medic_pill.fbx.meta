@@ -190,7 +190,7 @@ ModelImporter:
       - time: 1
         functionName: FinishPutAway
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 3903d5681851d5e4dacdfa0c92444a27, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 68374989a17a139419c04f948b4c9a4b, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

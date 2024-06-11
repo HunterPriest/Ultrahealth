@@ -30,8 +30,14 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
         damageable.TakeDamage(grenade.damage);
     }
 
+    public void Visit(Syrnage syrnage, RaycastHit hit)
+    {
+        damageable.TakeDamage(syrnage.damage);
+        SpawnDecal(hit);
+    }
+
     private void SpawnDecal(RaycastHit hit)
     {
-        Instantiate(_decal.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
+        Instantiate(_decal.gameObject, hit.point, Quaternion.LookRotation(hit.normal), hit.transform);
     }
 }
