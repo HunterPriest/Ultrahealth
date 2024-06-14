@@ -1,14 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
-    <ui:VisualElement name="MenuSettings" style="flex-grow: 1;">
+    <ui:VisualElement name="MenuSettings" style="flex-grow: 1; width: 1920px; height: 1080px;">
         <ui:VisualElement name="Backround" style="flex-grow: 1; background-color: rgb(77, 27, 27); align-items: center;">
             <ui:Label tabindex="-1" text="Настройки" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="defoltOldKallText" style="font-size: 70%;" />
             <ui:VisualElement name="SettingsContainer" style="flex-grow: 1; top: 10%; flex-direction: row; width: 94%;">
-                <ui:VisualElement name="SettingsButtons" style="flex-grow: 1;">
-                    <ui:Button text="Главное" parse-escape-sequences="true" display-tooltip-when-elided="true" name="mainSettings" class="defoltOldKallButtons defoltHoverButton defoltFocusButton defoltOldKallText" style="color: rgb(255, 255, 255); font-size: 35px; width: 320px;" />
-                    <ui:Button text="Управление" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Control" class="defoltOldKallButtons" style="font-size: 35px; width: 320px;" />
-                    <ui:Button text="Графика" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Graphic" class="defoltOldKallButtons" style="font-size: 35px; width: 320px;" />
-                    <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="defoltOldKallButtons" style="font-size: 35px; width: 320px;" />
+                <ui:VisualElement name="SettingsButtons" style="flex-grow: 1; width: 400px;">
+                    <ui:Button text="Главное" parse-escape-sequences="true" display-tooltip-when-elided="true" name="mainSettings" class="defoltOldKallButtons defoltHoverButton defoltFocusButton defoltOldKallText" style="color: rgb(255, 255, 255); font-size: 44px; width: 400px; height: 120px;" />
+                    <ui:Button text="Управление" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Control" class="defoltOldKallButtons" style="font-size: 44px; width: 400px; height: 120px; white-space: normal;" />
+                    <ui:Button text="Графика" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Graphic" class="defoltOldKallButtons" style="font-size: 44px; width: 400px; height: 120px;" />
+                    <ui:Button text="Выход" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="defoltOldKallButtons" style="font-size: 44px; width: 400px; height: 120px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="SetSettings" style="flex-grow: 1; width: 75%; height: 588px;" />
             </ui:VisualElement>

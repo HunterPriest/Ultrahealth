@@ -7,7 +7,7 @@ public class MainSettingsUI : UIToolkitElement
     [SerializeField] private VisualTreeAsset _mainSettingsAsset;
     [SerializeField] private SettingsUI _settingsUI;
 
-    private VisualElement _settings;
+    private VisualElement _mainSettings;
     private SettingsSaver _settingsSaver;
     private Slider _sens;
 
@@ -19,21 +19,18 @@ public class MainSettingsUI : UIToolkitElement
 
     protected override void Initialize()
     {
-        _settings = _mainSettingsAsset.CloneTree();
+        _mainSettings = _mainSettingsAsset.CloneTree();
     }
 
-    public void Open()
+    public void Open(VisualElement moterObj)
     {
-        ResetContainer(_settings);
+        moterObj.Add(_mainSettings);
         _sens = _container.Q<Slider>("Sens");
-        Button back = _container.Q<Button>("Back");
 
         _sens.highValue = 1;
         _sens.value = _settingsSaver.currentSave.sens;
         _sens.lowValue = 0;
 
-        back.clicked += _settingsUI.Open;
-        back.clicked += Save;
     }
 
     private void Save()

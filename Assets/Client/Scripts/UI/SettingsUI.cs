@@ -20,8 +20,9 @@ public class SettingsUI : UIToolkitElement
         ResetContainer(_settings);
         Button mainSettings = _container.Q<Button>("mainSettings");
         Button back = _container.Q<Button>("Back");
+        VisualElement setSettingsPanels = _container.Q<VisualElement>("SetSettings");
 
-        mainSettings.clicked += _mainSettingsUI.Open;
+        mainSettings.clicked += () => _mainSettingsUI.Open(setSettingsPanels);
         back.clicked += () =>
         {
             if(_menu != null)
@@ -33,10 +34,5 @@ public class SettingsUI : UIToolkitElement
                 _pause.OpenPause();
             }
         };
-    }
-
-    protected override void ResetContainer(VisualElement element)
-    {
-        base.ResetContainer(element);
     }
 }
