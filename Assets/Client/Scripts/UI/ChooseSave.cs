@@ -51,7 +51,7 @@ public class ChooseSave : UIToolkitElement
     {
         if(Saver.HasSave(button.tabIndex.ToString()))
         {
-            button.text = "Save " + button.tabIndex.ToString();
+            button.text = "Сохранение " + button.tabIndex.ToString();
             button.clicked += () => OnButtonWithSave(button.tabIndex);
         }
         else

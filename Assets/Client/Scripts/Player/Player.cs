@@ -35,8 +35,8 @@ public class Player : Character
         Weapons.Initialize(_fpsRig);
         _gameUI.gameplayUI.InitializeValues(playerSettings);
 
-        _gameMachine.StopGameAction += _input.UnsubscribeGamplayButtons;
-        _gameMachine.ResumeGameAction += _input.SubscribeGamplayButtons;
+        _gameMachine.StopGameAction += _input.UnsubscribeGamplayActions;
+        _gameMachine.ResumeGameAction += _input.SubscribeGamplayActions;
         
         _unit.OnTakenDamage += _gameUI.gameplayUI.UpdateHealthBarValue;
         _unit.OnTakenDamage += comboCounter.ResetToZero;

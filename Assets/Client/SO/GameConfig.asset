@@ -74,3 +74,4 @@ MonoBehaviour:
     timeOfHideZeroCombo: 5
   standartSettings:
     sens: 0.5
+    maxSens: 5

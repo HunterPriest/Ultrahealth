@@ -17,35 +17,19 @@ public class PlayerInput : MonoBehaviour
 
     public void SubscribePlayer()
     { 
-        _input.PlayerActions.MousePosition.performed += OnMousePosition;
-        _input.PlayerActions.Jump.started += OnJump;
-        _input.PlayerActions.Recharge.started += OnRecharge;
-        _input.PlayerActions.Move.performed += OnChangeDirection;
-        _input.PlayerActions.Move.canceled += OnChangeDirection;
-        _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
-        _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
-        _input.PlayerActions.Shoot.started += OnShoot;
-        _input.PlayerActions.Dash.started += OnDash;
+        SubscribeGamplayActions();
         _input.PlayerActions.Map.started += OnMap;
         _input.PlayerActions.Pause.started += OnPause;
     }
 
     public void UnsubscribePlayer()
     { 
-        _input.PlayerActions.MousePosition.performed -= OnMousePosition;
-        _input.PlayerActions.Jump.started -= OnJump;
-        _input.PlayerActions.Recharge.started -= OnRecharge;
-        _input.PlayerActions.Move.performed -= OnChangeDirection;
-        _input.PlayerActions.Move.canceled -= OnChangeDirection;
-        _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
-        _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
-        _input.PlayerActions.Shoot.started -= OnShoot;
-        _input.PlayerActions.Dash.started -= OnDash;
+        UnsubscribeGamplayActions();
         _input.PlayerActions.Map.started -= OnMap;
         _input.PlayerActions.Pause.started -= OnPause;
     }
 
-    public void UnsubscribeGamplayButtons()
+    public void UnsubscribeGamplayActions()
     {
         _input.PlayerActions.MousePosition.performed -= OnMousePosition;
         _input.PlayerActions.Jump.started -= OnJump;
@@ -58,7 +42,7 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.Dash.started -= OnDash;
     }
 
-    public void SubscribeGamplayButtons()
+    public void SubscribeGamplayActions()
     {
         _input.PlayerActions.MousePosition.performed += OnMousePosition;
         _input.PlayerActions.Jump.started += OnJump;

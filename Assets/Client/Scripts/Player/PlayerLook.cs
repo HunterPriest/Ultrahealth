@@ -25,7 +25,8 @@ public class PlayerLook : MonoBehaviour
     {
         transform.Rotate(Vector3.up * mousePosition.x * Time.deltaTime * _cameraSettings.sens);
         _xRotate -= mousePosition.y * Time.deltaTime * _cameraSettings.sens;
-        Quaternion fpsRigRotation = Quaternion.Euler(Mathf.Clamp(_xRotate, -80f, 80f), 0, 0);
+        _xRotate = Mathf.Clamp(_xRotate, -80f, 80f);
+        Quaternion fpsRigRotation = Quaternion.Euler(_xRotate, 0, 0);
         _fpsRig.localRotation = fpsRigRotation;
     }
 }

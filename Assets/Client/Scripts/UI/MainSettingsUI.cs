@@ -9,12 +9,14 @@ public class MainSettingsUI : UIToolkitElement
 
     private VisualElement _mainSettings;
     private SettingsSaver _settingsSaver;
+    private GameConfigInstaller.StandartSettings _standartSettings;
     private Slider _sens;
 
     [Inject]
-    private void Construct(SettingsSaver settingsSaver)
+    private void Construct(SettingsSaver settingsSaver, GameConfigInstaller.StandartSettings standartSettings)
     {
         _settingsSaver = settingsSaver;
+        _standartSettings = standartSettings;
     }
 
     protected override void Initialize()
@@ -22,18 +24,17 @@ public class MainSettingsUI : UIToolkitElement
         _mainSettings = _mainSettingsAsset.CloneTree();
     }
 
-    public void Open(VisualElement moterObj)
+    public void Open(VisualElement settings)
     {
-        moterObj.Add(_mainSettings);
+        settings.Add(_mainSettings);
         _sens = _container.Q<Slider>("Sens");
 
-        _sens.highValue = 1;
-        _sens.value = _settingsSaver.currentSave.sens;
+        _sens.highValue = _standartSettings.maxSens;
         _sens.lowValue = 0;
-
+        _sens.value = _settingsSaver.currentSave.sens;
     }
 
-    private void Save()
+    public void Save()
     {
         _settingsSaver.currentSave.sens = _sens.value;
         _settingsSaver.SaveCurrentSave();

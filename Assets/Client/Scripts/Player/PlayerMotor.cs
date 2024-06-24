@@ -34,15 +34,12 @@ public class PlayerMotor : MonoBehaviour
 
     public void Jump()
     {
-        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenJumping <= 0))
+        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenJumping <= 0) || !_characterController.isGrounded)
         {
             return;
         }
         _playerUnit.LowerStamina(_movementSettings.staminaConsumedWhenJumping);
-        if (_characterController.isGrounded)
-        {
-            _playerVelocity.y = Mathf.Sqrt(_movementSettings.jumpForce * -2f * Physics.gravity.y);
-        }
+        _playerVelocity.y = Mathf.Sqrt(_movementSettings.jumpForce * -2f * Physics.gravity.y);
     }
 
     public void Dash()

@@ -21,8 +21,18 @@ public class SettingsUI : UIToolkitElement
         Button mainSettings = _container.Q<Button>("mainSettings");
         Button back = _container.Q<Button>("Back");
         VisualElement setSettingsPanels = _container.Q<VisualElement>("SetSettings");
+        _mainSettingsUI.Open(setSettingsPanels);
+        Button save = _container.Q<Button>("Save");
+        
+        save.clicked += () =>
+        {
+            _mainSettingsUI.Save();
+        };
 
-        mainSettings.clicked += () => _mainSettingsUI.Open(setSettingsPanels);
+        mainSettings.clicked += () => 
+        {
+            _mainSettingsUI.Open(setSettingsPanels);
+        };
         back.clicked += () =>
         {
             if(_menu != null)

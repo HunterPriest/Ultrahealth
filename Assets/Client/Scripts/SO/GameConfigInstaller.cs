@@ -140,6 +140,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
     {
         [Header("Main")]
         public float sens;
+        public float maxSens;
     }
 
     [Serializable]
