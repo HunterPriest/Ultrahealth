@@ -23,8 +23,7 @@ public class PlayerWeapons : MonoBehaviour
 
     private void SpawnWeapon(int indexInArray, Transform fpsRig, bool stateWeapon)
     {
-        _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig.position + _startedWeapons[indexInArray].transform.position, 
-        Quaternion.identity, fpsRig).GetComponent<IPlayerWeapon>());
+        _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig).GetComponent<IPlayerWeapon>());
         _weapons[indexInArray].weapon.Initialize();
         if(_weapons[indexInArray] is RaycastWeapon)
         {

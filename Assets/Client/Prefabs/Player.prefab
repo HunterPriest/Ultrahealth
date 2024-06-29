@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7824536503448267402}
@@ -175,7 +175,6 @@ MonoBehaviour:
   _startedWeapons:
   - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
   - {fileID: 3142940249253135695, guid: eb5d13bd9cb66a249a18be81d4081bd1, type: 3}
-  - {fileID: 6699234126277893134, guid: 130fd8f64eecd1b45bedf0d7ed30a4e4, type: 3}
 --- !u!1 &7657326656764830192
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +274,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 69
+  field of view: 80
   orthographic: 0
   orthographic size: 0.005593998
   m_Depth: 0

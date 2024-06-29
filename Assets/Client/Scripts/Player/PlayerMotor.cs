@@ -65,8 +65,8 @@ public class PlayerMotor : MonoBehaviour
         }
         _playerUnit.LowerStamina(_movementSettings.staminaConsumedWhenDashing);
 
-        float startTime = Time.time;
-        while(Time.time < startTime + _movementSettings.dashTime)
+        float endTime = Time.time + _movementSettings.dashTime;
+        while(Time.time < endTime)
         {
             _characterController.Move(transform.TransformDirection(dashDirection) * _movementSettings.dashSpeed * Time.deltaTime);
             yield return null;  
