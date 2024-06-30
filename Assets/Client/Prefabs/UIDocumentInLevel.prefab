@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2485016960099941281}
   - component: {fileID: -407094666595737227}
   - component: {fileID: 7282887786983119981}
+  - component: {fileID: 5830287472706688167}
   m_Layer: 5
   m_Name: UIDocumentInLevel
   m_TagString: Untagged
@@ -82,7 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseAsset: {fileID: 9197481963319205126, guid: 0a7f04bfd6561984783806101c10378c, type: 3}
-  _settingsUI: {fileID: 0}
+  _settingsUI: {fileID: -407094666595737227}
+  _directoruUI: {fileID: 5830287472706688167}
 --- !u!114 &7772860015023190492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +154,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainSettingsAsset: {fileID: 9197481963319205126, guid: 407308f67ba43e14981522a995f0edfa, type: 3}
   _settingsUI: {fileID: -407094666595737227}
+--- !u!114 &5830287472706688167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963197534754371702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9abc1fc5a344f4ebe49e77b1b1bf93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menu: {fileID: 0}
+  _pause: {fileID: 0}
+  _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}

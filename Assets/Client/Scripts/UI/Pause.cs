@@ -7,6 +7,7 @@ public class Pause : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _pauseAsset;
     [SerializeField] private SettingsUI _settingsUI;
+    [SerializeField] private DirectoryUI _directoruUI;
 
     private VisualElement _pause;
 
@@ -30,10 +31,12 @@ public class Pause : UIToolkitElement
         ResetContainer(_pause);
 
         Button continueGame = _container.Q<Button>("Cont");
+        Button directory = _container.Q<Button>("Directory");
         Button settings = _container.Q<Button>("Settings");
         Button exitToMenu = _container.Q<Button>("ExitToMenu");
 
         continueGame.clicked += _gameUI.ClosePause;
+        directory.clicked += _directoruUI.OpenDirectory;
         settings.clicked += _settingsUI.Open;
         exitToMenu.clicked += _gameMachine.FinishGame;
     }
