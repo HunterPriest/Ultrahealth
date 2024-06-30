@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -7579741152625135012}
   - component: {fileID: 6243802828896330972}
   - component: {fileID: 7654272514596067555}
+  - component: {fileID: 8846957362426452610}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -175,6 +176,14 @@ MonoBehaviour:
   _startedWeapons:
   - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
   - {fileID: 3142940249253135695, guid: eb5d13bd9cb66a249a18be81d4081bd1, type: 3}
+--- !u!81 &8846957362426452610
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285030414775975039}
+  m_Enabled: 1
 --- !u!1 &7657326656764830192
 GameObject:
   m_ObjectHideFlags: 0

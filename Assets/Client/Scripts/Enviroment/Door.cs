@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private Trigger _trigger;
     [SerializeField] private Animator _animator;
+    [SerializeField] private MeshRenderer _spriteRenderer;
 
     private Vector3 _point1;
     private Vector3 _point2;
@@ -18,6 +19,7 @@ public class Door : MonoBehaviour
     private Vector3 _point1old;
     private Vector3 _point2old;
 
+    private bool _isBlocked = false;
     private bool _isOpen = false;
 
     private void OnValidate()
@@ -30,19 +32,18 @@ public class Door : MonoBehaviour
         _point1old = _part1.position;
         _point2old = _part2.position;
 
-        _trigger.OnEnter += () => _animator.Play("Open");
-        _trigger.OnExit += () => _animator.Play("Close");
+        _trigger.OnEnter += Open;
+        _trigger.OnExit += Close;
     }
 
 
     private void Open()
     {
-        if(!_isOpen)
+        if(!_isOpen && !_isBlocked)
         {
             _isOpen = true;
             _collider.enabled = false;
-            StartCoroutine(OpenCoroutine());
-            print(_isOpen);
+            _animator.Play("Open");
         }
     }
 
@@ -52,30 +53,19 @@ public class Door : MonoBehaviour
         {
             _isOpen = false;
             _collider.enabled = true;
-            StartCoroutine(CloseCoroutine());
-            print(_isOpen);
+            _animator.Play("Close");
         }
     }
 
-    private IEnumerator OpenCoroutine()
+    public void Block()
     {
-        StopAllCoroutines();
-        while(_part1.position.y >= _point2.y && _part2.position.y >= _point1.y)
-        {
-            _part1.position = Vector3.MoveTowards(_part1.position, _point1, Time.deltaTime * _speed);
-            _part2.position = Vector3.MoveTowards(_part2.position, _point2, Time.deltaTime * _speed);
-            yield return null;  
-        }
+        _isBlocked = true;
+        _spriteRenderer.enabled = true;
     }
 
-    private IEnumerator CloseCoroutine()
+    public void Unblock()
     {
-        StopAllCoroutines();
-        while(_part1.position.y >= _point1old.y && _part2.position.y >= _point2old.y)
-        {
-            _part1.position = Vector3.MoveTowards(_part1.position, _point1old, Time.deltaTime * _speed);
-            _part2.position = Vector3.MoveTowards(_part2.position, _point2old, Time.deltaTime * _speed);
-            yield return null;  
-        }
+        _isBlocked = false;
+        _spriteRenderer.enabled = false;
     }
 }

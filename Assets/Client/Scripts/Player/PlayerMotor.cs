@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
+    [SerializeField] private PlayerSound _playerSound;
 
     private Vector3 _playerVelocity;
     private Vector3 _direction;
@@ -18,7 +19,11 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        _characterController.Move(transform.TransformDirection(_direction) * _movementSettings.speed * Time.deltaTime);
+        if(_direction != Vector3.zero)
+        {
+            _characterController.Move(transform.TransformDirection(_direction) * _movementSettings.speed * Time.deltaTime);
+            _playerSound.Walk();    
+        }
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         if (_characterController.isGrounded && _playerVelocity.y < 0)
         {
@@ -38,6 +43,7 @@ public class PlayerMotor : MonoBehaviour
         {
             return;
         }
+        _playerSound.Jump();
         _playerUnit.LowerStamina(_movementSettings.staminaConsumedWhenJumping);
         _playerVelocity.y = Mathf.Sqrt(_movementSettings.jumpForce * -2f * Physics.gravity.y);
     }
@@ -48,6 +54,7 @@ public class PlayerMotor : MonoBehaviour
         {
             return;
         }
+        _playerSound.Dash();
         StartCoroutine(DashCorutine());
     }
 
