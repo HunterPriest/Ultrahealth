@@ -8,6 +8,7 @@
     -unity-font: url('project://database/Assets/Client/Fonts/ST-SimpleSquare/ST-SimpleSquare.ttf?fileID=12800000&guid=481bdf527b52a2449b19c1cd427c64a2&type=3#ST-SimpleSquare');
     align-items: stretch;
     -unity-font-definition: initial;
+    flex-wrap: wrap;
 }
 
 .defoltOldKallButtons {

@@ -459,6 +459,9 @@ MonoBehaviour:
   _menu: {fileID: 1836095559}
   _pause: {fileID: 0}
   _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
+  _enemyDirectory:
+  - {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
+  - {fileID: 11400000, guid: 62f473327cb0cae46b9b012ec423f90c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
