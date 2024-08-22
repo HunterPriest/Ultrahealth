@@ -1,13 +1,24 @@
 using UnityEngine;
 using Tools;
 using System;
+using Zenject;
 
 public class Enemy : Character
 {
     protected EnemyState currentStateType = EnemyState.Idle;
     protected IStateEnemy currentState;
 
+    public EnemyDirectorySO enemyInDirectory;
+
     public Action OnDead;
+
+    private PlayerSaver _playerSaver;
+
+    [Inject]
+    private void Construct(PlayerSaver playerSaver)
+    {
+        _playerSaver = playerSaver;
+    }
 
     protected virtual void OnValidate() {   }
 
@@ -36,5 +47,7 @@ public class Enemy : Character
     {
         base.Dead();
         OnDead?.Invoke();
+        _playerSaver.currentSave._killEnemies.Add(enemyInDirectory);
+
     }
 }

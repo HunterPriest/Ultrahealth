@@ -349,7 +349,6 @@ MonoBehaviour:
   _MenuAsset: {fileID: 9197481963319205126, guid: 597c752cb146704498d69cf1e47fad22, type: 3}
   _chooseSave: {fileID: 1836095561}
   _settingsUI: {fileID: 1836095565}
-  _directoruUI: {fileID: 1836095566}
 --- !u!114 &1836095560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +365,7 @@ MonoBehaviour:
   _passedLevelButtonColor: {r: 0, g: 0, b: 0, a: 0.6313726}
   _chooseSave: {fileID: 1836095561}
   _levelUp: {fileID: 1836095563}
+  _directoruUI: {fileID: 1836095566}
   organisms:
   - {fileID: 11400000, guid: 92ca3c995f34cab419a3fa4b4b846eb1, type: 2}
 --- !u!114 &1836095561
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9abc1fc5a344f4ebe49e77b1b1bf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menu: {fileID: 1836095559}
+  _chooseLevelMenu: {fileID: 1836095560}
   _pause: {fileID: 0}
   _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
   _enemyDirectory:

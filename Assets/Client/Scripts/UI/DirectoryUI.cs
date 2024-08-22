@@ -1,15 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class DirectoryUI : UIToolkitElement
 {
-    [SerializeField] private Menu _menu;
+    [SerializeField] private ChooseLevelMenu _chooseLevelMenu;
     [SerializeField] private Pause _pause;
     [SerializeField] private VisualTreeAsset _directoryAsset;
     [SerializeField] private List<EnemyDirectorySO> _enemyDirectory;
 
     private VisualElement _directory;
+
+    private PlayerSaver _playerSaver;
+
+    [Inject]
+    private void Construct(PlayerSaver playerSaver)
+    {
+        _playerSaver = playerSaver;
+    }
 
     protected override void Initialize()
     {
@@ -20,15 +29,17 @@ public class DirectoryUI : UIToolkitElement
     {
         ResetContainer(_directory);
 
+        _enemyDirectory = _playerSaver.currentSave._killEnemies;
+
         InitializeDirectoryScroll();
 
         Button back = _container.Q<Button>("Back");
 
         back.clicked += () =>
         {
-            if (_menu != null)
+            if (_chooseLevelMenu != null)
             {
-                _menu.OpenMenu();
+                _chooseLevelMenu.OpenChooseLevelMenu();
             }
             else if (_pause != null)
             {
@@ -39,16 +50,20 @@ public class DirectoryUI : UIToolkitElement
 
     private void InitializeDirectoryScroll()
     {
-        for(int i = 0; i < _enemyDirectory.Count; i++)
+        if (_enemyDirectory == null) return;
+        else
         {
-            VisualElement currentEnemy = _container.Q<VisualElement>(_enemyDirectory[i].name.ToString());
-            Button currentButton = _container.Q<Button>(_enemyDirectory[i].name.ToString());
-            VisualElement ImageInScroll = currentEnemy.Q<VisualElement>("ImageInScroll");
-            Label NameInScroll = currentEnemy.Q<Label>("NameInScroll");
+            for (int i = 0; i < _enemyDirectory.Count; i++)
+            {
+                VisualElement currentEnemy = _container.Q<VisualElement>(_enemyDirectory[i].name.ToString());
+                Button currentButton = _container.Q<Button>(_enemyDirectory[i].name.ToString());
+                VisualElement ImageInScroll = currentEnemy.Q<VisualElement>("ImageInScroll");
+                Label NameInScroll = currentEnemy.Q<Label>("NameInScroll");
 
-            ImageInScroll.style.backgroundImage = _enemyDirectory[i]._enemyImage;
-            NameInScroll.text = _enemyDirectory[i]._name;
-            currentButton.clicked += () => OpenButton(currentButton);
+                ImageInScroll.style.backgroundImage = _enemyDirectory[i]._enemyImage;
+                NameInScroll.text = _enemyDirectory[i]._name;
+                currentButton.clicked += () => OpenButton(currentButton);
+            }
         }
     }
 

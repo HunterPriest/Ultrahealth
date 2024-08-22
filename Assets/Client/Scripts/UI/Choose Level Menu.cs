@@ -8,7 +8,8 @@ public class ChooseLevelMenu : UIToolkitElement
     [SerializeField] private Color _passedLevelButtonColor;
     [SerializeField] private ChooseSave _chooseSave;
     [SerializeField] private levelUp _levelUp;
-     
+    [SerializeField] private DirectoryUI _directoruUI;
+
     [Header ("Maps")] 
     [SerializeField] private MapsInChooseConfiguration[] organisms;
 
@@ -46,6 +47,9 @@ public class ChooseLevelMenu : UIToolkitElement
             }
             SubscribeButton(buttonsLevels[i - 1]);
         }
+
+        Button directory = _container.Q<Button>("Directory");
+        directory.clicked += _directoruUI.OpenDirectory;
 
         Button exit = _container.Q<Button>("Exit");
         exit.clicked += _chooseSave.OpenSave;

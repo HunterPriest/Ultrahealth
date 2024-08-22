@@ -1,7 +1,11 @@
+using System.Collections.Generic;
+
 public class CurrentSave
 {
     public int indexSave { get; private set; }
     public DataSave.PlayerData playerSave { get; set; }
+
+    public List<EnemyDirectorySO> _killEnemies { get; set; }
 
     public CurrentSave(int indexSave, DataSave.PlayerData playerData)
     {
