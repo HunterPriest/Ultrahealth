@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -413,7 +413,7 @@ MonoBehaviour:
   _chooseLevelMenu: {fileID: 1836095560}
   _skillButtonColor: {r: 1, g: 0, b: 0, a: 0.22352941}
   _buyedSkillButtonColor: {r: 0, g: 0, b: 0, a: 0.5882353}
-  _BacteriaLevelUpAsset: {fileID: 9197481963319205126, guid: 0b11dcb00d86a0f47b601c2bef4a8e4a, type: 3}
+  _BacteriaLevelUpAsset: {fileID: 9197481963319205126, guid: a35ed1a2b1b6d1647804f7a7b683983e, type: 3}
   _NanoRobotLevelUpAsset: {fileID: 9197481963319205126, guid: 2d8c80cbf25d53f4e835319d99e41bf8, type: 3}
   _SinglecellLevelUpAsset: {fileID: 9197481963319205126, guid: 423fbe60fc464ef439918f09788e3b54, type: 3}
 --- !u!114 &1836095564

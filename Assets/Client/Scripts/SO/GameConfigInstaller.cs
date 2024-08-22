@@ -4,6 +4,7 @@ using Zenject;
 using AYellowpaper.SerializedCollections;
 using Tools;
 using UnityEngine.Rendering;
+using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 
 [CreateAssetMenu(fileName = "GameConfigInstaller", menuName = "Installers/GameConfigInstaller")]
 public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>
@@ -168,20 +169,17 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
 
         public Tree GetTree(int indexClass)
         {
-            if(indexClass == 1)
+            switch (indexClass)
             {
+            case 1:
                 return bacteriaTree;
-            }
-            else if(indexClass == 2)
-            {
+            case 2:
                 return nanoRobotTreel;
-            }
-            else if(indexClass == 3)
-            {
+            case 3:
                 return singlecellTree;
             }
 
-            return null;
+            return bacteriaTree;
         }
     }
 

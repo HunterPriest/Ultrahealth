@@ -4,6 +4,7 @@ using Zenject;
 using System.Collections;
 using System;
 using ModestTree;
+using System.Collections.Generic;
 
 public class levelUp : UIToolkitElement
 {
@@ -30,7 +31,7 @@ public class levelUp : UIToolkitElement
 
     private Button _levelUpButton;
     private Button _currentSkillButton;
-    Button[] _levelUpButtons;
+    private List<Button> _levelUpButtons = new List<Button>();
 
 
     private int _currentIndexSkill;
@@ -51,10 +52,8 @@ public class levelUp : UIToolkitElement
 
     public void OpenLevelUp()
     {
+        LoadUIAsset(_playerSaver.currentSave.playerSave.indexClassPlayer);
         _currentClassTree = _levelUpSettings.GetTree(_playerSaver.currentSave.playerSave.indexClassPlayer);
-
-        StartOpen(_playerSaver.currentSave.playerSave.indexClassPlayer);
-
         _playerStats = _container.Q<Label>("PlayerStats");
         UpdatePlayerStats();
 
@@ -75,36 +74,29 @@ public class levelUp : UIToolkitElement
         _levelUpButton.visible = false;
 
         _notEnoughExperience = _container.Q<Label>("NotEnoughExperience");
-
-        _levelUpButtons = new Button[_currentClassTree.skills.Length];
-
-        for(int i = 0; i < _levelUpButtons.Length; i++)
+        
+        _levelUpButtons = new List<Button>();
+        for(int i = 0; i < _currentClassTree.skills.Length; i++)
         {
-            _levelUpButtons[i] = _container.Q<Button>(_currentClassTree.skills[i].branchIndex.ToString() +
-             _currentClassTree.skills[i].branchFloor.ToString());
+            _levelUpButtons.Add(_container.Q<Button>(_currentClassTree.skills[i].branchIndex.ToString() +
+             _currentClassTree.skills[i].branchFloor.ToString()));
             SubscribeSkillButton(_levelUpButtons[i], _currentClassTree.skills[i].branchFloor, _currentClassTree.skills[i].branchIndex, i);
         }
     }
 
-    private void StartOpen(int index)
+    private void LoadUIAsset(int indexClass)
     {
-        switch (index)
+        switch (indexClass)
         {
             case 1:
-                {
-                    ResetContainer(_bacteriaLevelUp);
-                    break;
-                }
+                ResetContainer(_bacteriaLevelUp);
+                break;
             case 2:
-                {
-                    ResetContainer(_nanoRobotLevelUp);
-                    break;
-                }
+                ResetContainer(_nanoRobotLevelUp);
+                break;
             case 3:
-                {
-                    ResetContainer(_singlecellLevelUp);
-                    break;
-                }
+                ResetContainer(_singlecellLevelUp);
+                break;
         }
     }
 
