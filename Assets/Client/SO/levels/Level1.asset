@@ -61,3 +61,6 @@ MonoBehaviour:
       Value: 500
     - Key: 4
       Value: 250
+  _enemiesOnLevel:
+  - {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
+  - {fileID: 11400000, guid: 62f473327cb0cae46b9b012ec423f90c, type: 2}

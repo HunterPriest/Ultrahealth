@@ -3,6 +3,7 @@ using UnityEngine;
 using Tools;
 using Unity.VisualScripting;
 using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu(menuName = "Ultrahealth/LevelSettings")]
 public class LevelSettings : ScriptableObject
@@ -19,6 +20,8 @@ public class LevelSettings : ScriptableObject
 
     [SerializedDictionary("Level grade", "Exp")]
     [SerializeField] private SerializedDictionary<LevelGrade, int> _levelExp;
+
+    [SerializeField] private List<EnemyDirectorySO> _enemiesOnLevel;
 
     public int levelIndex => _levelIndex;
 
@@ -100,5 +103,10 @@ public class LevelSettings : ScriptableObject
     public int GetAmountExp(LevelGrade finalyGrade)
     {
         return _levelExp[finalyGrade];
+    }
+
+    public List<EnemyDirectorySO> GetEnemyDirectorySO()
+    {
+        return _enemiesOnLevel;
     }
 }

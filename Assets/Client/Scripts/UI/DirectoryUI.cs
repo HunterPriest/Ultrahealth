@@ -1,28 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Zenject;
-
 public class DirectoryUI : UIToolkitElement
 {
     [SerializeField] private ChooseLevelMenu _chooseLevelMenu;
     [SerializeField] private Pause _pause;
     [SerializeField] private VisualTreeAsset _directoryAsset;
-    [SerializeField] private List<EnemyDirectorySO> _enemyDirectory;
+    private List<EnemyDirectorySO> _enemyDirectory;
 
     private VisualElement _directory;
-
-    private PlayerSaver _playerSaver;
-
-    [Inject]
-    private void Construct(PlayerSaver playerSaver)
-    {
-        _playerSaver = playerSaver;
-    }
 
     protected override void Initialize()
     {
         _directory = _directoryAsset.CloneTree();
+
+        _enemyDirectory = new List<EnemyDirectorySO>();
 
         Button back = _directory.Q<Button>("Back");
 
@@ -42,8 +34,6 @@ public class DirectoryUI : UIToolkitElement
     public void OpenDirectory()
     {
         ResetContainer(_directory);
-
-        //_enemyDirectory = _playerSaver.currentSave.killEnemies;
 
         InitializeDirectoryScroll();
     }
@@ -84,7 +74,14 @@ public class DirectoryUI : UIToolkitElement
                 about.text = CurrentElement._aboutEnemy;
             }
         }
+    }
 
-        
+    public void AddEnemyDirectorySO(LevelSettings level)
+    {
+        List<EnemyDirectorySO> _enemies = level.GetEnemyDirectorySO();
+        for(int i = 0; i<_enemies.Count; i++)
+        {
+            _enemyDirectory.Add(_enemies[i]);
+        }
     }
 }
