@@ -179,7 +179,7 @@ public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller
                 return singlecellTree;
             }
 
-            return bacteriaTree;
+            return null;
         }
     }
 
