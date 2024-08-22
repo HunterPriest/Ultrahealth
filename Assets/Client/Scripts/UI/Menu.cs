@@ -13,19 +13,20 @@ public class Menu : UIToolkitElement
     protected override void Initialize()
     {
         _menu = _MenuAsset.CloneTree();
+
+        Button start = _menu.Q<Button>("Play");
+        Button settings = _menu.Q<Button>("Settings");
+        Button exit = _menu.Q<Button>("Exit");
+
+        start.clicked += _chooseSave.OpenSave;
+        settings.clicked += _settingsUI.Open;
+        exit.clicked += Application.Quit;
+
         OpenMenu();
     }
 
     public void OpenMenu()
     {
         ResetContainer(_menu);
-
-        Button start = _container.Q<Button>("Play");
-        Button settings = _container.Q<Button>("Settings");
-        Button exit = _container.Q<Button>("Exit");
-
-        start.clicked += _chooseSave.OpenSave;
-        settings.clicked += _settingsUI.Open;
-        exit.clicked += Application.Quit;
     }
 }

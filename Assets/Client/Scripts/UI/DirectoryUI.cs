@@ -23,17 +23,8 @@ public class DirectoryUI : UIToolkitElement
     protected override void Initialize()
     {
         _directory = _directoryAsset.CloneTree();
-    }
 
-    public void OpenDirectory()
-    {
-        ResetContainer(_directory);
-
-        _enemyDirectory = _playerSaver.currentSave._killEnemies;
-
-        InitializeDirectoryScroll();
-
-        Button back = _container.Q<Button>("Back");
+        Button back = _directory.Q<Button>("Back");
 
         back.clicked += () =>
         {
@@ -46,6 +37,15 @@ public class DirectoryUI : UIToolkitElement
                 _pause.OpenPause();
             }
         };
+    }
+
+    public void OpenDirectory()
+    {
+        ResetContainer(_directory);
+
+        _enemyDirectory = _playerSaver.currentSave._killEnemies;
+
+        InitializeDirectoryScroll();
     }
 
     private void InitializeDirectoryScroll()

@@ -29,12 +29,20 @@ public class ChooseLevelMenu : UIToolkitElement
     protected override void Initialize()
     {
         _chooseLevel = _chooseLevelsAsset.CloneTree();
+
+        Button directory = _chooseLevel.Q<Button>("Directory");
+        directory.clicked += _directoruUI.OpenDirectory;
+
+        Button exit = _chooseLevel.Q<Button>("Exit");
+        exit.clicked += _chooseSave.OpenSave;
+
+        Button levelUp = _chooseLevel.Q<Button>("LevelUp");
+        levelUp.clicked += _levelUp.OpenLevelUp; 
     }
 
     public void OpenChooseLevelMenu()
     {
         ResetContainer(_chooseLevel);
-        print(_playerSaver.currentSave.indexSave);
 
         Button[] buttonsLevels = new Button[_gameSettings.amountLevels];
         
@@ -47,15 +55,6 @@ public class ChooseLevelMenu : UIToolkitElement
             }
             SubscribeButton(buttonsLevels[i - 1]);
         }
-
-        Button directory = _container.Q<Button>("Directory");
-        directory.clicked += _directoruUI.OpenDirectory;
-
-        Button exit = _container.Q<Button>("Exit");
-        exit.clicked += _chooseSave.OpenSave;
-
-        Button levelUp = _container.Q<Button>("LevelUp");
-        levelUp.clicked += _levelUp.OpenLevelUp;;
     }
 
     private void OnButtonLevelClick(MapsInChooseConfiguration ActiveMap, int indexMap)
@@ -75,6 +74,7 @@ public class ChooseLevelMenu : UIToolkitElement
         Start.clicked += () =>
         {
             _gameMachine.LoadLevel(indexMap);
+            Start.clicked -= () => { };
         };
         mapInChoose.style.backgroundImage = ActiveMap.texture;
 
@@ -83,6 +83,10 @@ public class ChooseLevelMenu : UIToolkitElement
 
     private void SubscribeButton(Button button)
     {
-        button.clicked += () => OnButtonLevelClick(organisms[button.tabIndex - 1], button.tabIndex);
+        button.clicked += () =>
+        {
+            OnButtonLevelClick(organisms[button.tabIndex - 1], button.tabIndex);
+            button.clicked -= () => { };
+        };
     }
 }

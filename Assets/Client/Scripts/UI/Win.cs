@@ -64,7 +64,11 @@ public class Win : UIToolkitElement
 
         Button ExitToMenu = _container.Q<Button>("ExitToMenu");
 
-        ExitToMenu.clicked += () => OnExitToMenu(levelSettings);
+        ExitToMenu.clicked += () =>
+        {
+            ExitToMenu.clicked -= () => { };
+            OnExitToMenu(levelSettings);
+        };
 
         level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
     }

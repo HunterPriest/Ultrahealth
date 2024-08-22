@@ -20,19 +20,19 @@ public class ClassChoose : UIToolkitElement
     protected override void Initialize()
     {
         _chooseClass = _chooseClassAsset.CloneTree();
+
+        Button bacteria = _chooseClass.Q<Button>("Bacteria");
+        Button nanoRobot = _chooseClass.Q<Button>("Nano-robot");
+        Button singlecell = _chooseClass.Q<Button>("Singlecell");
+
+        bacteria.clicked += () => OnButton(1);
+        nanoRobot.clicked += () => OnButton(2);
+        singlecell.clicked += () => OnButton(3);
     }
 
     public void OpenClassChooser()
     {
         ResetContainer(_chooseClass);
-
-        Button bacteria = _container.Q<Button>("Bacteria");
-        Button nanoRobot = _container.Q<Button>("Nano-robot");
-        Button singlecell = _container.Q<Button>("Singlecell");
-
-        bacteria.clicked += () => OnButton(1);
-        nanoRobot.clicked += () => OnButton(2);
-        singlecell.clicked += () => OnButton(3);
     }
     private void OnButton(int indexClass)
     {
@@ -43,6 +43,5 @@ public class ClassChoose : UIToolkitElement
     public void OpenChooseLevel()
     {
         _chooseLevel.OpenChooseLevelMenu();
-        print("saaaave");
     }
 }

@@ -20,13 +20,9 @@ public class DeathPlayer : UIToolkitElement
     protected override void Initialize()
     {
         deathPlayer = _deathPlayerAsset.CloneTree();
-    }
 
-    public void Open()
-    {
-        ResetContainer(deathPlayer);
-        Button exitToMenu = _container.Q<Button>("Exit");
-        Button repeat = _container.Q<Button>("Repeat");
+        Button exitToMenu = deathPlayer.Q<Button>("Exit");
+        Button repeat = deathPlayer.Q<Button>("Repeat");
 
         exitToMenu.clicked += _gameMachine.FinishGame;
         repeat.clicked += () =>
@@ -34,5 +30,10 @@ public class DeathPlayer : UIToolkitElement
             _gameMachine.LoadLevel(_level.levelSettings.levelIndex);
             _gameMachine.ResumeGame();
         };
+    }
+
+    public void Open()
+    {
+        ResetContainer(deathPlayer);
     }
 }

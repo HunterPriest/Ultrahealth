@@ -37,21 +37,18 @@ public class ChooseSave : UIToolkitElement
             buttonsSaves[i] = _save.Q<Button>("Save" + (i + 1).ToString());
             SubscribeButton(buttonsSaves[i]);
         }
+
+        Button exit = _save.Q<Button>("Exit");
+        exit.clicked += _menu.OpenMenu;
     }
 
     public void OpenSave()
     {
         ResetContainer(_save);
-
-        
-
-        Button exit = _container.Q<Button>("Exit");
-        exit.clicked += _menu.OpenMenu;
     }
 
     private void SubscribeButton(Button button)
     {
-        print(button.name);
         if(Saver.HasSave(button.tabIndex.ToString()))
         {
             button.text = "Сохранение " + button.tabIndex.ToString();
@@ -68,7 +65,6 @@ public class ChooseSave : UIToolkitElement
         DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
         _playerSaver.ChangeCurrentSave(playerData, indexSave);
         _classChooser.OpenChooseLevel();
-        print(indexSave);
     }
 
     private void NewSave(int indexSave)
@@ -78,8 +74,16 @@ public class ChooseSave : UIToolkitElement
         Button yes = _container.Q<Button>("Yes");
         Button no = _container.Q<Button>("No");
 
-        yes.clicked += () => OnClickYes(indexSave);
-        no.clicked += () => OpenSave();
+        yes.clicked += () =>
+        {
+            OnClickYes(indexSave);
+            yes.clicked -= () => { };
+        };
+        no.clicked += () =>
+        {
+            OpenSave();
+            no.clicked -= () => { };
+        };
     }
 
     private void OnClickYes(int indexSave)

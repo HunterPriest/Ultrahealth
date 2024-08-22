@@ -9,40 +9,43 @@ public class SettingsUI : UIToolkitElement
     [SerializeField] private Pause _pause;
 
     private VisualElement _settings;
+    private VisualElement _setSettingsPanels;
 
     protected override void Initialize()
     {
         _settings = _settingsAsset.CloneTree();
-    }
 
-    public void Open()
-    {
-        ResetContainer(_settings);
-        Button mainSettings = _container.Q<Button>("mainSettings");
-        Button back = _container.Q<Button>("Back");
-        VisualElement setSettingsPanels = _container.Q<VisualElement>("SetSettings");
-        _mainSettingsUI.Open(setSettingsPanels);
-        Button save = _container.Q<Button>("Save");
-        
+        Button mainSettings = _settings.Q<Button>("mainSettings");
+        Button back = _settings.Q<Button>("Back");
+        _setSettingsPanels = _settings.Q<VisualElement>("SetSettings");
+        Button save = _settings.Q<Button>("Save");
+
         save.clicked += () =>
         {
             _mainSettingsUI.Save();
         };
 
-        mainSettings.clicked += () => 
+        mainSettings.clicked += () =>
         {
-            _mainSettingsUI.Open(setSettingsPanels);
+            _mainSettingsUI.Open(_setSettingsPanels);
         };
         back.clicked += () =>
         {
-            if(_menu != null)
+            if (_menu != null)
             {
                 _menu.OpenMenu();
             }
-            else if(_pause != null)
+            else if (_pause != null)
             {
                 _pause.OpenPause();
             }
         };
+    }
+
+    public void Open()
+    {
+        ResetContainer(_settings);
+
+        _mainSettingsUI.Open(_setSettingsPanels);
     }
 }

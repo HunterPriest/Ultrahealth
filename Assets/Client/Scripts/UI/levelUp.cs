@@ -57,7 +57,11 @@ public class levelUp : UIToolkitElement
         UpdatePlayerStats();
 
         Button exit = _container.Q<Button>("Exit");
-        exit.clicked += _chooseLevelMenu.OpenChooseLevelMenu;
+        exit.clicked += () => 
+        {
+            exit.clicked -= () => { };
+            _chooseLevelMenu.OpenChooseLevelMenu();
+        };
 
         _descriptionSkill = _container.Q<Label>("Description");
         _levelUpButton = _container.Q<Button>("LevelUp");
