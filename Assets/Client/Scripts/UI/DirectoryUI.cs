@@ -43,7 +43,7 @@ public class DirectoryUI : UIToolkitElement
     {
         ResetContainer(_directory);
 
-        _enemyDirectory = _playerSaver.currentSave._killEnemies;
+        //_enemyDirectory = _playerSaver.currentSave.killEnemies;
 
         InitializeDirectoryScroll();
     }

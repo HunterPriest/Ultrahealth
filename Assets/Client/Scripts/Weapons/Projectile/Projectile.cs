@@ -13,7 +13,7 @@ public abstract class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Run(Vector3 force)
+    public virtual void Run(Vector3 force)
     {
         rb.AddForce(force, ForceMode.Force);
         Destroy(gameObject, 10f);

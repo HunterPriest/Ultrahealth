@@ -15,6 +15,7 @@ public abstract class Weapon : MonoBehaviour
     public virtual void FinishAttack()
     {
         UpdateState(WeaponState.Idle);
+        Debug.Log("Roflo");
     }
 
     public virtual void RemoveWeapon()

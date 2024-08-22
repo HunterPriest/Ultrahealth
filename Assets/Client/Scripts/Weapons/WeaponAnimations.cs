@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class WeaponAnimations : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
 
     public void Reload()
     {
         _animator.Play("Reload");
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
         _animator.Play("Attack");
     }

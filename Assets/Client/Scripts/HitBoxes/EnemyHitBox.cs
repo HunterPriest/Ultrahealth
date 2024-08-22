@@ -22,7 +22,6 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
 
     public void Visit(HeartCancerProjectile heartCancerProjectile)
     {
-        damageable.TakeDamage(heartCancerProjectile.damage);
     }
 
     public void Visit(Grenade grenade)
@@ -39,5 +38,10 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
     private void SpawnDecal(RaycastHit hit)
     {
         Instantiate(_decal.gameObject, hit.point, Quaternion.LookRotation(hit.normal), hit.transform);
+    }
+
+    public void Visit(Defibrillator defibrillator)
+    {
+        damageable.TakeDamage(defibrillator.damage);
     }
 }

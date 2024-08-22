@@ -30,6 +30,8 @@ public class levelUp : UIToolkitElement
 
     private Button _levelUpButton;
     private Button _currentSkillButton;
+    Button[] _levelUpButtons;
+
 
     private int _currentIndexSkill;
 
@@ -60,6 +62,11 @@ public class levelUp : UIToolkitElement
         exit.clicked += () => 
         {
             exit.clicked -= () => { };
+            _levelUpButton.clicked -= () => { };
+            foreach (Button button in _levelUpButtons)
+            {
+                button.clicked -= () => { };
+            }
             _chooseLevelMenu.OpenChooseLevelMenu();
         };
 
@@ -69,13 +76,13 @@ public class levelUp : UIToolkitElement
 
         _notEnoughExperience = _container.Q<Label>("NotEnoughExperience");
 
-        Button[] levelUpButtons = new Button[_currentClassTree.skills.Length];
+        _levelUpButtons = new Button[_currentClassTree.skills.Length];
 
-        for(int i = 0; i < levelUpButtons.Length; i++)
+        for(int i = 0; i < _levelUpButtons.Length; i++)
         {
-            levelUpButtons[i] = _container.Q<Button>(_currentClassTree.skills[i].branchIndex.ToString() +
+            _levelUpButtons[i] = _container.Q<Button>(_currentClassTree.skills[i].branchIndex.ToString() +
              _currentClassTree.skills[i].branchFloor.ToString());
-            SubscribeSkillButton(levelUpButtons[i], _currentClassTree.skills[i].branchFloor, _currentClassTree.skills[i].branchIndex, i);
+            SubscribeSkillButton(_levelUpButtons[i], _currentClassTree.skills[i].branchFloor, _currentClassTree.skills[i].branchIndex, i);
         }
     }
 

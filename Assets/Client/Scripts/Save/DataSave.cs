@@ -7,6 +7,7 @@ namespace DataSave
     [System.Serializable]
     public class PlayerData
     { 
+        public List<EnemyDirectorySO> killEnemies;
         public int currentIndexLevel;
         [Range(1, 3)] public int indexClassPlayer;
         public float maxStamina;

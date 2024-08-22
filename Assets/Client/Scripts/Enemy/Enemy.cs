@@ -47,7 +47,5 @@ public class Enemy : Character
     {
         base.Dead();
         OnDead?.Invoke();
-        _playerSaver.currentSave._killEnemies.Add(enemyInDirectory);
-
     }
 }

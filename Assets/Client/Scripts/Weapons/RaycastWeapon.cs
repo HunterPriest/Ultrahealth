@@ -6,6 +6,13 @@ public abstract class RaycastWeapon : DamagingWeapon
     [SerializeField] private float _distance;
     protected Transform direction;
     
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Physics.Raycast(direction.position, direction.forward, out RaycastHit hit, _distance);
+        Gizmos.DrawLine(direction.position, hit.point);
+    }
+
     public override void SetDirection(Transform transform)
     {
         direction = transform;

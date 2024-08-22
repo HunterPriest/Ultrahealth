@@ -9,26 +9,30 @@ public class HeartValueOpener : MonoBehaviour
 
     public void OpenRight()
     {
-        _heartValueColliderRight.sharedMesh = null;
-        _heartValueColliderRight.sharedMesh = _heartValueMeshRight.sharedMesh;
+        SkinnedMeshRenderer skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        skinnedMeshRenderer.sharedMesh = null;
+        _heartValueColliderRight.sharedMesh = skinnedMeshRenderer.sharedMesh;
     }
 
     public void CloseRight()
     {
-        _heartValueColliderRight.sharedMesh = null;
-        _heartValueColliderRight.sharedMesh = _heartValueMeshRight.sharedMesh;
+        SkinnedMeshRenderer skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        skinnedMeshRenderer.sharedMesh = null;
+        _heartValueColliderRight.sharedMesh = skinnedMeshRenderer.sharedMesh;
     }
 
     public void OpenLeft()
     {
-        _heartValueColliderLeft.sharedMesh = null;
-        _heartValueColliderLeft.sharedMesh = _heartValueMeshLeft.sharedMesh;
+        SkinnedMeshRenderer skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        skinnedMeshRenderer.sharedMesh = null;
+        _heartValueColliderLeft.sharedMesh = skinnedMeshRenderer.sharedMesh;
     }
 
     public void CloseLeft()
     {
-        _heartValueColliderLeft.sharedMesh = null;
-        _heartValueColliderLeft.sharedMesh = _heartValueMeshLeft.sharedMesh;
+        SkinnedMeshRenderer skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        skinnedMeshRenderer.sharedMesh = null;
+        _heartValueColliderLeft.sharedMesh = skinnedMeshRenderer.sharedMesh;
     }
 
 }

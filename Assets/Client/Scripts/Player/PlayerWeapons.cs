@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
+using Tools;
 
 public class PlayerWeapons : MonoBehaviour
 {
@@ -46,7 +47,9 @@ public class PlayerWeapons : MonoBehaviour
 
     public void ChooseWeapon(int indexWeapon)
     {
-        if(indexWeapon - 1 == _indexOfCurrentWeapon)
+        if(indexWeapon - 1 == _indexOfCurrentWeapon || indexWeapon > _weapons.Count 
+        || _weapons[_indexOfCurrentWeapon].weapon.GetState() == WeaponState.Take
+        || _weapons[_indexOfCurrentWeapon].weapon.GetState() == WeaponState.PutAway)
         {
             return;
         }

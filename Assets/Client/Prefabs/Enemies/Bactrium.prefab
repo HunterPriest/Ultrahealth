@@ -262,6 +262,37 @@ Transform:
   - {fileID: 7294792416819242124}
   m_Father: {fileID: 5716150175637924748}
   m_LocalEulerAnglesHint: {x: 27.200577, y: -7.2727175, z: 31.578527}
+--- !u!1 &2344966803913274493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3913681470857764633}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3913681470857764633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344966803913274493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.48, z: 0.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6977311343410243011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2438535228775085644
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +832,7 @@ Transform:
   - {fileID: 2045961212410115421}
   - {fileID: 6006117142167814908}
   - {fileID: 1195111855333807310}
+  - {fileID: 3913681470857764633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &577316733037574652
@@ -872,8 +904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _attackRange: 2.4
+  _attackRange: 0.56
   _hitColliders: 5
+  _overlapCirclePoint: {fileID: 3913681470857764633}
 --- !u!54 &2071701667326364980
 Rigidbody:
   m_ObjectHideFlags: 0

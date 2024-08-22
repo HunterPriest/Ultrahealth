@@ -69,6 +69,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ThirdWeapon",
+                    "type": "Button",
+                    "id": "7e66f767-73c2-409d-a2e8-cb9b2b216af0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "c0f2a1ec-86f4-4e78-a527-a86b27c792f3",
@@ -268,6 +277,17 @@
                     "processors": "",
                     "groups": "Mouse and keyboard",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c3fba043-84ab-4e55-b3e4-17abc72f1637",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and keyboard",
+                    "action": "ThirdWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

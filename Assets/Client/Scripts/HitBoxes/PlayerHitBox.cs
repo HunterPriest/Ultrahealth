@@ -22,4 +22,6 @@ public class PlayerHitBox : HitBox, IWeaponVisitor
     }
 
     public void Visit(Syrnage syrnage, RaycastHit hit) {   }
+
+    public void Visit(Defibrillator defibrillator) {    }
 }

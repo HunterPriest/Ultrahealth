@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 _direction;
     private PlayerUnit _playerUnit;
     private GameConfigInstaller.PlayerSettings.MovementSettings _movementSettings;
+    private bool _isDashing = false;
 
     public void Initialize(PlayerUnit playerUnit, GameConfigInstaller.PlayerSettings.MovementSettings movementSettings)
     {
@@ -19,15 +21,18 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        if(_direction != Vector3.zero)
-        {
-            _characterController.Move(transform.TransformDirection(_direction) * _movementSettings.speed * Time.deltaTime);
-            _playerSound.Walk();    
-        }
+        _characterController.Move(transform.TransformDirection(_direction) * _movementSettings.speed * Time.deltaTime);
         _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
-        if (_characterController.isGrounded && _playerVelocity.y < 0)
+        if (_characterController.isGrounded)
         {
-            _playerVelocity.y = -2f;
+            if (_playerVelocity.y < 0 && !_isDashing)
+            {
+                _playerVelocity.y = -2f;
+            }
+            if(_direction != Vector3.zero)
+            {
+                _playerSound.Walk();    
+            }
         }
         _characterController.Move(_playerVelocity * Time.deltaTime);
     }
@@ -50,10 +55,11 @@ public class PlayerMotor : MonoBehaviour
 
     public void Dash()
     {        
-        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenDashing <= 0))
+        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenDashing <= 0) && _isDashing)
         {
             return;
         }
+        _isDashing = true;
         _playerSound.Dash();
         StartCoroutine(DashCorutine());
     }
@@ -79,5 +85,6 @@ public class PlayerMotor : MonoBehaviour
             yield return null;  
         }
 
+        _isDashing = false;
     }
 }
