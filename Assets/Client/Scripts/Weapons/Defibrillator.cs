@@ -57,16 +57,10 @@ public class Defibrillator : OverlapWeapon, IPlayerWeapon
     {
         _isAttacking = false;
         base.FinishAttack();
-        Debug.Log("pisos");
     }
 
     protected override void Accept(IWeaponVisitor weaponVisitor)
     {
         weaponVisitor?.Visit(this);
-    }
-
-    public void test()
-    {
-        Debug.Log("rofloPernul3d");
     }
 }
