@@ -27,21 +27,23 @@ public class ChooseSave : UIToolkitElement
     {
         _save = _chooseSaveAsset.CloneTree();
         _panelNewSave = _panelForSaveCreateAsset.CloneTree();
+
+        Button[] buttonsSaves = new Button[_savesSettings.amountSaves];
+        int[] buttonsIndexes = new int[_savesSettings.amountSaves];
+
+        for (int i = 0; i < _savesSettings.amountSaves; i++)
+        {
+            buttonsIndexes[i] = i;
+            buttonsSaves[i] = _save.Q<Button>("Save" + (i + 1).ToString());
+            SubscribeButton(buttonsSaves[i]);
+        }
     }
 
     public void OpenSave()
     {
         ResetContainer(_save);
 
-        Button[] buttonsSaves = new Button[_savesSettings.amountSaves];
-        int[] buttonsIndexes = new int[_savesSettings.amountSaves];
-
-        for(int i = 1; i < _savesSettings.amountSaves + 1; i++)
-        {
-            buttonsIndexes[i - 1] = i;
-            buttonsSaves[i - 1] = _container.Q<Button>("Save" + i.ToString());
-            SubscribeButton(buttonsSaves[i - 1]);
-        }
+        
 
         Button exit = _container.Q<Button>("Exit");
         exit.clicked += _menu.OpenMenu;
@@ -49,6 +51,7 @@ public class ChooseSave : UIToolkitElement
 
     private void SubscribeButton(Button button)
     {
+        print(button.name);
         if(Saver.HasSave(button.tabIndex.ToString()))
         {
             button.text = "Сохранение " + button.tabIndex.ToString();
@@ -65,6 +68,7 @@ public class ChooseSave : UIToolkitElement
         DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
         _playerSaver.ChangeCurrentSave(playerData, indexSave);
         _classChooser.OpenChooseLevel();
+        print(indexSave);
     }
 
     private void NewSave(int indexSave)

@@ -43,5 +43,6 @@ public class ClassChoose : UIToolkitElement
     public void OpenChooseLevel()
     {
         _chooseLevel.OpenChooseLevelMenu();
+        print("saaaave");
     }
 }
