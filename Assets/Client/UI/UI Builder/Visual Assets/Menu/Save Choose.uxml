@@ -3,10 +3,10 @@
     <ui:VisualElement style="flex-grow: 1; align-items: center; width: 701px; height: 1080px;">
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%; justify-content: center; align-self: center; align-items: center; background-color: rgba(0, 0, 0, 0.59); height: 100%;">
             <ui:Label tabindex="-1" text="Выберите &#10;сохранение" parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText" style="height: 30%; width: 530px; -unity-text-align: middle-center; top: auto; font-size: 77px; -unity-font-definition: initial; justify-content: space-around; align-items: center; align-self: center; -unity-font-style: normal;" />
-            <ui:Button text="Сохранение 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save1" tabindex="1" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
-            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save2" tabindex="2" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
-            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save3" tabindex="3" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
-            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save4" tabindex="4" class="defoltOldKallButtons defoltFocusButton defoltHoverButton" style="width: 625px;" />
+            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save1" tabindex="1" focusable="true" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
+            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save2" tabindex="2" focusable="true" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
+            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save3" tabindex="3" focusable="true" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
+            <ui:Button text="Пусто" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save4" tabindex="4" focusable="true" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 625px;" />
             <ui:Button text="Назад" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" tabindex="0" class="defoltOldKallButtons defoltFocusButton defoltHoverButton" style="width: 625px;" />
         </ui:VisualElement>
     </ui:VisualElement>

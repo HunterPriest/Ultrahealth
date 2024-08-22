@@ -7,20 +7,30 @@ using ModestTree;
 
 public class levelUp : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _levelUpAsset;
     [SerializeField] private ChooseLevelMenu _chooseLevelMenu;
     [SerializeField] private Color _skillButtonColor;
     [SerializeField] private Color _buyedSkillButtonColor;
 
-    private VisualElement _levelUp;
+    [Header("Branches Assets")]
+    [SerializeField] private VisualTreeAsset _BacteriaLevelUpAsset;
+    [SerializeField] private VisualTreeAsset _NanoRobotLevelUpAsset;
+    [SerializeField] private VisualTreeAsset _SinglecellLevelUpAsset;
+
+    private VisualElement _bacteriaLevelUp;
+    private VisualElement _nanoRobotLevelUp;
+    private VisualElement _singlecellLevelUp;
+
     private PlayerSaver _playerSaver;
     private GameConfigInstaller.LevelUpSettings _levelUpSettings;
     private GameConfigInstaller.LevelUpSettings.Tree _currentClassTree;
+
     private Label _playerStats;
     private Label _notEnoughExperience;
     private Label _descriptionSkill;
+
     private Button _levelUpButton;
     private Button _currentSkillButton;
+
     private int _currentIndexSkill;
 
     [Inject]
@@ -32,14 +42,16 @@ public class levelUp : UIToolkitElement
 
     protected override void Initialize()
     {
-        _levelUp = _levelUpAsset.CloneTree();
+        _bacteriaLevelUp = _BacteriaLevelUpAsset.CloneTree();
+        _nanoRobotLevelUp = _NanoRobotLevelUpAsset.CloneTree();
+        _singlecellLevelUp = _SinglecellLevelUpAsset.CloneTree();
     }
 
     public void OpenLevelUp()
     {
-        ResetContainer(_levelUp);
-
         _currentClassTree = _levelUpSettings.GetTree(_playerSaver.currentSave.playerSave.indexClassPlayer);
+
+        StartOpen(_playerSaver.currentSave.playerSave.indexClassPlayer);
 
         _playerStats = _container.Q<Label>("PlayerStats");
         UpdatePlayerStats();
@@ -61,7 +73,29 @@ public class levelUp : UIToolkitElement
              _currentClassTree.skills[i].branchFloor.ToString());
             SubscribeSkillButton(levelUpButtons[i], _currentClassTree.skills[i].branchFloor, _currentClassTree.skills[i].branchIndex, i);
         }
-      }
+    }
+
+    private void StartOpen(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                {
+                    ResetContainer(_bacteriaLevelUp);
+                    break;
+                }
+            case 2:
+                {
+                    ResetContainer(_nanoRobotLevelUp);
+                    break;
+                }
+            case 3:
+                {
+                    ResetContainer(_singlecellLevelUp);
+                    break;
+                }
+        }
+    }
 
     private void UpdatePlayerStats()
     {

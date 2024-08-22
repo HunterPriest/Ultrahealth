@@ -410,10 +410,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f455d2ce53c5a44b3b46cca1aada05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelUpAsset: {fileID: 9197481963319205126, guid: 0b11dcb00d86a0f47b601c2bef4a8e4a, type: 3}
   _chooseLevelMenu: {fileID: 1836095560}
   _skillButtonColor: {r: 1, g: 0, b: 0, a: 0.22352941}
   _buyedSkillButtonColor: {r: 0, g: 0, b: 0, a: 0.5882353}
+  _BacteriaLevelUpAsset: {fileID: 9197481963319205126, guid: 0b11dcb00d86a0f47b601c2bef4a8e4a, type: 3}
+  _NanoRobotLevelUpAsset: {fileID: 9197481963319205126, guid: 2d8c80cbf25d53f4e835319d99e41bf8, type: 3}
+  _SinglecellLevelUpAsset: {fileID: 9197481963319205126, guid: 423fbe60fc464ef439918f09788e3b54, type: 3}
 --- !u!114 &1836095564
 MonoBehaviour:
   m_ObjectHideFlags: 0

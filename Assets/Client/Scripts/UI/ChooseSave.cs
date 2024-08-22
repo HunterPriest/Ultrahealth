@@ -56,7 +56,7 @@ public class ChooseSave : UIToolkitElement
         }
         else
         {
-            button.clicked += () => OnButtonWithoutSave(button.tabIndex);
+            button.clicked += () => NewSave(button.tabIndex);
         }
     }
 
@@ -67,24 +67,19 @@ public class ChooseSave : UIToolkitElement
         _classChooser.OpenChooseLevel();
     }
 
-    private void OnButtonWithoutSave(int indexSave)
-    {
-        _save.Add(_panelNewSave);
-        NewSave(indexSave);
-    }
-
     private void NewSave(int indexSave)
     {
+        _container.Add(_panelNewSave);
+
         Button yes = _container.Q<Button>("Yes");
         Button no = _container.Q<Button>("No");
 
         yes.clicked += () => OnClickYes(indexSave);
-        no.clicked += () => _save.Remove(_panelNewSave);
+        no.clicked += () => OpenSave();
     }
 
     private void OnClickYes(int indexSave)
     {
-        _save.Remove(_panelNewSave);
         _playerSaver.ChangeCurrentSave(indexSave);
         _classChooser.OpenClassChooser();
     }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(menuName = "Ultrahealth/ClassConfig")]
 public class ClassConfig : ScriptableObject
