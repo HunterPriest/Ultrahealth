@@ -28,6 +28,7 @@ public class HeartCancerProjectile : Projectile
          Vector3.zero, Quaternion.identity, transform).transform;
 
         modelTransform.localScale = new Vector3(0.018f, 0.018f, 0.018f);
+        modelTransform.localPosition = Vector3.zero;
     }
 
     protected override void Attack(GameObject gameObject)

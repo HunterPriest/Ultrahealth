@@ -35,49 +35,6 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|Attack1
       takeName: rig|Attack1
-      internalID: 3888107679142027666
-      firstFrame: 0
-      lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.18506494
-        functionName: PerformAttack
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.83766234
-        functionName: FinishAttack
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: rig|Attack2
-      takeName: rig|Attack2
       internalID: 2201242382962465064
       firstFrame: 0
       lastFrame: 29
@@ -107,7 +64,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8279221
+      - time: 0.91883117
         functionName: FinishAttack
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
@@ -148,9 +105,52 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
+      name: rig|Attack2
+      takeName: rig|Attack2
+      internalID: -7766205964690679432
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.26948053
+        functionName: PerformAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91558444
+        functionName: FinishAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
       name: rig|PutAway
       takeName: rig|PutAway
-      internalID: -7766205964690679432
+      internalID: -7150057369299633048
       firstFrame: 0
       lastFrame: 17
       wrapMode: 0
@@ -175,7 +175,7 @@ ModelImporter:
       - time: 1
         functionName: FinishPutAway
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -186,7 +186,7 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|Take
       takeName: rig|Take
-      internalID: -1684480854088860765
+      internalID: -8747071743578227346
       firstFrame: 0
       lastFrame: 17
       wrapMode: 0
