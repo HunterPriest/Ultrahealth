@@ -4,18 +4,6 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
 {
     [SerializeField] private Decal _decal;
 
-    public void Visit(Saiga weapon, RaycastHit hit)
-    {
-        damageable.TakeDamage(weapon.damage);
-        SpawnDecal(hit);
-    }
-    
-    public void Visit(Automat weapon, RaycastHit hit)
-    {
-        damageable.TakeDamage(weapon.damage);
-        SpawnDecal(hit);
-    }
-
     public void Visit(BacteriaWeapon weapon)
     {
     }

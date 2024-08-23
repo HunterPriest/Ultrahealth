@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class PlayerHitBox : HitBox, IWeaponVisitor
 {
-    public void Visit(Saiga weapon, RaycastHit hit) {   }
-    
-    public void Visit(Automat weapon, RaycastHit hit) {   }
-
     public void Visit(BacteriaWeapon weapon)
     {
         damageable.TakeDamage(weapon.damage);
