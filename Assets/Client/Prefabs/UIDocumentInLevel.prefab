@@ -166,9 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9abc1fc5a344f4ebe49e77b1b1bf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menu: {fileID: 0}
-  _pause: {fileID: 0}
+  _chooseLevelMenu: {fileID: 0}
+  _pause: {fileID: 3568293702885248390}
   _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
-  _enemyDirectory:
-  - {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
-  - {fileID: 11400000, guid: 62f473327cb0cae46b9b012ec423f90c, type: 2}
