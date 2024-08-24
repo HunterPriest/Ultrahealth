@@ -9,6 +9,7 @@ public class PlayerWeapons : MonoBehaviour
 {
     [SerializeField] private GameObject[] _startedWeapons;
     [SerializeField] private Transform _parentWeapons;
+    [SerializeField] private ShakeCameraOnWeaponAttack shakeCameraOnWeaponAttack;
     
     private List<PlayerWeapon> _weapons = new List<PlayerWeapon>();
     private int _indexOfCurrentWeapon;
@@ -29,12 +30,22 @@ public class PlayerWeapons : MonoBehaviour
         _weapons.Add(Instantiate(_startedWeapons[indexInArray], fpsRig).GetComponent<PlayerWeapon>());
         _weapons[indexInArray].Initialize();
         _weapons[indexInArray].onPutAway += TakeWeapon;
+        _weapons[indexInArray].onShoot += shakeCameraOnWeaponAttack.ReactOnAttack;
         _weapons[indexInArray].gameObject.SetActive(stateWeapon);
     }
     
     public void Shoot()
     {
         _weapons[_indexOfCurrentWeapon].Attack();
+    }
+
+    private void OnDisable()
+    { 
+        for(int i = 0; i < _startedWeapons.Length; i++)
+        {
+            _weapons[i].onPutAway -= TakeWeapon;
+            _weapons[i].onShoot -= shakeCameraOnWeaponAttack.ReactOnAttack;
+        }
     }
 
     public void ChooseWeapon(int indexWeapon)

@@ -1,12 +1,13 @@
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-[CreateAssetMenu(menuName = "Ultrahealth/AnimationConfigs/AnimationConfig")]
+[Serializable]
 public class ShakeAnimationConfig : AnimationConfig
 {
     public ShakeRandomnessMode randomnessMode = ShakeRandomnessMode.Full;
-    public Vector3 strength;
+    public Vector3 strength = Vector3.one;
     public float randomness = 90f;
-    public float vibrato = 10f;
+    public int vibrato = 10;
     public bool snapping;
 }

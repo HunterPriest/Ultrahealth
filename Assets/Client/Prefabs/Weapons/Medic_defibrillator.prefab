@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAnimations: {fileID: -465692545400025343}
-  shakeAnimationConfig: {fileID: 0}
+  _shakeAnimationConfig: {fileID: 11400000, guid: 38d7465dfabd48b45a28a8e4e260d8b5, type: 2}
   _settings:
     _damage: 35
     _maxAmountColliders: 7

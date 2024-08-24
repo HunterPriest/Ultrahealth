@@ -14608,7 +14608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAnimations: {fileID: 2720003534219260021}
-  shakeAnimationConfig: {fileID: 0}
+  _shakeAnimationConfig: {fileID: 11400000, guid: 38d7465dfabd48b45a28a8e4e260d8b5, type: 2}
   _setting:
     _spawnPointProjectile: {fileID: 4476117662436383007}
     _projectile: {fileID: 341932487042484591, guid: 4569071bfbd390a418738d4bb0112f62, type: 3}

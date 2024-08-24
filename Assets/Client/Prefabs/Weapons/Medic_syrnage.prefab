@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAnimations: {fileID: 8958377333102036430}
-  shakeAnimationConfig: {fileID: 0}
+  _shakeAnimationConfig: {fileID: 11400000, guid: 38d7465dfabd48b45a28a8e4e260d8b5, type: 2}
   _settings:
     _damage: 100
     _distance: 400

@@ -1,8 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-[CreateAssetMenu(menuName = "Ultrahealth/AnimationConfigs/AnimationConfig")]
-public class AnimationConfig : ScriptableObject
+[Serializable]
+public class AnimationConfig
 {
     public bool isOn = true;
     public float duration = 1f;
