@@ -15,7 +15,7 @@ public class Thermometr : PlayerWeapon
         base.Initialize();
         _attack = new RaycastAttack(_settings);
         _attack.AcceptVisit += Accept;    
-        _settings.SetDirection(transform.parent);
+        _settings.SetDirection(transform.parent.parent);
     }
 
     public override void PerformAttack()

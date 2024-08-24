@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093213673071155574}
+  - component: {fileID: 2347032121572486626}
   m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
@@ -33,6 +34,20 @@ Transform:
   - {fileID: 2493826753837830}
   m_Father: {fileID: 9092083726789455569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2347032121572486626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344407408605270966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9910bf58ae49948bf37a00eb135b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionLerpSpeed: 8
+  rotationLerpSpeed: 8
 --- !u!1 &6722585882281248429
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +104,7 @@ GameObject:
   - component: {fileID: 1190045062245095829}
   - component: {fileID: 4783944043433553771}
   - component: {fileID: 1956997014440125947}
+  - component: {fileID: 2801479194719213545}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -156,6 +172,7 @@ MonoBehaviour:
   _playerLook: {fileID: 4916741376896399690}
   _weapons: {fileID: 7654272514596067555}
   _unit: {fileID: 6243802828896330972}
+  _weaponSway: {fileID: 5017908845705176942}
 --- !u!114 &8885624942802238563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +267,7 @@ MonoBehaviour:
   - {fileID: 3142940249253135695, guid: eb5d13bd9cb66a249a18be81d4081bd1, type: 3}
   - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
   _parentWeapons: {fileID: 7769286558824365405}
-  _raycastWeaponsIndexes: 0100000002000000
+  shakeCameraOnWeaponAttack: {fileID: 2801479194719213545}
 --- !u!81 &8846957362426452610
 AudioListener:
   m_ObjectHideFlags: 0
@@ -410,6 +427,18 @@ MonoBehaviour:
   _cameraTransform: {fileID: 1093213673071155574}
   _weaponTransform: {fileID: 7769286558824365405}
   _fpsRig: {fileID: 7824536503448267402}
+--- !u!114 &2801479194719213545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285030414775975039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4d967a004774c4096ab547467a8235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7657326656764830192
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7769286558824365405}
+  - component: {fileID: 5017908845705176942}
   m_Layer: 3
   m_Name: Weapons
   m_TagString: Untagged
@@ -730,3 +760,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9092083726789455569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5017908845705176942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196002485051459880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4eb3044ff464c41ba662912138e5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: {x: 1, y: 1}
+  multiplier: 4
+  inverseX: 0
+  inverseY: 0
+  minMaxX: {x: -4, y: 4}
+  minMaxY: {x: -4, y: 4}

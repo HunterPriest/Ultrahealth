@@ -5,10 +5,10 @@ using Tools;
 public abstract class PlayerWeapon : Weapon
 {
     [SerializeField] protected WeaponAnimations weaponAnimations;
-    [SerializeField] private ShakeAnimationConfig shakeAnimationConfig;
+    [SerializeField] private ShakeCameraAnimationConfig _shakeAnimationConfig;
 
     public event Action onPutAway;
-    public event Action onShoot;
+    public event Action<ShakeCameraAnimationConfig> onShoot;
 
     public override void Initialize()
     {
@@ -29,7 +29,7 @@ public abstract class PlayerWeapon : Weapon
     public override void Attack()
     {
         base.Attack();
-        onShoot?.Invoke();
+        onShoot?.Invoke(_shakeAnimationConfig);
         weaponAnimations.Attack();
     }
 

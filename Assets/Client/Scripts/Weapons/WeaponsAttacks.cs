@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 using Zenject;
 
 namespace WeaponsAttacks

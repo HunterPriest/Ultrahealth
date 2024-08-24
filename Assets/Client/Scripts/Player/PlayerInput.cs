@@ -60,6 +60,7 @@ public class PlayerInput : MonoBehaviour
     private void OnMousePosition(InputAction.CallbackContext context)
     {
         _player.CameraMovement.RotateCamera(context.ReadValue<Vector2>());
+        _player.WeaponSway.SetMousePosition(context.ReadValue<Vector2>());
     }
 
     private void OnJump(InputAction.CallbackContext context)

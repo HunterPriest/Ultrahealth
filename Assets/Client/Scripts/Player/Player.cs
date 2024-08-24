@@ -9,6 +9,7 @@ public class Player : Character
     [SerializeField] private PlayerLook _playerLook;
     [SerializeField] private PlayerWeapons _weapons;
     [SerializeField] private PlayerUnit _unit;
+    [SerializeField] private TransformSway _weaponSway;
 
     private PlayerState _playerState;
     private GameUI _gameUI;
@@ -17,6 +18,7 @@ public class Player : Character
     public PlayerMotor Movement => _movement;
     public PlayerLook CameraMovement => _playerLook;
     public PlayerWeapons Weapons => _weapons;
+    public TransformSway WeaponSway => _weaponSway;
 
     [Inject]
     public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,
