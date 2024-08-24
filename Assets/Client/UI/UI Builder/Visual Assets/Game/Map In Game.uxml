@@ -1,11 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
+    <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Cross.uss?fileID=7433441132597879392&amp;guid=ae9699348d7852a469c5ae6cc9924244&amp;type=3#Cross" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; position: relative; left: auto; top: auto; flex-direction: row; background-color: rgba(0, 0, 0, 0.67); right: auto; bottom: auto; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); scale: 1 1; width: 1920px; height: 1080px;">
         <ui:VisualElement name="ForMap" style="flex-grow: 1; width: 524px; justify-content: space-between; height: 1080px;" />
         <ui:VisualElement name="TextField" style="flex-grow: 1; width: 200px; height: 1080px;">
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="height: 76px; font-size: 44px; -unity-text-align: upper-left;" />
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" class="defoltOldKallText" style="font-size: 24px; -unity-text-align: upper-left; width: 100%; height: 90%;" />
-            <ui:Button text="Выйти" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="left: auto; top: -84px; width: 700px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Button text="Выйти" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="gameButton gameButtonHover gameButtonFocus defoltOldKallText cross" style="left: auto; top: 0; height: 100px; -unity-text-align: middle-center; position: absolute; right: 0; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
 </ui:UXML>

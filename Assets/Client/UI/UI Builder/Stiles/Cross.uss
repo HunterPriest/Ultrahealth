@@ -1,0 +1,7 @@
+.cross {
+    background-image: url('project://database/Assets/Client/Image/Materials/105-1058931_black-cross-png-cross-sign-png-black.png?fileID=2800000&guid=4aaa7c852be8e6344b399ac08e87d342&type=3#105-1058931_black-cross-png-cross-sign-png-black');
+    width: 125px;
+    height: 125px;
+    color: rgba(27, 27, 27, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
