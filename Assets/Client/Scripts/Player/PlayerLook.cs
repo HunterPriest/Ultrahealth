@@ -7,6 +7,12 @@ public class PlayerLook : MonoBehaviour
     private Transform _fpsRig;
     private float _xRotate;
 
+    [Inject]
+    private void Construct(HeadService headService)
+    {
+        _fpsRig = headService.fpsRig;   
+    }
+
     public void UpdateCameraSettings(GameConfigInstaller.PlayerSettings.CameraSettings cameraSettings)
     {
         if(_cameraSettings != cameraSettings)
@@ -15,9 +21,8 @@ public class PlayerLook : MonoBehaviour
         }
     }
     
-    public void Initialize(Transform fpsRig, GameConfigInstaller.PlayerSettings.CameraSettings cameraSettings)
+    public void Initialize(GameConfigInstaller.PlayerSettings.CameraSettings cameraSettings)
     {
-        _fpsRig = fpsRig;
         _cameraSettings = cameraSettings;
     }
 

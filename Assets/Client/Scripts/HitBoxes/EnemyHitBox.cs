@@ -20,7 +20,7 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
 
     public void Visit(Syrnage syrnage, RaycastHit hit)
     {
-        damageable.TakeDamage(syrnage.damage);
+        damageable.TakeDamage(syrnage.Damage);
         SpawnDecal(hit);
     }
 
@@ -31,12 +31,12 @@ public class EnemyHitBox : HitBox, IWeaponVisitor
 
     public void Visit(Defibrillator defibrillator)
     {
-        damageable.TakeDamage(defibrillator.damage);
+        damageable.TakeDamage(defibrillator.Damage);
     }
 
-    public void Visit(Thermometr weapon, RaycastHit hit)
+    public void Visit(Thermometr thermometr, RaycastHit hit)
     {
-        damageable.TakeDamage(weapon.damage);
+        damageable.TakeDamage(thermometr.Damage);
         SpawnDecal(hit);
     }
 }

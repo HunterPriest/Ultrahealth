@@ -183,11 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61424c8e0ba1b248926b8812f3b9ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
-  _attackRange: 0.76
-  _hitColliders: 10
-  _overlapCirclePoint: {fileID: 867080928763099626}
-  _animations: {fileID: -465692545400025343}
+  weaponAnimations: {fileID: -465692545400025343}
+  shakeAnimationConfig: {fileID: 0}
+  _settings:
+    _damage: 35
+    _maxAmountColliders: 7
+    _attackRange: 0.51
+    _overlapPoint: {fileID: 867080928763099626}
 --- !u!114 &-465692545400025343
 MonoBehaviour:
   m_ObjectHideFlags: 0

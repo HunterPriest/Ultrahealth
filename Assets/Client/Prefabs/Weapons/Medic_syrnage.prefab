@@ -172,9 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fdb9694d12ca904b9ebf8b1652a5e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
-  _distance: 100
-  _animations: {fileID: 8958377333102036430}
+  weaponAnimations: {fileID: 8958377333102036430}
+  shakeAnimationConfig: {fileID: 0}
+  _settings:
+    _damage: 100
+    _distance: 400
 --- !u!114 &8958377333102036430
 MonoBehaviour:
   m_ObjectHideFlags: 0

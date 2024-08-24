@@ -14607,10 +14607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3903d5681851d5e4dacdfa0c92444a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPointProjectile: {fileID: 4476117662436383007}
-  _projectile: {fileID: 341932487042484591, guid: 4569071bfbd390a418738d4bb0112f62, type: 3}
-  _forceRunProjectile: 700
-  _animations: {fileID: 2720003534219260021}
+  weaponAnimations: {fileID: 2720003534219260021}
+  shakeAnimationConfig: {fileID: 0}
+  _setting:
+    _spawnPointProjectile: {fileID: 4476117662436383007}
+    _projectile: {fileID: 341932487042484591, guid: 4569071bfbd390a418738d4bb0112f62, type: 3}
+    _forceRunProjectile: 100
 --- !u!114 &2720003534219260021
 MonoBehaviour:
   m_ObjectHideFlags: 0

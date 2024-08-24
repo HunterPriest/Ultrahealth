@@ -29,10 +29,10 @@ public class Player : Character
 
         playerSettings = new GameConfigInstaller.PlayerSettings(playerSaver.currentSave.playerSave, settingsSaver.currentSave);
         _input.Initialize(this, input, gameUI);
-        CameraMovement.Initialize(_fpsRig, playerSettings.cameraSettings);
+        CameraMovement.Initialize(playerSettings.cameraSettings);
         _unit.Initialize(playerSettings.healthSettings, playerSettings.movementSettings, this);
         _movement.Initialize(_unit, playerSettings.movementSettings);
-        Weapons.Initialize(_fpsRig);
+        Weapons.Initialize();
         _gameUI.gameplayUI.InitializeValues(playerSettings);
 
         _gameMachine.StopGameAction += _input.UnsubscribeGamplayActions;

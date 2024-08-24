@@ -903,10 +903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef866f82d86cc648b57cdaef51e3194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _attackRange: 0.88
-  _hitColliders: 5
-  _overlapCirclePoint: {fileID: 3913681470857764633}
+  _settings:
+    _damage: 10
+    _maxAmountColliders: 5
+    _attackRange: 0.81
+    _overlapPoint: {fileID: 3913681470857764633}
 --- !u!54 &2071701667326364980
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -41,6 +41,13 @@ namespace Tools
         SingleCell = 2
     }
 
+    public enum WeaponsTypes
+    {
+        Overlap,
+        Raycast, 
+        Projectile
+    }
+
     public enum LevelGrade
     {
         S,

@@ -13,7 +13,7 @@ public class FirstPhaseHeartCancerWeapons : IPhase
     [SerializeField] private int _minAmountShots;
     [SerializeField] private int _maxAmountRoundShoot;
     [SerializeField] private int _minAmountRoundShoot;
-    [SerializeField] private ProjectileWeapon _projectileWeapon;
+    [SerializeField] private HeartCancerProjectileWeapon _projectileWeapon;
 
     private float _nextTimeShoot;
     private float _angleBetweenSpawnPointProjectile;
@@ -34,7 +34,7 @@ public class FirstPhaseHeartCancerWeapons : IPhase
         _heartCancer = heartCancer;
         _projectileWeapon.Initialize();
         _angleBetweenSpawnPointProjectile = 360f / _amountProjectileForRoundAttack;
-        _distanceBetween = new Vector3(0, Vector3.Distance(_projectileWeapon.spawnPointProjectile.position,
+        _distanceBetween = new Vector3(0, Vector3.Distance(_projectileWeapon.Settings.SpawnPointProjectile.position,
         _heartCancer.transform.position), 0);
     }
 
@@ -92,12 +92,12 @@ public class FirstPhaseHeartCancerWeapons : IPhase
 
     private void RoundAttack()
     {
-        Transform spawnPoint = _projectileWeapon.spawnPointProjectile;
+        Transform spawnPoint = _projectileWeapon.Settings.SpawnPointProjectile;
         for(int i = 0; i < _amountProjectileForRoundAttack; i++)
         {
             _projectileWeapon.Attack();
             spawnPoint.RotateAround(_heartCancer.transform.position, _distanceBetween, _angleBetweenSpawnPointProjectile);
-            _projectileWeapon.SetSpawnPointProjectile(spawnPoint);
+            _projectileWeapon.Settings.SetSpawnPointProjectile(spawnPoint);
         }
     }
 

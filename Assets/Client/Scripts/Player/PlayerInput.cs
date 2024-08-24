@@ -33,7 +33,6 @@ public class PlayerInput : MonoBehaviour
     {
         _input.PlayerActions.MousePosition.performed -= OnMousePosition;
         _input.PlayerActions.Jump.started -= OnJump;
-        _input.PlayerActions.Recharge.started -= OnRecharge;
         _input.PlayerActions.Move.performed -= OnChangeDirection;
         _input.PlayerActions.Move.canceled -= OnChangeDirection;
         _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
@@ -48,7 +47,6 @@ public class PlayerInput : MonoBehaviour
     {
         _input.PlayerActions.MousePosition.performed += OnMousePosition;
         _input.PlayerActions.Jump.started += OnJump;
-        _input.PlayerActions.Recharge.started += OnRecharge;
         _input.PlayerActions.Move.performed += OnChangeDirection;
         _input.PlayerActions.Move.canceled += OnChangeDirection;
         _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
@@ -67,11 +65,6 @@ public class PlayerInput : MonoBehaviour
     private void OnJump(InputAction.CallbackContext context)
     {
         _player.Movement.Jump();
-    }
-
-    private void OnRecharge(InputAction.CallbackContext context)
-    {
-        _player.Weapons.ReloadWeapon();
     }
 
     private void OnChangeDirection(InputAction.CallbackContext context)

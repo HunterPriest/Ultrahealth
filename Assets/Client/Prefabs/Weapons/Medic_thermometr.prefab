@@ -9152,6 +9152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -121.924675
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: 0dfb8484fda1859468e47deb05c71f92, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10433aab32eb5754c801cb000fdba83e, type: 2}
     - target: {fileID: 5082234363490492061, guid: 0dfb8484fda1859468e47deb05c71f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 35.234947
@@ -10640,6 +10644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 7205140776170859923, guid: 0dfb8484fda1859468e47deb05c71f92, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10433aab32eb5754c801cb000fdba83e, type: 2}
     - target: {fileID: 7205608586215167790, guid: 0dfb8484fda1859468e47deb05c71f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -39.140743
@@ -12096,9 +12104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59e91808c9988f46a3b7caa2ae470a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _distance: 100
-  _animations: {fileID: 4241267395592049480}
+  weaponAnimations: {fileID: 4241267395592049480}
+  shakeAnimationConfig: {fileID: 0}
+  _settings:
+    _damage: 10
+    _distance: 100
 --- !u!114 &4241267395592049480
 MonoBehaviour:
   m_ObjectHideFlags: 0

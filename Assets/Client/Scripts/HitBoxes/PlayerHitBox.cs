@@ -4,7 +4,7 @@ public class PlayerHitBox : HitBox, IWeaponVisitor
 {
     public void Visit(BacteriaWeapon weapon)
     {
-        damageable.TakeDamage(weapon.damage);
+        damageable.TakeDamage(weapon.Damage);
     }
 
     public void Visit(HeartCancerProjectile heartCancerProjectile)

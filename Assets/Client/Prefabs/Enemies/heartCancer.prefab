@@ -189,9 +189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f686a75a03be541963b4ac63ea8c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPointProjectile: {fileID: 7416933183378779053}
-  _projectile: {fileID: 4337090142668225553, guid: f9f5234b3ae099a41a7ec25ec40b8be6, type: 3}
-  _forceRunProjectile: 1000
+  _setting:
+    _spawnPointProjectile: {fileID: 7416933183378779053}
+    _projectile: {fileID: 4337090142668225553, guid: f9f5234b3ae099a41a7ec25ec40b8be6, type: 3}
+    _forceRunProjectile: 600
 --- !u!135 &2481759960117899574
 SphereCollider:
   m_ObjectHideFlags: 0
