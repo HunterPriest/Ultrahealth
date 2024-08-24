@@ -100,6 +100,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FourthWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""703ba720-5f5a-4b53-be95-2ea94ef5a2c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Shoot"",
                     ""type"": ""Button"",
                     ""id"": ""c0f2a1ec-86f4-4e78-a527-a86b27c792f3"",
@@ -312,6 +321,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""ThirdWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""880b60cb-5dad-4a3f-9c65-c82a0575d798"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""FourthWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -356,6 +376,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_FirstWeapon = m_Player.FindAction("FirstWeapon", throwIfNotFound: true);
         m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
         m_Player_ThirdWeapon = m_Player.FindAction("ThirdWeapon", throwIfNotFound: true);
+        m_Player_FourthWeapon = m_Player.FindAction("FourthWeapon", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
@@ -429,6 +450,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_FirstWeapon;
     private readonly InputAction m_Player_SecondWeapon;
     private readonly InputAction m_Player_ThirdWeapon;
+    private readonly InputAction m_Player_FourthWeapon;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Map;
@@ -445,6 +467,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @FirstWeapon => m_Wrapper.m_Player_FirstWeapon;
         public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
         public InputAction @ThirdWeapon => m_Wrapper.m_Player_ThirdWeapon;
+        public InputAction @FourthWeapon => m_Wrapper.m_Player_FourthWeapon;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Map => m_Wrapper.m_Player_Map;
@@ -482,6 +505,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @ThirdWeapon.started += instance.OnThirdWeapon;
             @ThirdWeapon.performed += instance.OnThirdWeapon;
             @ThirdWeapon.canceled += instance.OnThirdWeapon;
+            @FourthWeapon.started += instance.OnFourthWeapon;
+            @FourthWeapon.performed += instance.OnFourthWeapon;
+            @FourthWeapon.canceled += instance.OnFourthWeapon;
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
@@ -522,6 +548,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @ThirdWeapon.started -= instance.OnThirdWeapon;
             @ThirdWeapon.performed -= instance.OnThirdWeapon;
             @ThirdWeapon.canceled -= instance.OnThirdWeapon;
+            @FourthWeapon.started -= instance.OnFourthWeapon;
+            @FourthWeapon.performed -= instance.OnFourthWeapon;
+            @FourthWeapon.canceled -= instance.OnFourthWeapon;
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
@@ -579,6 +608,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnFirstWeapon(InputAction.CallbackContext context);
         void OnSecondWeapon(InputAction.CallbackContext context);
         void OnThirdWeapon(InputAction.CallbackContext context);
+        void OnFourthWeapon(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);

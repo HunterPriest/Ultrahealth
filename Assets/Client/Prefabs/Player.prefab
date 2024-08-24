@@ -227,8 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startedWeapons:
   - {fileID: 2472317315326677422, guid: 4357bad5d475f5042ad0f9ce62bac7b8, type: 3}
-  - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
+  - {fileID: 4060365312720694050, guid: 8968f933abcc62a4bb63f4bb1798bf6c, type: 3}
   - {fileID: 3142940249253135695, guid: eb5d13bd9cb66a249a18be81d4081bd1, type: 3}
+  - {fileID: 2674330224589154557, guid: 87b8c1762bae14d4f8641be8ac1fcf60, type: 3}
 --- !u!81 &8846957362426452610
 AudioListener:
   m_ObjectHideFlags: 0

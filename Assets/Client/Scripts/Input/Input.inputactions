@@ -78,6 +78,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "FourthWeapon",
+                    "type": "Button",
+                    "id": "703ba720-5f5a-4b53-be95-2ea94ef5a2c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "c0f2a1ec-86f4-4e78-a527-a86b27c792f3",
@@ -288,6 +297,17 @@
                     "processors": "",
                     "groups": "Mouse and keyboard",
                     "action": "ThirdWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "880b60cb-5dad-4a3f-9c65-c82a0575d798",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and keyboard",
+                    "action": "FourthWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

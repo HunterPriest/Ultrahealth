@@ -39,6 +39,7 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.FirstWeapon.started -= OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started -= OnChooseSecondWeapon;
         _input.PlayerActions.ThirdWeapon.started -= OnChooseThirdWeapon;
+        _input.PlayerActions.FourthWeapon.started -= OnChooseFourthWeapon;
         _input.PlayerActions.Shoot.started -= OnShoot;
         _input.PlayerActions.Dash.started -= OnDash;
     }
@@ -53,6 +54,7 @@ public class PlayerInput : MonoBehaviour
         _input.PlayerActions.FirstWeapon.started += OnChooseFirstWeapon;
         _input.PlayerActions.SecondWeapon.started += OnChooseSecondWeapon;
         _input.PlayerActions.ThirdWeapon.started += OnChooseThirdWeapon;
+        _input.PlayerActions.FourthWeapon.started += OnChooseFourthWeapon;
         _input.PlayerActions.Shoot.started += OnShoot;
         _input.PlayerActions.Dash.started += OnDash;
     }
@@ -86,9 +88,15 @@ public class PlayerInput : MonoBehaviour
     {
         _player.Weapons.ChooseWeapon(2);
     }
+
     private void OnChooseThirdWeapon(InputAction.CallbackContext context)
     {
         _player.Weapons.ChooseWeapon(3);
+    }
+
+    private void OnChooseFourthWeapon(InputAction.CallbackContext context)
+    {
+        _player.Weapons.ChooseWeapon(4);
     }
 
     private void OnShoot(InputAction.CallbackContext context)
