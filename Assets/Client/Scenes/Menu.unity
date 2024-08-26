@@ -289,8 +289,8 @@ GameObject:
   - component: {fileID: 1836095557}
   - component: {fileID: 1836095556}
   - component: {fileID: 1836095559}
-  - component: {fileID: 1836095560}
   - component: {fileID: 1836095561}
+  - component: {fileID: 1836095560}
   - component: {fileID: 1836095562}
   - component: {fileID: 1836095563}
   - component: {fileID: 1836095565}
@@ -383,10 +383,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chooseSaveAsset: {fileID: 9197481963319205126, guid: 63e482a83820ac34492d1e58477a6bb0, type: 3}
   _classChooser: {fileID: 1836095562}
-  _newSaveUI: {fileID: 9197481963319205126, guid: 197b58e18a74f4b4493469355872f409, type: 3}
-  _saveUI: {fileID: 9197481963319205126, guid: f6160cef7334dff42b7158626bae9828, type: 3}
+  _newSaveAsset: {fileID: 9197481963319205126, guid: 197b58e18a74f4b4493469355872f409, type: 3}
+  _saveButtonAsset: {fileID: 9197481963319205126, guid: d2949ec33ea2e524c9e58c494689f73b, type: 3}
   _menu: {fileID: 1836095559}
-  _playerMenu: {fileID: 1836095567}
 --- !u!114 &1836095562
 MonoBehaviour:
   m_ObjectHideFlags: 0

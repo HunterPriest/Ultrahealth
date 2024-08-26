@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
-    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" tabindex="1" focusable="true" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 100%; -unity-text-align: middle-left; align-items: flex-start; border-bottom-color: rgb(0, 0, 0);">
-        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SaveName" style="width: 100%;" />
-    </ui:Button>
-</ui:UXML>

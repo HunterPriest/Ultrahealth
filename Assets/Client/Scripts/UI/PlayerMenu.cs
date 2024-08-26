@@ -15,17 +15,18 @@ public class PlayerMenu : UIToolkitElement
     protected override void Initialize()
     {
         _playerMenuUI = _playerMenuAsset.CloneTree();
+
+        Button exit = _playerMenuUI.Q<Button>("Exit");
+
+        exit.clicked += () =>
+        {
+            _chooseSave.OpenSave();
+            exit.clicked -= () => { };
+        };
     }
 
     public void Open()
     {
         ResetContainer(_playerMenuUI);
-        Button exit = _playerMenuUI.Q<Button>("Exit");
-
-        exit.clicked += () => 
-        {
-            _chooseSave.OpenSave();
-            exit.clicked -= () => { };
-        };
     }
 }
