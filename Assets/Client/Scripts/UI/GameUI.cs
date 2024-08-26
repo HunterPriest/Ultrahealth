@@ -35,7 +35,7 @@ public class GameUI
         if(_gameMachine.currentState == GameState.Game)
         {
             _gameMachine.StopGame();
-            _pause.OpenPause();
+            _pause.Open();
         }
         else if(_gameMachine.currentState == GameState.Pause)
         {

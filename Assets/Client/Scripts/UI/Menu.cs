@@ -3,30 +3,21 @@ using UnityEngine.UIElements;
 
 public class Menu : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _MenuAsset;
-    [SerializeField] private ChooseSave _chooseSave;
+    [SerializeField] private SaveChoice _saveChoice;
     [SerializeField] private SettingsUI _settingsUI;
-
-    private VisualElement _menu;
-
 
     protected override void Initialize()
     {
-        _menu = _MenuAsset.CloneTree();
+        base.Initialize();
 
-        Button start = _menu.Q<Button>("Play");
-        Button settings = _menu.Q<Button>("Settings");
-        Button exit = _menu.Q<Button>("Exit");
+        Button start = UIElement.Q<Button>("Play");
+        Button settings = UIElement.Q<Button>("Settings");
+        Button exit = UIElement.Q<Button>("Exit");
 
-        start.clicked += _chooseSave.OpenSave;
+        start.clicked += _saveChoice.Open;
         settings.clicked += _settingsUI.Open;
         exit.clicked += Application.Quit;
 
-        OpenMenu();
-    }
-
-    public void OpenMenu()
-    {
-        ResetContainer(_menu);
+        Open();
     }
 }

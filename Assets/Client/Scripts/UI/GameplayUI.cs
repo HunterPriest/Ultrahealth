@@ -21,11 +21,11 @@ public class GameplayUI : UIToolkitElement
 
     protected override void Initialize()
     {
-        _gameplayUI = _gameplayUIAsset.CloneTree();
+        base.Initialize();
         Open();
     }
 
-    public void Open()
+    public override void Open()
     {
         ResetContainer(_gameplayUI);
         InitializeUI(_playerSettings.healthSettings.maxHealth, _playerSettings.movementSettings.maxStamina);

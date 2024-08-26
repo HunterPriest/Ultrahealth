@@ -1,24 +1,21 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SettingsUI : UIToolkitElement
+public class SettingsUI : UIToolkitElementWithExitOnButton
 {
-    [SerializeField] private VisualTreeAsset _settingsAsset;
     [SerializeField] private MainSettingsUI _mainSettingsUI;
-    [SerializeField] private Menu _menu;
     [SerializeField] private Pause _pause;
 
-    private VisualElement _settings;
     private VisualElement _setSettingsPanels;
 
     protected override void Initialize()
     {
-        _settings = _settingsAsset.CloneTree();
+        base.Initialize();
 
-        Button mainSettings = _settings.Q<Button>("mainSettings");
-        Button back = _settings.Q<Button>("Back");
-        _setSettingsPanels = _settings.Q<VisualElement>("SetSettings");
-        Button save = _settings.Q<Button>("Save");
+        Button mainSettings = UIElement.Q<Button>("mainSettings");
+        Button back = UIElement.Q<Button>("Back");
+        _setSettingsPanels = UIElement.Q<VisualElement>("SetSettings");
+        Button save = UIElement.Q<Button>("Save");
 
         save.clicked += () =>
         {
@@ -31,20 +28,20 @@ public class SettingsUI : UIToolkitElement
         };
         back.clicked += () =>
         {
-            if (_menu != null)
+            if (_pause != null)
             {
-                _menu.OpenMenu();
+                _pause.Open();
             }
-            else if (_pause != null)
+            else
             {
-                _pause.OpenPause();
+                Exit();
             }
         };
     }
 
-    public void Open()
+    public override void Open()
     {
-        ResetContainer(_settings);
+        base.Open();
 
         _mainSettingsUI.Open(_setSettingsPanels);
     }

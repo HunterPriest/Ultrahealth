@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: flex-start; width: 100%;">
+        <ui:Slider picking-mode="Ignore" label="Чувствительность" value="42" high-value="100" name="Sens" direction="Horizontal" class="defoltOldKallText" style="font-size: 44px; width: 100%; height: 45px; justify-content: space-between;" />
+    </ui:VisualElement>
+</ui:UXML>

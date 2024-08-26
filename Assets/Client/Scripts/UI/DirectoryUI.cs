@@ -1,39 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-public class DirectoryUI : UIToolkitElement
+public class DictionaryUI : UIToolkitElementWithExitOnButton
 {
-    [SerializeField] private ChooseLevelMenu _chooseLevelMenu;
     [SerializeField] private Pause _pause;
-    [SerializeField] private VisualTreeAsset _directoryAsset;
     private List<EnemyDirectorySO> _enemyDirectory;
-
-    private VisualElement _directory;
 
     protected override void Initialize()
     {
-        _directory = _directoryAsset.CloneTree();
+        base.Initialize();
 
         _enemyDirectory = new List<EnemyDirectorySO>();
-
-        Button back = _directory.Q<Button>("Back");
-
-        back.clicked += () =>
-        {
-            if (_chooseLevelMenu != null)
-            {
-                _chooseLevelMenu.OpenChooseLevelMenu();
-            }
-            else if (_pause != null)
-            {
-                _pause.OpenPause();
-            }
-        };
     }
 
-    public void OpenDirectory()
+    public override void Open()
     {
-        ResetContainer(_directory);
+        base.Open();
 
         InitializeDirectoryScroll();
     }

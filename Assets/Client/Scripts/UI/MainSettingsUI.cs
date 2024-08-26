@@ -4,10 +4,8 @@ using Zenject;
 
 public class MainSettingsUI : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _mainSettingsAsset;
     [SerializeField] private SettingsUI _settingsUI;
 
-    private VisualElement _mainSettings;
     private SettingsSaver _settingsSaver;
     private GameConfigInstaller.StandartSettings _standartSettings;
     private Slider _sens;
@@ -19,14 +17,9 @@ public class MainSettingsUI : UIToolkitElement
         _standartSettings = standartSettings;
     }
 
-    protected override void Initialize()
-    {
-        _mainSettings = _mainSettingsAsset.CloneTree();
-    }
-
     public void Open(VisualElement settings)
     {
-        settings.Add(_mainSettings);
+        settings.Add(UIElement);
         _sens = _container.Q<Slider>("Sens");
 
         _sens.highValue = _standartSettings.maxSens;

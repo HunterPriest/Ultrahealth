@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 using Zenject;
 using Tools;
 
-public class Win : UIToolkitElement
+public class Win : UIToolkitBasicElement
 {
     [SerializeField] private VisualTreeAsset WinAsset;
 

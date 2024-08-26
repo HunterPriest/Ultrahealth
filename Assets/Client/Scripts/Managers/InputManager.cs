@@ -2,26 +2,29 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private Input _playerInput;
+    private Input _input;
     private Input.PlayerActions _playerActions;
+    private Input.UIActions _UIActions;
 
     public Input.PlayerActions PlayerActions => _playerActions;
+    public Input.UIActions UIActions => _UIActions;
 
     public void Initialize()
     {
-        _playerActions = _playerInput.Player;
+        _playerActions = _input.Player;
+        _UIActions = _input.UI;
 
         print("Initialize");
     }
 
     public void OnEnable()
     {
-        _playerInput = new Input();
-        _playerInput.Enable();
+        _input = new Input();
+        _input.Enable();
     }
 
     public void OnDisable()
     {
-        _playerInput.Disable();
+        _input.Disable();
     }
 }

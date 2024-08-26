@@ -4,9 +4,6 @@ using Zenject;
 
 public class DeathPlayer : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _deathPlayerAsset;
-
-    private VisualElement deathPlayer;
     private GameMachine _gameMachine;
     private Level _level;
 
@@ -19,10 +16,10 @@ public class DeathPlayer : UIToolkitElement
 
     protected override void Initialize()
     {
-        deathPlayer = _deathPlayerAsset.CloneTree();
+        base.Initialize();
 
-        Button exitToMenu = deathPlayer.Q<Button>("Exit");
-        Button repeat = deathPlayer.Q<Button>("Repeat");
+        Button exitToMenu = UIElement.Q<Button>("Exit");
+        Button repeat = UIElement.Q<Button>("Repeat");
 
         exitToMenu.clicked += _gameMachine.FinishGame;
         repeat.clicked += () =>
@@ -30,10 +27,5 @@ public class DeathPlayer : UIToolkitElement
             _gameMachine.LoadLevel(_level.levelSettings.levelIndex);
             _gameMachine.ResumeGame();
         };
-    }
-
-    public void Open()
-    {
-        ResetContainer(deathPlayer);
     }
 }

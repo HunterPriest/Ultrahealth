@@ -6,9 +6,8 @@ using System;
 using ModestTree;
 using System.Collections.Generic;
 
-public class levelUp : UIToolkitElement
+public class levelUp : UIToolkitElementWithExitOnButton
 {
-    [SerializeField] private ChooseLevelMenu _chooseLevelMenu;
     [SerializeField] private Color _skillButtonColor;
     [SerializeField] private Color _buyedSkillButtonColor;
 
@@ -50,24 +49,12 @@ public class levelUp : UIToolkitElement
         _singlecellLevelUp = _SinglecellLevelUpAsset.CloneTree();
     }
 
-    public void OpenLevelUp()
+    public override void Open()
     {
         LoadUIAsset(_playerSaver.currentSave.playerSave.indexClassPlayer);
         _currentClassTree = _levelUpSettings.GetTree(_playerSaver.currentSave.playerSave.indexClassPlayer);
         _playerStats = _container.Q<Label>("PlayerStats");
         UpdatePlayerStats();
-
-        Button exit = _container.Q<Button>("Exit");
-        exit.clicked += () => 
-        {
-            exit.clicked -= () => { };
-            _levelUpButton.clicked -= () => { };
-            foreach (Button button in _levelUpButtons)
-            {
-                button.clicked -= () => { };
-            }
-            _chooseLevelMenu.OpenChooseLevelMenu();
-        };
 
         _descriptionSkill = _container.Q<Label>("Description");
         _levelUpButton = _container.Q<Button>("LevelUp");

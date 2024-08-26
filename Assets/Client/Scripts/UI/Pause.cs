@@ -5,11 +5,8 @@ using Zenject;
 
 public class Pause : UIToolkitElement
 {
-    [SerializeField] private VisualTreeAsset _pauseAsset;
     [SerializeField] private SettingsUI _settingsUI;
-    [SerializeField] private DirectoryUI _directoruUI;
-
-    private VisualElement _pause;
+    [SerializeField] private DictionaryUI _directoruUI;
 
     private GameUI _gameUI;
     private GameMachine _gameMachine;
@@ -23,21 +20,16 @@ public class Pause : UIToolkitElement
 
     protected override void Initialize()
     {
-        _pause = _pauseAsset.CloneTree();
+        base.Initialize();
 
-        Button continueGame = _pause.Q<Button>("Cont");
-        Button directory = _pause.Q<Button>("Directory");
-        Button settings = _pause.Q<Button>("Settings");
-        Button exitToMenu = _pause.Q<Button>("ExitToMenu");
+        Button continueGame = UIElement.Q<Button>("Cont");
+        Button directory = UIElement.Q<Button>("Directory");
+        Button settings = UIElement.Q<Button>("Settings");
+        Button exitToMenu = UIElement.Q<Button>("ExitToMenu");
 
         continueGame.clicked += _gameUI.ClosePause;
-        directory.clicked += _directoruUI.OpenDirectory;
+        directory.clicked += _directoruUI.Open;
         settings.clicked += _settingsUI.Open;
         exitToMenu.clicked += _gameMachine.FinishGame;
-    }
-
-    public void OpenPause()
-    {
-        ResetContainer(_pause);
     }
 }

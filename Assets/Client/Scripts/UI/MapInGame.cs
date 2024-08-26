@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 
-public class MapInGame : UIToolkitElement
+public class MapInGame : UIToolkitBasicElement
 {
     [SerializeField] private VisualTreeAsset _MapInGameAsset;
     [SerializeField] private MapConfiguration _currentMap;

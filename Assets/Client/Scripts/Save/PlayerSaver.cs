@@ -25,9 +25,10 @@ public class PlayerSaver
         currentSave = new CurrentSave(newIndexSave, playerData);
     }
 
-    public void ChangeCurrentSave(int newIndexSave)
+    public void ChangeCurrentSave(int index, string name)
     {
-        currentSave = new CurrentSave(newIndexSave);
+        currentSave = new CurrentSave(index);
+        currentSave.playerSave.name = name;
     }
 
     private DataSave.PlayerData SaveNewPlayerData(int indexClass)

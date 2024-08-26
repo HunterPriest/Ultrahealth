@@ -9,7 +9,7 @@ public class Level : MonoBehaviour
     [SerializeField] private Boss _boss;
     [SerializeField] private Win _win;
     [SerializeField] private LevelSettings _levelSettings;
-    [SerializeField] private DirectoryUI _directory;
+    [SerializeField] private DictionaryUI _directory;
 
     private GameMachine _gameMachine;
     private float _startTime;
