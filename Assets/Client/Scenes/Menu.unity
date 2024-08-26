@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 1836095565}
   - component: {fileID: 1836095564}
   - component: {fileID: 1836095566}
+  - component: {fileID: 1836095567}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -382,8 +383,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chooseSaveAsset: {fileID: 9197481963319205126, guid: 63e482a83820ac34492d1e58477a6bb0, type: 3}
   _classChooser: {fileID: 1836095562}
-  _panelForSaveCreateAsset: {fileID: 9197481963319205126, guid: dad3a448ec8f315429c6c2d9a7730a2b, type: 3}
+  _newSaveUI: {fileID: 9197481963319205126, guid: 197b58e18a74f4b4493469355872f409, type: 3}
+  _saveUI: {fileID: 9197481963319205126, guid: f6160cef7334dff42b7158626bae9828, type: 3}
   _menu: {fileID: 1836095559}
+  _playerMenu: {fileID: 1836095567}
 --- !u!114 &1836095562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +464,23 @@ MonoBehaviour:
   _chooseLevelMenu: {fileID: 1836095560}
   _pause: {fileID: 0}
   _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
+--- !u!114 &1836095567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836095555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d416acee16ca9a945b89bcafceeb31b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMenuAsset: {fileID: 9197481963319205126, guid: 46a76347acf7b6f42b78b47e5cf4a63a, type: 3}
+  _chooseLevelMenu: {fileID: 1836095560}
+  _levelUp: {fileID: 1836095563}
+  _directoryUI: {fileID: 1836095566}
+  _chooseSave: {fileID: 1836095561}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

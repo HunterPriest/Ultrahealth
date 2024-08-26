@@ -8,6 +8,7 @@ namespace DataSave
     public class PlayerData
     { 
         public List<EnemyDirectorySO> killEnemies;
+        public string name;
         public int currentIndexLevel;
         [Range(1, 3)] public int indexClassPlayer;
         public float maxStamina;
@@ -28,4 +29,4 @@ namespace DataSave
     {
         public float sens;
     }
-}
+}   

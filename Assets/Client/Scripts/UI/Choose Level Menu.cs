@@ -31,13 +31,13 @@ public class ChooseLevelMenu : UIToolkitElement
         _chooseLevel = _chooseLevelsAsset.CloneTree();
 
         Button directory = _chooseLevel.Q<Button>("Directory");
-        directory.clicked += _directoruUI.OpenDirectory;
+        //directory.clicked += _directoruUI.OpenDirectory;
 
         Button exit = _chooseLevel.Q<Button>("Exit");
-        exit.clicked += _chooseSave.OpenSave;
+        //exit.clicked += _chooseSave.OpenSave;
 
         Button levelUp = _chooseLevel.Q<Button>("LevelUp");
-        levelUp.clicked += _levelUp.OpenLevelUp; 
+        //levelUp.clicked += _levelUp.OpenLevelUp; 
     }
 
     public void OpenChooseLevelMenu()

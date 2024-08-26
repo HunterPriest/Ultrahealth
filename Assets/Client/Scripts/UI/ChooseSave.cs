@@ -3,18 +3,23 @@ using UnityEngine;
 using Zenject;
 using System.CodeDom.Compiler;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class ChooseSave : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _chooseSaveAsset;
     [SerializeField] private ClassChoose _classChooser;
-    [SerializeField] private VisualTreeAsset _panelForSaveCreateAsset;
+    [SerializeField] private VisualTreeAsset _newSaveAsset;
+    [SerializeField] private VisualTreeAsset _saveUIAsset;
     [SerializeField] private Menu _menu;
 
-    private VisualElement _save;
-    private VisualElement _panelNewSave;
+    private VisualElement _chooseSaveUI;
+    private VisualElement _newSaveUI; 
     private GameConfigInstaller.SavesSettings _savesSettings;
     private PlayerSaver _playerSaver;
+    private List<DataSave.PlayerData> _playersData = new List<DataSave.PlayerData>();
+    private List<VisualElement> _savesUI = new List<VisualElement>();
 
     [Inject]
     private void Construct(PlayerSaver playerSaver, GameConfigInstaller.SavesSettings savesSettings)
@@ -25,33 +30,75 @@ public class ChooseSave : UIToolkitElement
 
     protected override void Initialize()
     {
-        _save = _chooseSaveAsset.CloneTree();
-        _panelNewSave = _panelForSaveCreateAsset.CloneTree();
+        _chooseSaveUI = _chooseSaveAsset.CloneTree();
+        _newSaveUI = _newSaveAsset.CloneTree();
 
-        Button[] buttonsSaves = new Button[_savesSettings.amountSaves];
-        int[] buttonsIndexes = new int[_savesSettings.amountSaves];
 
-        for (int i = 0; i < _savesSettings.amountSaves; i++)
+        ScrollView saves = _chooseSaveUI.Q<ScrollView>("Saves");
+        saves.Add(_newSaveUI);              
+
+        int i = 1;
+        while(Saver.HasSave(i.ToString()))
         {
-            buttonsIndexes[i] = i;
-            buttonsSaves[i] = _save.Q<Button>("Save" + (i + 1).ToString());
-            SubscribeButton(buttonsSaves[i]);
+            VisualElement saveUI = _saveUIAsset.CloneTree();
+            _savesUI.Add(saveUI);
+            saves.Add(saveUI);
+            _playersData.Add(_playerSaver.LoadPlayerData(i));
+            Button playerSave = saves.Q<Button>("SaveButton");
+            playerSave.name = "Save" + i.ToString();
+            if(_playersData[i - 1].name != null)
+            {
+                playerSave.text = _playersData[i - 1].name;
+            }
+            else
+            {
+                playerSave.text = "Roflo hahahah";
+            }
+            playerSave.tabIndex = i;
+            i++;
         }
 
-        Button exit = _save.Q<Button>("Exit");
+        saves.Add(_newSaveUI);          
+
+        Button exit = _chooseSaveUI.Q<Button>("Exit");
         exit.clicked += _menu.OpenMenu;
+    }
+
+    private void UpdateSavesButtons()
+    {
+        int i = 1;
+        while(Saver.HasSave(i.ToString()))
+        {
+            VisualElement saveUI = _saveUIAsset.CloneTree();
+            _savesUI.Add(saveUI);
+            saves.Add(saveUI);
+            _playersData.Add(_playerSaver.LoadPlayerData(i));
+            Button playerSave = saves.Q<Button>("SaveButton");
+            playerSave.name = "Save" + i.ToString();
+            if(_playersData[i - 1].name != null)
+            {
+                playerSave.text = _playersData[i - 1].name;
+            }
+            else
+            {
+                playerSave.text = "Roflo hahahah";
+            }
+            playerSave.tabIndex = i;
+            i++;
+        }
+
+        saves.Add(_newSaveUI);
     }
 
     public void OpenSave()
     {
-        ResetContainer(_save);
+        ResetContainer(_chooseSaveUI);
     }
 
     private void SubscribeButton(Button button)
     {
         if(Saver.HasSave(button.tabIndex.ToString()))
         {
-            button.text = "Сохранение " + button.tabIndex.ToString();
             button.clicked += () => OnButtonWithSave(button.tabIndex);
         }
         else
@@ -62,28 +109,8 @@ public class ChooseSave : UIToolkitElement
 
     private void OnButtonWithSave(int indexSave)
     {
-        DataSave.PlayerData playerData = _playerSaver.LoadPlayerData(indexSave);
-        _playerSaver.ChangeCurrentSave(playerData, indexSave);
+        _playerSaver.ChangeCurrentSave(_playersData[indexSave - 1], indexSave);
         _classChooser.OpenChooseLevel();
-    }
-
-    private void NewSave(int indexSave)
-    {
-        _container.Add(_panelNewSave);
-
-        Button yes = _container.Q<Button>("Yes");
-        Button no = _container.Q<Button>("No");
-
-        yes.clicked += () =>
-        {
-            OnClickYes(indexSave);
-            yes.clicked -= () => { };
-        };
-        no.clicked += () =>
-        {
-            OpenSave();
-            no.clicked -= () => { };
-        };
     }
 
     private void OnClickYes(int indexSave)
