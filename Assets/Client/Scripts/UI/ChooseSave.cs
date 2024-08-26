@@ -10,13 +10,11 @@ public class ChooseSave : UIToolkitElement
 {
     [SerializeField] private VisualTreeAsset _chooseSaveAsset;
     [SerializeField] private ClassChoose _classChooser;
-    [SerializeField] private VisualTreeAsset _newSaveAsset;//panel
     [SerializeField] private VisualTreeAsset _saveButtonAsset;
     [SerializeField] private Menu _menu;
 
     private VisualElement _chooseSaveUI;
     private VisualElement _saveButton;
-    private VisualElement _newSave;
     private PlayerSaver _playerSaver;
     private List<DataSave.PlayerData> _playersData = new List<DataSave.PlayerData>();
 
@@ -29,8 +27,10 @@ public class ChooseSave : UIToolkitElement
     protected override void Initialize()
     {
         _chooseSaveUI = _chooseSaveAsset.CloneTree();
-        _newSave = _newSaveAsset.CloneTree();
-        _saveButton = _saveButtonAsset.CloneTree();  
+        _saveButton = _saveButtonAsset.CloneTree();
+
+        Button plus = _chooseSaveUI.Q<Button>("Plus");
+        plus.clicked += CreateNewSave;
 
         Button exit = _chooseSaveUI.Q<Button>("Exit");
         exit.clicked += _menu.OpenMenu;
@@ -81,9 +81,13 @@ public class ChooseSave : UIToolkitElement
         _classChooser.OpenChooseLevel();
     }
 
-    private void OnClickYes(int indexSave)
+    private void CreateNewSave()
     {
-        _playerSaver.ChangeCurrentSave(indexSave);
-        _classChooser.OpenClassChooser();
+        TextField saveName = _container.Q<TextField>("NewSaveName");
+
+        if (saveName.value != null && saveName.value != "¬ведите им€...")
+        {
+
+        }
     }
 }
