@@ -23,9 +23,8 @@
             <ui:VisualElement name="ToPerkVE" style="flex-grow: 1; width: 950px; flex-direction: row;">
                 <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Description" class="defoltOldKallText" style="font-size: 54px; width: 100%; height: auto;" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: flex-end; width: 79px; height: 100%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: space-around; width: 79px; height: 100%;">
                 <ui:Button text="Купить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" class="defoltOldKallButtons defoltHoverButton defoltFocusButton defoltOldKallText" style="width: 100%; justify-content: flex-end; height: 50%; display: flex; visibility: visible; transition-property: opacity; transition-duration: 1s; transition-timing-function: linear; transition-delay: 0s;" />
-                <ui:Button text="Назад" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="defoltOldKallButtons defoltHoverButton defoltFocusButton defoltOldKallText" style="width: 100%; justify-content: flex-end; height: 50%; display: flex; opacity: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
