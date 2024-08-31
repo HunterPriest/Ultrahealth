@@ -20,6 +20,7 @@ public class CurrentSave
     public CurrentSave(int indexSave)
     {
         this.indexSave = indexSave;
+        playerSave = new();
     }
 
     public CurrentSave(DataSave.PlayerData playerData)

@@ -1,5 +1,9 @@
+using System;
+
 public class PlayerSaver
 {
+    public Action OnCreatedNewSave;
+
     public CurrentSave currentSave {get; private set; }
 
     private GameConfigInstaller.ClassesSettings _classesConfigs;
@@ -23,6 +27,7 @@ public class PlayerSaver
     {
         DataSave.PlayerData playerData = SaveNewPlayerData(indexClass);
         currentSave = new CurrentSave(newIndexSave, playerData);
+        OnCreatedNewSave.Invoke();
     }
 
     public void ChangeCurrentSave(int index, string name)
@@ -33,12 +38,12 @@ public class PlayerSaver
 
     private DataSave.PlayerData SaveNewPlayerData(int indexClass)
     {
-        DataSave.PlayerData playerData = CreateNewPlayerData(indexClass);
+        DataSave.PlayerData playerData = CreateNewPlayerData(indexClass, currentSave.playerSave.name);
         Saver.Save<DataSave.PlayerData>(currentSave.indexSave.ToString(), playerData);
         return playerData;
     }
 
-    public DataSave.PlayerData CreateNewPlayerData(int indexClass)
+    public DataSave.PlayerData CreateNewPlayerData(int indexClass, string name)
     {
         DataSave.PlayerData playerData = new();
         ClassConfig classConfig = null;
@@ -57,6 +62,7 @@ public class PlayerSaver
         }
 
         playerData.currentIndexLevel = 1;
+        playerData.name = name;
         playerData.dashSpeed = classConfig.dashSpeed;
         playerData.dashTime = classConfig.dashTime;
         playerData.jumpForce = classConfig.jumpForce;

@@ -1,10 +1,7 @@
 using UnityEngine.UIElements;
 using UnityEngine;
 using Zenject;
-using System.CodeDom.Compiler;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 public class SaveChoice : UIToolkitElementWithExitOnButton
 {
@@ -12,16 +9,15 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
     [SerializeField] private PlayerMenu _playerMenu;
     [SerializeField] private VisualTreeAsset _saveButtonAsset;
 
-    private VisualElement _saveButton;
     private PlayerSaver _playerSaver;
     private int _indexNewSave;
     private List<DataSave.PlayerData> _playersData = new List<DataSave.PlayerData>();
-    private Input.UIActions _UIActions;
+    private List<VisualElement> _saveButtons = new List<VisualElement>();
+    private VisualElement _savesContainer;
 
     [Inject]
-    public void Construct(InputManager inputManager, PlayerSaver playerSaver)
+    public void Construct(PlayerSaver playerSaver)
     {
-        _UIActions = inputManager.UIActions;
         _playerSaver = playerSaver;
     }
 
@@ -30,33 +26,38 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
         base.Initialize();
         Button plus = UIElement.Q<Button>("Plus");
         plus.clicked += () => CreateNewSave(_indexNewSave);
+        _savesContainer = UIElement.Q<VisualElement>("SaveConteyner");
+        InitializeSavesButtons();
+        _playerSaver.OnCreatedNewSave += UpdateSavesButtons;
     }
 
-    public override void Open()
-    {   
-        base.Open();
+    private void UpdateSavesButtons()
+    {
+        RemoveSaveButtons();
+        _saveButtons.Clear();
+        _playersData.Clear();
+        InitializeSavesButtons();
+    }
 
-        VisualElement savesConteyner = UIElement.Q<VisualElement>("SaveConteyner");
-
+    private void InitializeSavesButtons()
+    {
         int i = 1;
         while (Saver.HasSave(i.ToString()))
         {
             VisualElement saveButton = _saveButtonAsset.CloneTree();
-            savesConteyner.Add(saveButton);
-            Button button = savesConteyner.Q<Button>("SaveButton");
-            Label saveName = savesConteyner.Q<Label>("SaveName");
+
+            _saveButtons.Add(saveButton);
+            _savesContainer.Add(saveButton);
+
+            Button button = _savesContainer.Q<Button>("SaveButton");
+            Label saveName = _savesContainer.Q<Label>("SaveName");
+
             button.name = "Save" + i.ToString();
             saveName.name = "SaveName" + i.ToString();
 
             _playersData.Add(_playerSaver.LoadPlayerData(i));
-            if (_playersData[i - 1].name != null)
-            {
-                saveName.text = _playersData[i - 1].name;
-            }
-            else
-            {
-                saveName.text = i.ToString();
-            }
+
+            saveName.text = _playersData[i - 1].name;
             button.tabIndex = i;
             i++;
             SubscribeButton(button);
@@ -65,13 +66,17 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
         _indexNewSave = i++;
     }
 
+    private void RemoveSaveButtons()
+    {
+        foreach(VisualElement element in _saveButtons)
+        {
+            _savesContainer.Remove(element);
+        }
+    }
+
     private void SubscribeButton(Button button)
     {
-        button.clicked += () =>
-        {
-            OnButtonSave(button.tabIndex);
-            button.clicked -= () => { };
-        };
+        button.clicked += () => OnButtonSave(button.tabIndex);
     }
 
     private void OnButtonSave(int indexSave)
@@ -82,11 +87,12 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
 
     private void CreateNewSave(int index)
     {
-        TextField saveName = _container.Q<TextField>("NewSaveName");
+        TextField saveTextField = _container.Q<TextField>("NewSaveName");
 
-        if (saveName.value != null && saveName.value != "Ведите имя...")
+        if (saveTextField.value != null && saveTextField.value != "Ведите имя...")
         {
-            _playerSaver.ChangeCurrentSave(index, saveName.value);
+            _playerSaver.ChangeCurrentSave(index, saveTextField.value);
+            saveTextField.value = "Ведите имя...";
             _classChooser.Open();
         }
     }
