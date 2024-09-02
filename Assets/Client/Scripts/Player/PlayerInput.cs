@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private InputManager _input;
+    private InputHandler _input;
     private Player _player;
     private GameUI _gameUI;
 
-    public void Initialize(Player player, InputManager input, GameUI gameUI)
+    public void Initialize(Player player, InputHandler input, GameUI gameUI)
     {
         _player = player;
         _input = input;

@@ -5,7 +5,7 @@
     -unity-font-style: normal;
     width: auto;
     display: flex;
-    -unity-font: url('project://database/Assets/Client/Fonts/ST-SimpleSquare/ST-SimpleSquare.ttf?fileID=12800000&guid=481bdf527b52a2449b19c1cd427c64a2&type=3#ST-SimpleSquare');
+    -unity-font: url('project://database/Assets/Client/Fonts/joystix%20monospace.otf?fileID=12800000&guid=a17ecdf00c1b8e311b46563e475bf0a5&type=3#joystix monospace');
     align-items: stretch;
     -unity-font-definition: initial;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
     border-right-width: 12px;
     border-bottom-width: 12px;
     border-left-width: 12px;
-    -unity-font: url('project://database/Assets/Client/Fonts/ST-SimpleSquare/ST-SimpleSquare.otf?fileID=12800000&guid=b7d4829be0ba5d54e8eeabdc43b85428&type=3#ST-SimpleSquare');
+    -unity-font: url('project://database/Assets/Client/Fonts/joystix%20monospace.otf?fileID=12800000&guid=a17ecdf00c1b8e311b46563e475bf0a5&type=3#joystix monospace');
     -unity-text-outline-width: 0;
     -unity-text-outline-color: rgba(0, 0, 0, 0);
     -unity-font-definition: initial;

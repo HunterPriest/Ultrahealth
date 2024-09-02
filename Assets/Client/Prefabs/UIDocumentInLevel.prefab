@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a87cd34adbdd8840b67d6ba5dfdb641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseAsset: {fileID: 9197481963319205126, guid: 0a7f04bfd6561984783806101c10378c, type: 3}
+  _UIAsset: {fileID: 9197481963319205126, guid: 0a7f04bfd6561984783806101c10378c, type: 3}
   _settingsUI: {fileID: -407094666595737227}
   _directoruUI: {fileID: 5830287472706688167}
 --- !u!114 &7772860015023190492
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82468d3f973971a45b3a2ef80452a5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIAsset: {fileID: 9197481963319205126, guid: 5dff64ef8543cfc4b85a18744250e16e, type: 3}
   _gameplayUIAsset: {fileID: 9197481963319205126, guid: 5dff64ef8543cfc4b85a18744250e16e, type: 3}
 --- !u!114 &2485016960099941281
 MonoBehaviour:
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2356a3af200e5624f97921706369b3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathPlayerAsset: {fileID: 9197481963319205126, guid: 303fd5bca7d472c43aab9e4b0dd032d8, type: 3}
+  _UIAsset: {fileID: 9197481963319205126, guid: 303fd5bca7d472c43aab9e4b0dd032d8, type: 3}
 --- !u!114 &-407094666595737227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d66bec6180b0ed43a16384ff9ec291d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsAsset: {fileID: 9197481963319205126, guid: 7f69a02b9e8d6524a940613f1c02da2e, type: 3}
+  _UIAsset: {fileID: 9197481963319205126, guid: 7f69a02b9e8d6524a940613f1c02da2e, type: 3}
+  _elementToExit: {fileID: 3568293702885248390}
   _mainSettingsUI: {fileID: 7282887786983119981}
-  _menu: {fileID: 0}
   _pause: {fileID: 3568293702885248390}
 --- !u!114 &7282887786983119981
 MonoBehaviour:
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6127bfef622fa134a84d234fb85003e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainSettingsAsset: {fileID: 9197481963319205126, guid: 407308f67ba43e14981522a995f0edfa, type: 3}
+  _UIAsset: {fileID: 9197481963319205126, guid: 407308f67ba43e14981522a995f0edfa, type: 3}
   _settingsUI: {fileID: -407094666595737227}
 --- !u!114 &5830287472706688167
 MonoBehaviour:
@@ -166,6 +167,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9abc1fc5a344f4ebe49e77b1b1bf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chooseLevelMenu: {fileID: 0}
-  _pause: {fileID: 3568293702885248390}
-  _directoryAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
+  _UIAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
+  _elementToExit: {fileID: 3568293702885248390}

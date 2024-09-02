@@ -1,22 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 public class UIInput : MonoBehaviour
 {
     private Input.UIActions _UIActions;
+    private IExitUIOnButton _exitUIOnButton;
 
-    [Inject]
-    public void Construct(InputManager inputManager)
+    public void Initialize(InputHandler inputHandler)
     {
-        _UIActions = inputManager.UIActions;
+        _UIActions = inputHandler.UIActions;
     }
 
-    public void SubcribeExit(IExitUIOnButton exitUIOnButton)
+    public void SubcribeExitButton(IExitUIOnButton exitUIOnButton)
     {
-        _UIActions.Exit.performed += context => 
-        {
-            exitUIOnButton.Exit();
-            _UIActions.Exit.performed -= context => {   };
-        };
+        _exitUIOnButton = exitUIOnButton;
+        _UIActions.Exit.performed += OnExit;
+    }
+
+    private void OnExit(InputAction.CallbackContext context)
+    {
+        UnsubscribeExitButton();
+        _exitUIOnButton.Exit();
+    }
+
+    public void UnsubscribeExitButton()
+    {
+        _UIActions.Exit.performed -= OnExit;
     }
 }

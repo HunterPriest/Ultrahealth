@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/Defolt.uss?fileID=7433441132597879392&amp;guid=f6e051c9a8a17cc4bbea840d4f5e54c2&amp;type=3#Defolt" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; position: absolute; height: 1080px; width: 1901px; left: -950px; top: 0;">
         <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: flex-start;">
-            <ui:Button text="Продолжить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Continion" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 650px; -unity-text-align: middle-left; align-self: flex-start;" />
+            <ui:Button text="Продолжить" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Continue" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 650px; -unity-text-align: middle-left; align-self: flex-start;" />
             <ui:Button text="Уровни" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Levels" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 650px; -unity-text-align: middle-left; align-self: flex-start;" />
             <ui:Button text="Прокачка" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 650px; -unity-text-align: middle-left; align-self: flex-start;" />
             <ui:Button text="Справочник" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Directory" class="defoltOldKallButtons defoltHoverButton defoltFocusButton" style="width: 650px; -unity-text-align: middle-left; align-self: flex-start;" />

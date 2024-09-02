@@ -21,7 +21,7 @@ public class Player : Character
     public TransformSway WeaponSway => _weaponSway;
 
     [Inject]
-    public void Construct(InputManager input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,
+    public void Construct(InputHandler input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,
     PlayerSaver playerSaver, GameMachine gameMachine, ComboCounter comboCounter, SettingsSaver settingsSaver)
     {   
         gameUI.SetSettingsSaverAndPlayer(this, settingsSaver);

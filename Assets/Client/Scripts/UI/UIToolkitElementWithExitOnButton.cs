@@ -16,7 +16,7 @@ public class UIToolkitElementWithExitOnButton : UIToolkitElement, IExitUIOnButto
     public override void Open()
     {
         base.Open();
-        _UIInput.SubcribeExit(this);
+        _UIInput.SubcribeExitButton(this);      
     }
 
     public void Exit()

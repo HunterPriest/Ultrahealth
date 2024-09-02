@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputHandler : MonoBehaviour
 {
     private Input _input;
     private Input.PlayerActions _playerActions;
     private Input.UIActions _UIActions;
 
     public Input.PlayerActions PlayerActions => _playerActions;
-    public Input.UIActions UIActions => _UIActions;
+    public Input.UIActions UIActions => _UIActions; 
 
     public void Initialize()
     {

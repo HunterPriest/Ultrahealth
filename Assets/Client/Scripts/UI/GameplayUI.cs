@@ -27,22 +27,22 @@ public class GameplayUI : UIToolkitElement
 
     public override void Open()
     {
-        ResetContainer(_gameplayUI);
+        base.Open();
         InitializeUI(_playerSettings.healthSettings.maxHealth, _playerSettings.movementSettings.maxStamina);
     }
 
     private void InitializeUI(float maxHealth, float maxStamina)
     {
-        _healthBar = _container.Q<ProgressBar>("Health");
-        _staminaBar = _container.Q<ProgressBar>("Stamina");
-        _bossHealthBar = _container.Q<ProgressBar>("BossHP");
+        _healthBar = UIElement.Q<ProgressBar>("Health");
+        _staminaBar = UIElement.Q<ProgressBar>("Stamina");
+        _bossHealthBar = UIElement.Q<ProgressBar>("BossHP");
         _healthBar.lowValue = 0;
         _healthBar.highValue = maxHealth;
         _healthBar.title = _healthBar.highValue.ToString() + "/" + _healthBar.highValue.ToString();
         _staminaBar.lowValue = 0;
         _staminaBar.highValue = maxStamina;
         _staminaBar.title = _staminaBar.highValue.ToString() + "/" + _staminaBar.highValue.ToString();
-        _combo = _container.Q<Label>("Combo");
+        _combo = UIElement.Q<Label>("Combo");
     }
 
     public void UpdateHealthBarValue(float value)

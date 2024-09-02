@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 public class DictionaryUI : UIToolkitElementWithExitOnButton
 {
-    [SerializeField] private Pause _pause;
     private List<EnemyDirectorySO> _enemyDirectory;
 
     protected override void Initialize()

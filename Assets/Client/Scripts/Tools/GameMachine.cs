@@ -9,31 +9,33 @@ public class GameMachine
     public Action ResumeGameAction;
 
     private ScenesManager _scenesManager;
-    private InputManager _inputManager;
+    private InputHandler _inputHandler;
+    private UIInput _UIInput;
 
     public GameState currentState {get; private set; }
 
     [Inject]
-    public GameMachine(ScenesManager scenesManager, InputManager inputManager)
+    public GameMachine(ScenesManager scenesManager, InputHandler inputManager, UIInput uIInput)
     {
         UpdateGameState(GameState.Bootstrap);
         _scenesManager = scenesManager;
-        MonoBehaviour.print(scenesManager);
-        _inputManager = inputManager;
-        MonoBehaviour.print(inputManager);
+        _inputHandler = inputManager;
+        _UIInput = uIInput;
     }
 
     public void Initialize()
     {
         UpdateGameState(GameState.Initialize);
-        _inputManager.Initialize();
+        _inputHandler.Initialize();
         _scenesManager.OpenMenu();
+        _UIInput.Initialize(_inputHandler);
         UpdateGameState(GameState.Menu);
     }
 
     public void LoadLevel(int indexLevel)
     {
         UpdateGameState(GameState.LoadGame);
+        _UIInput.UnsubscribeExitButton();
         _scenesManager.OpenLevel(indexLevel);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -54,6 +56,7 @@ public class GameMachine
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _UIInput.UnsubscribeExitButton();
         UpdateGameState(GameState.Game);
         ResumeGameAction.Invoke();
     }

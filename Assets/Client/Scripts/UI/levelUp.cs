@@ -51,6 +51,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
 
     public override void Open()
     {
+        base.Open();
         LoadUIAsset(_playerSaver.currentSave.playerSave.indexClassPlayer);
         _currentClassTree = _levelUpSettings.GetTree(_playerSaver.currentSave.playerSave.indexClassPlayer);
         _playerStats = _container.Q<Label>("PlayerStats");

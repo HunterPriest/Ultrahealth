@@ -3,7 +3,9 @@ using Zenject;
 
 public class GlobalInstaller : MonoInstaller
 {
-    [SerializeField] private InputManager _inputManager;
+    [SerializeField] private InputHandler _inputHandler;
+    [SerializeField] private UIInput _UIInput;
+
 
     public override void InstallBindings()
     {
@@ -12,11 +14,12 @@ public class GlobalInstaller : MonoInstaller
         BindGameMachine();
         BindPlayerSaver();
         BindSettingsSave();
+        BindUIInput();
     }
 
     private void BindInputManager()
     {
-        Container.Bind<InputManager>().FromInstance(_inputManager).AsSingle().NonLazy();
+        Container.Bind<InputHandler>().FromInstance(_inputHandler).AsSingle().NonLazy();
     }
 
     private void BindScenesManager()
@@ -37,5 +40,10 @@ public class GlobalInstaller : MonoInstaller
     private void BindSettingsSave()
     {
         Container.Bind<SettingsSaver>().AsSingle().NonLazy();
+    }
+
+    private void BindUIInput()
+    {
+        Container.Bind<UIInput>().FromInstance(_UIInput).AsSingle();
     }
 }
