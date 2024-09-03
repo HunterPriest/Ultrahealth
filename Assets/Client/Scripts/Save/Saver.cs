@@ -32,4 +32,16 @@ public static class Saver
             return false;
         }
     }
+
+    public static void DeleteSave<T>(string name)
+    {
+        if(PlayerPrefs.HasKey(name))
+        {
+            PlayerPrefs.DeleteKey(name);
+        }
+        else
+        {
+            return;
+        }
+    }
 }

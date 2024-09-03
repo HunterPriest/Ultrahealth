@@ -50,6 +50,7 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
             _savesContainer.Add(saveButton);
 
             Button button = _savesContainer.Q<Button>("SaveButton");
+            Button deleteSave = _savesContainer.Q<Button>("Delete");
             Label saveName = _savesContainer.Q<Label>("SaveName");
 
             button.name = "Save" + i.ToString();
@@ -59,8 +60,9 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
 
             saveName.text = _playersData[i - 1].name;
             button.tabIndex = i;
+            deleteSave.tabIndex = i;
             i++;
-            SubscribeButton(button);
+            SubscribeButton(button, deleteSave);
         }
 
         _indexNewSave = i++;
@@ -74,9 +76,14 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
         }
     }
 
-    private void SubscribeButton(Button button)
+    private void SubscribeButton(Button button, Button deleteSave)
     {
         button.clicked += () => OnButtonSave(button.tabIndex);
+        deleteSave.clicked += () =>
+        {
+            deleteSave.clicked -= () => { };
+            DeleteSave(deleteSave.tabIndex);
+        };
     }
 
     private void OnButtonSave(int indexSave)
@@ -95,5 +102,11 @@ public class SaveChoice : UIToolkitElementWithExitOnButton
             saveTextField.value = "Ведите имя...";
             _classChooser.Open();
         }
+    }
+
+    private void DeleteSave(int index)
+    {
+        _playerSaver.DeleteSave(index);
+        UpdateSavesButtons();
     }
 }

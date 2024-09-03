@@ -89,4 +89,9 @@ public class PlayerSaver
     {
         Saver.Save<DataSave.PlayerData>(indexSave.ToString(), playerData);
     }
+
+    public void DeleteSave(int indexSave)
+    {
+        Saver.DeleteSave<DataSave.PlayerData>(indexSave.ToString());
+    }
 }
