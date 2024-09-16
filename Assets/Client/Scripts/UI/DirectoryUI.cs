@@ -1,20 +1,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Zenject;
 public class DictionaryUI : UIToolkitElementWithExitOnButton
 {
     private List<EnemyDirectorySO> _enemyDirectory;
+
+    private PlayerSaver _playerSaver;
+
+    [Inject]
+    public void Construct(PlayerSaver playerSaver)
+    {
+        _playerSaver = playerSaver;
+    }
 
     protected override void Initialize()
     {
         base.Initialize();
 
         _enemyDirectory = new List<EnemyDirectorySO>();
+        
     }
 
     public override void Open()
     {
         base.Open();
+
+        _enemyDirectory = _playerSaver.currentSave.enemyDirectorySO;
 
         InitializeDirectoryScroll();
     }

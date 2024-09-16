@@ -1,0 +1,28 @@
+.levelUPButton {
+    position: absolute;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    top: 303px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    right: 0;
+    width: 130px;
+    bottom: 680px;
+    left: 0;
+    height: 117px;
+    -unity-slice-top: 8;
+    -unity-slice-right: 5;
+    -unity-slice-bottom: 10;
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}

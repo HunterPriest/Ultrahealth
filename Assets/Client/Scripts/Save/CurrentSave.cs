@@ -5,10 +5,14 @@ public class CurrentSave
 {
     public int indexSave { get; private set; }
     public DataSave.PlayerData playerSave { get; set; }
+    public List<EnemyDirectorySO> enemyDirectorySO { get; private set; }
 
     public void AddEnemyToDictionary(EnemyDirectorySO enemy)
     {
-        
+        if (enemyDirectorySO.Find(ListChecker) != false);
+        {
+            enemyDirectorySO.Add(enemy);
+        }
     }
 
     public CurrentSave(int indexSave, DataSave.PlayerData playerData)
@@ -34,5 +38,10 @@ public class CurrentSave
         "\n\n" + "Jump Force: " + playerSave.jumpForce.ToString() + "\n\n" +
         "Dash speed: " + playerSave.dashSpeed.ToString() + "\n\n" + "Speed: " + playerSave.speed.ToString() + "\n\n\n\n" + 
         "Experience: " + playerSave.experience.ToString();
+    }
+
+    private bool ListChecker(EnemyDirectorySO enemy)
+    {
+        return enemy;
     }
 }
