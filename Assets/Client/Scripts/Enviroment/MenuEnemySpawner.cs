@@ -3,21 +3,31 @@ using Zenject;
 
 public class MenuEnemySpawner : MonoBehaviour
 {
+    [SerializeField] private float _maxTimeSpawn;
+    [SerializeField] private float _minTimeSpawn;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Enemy _enemy;  
+    [SerializeField] private MenuEnemy _enemy;  
 
-    private Transform _playerTransform;
+    private float _currentTime;
+    private float _currentSpawnTime = 1f;
+    private Transform _target;
 
-    [Inject]  
-    private void Construct(Transform transform)
+    [Inject]
+    private void Construct(Transform target)
     {
-        _playerTransform = transform;
+        _target = target;
     }
 
-    private void Start()
+    private void Update()
     {
-        Enemy enemy = Instantiate(_enemy, _spawnPoint.position, Quaternion.identity, null).GetComponent<Enemy>();
-        enemy.Initialize(_playerTransform, null, null);
-    }
+        _currentTime += Time.deltaTime;
 
+        if(_currentSpawnTime <= _currentTime)
+        {
+            MenuEnemy enemy = Instantiate(_enemy.gameObject, _spawnPoint.position, Quaternion.identity, null).GetComponent<MenuEnemy>();
+            enemy.Initialize(_target);
+            _currentSpawnTime = Random.Range(_minTimeSpawn, _maxTimeSpawn);
+            _currentTime = 0;
+        }
+    }
 }
