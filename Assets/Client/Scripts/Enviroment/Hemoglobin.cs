@@ -1,34 +1,33 @@
 using UnityEngine;
+using Tools;
 
 public class Hemoglobin : MonoBehaviour
 {
-    [SerializeField] private Transform[] _startedPoints;
-    [SerializeField] public float _speed;
+    [SerializeField] private Transform[] _points;
+    [SerializeField] private float _speed;
+    [SerializeField] private ShakeAnimationSO _shakeAnimationConfig;
+ 
+    private int _indexCurrentPoint = 1;
 
-    private int _indexCurrentPoint = 0;
-    private bool _isRight = false;
+    private void Start()
+    {
+        transform.position = _points[0].position;
+    }
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _startedPoints[_indexCurrentPoint].position, _speed * Time.deltaTime);
-        if(Vector3.Distance(transform.position, _startedPoints[_indexCurrentPoint].position) <= 1f)
+        transform.position = Vector3.MoveTowards(transform.position, _points[_indexCurrentPoint].position, _speed * Time.deltaTime);
+        if(Vector3.Distance(transform.position, _points[_indexCurrentPoint].position) <= 0.5f)
         {
-            if(_indexCurrentPoint == _startedPoints.Length - 1)
-            {
-                _isRight = true;
-            }
-            else if(_indexCurrentPoint == 0)
-            {
-                _isRight = false;
-            }
+            _indexCurrentPoint++;
 
-            if(!_isRight)
+            AnimationShortCuts.ShakeRotationAnimation(transform, _shakeAnimationConfig.config);
+
+            if(_indexCurrentPoint == _points.Length)
             {
-                _indexCurrentPoint++;
-            }
-            else 
-            {
-                _indexCurrentPoint--;
+
+                _indexCurrentPoint = 0;
+                transform.position = _points[0].position;
             }
         }
     }

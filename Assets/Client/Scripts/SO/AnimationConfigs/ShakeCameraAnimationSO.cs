@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ultrahealth/ShakeCameraAnimationConfig")]
-public class ShakeCameraAnimationConfig : ScriptableObject
+[CreateAssetMenu(menuName = "Ultrahealth/ShakeCameraAnimationSO")]
+public class ShakeCameraAnimationSO : ScriptableObject
 {
     [SerializeField] private ShakeAnimationConfig _positionConfig;
     [SerializeField] private ShakeAnimationConfig _rotationConfig;

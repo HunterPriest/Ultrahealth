@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 using Zenject;
 using Tools;
@@ -13,7 +12,7 @@ public class ShakeCameraOnWeaponAttack : MonoBehaviour
         _cameraTransform = headService.cameraTransform;
     }
 
-    public void ReactOnAttack(ShakeCameraAnimationConfig shakeAnimationConfig)
+    public void ReactOnAttack(ShakeCameraAnimationSO shakeAnimationConfig)
     {
         AnimationShortCuts.ShakePositionAnimation(_cameraTransform, shakeAnimationConfig.positionConfig);
         AnimationShortCuts.ShakeRotationAnimation(_cameraTransform, shakeAnimationConfig.rotationConfig);

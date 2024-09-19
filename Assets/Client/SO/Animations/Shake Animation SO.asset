@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534f070e6984def86a4e7d09fee5a000, type: 3}
+  m_Name: Shake Animation SO
+  m_EditorClassIdentifier: 
+  _config:
+    isOn: 1
+    duration: 6.15
+    ease: 2
+    randomnessMode: 1
+    strength: {x: 360, y: 360, z: 360}
+    randomness: 0
+    vibrato: 0
+    snapping: 0

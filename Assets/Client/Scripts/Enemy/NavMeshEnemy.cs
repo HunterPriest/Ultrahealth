@@ -47,6 +47,16 @@ public class NavMeshEnemy : Enemy
 
     public override void Initialize(Transform playerTransform, ComboCounter comboCounter, KillCounter killCounter)
     {
+        if(comboCounter == null)
+        {
+            _agent.speed = _movementConfiguration.speed;
+            _movement = new EnemyChase(_animations, playerTransform, _agent);
+            _playerDetector.PlayerInChaseRange += OnPlayerInChaseRange;
+            _playerDetector.PlayerInAttackRange += OnPlayerInAttackRange;
+            _playerDetector.PlayerOutChaseRange += OnPlayerOutChaseRange; 
+            return;
+        }
+
         if(_agent == null)
         {
             Init();
