@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e36e4a942d1014dad96cd5c35899ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MapInGameAsset: {fileID: 9197481963319205126, guid: 8e6f209eb65063e43beb334ad3627160, type: 3}
+  _mapInGameAsset: {fileID: 9197481963319205126, guid: 8e6f209eb65063e43beb334ad3627160, type: 3}
   _currentMap: {fileID: 11400000, guid: 90aae26d94c9aff4eb1eda908fdf9d04, type: 2}
 --- !u!114 &3568293702885248390
 MonoBehaviour:

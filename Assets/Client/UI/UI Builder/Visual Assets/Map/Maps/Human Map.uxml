@@ -1,2 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Client/UI/UI%20Builder/Stiles/ButtonsOnMap.uss?fileID=7433441132597879392&amp;guid=b4165fd4fb39cde49bf9d540feabede9&amp;type=3#ButtonsOnMap" />
+    <ui:VisualElement style="flex-grow: 1; width: 902px; height: 906px; background-image: url(&apos;project://database/Assets/Client/Image/Maps/Human1_%D0%A1%D0%BB%D0%BE%D0%B9%201.png?fileID=2800000&amp;guid=078afb7daf51a654fa647a21e11e48eb&amp;type=3#Human1_Слой 1&apos;); align-self: center; justify-content: center; align-items: center; flex-direction: row; position: absolute; top: 77px;">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" tabindex="1" name="1" class="buttonOnMap buttonOnMapHover buttonOnMapFocus" style="top: -237px; width: 179px; height: 305px; left: -24px;" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" tabindex="2" name="2" class="buttonOnMap buttonOnMapHover buttonOnMapFocus" style="top: -121px; left: -16px; width: 347px; height: 194px;" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" tabindex="3" name="3" class="buttonOnMap buttonOnMapHover buttonOnMapFocus" style="top: 61px; left: -67px; width: 133px; height: 184px;" />
+    </ui:VisualElement>
 </ui:UXML>
