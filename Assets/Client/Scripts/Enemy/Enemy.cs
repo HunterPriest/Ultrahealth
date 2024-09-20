@@ -45,7 +45,7 @@ public class Enemy : Character
 
     public override void Dead()
     {
-        _playerSaver.currentSave.AddEnemyToDictionary(enemyInDirectory);
+        //_playerSaver.currentSave.AddEnemyToDictionary(enemyInDirectory);
         base.Dead();
         OnDead?.Invoke();
     }

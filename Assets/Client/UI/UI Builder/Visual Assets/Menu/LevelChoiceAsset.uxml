@@ -7,6 +7,5 @@
             <ui:Button text="уровень 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level1" tabindex="1" class="defoltOldKallText gameButton gameButtonHover gameButtonFocus" style="-unity-text-align: middle-center; -unity-slice-left: 15; -unity-slice-right: 15; -unity-slice-top: 1; width: 300px; -unity-slice-bottom: 1; -unity-font: url(&apos;project://database/Assets/Client/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=a17ecdf00c1b8e311b46563e475bf0a5&amp;type=3#joystix monospace&apos;);" />
             <ui:Button text="Скоро..." parse-escape-sequences="true" display-tooltip-when-elided="true" class="defoltOldKallText gameButton gameButtonHover gameButtonFocus" style="-unity-text-align: middle-center; height: 300px; width: 300px; -unity-slice-left: 15; -unity-slice-top: 1; -unity-slice-right: 15; -unity-slice-bottom: 1;" />
         </ui:VisualElement>
-        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" class="gameButton gameButtonHover gameButtonFocus defoltOldKallText" style="height: 100px; -unity-text-align: middle-center;" />
     </ui:VisualElement>
 </ui:UXML>

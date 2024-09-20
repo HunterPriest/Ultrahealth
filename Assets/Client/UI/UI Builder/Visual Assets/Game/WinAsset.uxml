@@ -18,7 +18,7 @@
         </ui:Label>
         <ui:Label tabindex="-1" text="Итог:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Result" class="defoltOldKallText" style="font-size: 113px; top: 50px; -unity-font-definition: initial; -unity-text-align: upper-left; width: 1642px; align-items: flex-end; flex-direction: row; height: 144px;">
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exp" class="defoltOldKallText" style="font-size: 113px; top: auto; -unity-font-definition: initial; -unity-text-align: upper-right; width: 1000px; align-items: flex-end; -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0); height: 100%; right: -174px;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultRang" enable-rich-text="true" class="defoltOldKallText" style="font-size: 113px; top: auto; -unity-font-definition: initial; -unity-text-align: upper-left; width: 502px; align-items: flex-end; height: 100%; right: 0;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultRang" enable-rich-text="true" class="defoltOldKallText" style="font-size: 113px; top: auto; -unity-font-definition: initial; -unity-text-align: upper-center; width: 502px; align-items: flex-end; height: 100%; right: 0;" />
         </ui:Label>
         <ui:Button text="Выйти в меню" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitToMenu" class="defoltOldKallText gameButton gameButtonHover gameButtonFocus" style="align-self: center; left: auto; top: 123px; width: 914px; -unity-text-align: middle-center; justify-content: flex-start; height: 118px;" />
     </ui:VisualElement>

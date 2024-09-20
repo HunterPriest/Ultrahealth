@@ -8,4 +8,6 @@ public class MapsInChooseConfiguration : ScriptableObject
     public string bolezni;
     public string startPointText;
     public string finishPointText;
+    public string organizmName;
+    public int level;
 }

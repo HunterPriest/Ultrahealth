@@ -8,6 +8,7 @@ public class LevelChoice : UIToolkitElementWithExitOnButton
     [SerializeField] private levelUp _levelUp;
     [SerializeField] private DictionaryUI _directoruUI;
     [SerializeField] private PlayerMenu _playerMenu;
+    [SerializeField] private LevelInformationUI _levelInformatoin;
 
     [Header ("Maps")] 
     [SerializeField] private MapsInChooseConfiguration[] organisms;
@@ -36,7 +37,7 @@ public class LevelChoice : UIToolkitElementWithExitOnButton
             }
             levelButton.clicked += () => 
             {
-                _gameMachine.LoadLevel(levelButton.tabIndex);
+                _levelInformatoin.OpenLevelInfornmation(organisms[levelButton.tabIndex - 1]);
                 levelButton.clicked -= () => { };  
             };
         }

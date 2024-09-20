@@ -52,7 +52,7 @@
     height: auto;
     width: 240px;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 255, 34, 0);
+    background-color: rgba(0, 255, 30, 0);
     border-top-width: 12px;
     border-right-width: 12px;
     border-bottom-width: 12px;
@@ -69,7 +69,7 @@
     word-spacing: 0;
     -unity-paragraph-spacing: 0;
     background-image: url('project://database/Assets/Plugins/Zenject/OptionalExtras/SampleGame1%20(Beginner)/Media/Imported/Textures/Glow.png?fileID=2800000&guid=9fd0803556af44591a2d3be1bd49a003&type=3#Glow');
-    -unity-background-image-tint-color: rgba(255, 3, 0, 0.84);
+    -unity-background-image-tint-color: rgb(255, 0, 30);
     -unity-slice-left: 12;
     -unity-slice-top: 4;
 }
