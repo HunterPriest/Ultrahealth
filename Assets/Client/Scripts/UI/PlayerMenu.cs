@@ -8,6 +8,7 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
     [SerializeField] private levelUp _levelUp;
     [SerializeField] private DictionaryUI _directoryUI;
     [SerializeField] private Menu _menu;
+    [SerializeField] private int _maxLevel;
 
     private PlayerSaver _playerSaver;
     private GameMachine _gameMachine;
@@ -33,7 +34,10 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
         levelUp.clicked += _levelUp.Open;
         directory.clicked += _directoryUI.Open;
         exitToMenu.clicked += _menu.Open;
-        continueButton.clicked += () => _gameMachine.LoadLevel(_playerSaver.currentSave.playerSave.currentIndexLevel); 
+        continueButton.clicked += () =>
+        {
+            if (_playerSaver.currentSave.playerSave.currentIndexLevel <= 1) _gameMachine.LoadLevel(_playerSaver.currentSave.playerSave.currentIndexLevel);
+        };
     }
     public override void Open()
     {
