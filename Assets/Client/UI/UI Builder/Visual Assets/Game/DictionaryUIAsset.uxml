@@ -15,8 +15,8 @@
         </ui:VisualElement>
         <ui:VisualElement name="AboutVE" style="flex-grow: 1; height: 100%; align-items: center; justify-content: flex-start;">
             <ui:VisualElement name="Image" style="flex-grow: 1; position: relative; height: 450px; width: 450px; left: 0; top: 30px;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="top: 23px; -unity-text-align: middle-center; width: 542px; align-self: center;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="About" class="defoltOldKallText" style="top: 23px; height: 538px; font-size: 35px; width: 450px; align-self: stretch; -unity-text-align: upper-left; right: auto; white-space: normal; left: 33px;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="top: 23px; -unity-text-align: middle-center; width: 542px; align-self: center; white-space: normal;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="About" class="defoltOldKallText" style="top: 23px; height: 538px; font-size: 35px; width: 546px; align-self: stretch; -unity-text-align: upper-left; right: auto; white-space: normal; left: 33px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
