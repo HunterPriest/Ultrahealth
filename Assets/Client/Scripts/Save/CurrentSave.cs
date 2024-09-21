@@ -8,7 +8,8 @@ public class CurrentSave
 
     public void AddEnemyToDictionary(EnemyDirectorySO enemyDirectorySO)
     {
-        if (playerSave.killEnemies.Contains(enemyDirectorySO) != true || playerSave.killEnemies == null) playerSave.killEnemies.Add(enemyDirectorySO);
+        if (playerSave.killEnemies.Contains(enemyDirectorySO) != true || playerSave.killEnemies == null)
+            playerSave.killEnemies.Add(enemyDirectorySO);
     }
 
     public CurrentSave(int indexSave, DataSave.PlayerData playerData)
