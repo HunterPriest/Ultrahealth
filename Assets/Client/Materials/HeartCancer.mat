@@ -33,6 +33,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Boolean_3F1A8DAB: 0
+    - Boolean_43476D73: 1
+    - Boolean_7165A49C: 1
+    - Boolean_8BBF99CD: 0
+    - Vector1_B2CC132F: 5.8
+    - Vector1_E8746023: 10.97
     - _Glossiness: 0.14
     - _Metallic: 0.68
     m_Colors:
