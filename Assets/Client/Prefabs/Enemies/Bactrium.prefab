@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cecdf4e7d38a8409918fffac84794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInDirectory: {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
+  _enemyDescription: {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
   _movementConfiguration: {fileID: 11400000, guid: 925bcc4696effa741bff2da6e8e1d112, type: 2}
   _enemyBehaviourConfiguration: {fileID: 11400000, guid: c32d9e692de6db24c95affec70ed351f, type: 2}
   _playerLayer:
