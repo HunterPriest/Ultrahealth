@@ -9,8 +9,8 @@
     align-items: stretch;
     -unity-font-definition: initial;
     flex-wrap: wrap;
-    top: -746px;
-    left: -380px;
+    top: auto;
+    left: auto;
 }
 
 .defoltOldKallButtons {
