@@ -14,11 +14,6 @@ public class Vain : MonoBehaviour
     {
         _material = GetComponent<Renderer>().material;
 
-        if(_material.GetFloat("Vector1_B2CC132F") == null)
-        {
-            return;
-        }
-
         _minVertexResolution = _material.GetFloat("Vector1_B2CC132F") - (_vertexResolutionRange / 2);
         _maxVertexResolution = _material.GetFloat("Vector1_B2CC132F") + (_vertexResolutionRange / 2);
     }

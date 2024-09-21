@@ -42,13 +42,13 @@ public class CurrentSave
         switch (playerSave.indexClassPlayer)
         {
             case 1:
-                nameClass = "Бактерия";
+                nameClass = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
                 break;
             case 2:
-                nameClass = "Нано-робот";
+                nameClass = "пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅ";
                 break;
             case 3:
-                nameClass = "Одноктелочное";
+                nameClass = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
                 break;
         }
         return nameClass;
