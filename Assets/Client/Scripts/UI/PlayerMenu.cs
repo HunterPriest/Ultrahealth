@@ -9,6 +9,7 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
     [SerializeField] private DictionaryUI _directoryUI;
     [SerializeField] private Menu _menu;
     [SerializeField] private int _maxLevel;
+    [SerializeField] private string[] className;
 
     private PlayerSaver _playerSaver;
     private GameMachine _gameMachine;
@@ -51,6 +52,6 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
         base.Open();
 
         _stats.text = _playerSaver.currentSave.StatsToString();
-        _className.text = _playerSaver.currentSave.CurrentClassToString();
+        _className.text = className[_playerSaver.currentSave.playerSave.indexClassPlayer - 1];
     }
 }

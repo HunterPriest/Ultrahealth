@@ -10,7 +10,7 @@
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; align-items: auto; justify-content: center;">
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayerStats" class="defoltOldKallText" style="height: 705px; width: 582px; -unity-text-align: upper-left; white-space: normal; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); align-self: flex-end; left: -30px; top: 30px;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClassName" class="defoltOldKallText" style="-unity-text-align: upper-center; width: 558px; left: -44px;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClassName" class="defoltOldKallText" style="-unity-text-align: upper-center; width: 558px; left: -44px; top: -756px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

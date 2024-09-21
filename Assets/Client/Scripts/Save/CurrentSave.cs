@@ -36,22 +36,4 @@ public class CurrentSave
         "Dash speed: " + playerSave.dashSpeed.ToString() + "\n\n" + "Speed: " + playerSave.speed.ToString() + "\n\n\n\n" + 
         "Experience: " + playerSave.experience.ToString();
     }
-
-    public string CurrentClassToString()
-    {
-        string nameClass = null;
-        switch (playerSave.indexClassPlayer)
-        {
-            case 1:
-                nameClass = "��������";
-                break;
-            case 2:
-                nameClass = "����-�����";
-                break;
-            case 3:
-                nameClass = "�������������";
-                break;
-        }
-        return nameClass;
-    }
 }
