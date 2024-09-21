@@ -5,14 +5,10 @@ public class CurrentSave
 {
     public int indexSave { get; private set; }
     public DataSave.PlayerData playerSave { get; set; }
-    public List<EnemyDirectorySO> enemyDirectorySO { get; private set; }
 
-    public void AddEnemyToDictionary(EnemyDirectorySO enemy)
+    public void AddEnemyToDictionary(EnemyDirectorySO enemyDirectorySO)
     {
-        if (enemyDirectorySO.Find(ListChecker) != false);
-        {
-            enemyDirectorySO.Add(enemy);
-        }
+        if (playerSave.killEnemies.Contains(enemyDirectorySO) != true || playerSave.killEnemies == null) playerSave.killEnemies.Add(enemyDirectorySO);
     }
 
     public CurrentSave(int indexSave, DataSave.PlayerData playerData)
@@ -40,8 +36,21 @@ public class CurrentSave
         "Experience: " + playerSave.experience.ToString();
     }
 
-    private bool ListChecker(EnemyDirectorySO enemy)
+    public string CurrentClassToString()
     {
-        return enemy;
+        string nameClass = null;
+        switch (playerSave.indexClassPlayer)
+        {
+            case 1:
+                nameClass = "Бактерия";
+                break;
+            case 2:
+                nameClass = "Нано-робот";
+                break;
+            case 3:
+                nameClass = "Одноктелочное";
+                break;
+        }
+        return nameClass;
     }
 }

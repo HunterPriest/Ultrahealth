@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "Ultrahealth/Enemy/EnemyDirectory")]
+[CreateAssetMenu(menuName = "Ultrahealth/Directory/EnemyDirectory")]
 public class EnemyDirectorySO : ScriptableObject
 {
     public Texture2D _enemyImage;

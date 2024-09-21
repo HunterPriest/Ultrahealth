@@ -4,9 +4,14 @@ using UnityEngine.UIElements;
 using Zenject;
 public class DictionaryUI : UIToolkitElementWithExitOnButton
 {
+    [SerializeField] private List<WeaponInDirectory> _weaponInDirectory;
     private List<EnemyDirectorySO> _enemyDirectory;
 
     private PlayerSaver _playerSaver;
+
+    private VisualElement _image;
+    private Label _name;
+    private Label _about;
 
     [Inject]
     public void Construct(PlayerSaver playerSaver)
@@ -18,6 +23,12 @@ public class DictionaryUI : UIToolkitElementWithExitOnButton
     {
         base.Initialize();
 
+        _image = UIElement.Q<VisualElement>("Image");
+        _name = UIElement.Q<Label>("Name");
+        _about = UIElement.Q<Label>("About");
+
+        InitializeWeapon();
+
         _enemyDirectory = new List<EnemyDirectorySO>();
         
     }
@@ -26,16 +37,15 @@ public class DictionaryUI : UIToolkitElementWithExitOnButton
     {
         base.Open();
 
-        _enemyDirectory = _playerSaver.currentSave.enemyDirectorySO;
+        _enemyDirectory = _playerSaver.currentSave.playerSave.killEnemies;
 
-        InitializeDirectoryScroll();
+        InitializeEnemyInDirectoryScroll();
     }
 
-    private void InitializeDirectoryScroll()
+    private void InitializeEnemyInDirectoryScroll()
     {
-        if (_enemyDirectory == null) return;
-        else
-        {
+        if (_enemyDirectory != null)
+        { 
             for (int i = 0; i < _enemyDirectory.Count; i++)
             {
                 VisualElement currentEnemy = _container.Q<VisualElement>(_enemyDirectory[i].name.ToString());
@@ -45,12 +55,30 @@ public class DictionaryUI : UIToolkitElementWithExitOnButton
 
                 ImageInScroll.style.backgroundImage = _enemyDirectory[i]._enemyImage;
                 NameInScroll.text = _enemyDirectory[i]._name;
-                currentButton.clicked += () => OpenButton(currentButton);
+                currentButton.clicked += () => OpenButtonEnemy(currentButton);
             }
         }
     }
 
-    private void OpenButton(Button button)
+    private void InitializeWeapon()
+    {
+        if (_weaponInDirectory != null)
+        {
+            for (int i = 0; i < _weaponInDirectory.Count; i++)
+            {
+                VisualElement currentWeapon = UIElement.Q<VisualElement>(_weaponInDirectory[i].name.ToString());
+                Button currentButton = UIElement.Q<Button>(_weaponInDirectory[i].name.ToString());
+                VisualElement ImageInScroll = currentWeapon.Q<VisualElement>("ImageInScroll");
+                Label NameInScroll = currentWeapon.Q<Label>("NameInScroll");
+
+                ImageInScroll.style.backgroundImage = _weaponInDirectory[i]._weaponImage;
+                NameInScroll.text = _weaponInDirectory[i]._name;
+                currentButton.clicked += () => OpenButtoWeapon(currentButton);
+            }
+        }
+    }
+
+    private void OpenButtonEnemy(Button button)
     {
         for (int i = 0; i < _enemyDirectory.Count; i++)
         {
@@ -58,23 +86,25 @@ public class DictionaryUI : UIToolkitElementWithExitOnButton
             {
                 EnemyDirectorySO CurrentElement = _enemyDirectory[i];
 
-                VisualElement image = _container.Q<VisualElement>("Image");
-                Label name = _container.Q<Label>("Name");
-                Label about = _container.Q<Label>("About");
-
-                image.style.backgroundImage = CurrentElement._enemyImage;
-                name.text = CurrentElement._name;
-                about.text = CurrentElement._aboutEnemy;
+                _image.style.backgroundImage = CurrentElement._enemyImage;
+                _name.text = CurrentElement._name;
+                _about.text = CurrentElement._aboutEnemy;
             }
         }
     }
 
-    public void AddEnemyDirectorySO(LevelSettings level)
+    private void OpenButtoWeapon(Button button)
     {
-        List<EnemyDirectorySO> _enemies = level.GetEnemyDirectorySO();
-        for(int i = 0; i<_enemies.Count; i++)
+        for (int i = 0; i < _weaponInDirectory.Count; i++)
         {
-            _enemyDirectory.Add(_enemies[i]);
+            if (_weaponInDirectory[i].name == button.name)
+            {
+                WeaponInDirectory CurrentElement = _weaponInDirectory[i];
+
+                _image.style.backgroundImage = CurrentElement._weaponImage;
+                _name.text = CurrentElement._name;
+                _about.text = CurrentElement._aboutWeapon;
+            }
         }
     }
 }

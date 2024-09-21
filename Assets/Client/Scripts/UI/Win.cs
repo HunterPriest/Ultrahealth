@@ -2,17 +2,30 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
 using Tools;
+using System.Collections.Generic;
 
 public class Win : UIToolkitBasicElement
 {
     [SerializeField] private VisualTreeAsset WinAsset;
+    [SerializeField] private EnemyDirectorySO[] _enemyToDirectory;
 
     private VisualElement _win;
     private GameMachine _gameMachine;
     private PlayerSaver _playerSaver;
     private GameConfigInstaller.GameSettings _gameSettings;
-    private int _exp;
-    
+    private int _expirience;
+
+    private Label _level;
+    private Label _time;
+    private Label _timeRang;
+    private Label _enemyKill;
+    private Label _enemyKillGrade;
+    private Label _resultRang;
+    private Label _exp;
+    private Label _combo;
+    private Label _comboRang;
+    private Button _exitToMenu;
+
 
     [Inject]
     private void Construct(GameMachine gameMachine, PlayerSaver playerSaver, GameConfigInstaller.GameSettings gameSettings)
@@ -25,52 +38,53 @@ public class Win : UIToolkitBasicElement
     protected override void Initialize()
     {
         _win = WinAsset.CloneTree();
+
+        _level = _win.Q<Label>("Level");
+        _time = _win.Q<Label>("Time");
+        _timeRang = _win.Q<Label>("TimeRang");
+        _enemyKill = _win.Q<Label>("EnemyKill");
+        _enemyKillGrade = _win.Q<Label>("EnemyKillRang");
+        _resultRang = _win.Q<Label>("ResultRang");
+        _exp = _win.Q<Label>("Exp");
+        _combo = _win.Q<Label>("AmountCombo");
+        _comboRang = _win.Q<Label>("ComboRang");
+        _exitToMenu = _win.Q<Button>("ExitToMenu");
     }
 
     public void OpenWin(LevelSettings levelSettings, float timeOfAdventure, int killEnemy, int amountCombo)
     {
         ResetContainer(_win);
 
-        Label level = _container.Q<Label>("Level");
-        Label time = _container.Q<Label>("Time");
-        Label timeRang = _container.Q<Label>("TimeRang");
-        Label enemyKill = _container.Q<Label>("EnemyKill");
-        Label enemyKillGrade = _container.Q<Label>("EnemyKillRang");
-        Label resultRang = _container.Q<Label>("ResultRang");
-        Label exp = _container.Q<Label>("Exp");
-        Label combo = _container.Q<Label>("AmountCombo");
-        Label comboRang = _container.Q<Label>("ComboRang");
-
-        time.text = timeOfAdventure.ToString();
+        _time.text = timeOfAdventure.ToString();
         LevelGrade timeGrade = levelSettings.GetGradeTime(timeOfAdventure);
-        timeRang.style.color = _gameSettings.rangGradeColor[timeGrade];
-        timeRang.text = timeGrade.ToString();
+        _timeRang.style.color = _gameSettings.rangGradeColor[timeGrade];
+        _timeRang.text = timeGrade.ToString();
 
-        enemyKill.text = killEnemy.ToString();
+        _enemyKill.text = killEnemy.ToString();
         LevelGrade killgrade = levelSettings.GetGradeKilledEnemies(killEnemy);
-        enemyKillGrade.text = killgrade.ToString();
-        enemyKillGrade.style.color = _gameSettings.rangGradeColor[killgrade];
+        _enemyKillGrade.text = killgrade.ToString();
+        _enemyKillGrade.style.color = _gameSettings.rangGradeColor[killgrade];
 
-        combo.text = amountCombo.ToString();
+        _combo.text = amountCombo.ToString();
         LevelGrade comboGrade = levelSettings.GetGradeCombo(amountCombo);
-        comboRang.text = comboGrade.ToString();
-        comboRang.style.color = _gameSettings.rangGradeColor[comboGrade];
+        _comboRang.text = comboGrade.ToString();
+        _comboRang.style.color = _gameSettings.rangGradeColor[comboGrade];
 
         LevelGrade finalyGrade = levelSettings.GetFinalyGrade((int)timeGrade, (int)killgrade, (int)comboGrade);
-        _exp = levelSettings.GetAmountExp(finalyGrade);
-        exp.text = _exp.ToString();
-        resultRang.text = finalyGrade.ToString();
-        resultRang.style.color = _gameSettings.rangGradeColor[finalyGrade];
+        _expirience = levelSettings.GetAmountExp(finalyGrade);
+        _exp.text = _expirience.ToString();
+        _resultRang.text = finalyGrade.ToString();
+        _resultRang.style.color = _gameSettings.rangGradeColor[finalyGrade];
 
-        Button ExitToMenu = _container.Q<Button>("ExitToMenu");
-
-        ExitToMenu.clicked += () =>
+        _exitToMenu.clicked += () =>
         {
-            ExitToMenu.clicked -= () => { };
+            _exitToMenu.clicked -= () => { };
             OnExitToMenu(levelSettings);
         };
 
-        level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
+        _level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
+        PushToDirectory();
+        
     }
 
     private void OnExitToMenu(LevelSettings levelSettings)
@@ -79,14 +93,16 @@ public class Win : UIToolkitBasicElement
         {
             _playerSaver.currentSave.playerSave.currentIndexLevel++;    
         }
-        _playerSaver.currentSave.playerSave.experience += _exp;
+        _playerSaver.currentSave.playerSave.experience += _expirience;
         _playerSaver.SaveCurrentSave();
         _gameMachine.FinishGame();
     }
 
-    protected override void ResetContainer(VisualElement element)
+    private void PushToDirectory()
     {
-        base.ResetContainer(element);
+        for(int i = 0; i < _enemyToDirectory.Length; i++)
+        {
+            _playerSaver.currentSave.AddEnemyToDictionary(_enemyToDirectory[i]);
+        }
     }
-    
 }    

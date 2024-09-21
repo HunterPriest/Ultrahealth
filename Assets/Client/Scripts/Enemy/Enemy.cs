@@ -5,8 +5,6 @@ using Zenject;
 
 public class Enemy : Character
 {
-    [SerializeField] private EnemyDirectorySO _enemyDescription;
-
     protected EnemyState currentStateType = EnemyState.Idle;
     protected IStateEnemy currentState;
 

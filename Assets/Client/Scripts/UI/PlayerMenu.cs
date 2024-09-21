@@ -13,6 +13,9 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
     private PlayerSaver _playerSaver;
     private GameMachine _gameMachine;
 
+    private Label _stats;
+    private Label _className;
+
     [Inject]
     public void Construct(PlayerSaver playerSaver, GameMachine gameMachine)
     {
@@ -23,6 +26,9 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
     protected override void Initialize()
     {
         base.Initialize();
+
+        _stats = UIElement.Q<Label>("PlayerStats");
+        _className = UIElement.Q<Label>("ClassName");
 
         Button levels = UIElement.Q<Button>("Levels");
         Button continueButton = UIElement.Q<Button>("Continue");
@@ -38,9 +44,13 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
         {
             if (_playerSaver.currentSave.playerSave.currentIndexLevel <= 1) _gameMachine.LoadLevel(_playerSaver.currentSave.playerSave.currentIndexLevel);
         };
+        
     }
     public override void Open()
     {
         base.Open();
+
+        _stats.text = _playerSaver.currentSave.StatsToString();
+        _className.text = _playerSaver.currentSave.CurrentClassToString();
     }
 }

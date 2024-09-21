@@ -9,7 +9,6 @@ public class Level : MonoBehaviour
     [SerializeField] private Boss _boss;
     [SerializeField] private Win _win;
     [SerializeField] private LevelSettings _levelSettings;
-    [SerializeField] private DictionaryUI _directory;
 
     private GameMachine _gameMachine;
     private float _startTime;
@@ -44,7 +43,6 @@ public class Level : MonoBehaviour
 
     public void CompleteLevel()
     {
-        _directory.AddEnemyDirectorySO(_levelSettings);
         _gameMachine.StopGame();
         _win.OpenWin(_levelSettings, Time.time - _startTime, _killCounter.amountKill, _comboCounter.GetAmountComboInEndLevel());
     }

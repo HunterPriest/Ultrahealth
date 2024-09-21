@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinAsset: {fileID: 9197481963319205126, guid: 4fee27b1cd497cd418c8b14105ac43fb, type: 3}
+  _enemyToDirectory: []
 --- !u!114 &1661442404051786615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _UIAsset: {fileID: 9197481963319205126, guid: 35eec63b49519cc4d963879ccaa1067f, type: 3}
   _elementToExit: {fileID: 3568293702885248390}
+  _weaponInDirectory:
+  - {fileID: 11400000, guid: e21bf5277b7e9da419da607515157678, type: 2}
+  - {fileID: 11400000, guid: ae827c553e4507543bef4c1015eb1467, type: 2}
+  - {fileID: 11400000, guid: c42e1c7f66550ec40870c62c5a1157ba, type: 2}
+  - {fileID: 11400000, guid: 5ae7d84178ffba74f9b7b4b025ca547b, type: 2}
