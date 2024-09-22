@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Zenject;
 using Tools;
+using UnityEngine;
 
 public class PlayerUnit : Unit
 {
@@ -11,6 +12,7 @@ public class PlayerUnit : Unit
     private float _stamina;
 
     public Action<float> ChangeStamina;
+    public Action<float> ChangeHealth;
 
     public float stamina => _stamina;
 
@@ -42,5 +44,14 @@ public class PlayerUnit : Unit
         }
         _stamina = _movementSettings.maxStamina;
         ChangeStamina.Invoke(stamina);
+    }
+
+    private void Update()
+    {
+        if(_healthSettings.maxHealth > health)
+        {
+            health += 0.01f * Time.deltaTime;
+            ChangeHealth.Invoke(health);
+        }
     }
 }

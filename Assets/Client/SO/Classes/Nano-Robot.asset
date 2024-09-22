@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Nano-Robot
   m_EditorClassIdentifier: 
   indexClassPlayer: 2
-  _LevelUpAsset: {fileID: 9197481963319205126, guid: 2d8c80cbf25d53f4e835319d99e41bf8, type: 3}
   maxHealth: 5
-  maxStamina: 4
-  jumpForce: 4
+  maxStamina: 6
+  jumpForce: 5
   dashTime: 0.4
-  dashSpeed: 24
+  dashSpeed: 30
   speed: 7
-  rateOfIncreaseStamina: 0
-  staminaConsumedWhenDashing: 0
-  staminaConsumedWhenJumping: 0
+  rateOfIncreaseStamina: 0.02
+  staminaConsumedWhenDashing: 2
+  staminaConsumedWhenJumping: 1

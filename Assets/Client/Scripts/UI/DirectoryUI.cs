@@ -44,7 +44,7 @@ public class DictionaryUI : UIToolkitElementWithExitOnButton
 
     private void InitializeEnemyInDirectoryScroll()
     {
-        if (_enemyDirectory != null)
+        if (_enemyDirectory.Count != 0)
         { 
             for (int i = 0; i < _enemyDirectory.Count; i++)
             {

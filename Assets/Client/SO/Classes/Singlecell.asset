@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Singlecell
   m_EditorClassIdentifier: 
   indexClassPlayer: 3
-  _LevelUpAsset: {fileID: 9197481963319205126, guid: 423fbe60fc464ef439918f09788e3b54, type: 3}
-  maxHealth: 20
+  maxHealth: 30
   maxStamina: 2
   jumpForce: 2
   dashTime: 0.15
   dashSpeed: 15
   speed: 3
-  rateOfIncreaseStamina: 0
-  staminaConsumedWhenDashing: 0
-  staminaConsumedWhenJumping: 0
+  rateOfIncreaseStamina: 0.1
+  staminaConsumedWhenDashing: 1
+  staminaConsumedWhenJumping: 1

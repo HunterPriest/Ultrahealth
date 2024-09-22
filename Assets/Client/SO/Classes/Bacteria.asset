@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Bacteria
   m_EditorClassIdentifier: 
   indexClassPlayer: 1
-  _LevelUpAsset: {fileID: 9197481963319205126, guid: 0b11dcb00d86a0f47b601c2bef4a8e4a, type: 3}
   maxHealth: 10
   maxStamina: 3
   jumpForce: 3
   dashTime: 0.25
   dashSpeed: 20
   speed: 5
-  rateOfIncreaseStamina: 0.1
+  rateOfIncreaseStamina: 0.03
   staminaConsumedWhenDashing: 2
   staminaConsumedWhenJumping: 2

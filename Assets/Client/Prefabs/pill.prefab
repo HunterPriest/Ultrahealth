@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6350432122683881251}
-  _damage: 50
+  _damage: 20
   _attackRange: 5
   _amountHitColliders: 10
   _decal: {fileID: 6848769235755512917, guid: 5fd1f8b8a681b7e45ae92c23252d7b12, type: 3}

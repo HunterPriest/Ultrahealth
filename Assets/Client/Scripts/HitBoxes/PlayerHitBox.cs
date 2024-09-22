@@ -23,8 +23,8 @@ public class PlayerHitBox : HitBox, IWeaponVisitor
 
     public void Visit(Thermometr weapon, RaycastHit hit) {   }
 
-    public void Visit(float damageAcid)
+    public void Visit(float damage)
     {
-        damageable.TakeDamage(damageAcid);
+        damageable.TakeDamage(damage);
     }
 }

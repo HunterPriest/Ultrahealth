@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class DeathBox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Trigger _trigger;
+    private PlayerHitBox _hitBox;
+
+    [Inject]
+    private void Construct(Player player)
     {
-        
+        _hitBox = player.HitBox;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _trigger = GetComponent<Trigger>();
+        _trigger.OnEnter += () => _hitBox.Visit(10000);
     }
 }

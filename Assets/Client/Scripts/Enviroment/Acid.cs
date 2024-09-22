@@ -8,13 +8,31 @@ public class Acid : MonoBehaviour
 
     private float _currentTime = 0;
     private PlayerHitBox _hitBox;   
-    private bool _playerInTrigger;
+    private bool _playerInTrigger = false;
+    private Trigger _trigger;
+
+    private void Start()
+    {
+        _trigger = GetComponent<Trigger>();
+        _trigger.OnEnter += playerEnter;
+        _trigger.OnExit += playerExit;
+    }
 
     [Inject]
     private void Construct(Player player)
     {   
         print(player.HitBox);
         _hitBox = player.HitBox;
+    }
+
+    private void playerEnter()
+    {
+        _playerInTrigger = true;
+    }
+
+    private void playerExit()
+    {
+        _playerInTrigger = false;
     }
 
     private void Update() 
@@ -30,15 +48,5 @@ public class Acid : MonoBehaviour
                 _hitBox.Visit(_damagePerSec);
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other) 
-    {
-        _playerInTrigger = true;
-    }
-
-    private void OnTriggerStay(Collider other) 
-    {
-        _playerInTrigger = false;
     }
 }

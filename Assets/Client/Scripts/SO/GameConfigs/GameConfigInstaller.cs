@@ -3,8 +3,6 @@ using UnityEngine;
 using Zenject;
 using AYellowpaper.SerializedCollections;
 using Tools;
-using UnityEngine.Rendering;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 
 [CreateAssetMenu(fileName = "GameConfigInstaller", menuName = "Installers/GameConfigInstaller")]
 public class GameConfigInstaller : ScriptableObjectInstaller<GameConfigInstaller>

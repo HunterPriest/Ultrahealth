@@ -43,7 +43,7 @@ public class PlayerMenu : UIToolkitElementWithExitOnButton
         exitToMenu.clicked += _menu.Open;
         continueButton.clicked += () =>
         {
-            if (_playerSaver.currentSave.playerSave.currentIndexLevel <= 1) _gameMachine.LoadLevel(_playerSaver.currentSave.playerSave.currentIndexLevel);
+            _gameMachine.LoadLevel(1);
         };
         
     }

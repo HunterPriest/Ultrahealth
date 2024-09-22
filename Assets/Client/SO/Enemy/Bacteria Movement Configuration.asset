@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf07f4e8ca56e4ea81ea0df7fe4fb7, type: 3}
   m_Name: Bacteria Movement Configuration
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 10
   JumpForce: 0
   MaxStamina: 0

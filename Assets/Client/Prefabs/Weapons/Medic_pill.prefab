@@ -14612,7 +14612,7 @@ MonoBehaviour:
   _setting:
     _spawnPointProjectile: {fileID: 4476117662436383007}
     _projectile: {fileID: 341932487042484591, guid: 4569071bfbd390a418738d4bb0112f62, type: 3}
-    _forceRunProjectile: 100
+    _forceRunProjectile: 500
 --- !u!114 &2720003534219260021
 MonoBehaviour:
   m_ObjectHideFlags: 0

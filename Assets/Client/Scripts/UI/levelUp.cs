@@ -61,7 +61,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
 
         _descriptionSkill = _container.Q<Label>("Description");
         _levelUpButton = _container.Q<Button>("LevelUp");
-        _prise = _container.Q<Label>("Prise");
+        _prise = _container.Q<Label>("Р¦РµРЅР°");
         _levelUpButton.visible = false;
 
         _notEnoughExperience = _container.Q<Label>("NotEnoughExperience");
@@ -121,7 +121,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         StartCoroutine(LevelUpButtonHide());
         WithdrawDescriptionSkill(_currentClassTree.skills[_currentIndexSkill]);
         _currentSkillButton = button;
-        _prise.text = "Цена: " + _currentClassTree.skills[_currentIndexSkill].GetPrise();
+        _prise.text = "Р¦РµРЅР°: " + _currentClassTree.skills[_currentIndexSkill].GetPrise();
         _levelUpButton.clicked += OnClickLevelUpButton;
     }
 
@@ -130,7 +130,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         bool isBuyed = _currentClassTree.skills[_currentIndexSkill].TryBuy(_playerSaver);
         if(!isBuyed)
         {
-            _notEnoughExperience.text = "Не хватает опыта";
+            _notEnoughExperience.text = "РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РѕРїС‹С‚Р°";
             StopCoroutine(NotEnoughExperienceHide());
             StartCoroutine(NotEnoughExperienceHide());
         }

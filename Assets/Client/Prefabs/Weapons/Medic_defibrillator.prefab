@@ -186,7 +186,7 @@ MonoBehaviour:
   weaponAnimations: {fileID: -465692545400025343}
   _shakeAnimationConfig: {fileID: 11400000, guid: 38d7465dfabd48b45a28a8e4e260d8b5, type: 2}
   _settings:
-    _damage: 35
+    _damage: 25
     _maxAmountColliders: 7
     _attackRange: 0.51
     _overlapPoint: {fileID: 867080928763099626}

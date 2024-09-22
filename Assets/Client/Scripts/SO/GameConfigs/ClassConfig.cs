@@ -11,7 +11,7 @@ public class ClassConfig : ScriptableObject
     public int maxHealth;
 
     [Header("Movement")]
-    public int maxStamina;
+    public float maxStamina;
     public int jumpForce;
     public float dashTime;
     public float dashSpeed;

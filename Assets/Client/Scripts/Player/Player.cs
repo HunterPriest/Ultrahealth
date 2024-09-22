@@ -45,6 +45,7 @@ public class Player : Character
         
         _unit.OnTakenDamage += _gameUI.gameplayUI.UpdateHealthBarValue;
         _unit.OnTakenDamage += comboCounter.ResetToZero;
+        _unit.ChangeHealth += _gameUI.gameplayUI.UpdateHealthBarValue;
         _unit.ChangeStamina += _gameUI.gameplayUI.UpdateStaminahBarValue;
     }
 
