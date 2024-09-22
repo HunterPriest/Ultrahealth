@@ -39,12 +39,30 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 8307a740b8be2294fafea38a29b177bd, type: 2}
       - {fileID: 11400000, guid: f9e8f1b71fbc24d40b23e768baa2dbab, type: 2}
       - {fileID: 11400000, guid: 9964c95ad153744448088bb6c7dd43a0, type: 2}
+      - {fileID: 11400000, guid: 3cce22d9ac67c1c47b503bd2f7f01cd2, type: 2}
+      - {fileID: 11400000, guid: 135c4ba68fb8eb54f8ee16b187d9b788, type: 2}
+      - {fileID: 11400000, guid: 84a51ce1394afde4cadf8064335cca3b, type: 2}
+      - {fileID: 11400000, guid: 6a56d67ca9ffae942b122b8f4f32ce68, type: 2}
     nanoRobotTreel:
       skills:
-      - {fileID: 0}
+      - {fileID: 11400000, guid: 36dd0fa8cc584464b8292c80c5e9f2c3, type: 2}
+      - {fileID: 11400000, guid: 69f77aded9ba62246a2f063f391c2f73, type: 2}
+      - {fileID: 11400000, guid: a79ee1c6cd1c11b4c8d5b7a42af98c78, type: 2}
+      - {fileID: 11400000, guid: 337b51c0a3a9bbe4c8263b115beae388, type: 2}
+      - {fileID: 11400000, guid: 70c4b45159ec7af44b5803a805213e77, type: 2}
+      - {fileID: 11400000, guid: 6ea463279ee30f34a96a29ba1c5ae05e, type: 2}
+      - {fileID: 11400000, guid: e9ea83d22c4a1814ca6addc9ecb70de8, type: 2}
+      - {fileID: 11400000, guid: 810e059705f6aaf4181e9d218888c56b, type: 2}
     singlecellTree:
       skills:
-      - {fileID: 0}
+      - {fileID: 11400000, guid: e414ac1172481784a87a40be0de5b740, type: 2}
+      - {fileID: 11400000, guid: c9ec8d49469ec2742b3f8c2b12e684e4, type: 2}
+      - {fileID: 11400000, guid: 78e49d4dfa853e54eaf0256275585b56, type: 2}
+      - {fileID: 11400000, guid: 1f8034f4c1e4c334394ad4b2fd396fd1, type: 2}
+      - {fileID: 11400000, guid: 17fd179c677bbf14180edae8bd8c86a2, type: 2}
+      - {fileID: 11400000, guid: 58be6e5f48085524b98fb46374c57111, type: 2}
+      - {fileID: 11400000, guid: 2e00722eda894864b9e399f977d9e3a4, type: 2}
+      - {fileID: 11400000, guid: af2d222d4c67e0b44b611e5800f5e0c9, type: 2}
   comboSetting:
     rangGradeAmountCombo:
       _serializedList:

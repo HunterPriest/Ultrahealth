@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb61e9b0aea1dc4f8354dd5ab75c171, type: 3}
-  m_Name: BacteriaImproveStamina2
+  m_Name: Nano-robotImproveStamina4
   m_EditorClassIdentifier: 
   nextSkills:
-  - {fileID: 11400000, guid: 84a51ce1394afde4cadf8064335cca3b, type: 2}
-  branchIndex: 3
-  branchFloor: 2
-  description: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C 10 \u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438"
-  id: 3
-  _price: 500
-  _addedStamina: 10
+  - {fileID: 11400000, guid: 810e059705f6aaf4181e9d218888c56b, type: 2}
+  branchIndex: 1
+  branchFloor: 3
+  description: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C 30 \u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438"
+  id: 0
+  _price: 750
+  _addedStamina: 30

@@ -27,6 +27,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
     private Label _playerStats;
     private Label _notEnoughExperience;
     private Label _descriptionSkill;
+    private Label _prise;
 
     private Button _levelUpButton;
     private Button _currentSkillButton;
@@ -59,6 +60,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
 
         _descriptionSkill = _container.Q<Label>("Description");
         _levelUpButton = _container.Q<Button>("LevelUp");
+        _prise = _container.Q<Label>("Prise");
         _levelUpButton.visible = false;
 
         _notEnoughExperience = _container.Q<Label>("NotEnoughExperience");
@@ -118,6 +120,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         StartCoroutine(LevelUpButtonHide());
         WithdrawDescriptionSkill(_currentClassTree.skills[_currentIndexSkill]);
         _currentSkillButton = button;
+        _prise.text = "Prise: " + _currentClassTree.skills[_currentIndexSkill].GetPrise();
         _levelUpButton.clicked += OnClickLevelUpButton;
     }
 
@@ -162,6 +165,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
     {
         yield return new WaitForSeconds(3);
         _currentIndexSkill = 0;
+        _prise.text = null;
         _levelUpButton.visible = false;
         _descriptionSkill.text = " ";
         _levelUpButton.clicked -= OnClickLevelUpButton;

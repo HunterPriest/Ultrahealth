@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb61e9b0aea1dc4f8354dd5ab75c171, type: 3}
   m_Name: BacteriaImproveStamina1
   m_EditorClassIdentifier: 
-  nextSkills: []
+  nextSkills:
+  - {fileID: 11400000, guid: 135c4ba68fb8eb54f8ee16b187d9b788, type: 2}
   branchIndex: 2
   branchFloor: 2
-  description: Add 10 Stamina
+  description: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C 10 \u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438"
   id: 2
   _price: 500
   _addedStamina: 10

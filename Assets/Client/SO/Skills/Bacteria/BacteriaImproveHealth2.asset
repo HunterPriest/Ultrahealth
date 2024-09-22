@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08967af260223e24eaa738d1367beca1, type: 3}
   m_Name: BacteriaImproveHealth2
   m_EditorClassIdentifier: 
-  nextSkills: []
+  nextSkills:
+  - {fileID: 11400000, guid: 3cce22d9ac67c1c47b503bd2f7f01cd2, type: 2}
   branchIndex: 1
   branchFloor: 2
-  description: Add 10 Health
+  description: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C 10 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F"
   id: 1
   _price: 500
   addedHealth: 10

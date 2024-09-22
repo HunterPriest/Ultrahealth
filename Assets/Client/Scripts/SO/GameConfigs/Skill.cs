@@ -9,6 +9,8 @@ public abstract class Skill : ScriptableObject
     public int id;
     [SerializeField] private int _price;
 
+    public string GetPrise() => _price.ToString();
+
     public bool TryBuy(PlayerSaver playerSaver)
     {
         if(playerSaver.currentSave.playerSave.experience < _price || playerSaver.currentSave.playerSave.tree[branchIndex - 1] > branchFloor)
