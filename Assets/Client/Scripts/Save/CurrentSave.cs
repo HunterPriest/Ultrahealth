@@ -31,9 +31,9 @@ public class CurrentSave
 
     public string StatsToString()
     {
-        return "Health: " + playerSave.maxHealth.ToString() + "\n\n" + "Stamina: " + playerSave.maxStamina.ToString() +
-        "\n\n" + "Jump Force: " + playerSave.jumpForce.ToString() + "\n\n" +
-        "Dash speed: " + playerSave.dashSpeed.ToString() + "\n\n" + "Speed: " + playerSave.speed.ToString() + "\n\n\n\n" + 
-        "Experience: " + playerSave.experience.ToString();
+        return "Здоровье: " + playerSave.maxHealth.ToString() + "\n\n" + "Выносливость: " + playerSave.maxStamina.ToString() +
+        "\n\n" + "Сила прыжка: " + playerSave.jumpForce.ToString() + "\n\n" +
+        "Скорость рывка: " + playerSave.dashSpeed.ToString() + "\n\n" + "Скорость: " + playerSave.speed.ToString() + "\n\n" + 
+        "Опыт: " + playerSave.experience.ToString();
     }
 }
