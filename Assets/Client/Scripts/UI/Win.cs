@@ -8,6 +8,7 @@ public class Win : UIToolkitBasicElement
 {
     [SerializeField] private VisualTreeAsset WinAsset;
     [SerializeField] private EnemyDirectorySO[] _enemyToDirectory;
+    [SerializeField] private int _indexLevel;
 
     private VisualElement _win;
     private GameMachine _gameMachine;
@@ -100,9 +101,17 @@ public class Win : UIToolkitBasicElement
 
     private void PushToDirectory()
     {
-        for(int i = 0; i < _enemyToDirectory.Length; i++)
+        print(_playerSaver.currentSave.playerSave.currentIndexLevel);
+        print(_indexLevel);
+
+        if(_playerSaver.currentSave.playerSave.currentIndexLevel == _indexLevel)
         {
-            _playerSaver.currentSave.AddEnemyToDictionary(_enemyToDirectory[i]);
+            for(int i = 0; i < _enemyToDirectory.Length; i++)
+            {
+                _playerSaver.currentSave.AddEnemyToDictionary(_enemyToDirectory[i]);
+            }
+
+            _playerSaver.SaveCurrentSave();
         }
     }
 }    

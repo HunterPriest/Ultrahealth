@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinAsset: {fileID: 9197481963319205126, guid: 4fee27b1cd497cd418c8b14105ac43fb, type: 3}
-  _enemyToDirectory: []
+  _enemyToDirectory:
+  - {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
+  - {fileID: 11400000, guid: 62f473327cb0cae46b9b012ec423f90c, type: 2}
+  _indexLevel: 1
 --- !u!114 &1661442404051786615
 MonoBehaviour:
   m_ObjectHideFlags: 0

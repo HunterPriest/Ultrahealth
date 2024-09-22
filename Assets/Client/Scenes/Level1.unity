@@ -5227,18 +5227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIDocumentInLevel
       objectReference: {fileID: 0}
-    - target: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
-      propertyPath: _enemyToDirectory.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
-      propertyPath: _enemyToDirectory.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 72c6819b2f9ed4b40ad12dc0625800cb, type: 2}
-    - target: {fileID: 7772860015023190492, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
-      propertyPath: _enemyToDirectory.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 62f473327cb0cae46b9b012ec423f90c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
