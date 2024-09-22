@@ -24,18 +24,18 @@
             <ui:Label tabindex="-1" text="Уровень 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Level1" class="defoltOldKallText" style="width: 1218px; background-color: rgba(0, 0, 0, 0.91);" />
             <ui:VisualElement name="1Location" style="flex-grow: 1; flex-direction: row; justify-content: flex-start; align-self: flex-start; align-items: flex-start; width: 100%; flex-wrap: wrap; height: 314px; background-color: rgba(0, 0, 0, 0.35);">
                 <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="11Enemy" style="width: 200px; height: 300px; background-color: rgba(0, 0, 0, 0.68); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-                    <ui:VisualElement name="ImageInScroll" tabindex="-1" style="flex-grow: 1;" />
+                    <ui:VisualElement name="ImageInScroll" tabindex="-1" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Client/Image/question.png?fileID=2800000&amp;guid=6fc5f16bdd1a81f45bf11f6783b3ae43&amp;type=3#question&apos;);" />
                     <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameInScroll" class="defoltOldKallText" style="-unity-text-align: middle-center; font-size: 22px; height: 88px; justify-content: flex-start; white-space: normal; width: auto; left: auto;" />
                 </ui:Button>
                 <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="1Boss" style="width: 200px; height: 300px; background-color: rgba(0, 0, 0, 0.68); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-                    <ui:VisualElement name="ImageInScroll" style="flex-grow: 1;" />
+                    <ui:VisualElement name="ImageInScroll" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Client/Image/question.png?fileID=2800000&amp;guid=6fc5f16bdd1a81f45bf11f6783b3ae43&amp;type=3#question&apos;);" />
                     <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameInScroll" class="defoltOldKallText" style="-unity-text-align: middle-center; font-size: 22px; height: 88px; justify-content: flex-start; white-space: normal; width: auto; left: auto;" />
                 </ui:Button>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="AboutVE" style="flex-grow: 1; height: 100%; align-items: center; justify-content: flex-start;">
             <ui:VisualElement name="Image" style="flex-grow: 1; position: relative; height: 450px; width: 450px; left: 0; top: 30px; background-image: none;" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="top: 23px; -unity-text-align: middle-center; width: 542px; align-self: center; white-space: nowrap;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="defoltOldKallText" style="top: 23px; -unity-text-align: middle-center; width: 542px; align-self: center; white-space: normal; height: 79px;" />
             <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="About" class="defoltOldKallText" style="top: 23px; height: 538px; font-size: 24px; width: 546px; align-self: stretch; -unity-text-align: upper-left; right: auto; white-space: normal; left: 33px;" />
         </ui:VisualElement>
     </ui:VisualElement>

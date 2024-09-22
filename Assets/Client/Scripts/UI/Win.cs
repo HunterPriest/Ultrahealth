@@ -83,7 +83,7 @@ public class Win : UIToolkitBasicElement
             OnExitToMenu(levelSettings);
         };
 
-        _level.text = "You passed the level: " + levelSettings.levelIndex.ToString();
+        _level.text += levelSettings.levelIndex.ToString();
         PushToDirectory();
         
     }
