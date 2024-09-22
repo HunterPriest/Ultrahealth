@@ -9,7 +9,8 @@ using System.Collections.Generic;
 public class levelUp : UIToolkitElementWithExitOnButton
 {
     [SerializeField] private Color _skillButtonColor;
-    [SerializeField] private Color _buyedSkillButtonColor;
+    [SerializeField] private Texture2D _buyedSkillButton;
+    [SerializeField] private Color _skillUnbuy;
 
     [Header("Branches Assets")]
     [SerializeField] private VisualTreeAsset _BacteriaLevelUpAsset;
@@ -103,7 +104,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         }
         else
         {
-            button.style.backgroundColor = _buyedSkillButtonColor;
+            button.style.backgroundColor = _skillUnbuy;
         }
     }
 
@@ -144,7 +145,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
                 SubscribeSkillButton(button, _currentClassTree.skills[_currentIndexSkill].nextSkills[i].branchFloor, 
                 _currentClassTree.skills[_currentIndexSkill].nextSkills[i].branchIndex, _currentClassTree.skills[_currentIndexSkill].nextSkills[i].id);
             }
-            _currentSkillButton.style.backgroundColor = _buyedSkillButtonColor;
+            _currentSkillButton.style.backgroundImage = _buyedSkillButton;
             _currentSkillButton.clickable.activators.Clear();
             UpdatePlayerStats();
         }   
