@@ -121,7 +121,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         StartCoroutine(LevelUpButtonHide());
         WithdrawDescriptionSkill(_currentClassTree.skills[_currentIndexSkill]);
         _currentSkillButton = button;
-        _prise.text = "Prise: " + _currentClassTree.skills[_currentIndexSkill].GetPrise();
+        _prise.text = "Цена: " + _currentClassTree.skills[_currentIndexSkill].GetPrise();
         _levelUpButton.clicked += OnClickLevelUpButton;
     }
 
@@ -130,7 +130,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
         bool isBuyed = _currentClassTree.skills[_currentIndexSkill].TryBuy(_playerSaver);
         if(!isBuyed)
         {
-            _notEnoughExperience.text = "Not enough experience";
+            _notEnoughExperience.text = "Не хватает опыта";
             StopCoroutine(NotEnoughExperienceHide());
             StartCoroutine(NotEnoughExperienceHide());
         }
