@@ -1,6 +1,7 @@
 using UnityEngine;
 using Tools;
 using Zenject;
+using Zenject.SpaceFighter;
 public class Player : Character
 {
     [SerializeField] private PlayerInput _input;
@@ -10,6 +11,7 @@ public class Player : Character
     [SerializeField] private PlayerWeapons _weapons;
     [SerializeField] private PlayerUnit _unit;
     [SerializeField] private TransformSway _weaponSway;
+    [SerializeField] private PlayerHitBox _hitBox;
 
     private PlayerState _playerState;
     private GameUI _gameUI;
@@ -19,6 +21,7 @@ public class Player : Character
     public PlayerLook CameraMovement => _playerLook;
     public PlayerWeapons Weapons => _weapons;
     public TransformSway WeaponSway => _weaponSway;
+    public PlayerHitBox HitBox => _hitBox;
 
     [Inject]
     public void Construct(InputHandler input, GameUI gameUI, GameConfigInstaller.PlayerSettings playerSettings,

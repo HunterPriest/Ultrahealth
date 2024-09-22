@@ -22,4 +22,9 @@ public class PlayerHitBox : HitBox, IWeaponVisitor
     public void Visit(Defibrillator defibrillator) {    }
 
     public void Visit(Thermometr weapon, RaycastHit hit) {   }
+
+    public void Visit(float damageAcid)
+    {
+        damageable.TakeDamage(damageAcid);
+    }
 }

@@ -173,6 +173,7 @@ MonoBehaviour:
   _weapons: {fileID: 7654272514596067555}
   _unit: {fileID: 6243802828896330972}
   _weaponSway: {fileID: 5017908845705176942}
+  _hitBox: {fileID: -7579741152625135012}
 --- !u!114 &8885624942802238563
 MonoBehaviour:
   m_ObjectHideFlags: 0

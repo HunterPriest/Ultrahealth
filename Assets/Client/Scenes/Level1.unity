@@ -830,6 +830,8 @@ GameObject:
   - component: {fileID: 315792781}
   - component: {fileID: 315792783}
   - component: {fileID: 315792782}
+  - component: {fileID: 315792785}
+  - component: {fileID: 315792784}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -902,6 +904,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315792780}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &315792784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315792780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 3.0601387, z: 10}
+  m_Center: {x: 0, y: -1.5300694, z: 0}
+--- !u!114 &315792785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315792780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01a8c4048bd25973bb38b5230550422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePerSec: 3
 --- !u!1 &332087562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1961,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 681615621}
-  - component: {fileID: 681615620}
   m_Layer: 0
   m_Name: Acid (2)
   m_TagString: Untagged
@@ -1933,27 +1968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &681615620
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681615619}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 065988385e0d6324b8f4d795d7a42328, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &681615621
 Transform:
   m_ObjectHideFlags: 0
@@ -2320,7 +2334,6 @@ MonoBehaviour:
   _boss: {fileID: 1063094865}
   _win: {fileID: 2052241662}
   _levelSettings: {fileID: 11400000, guid: f342bbcb721ec4c4aa72777401fcb5a2, type: 2}
-  _directory: {fileID: 1004830962}
 --- !u!4 &758764921
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,17 +2579,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 132874729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1004830962 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5830287472706688167, guid: 1a7295ff9e849db4eb0f35a4ac6410de, type: 3}
-  m_PrefabInstance: {fileID: 2052241658}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9abc1fc5a344f4ebe49e77b1b1bf93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1042452042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,7 +3208,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357593725}
-  - component: {fileID: 1357593724}
   m_Layer: 0
   m_Name: Acid (3)
   m_TagString: Untagged
@@ -3214,27 +3215,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1357593724
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357593723}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 065988385e0d6324b8f4d795d7a42328, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1357593725
 Transform:
   m_ObjectHideFlags: 0
@@ -3437,6 +3417,8 @@ GameObject:
   - component: {fileID: 1555579650}
   - component: {fileID: 1555579649}
   - component: {fileID: 1555579648}
+  - component: {fileID: 1555579652}
+  - component: {fileID: 1555579651}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -3509,6 +3491,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1983324606}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1555579651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555579646}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 3.325325, z: 10}
+  m_Center: {x: 0, y: -1.6626625, z: 0}
+--- !u!114 &1555579652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555579646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01a8c4048bd25973bb38b5230550422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePerSec: 3
 --- !u!1 &1595914305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5043,7 +5059,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983324606}
-  - component: {fileID: 1983324605}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -5051,27 +5066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1983324605
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983324604}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 065988385e0d6324b8f4d795d7a42328, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1983324606
 Transform:
   m_ObjectHideFlags: 0
@@ -5537,6 +5531,8 @@ GameObject:
   - component: {fileID: 2128608304}
   - component: {fileID: 2128608306}
   - component: {fileID: 2128608305}
+  - component: {fileID: 2128608308}
+  - component: {fileID: 2128608307}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -5609,6 +5605,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128608303}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2128608307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128608303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01a8c4048bd25973bb38b5230550422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePerSec: 3
+--- !u!65 &2128608308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128608303}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.000001, y: 3.8768487, z: 10}
+  m_Center: {x: 0, y: -1.9384243, z: 0}
 --- !u!4 &543450652477931684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8936345898943248077, guid: 4e103322fead01c4da26d1304110a32f, type: 3}
