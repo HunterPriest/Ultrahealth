@@ -104,14 +104,11 @@ public class Win : UIToolkitBasicElement
         print(_playerSaver.currentSave.playerSave.currentIndexLevel);
         print(_indexLevel);
 
-        if(_playerSaver.currentSave.playerSave.currentIndexLevel == _indexLevel)
+        for(int i = 0; i < _enemyToDirectory.Length; i++)
         {
-            for(int i = 0; i < _enemyToDirectory.Length; i++)
-            {
-                _playerSaver.currentSave.AddEnemyToDictionary(_enemyToDirectory[i]);
-            }
-
-            _playerSaver.SaveCurrentSave();
+            _playerSaver.currentSave.AddEnemyToDictionary(_enemyToDirectory[i]);
         }
+
+        _playerSaver.SaveCurrentSave();
     }
 }    

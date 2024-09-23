@@ -61,7 +61,7 @@ public class levelUp : UIToolkitElementWithExitOnButton
 
         _descriptionSkill = _container.Q<Label>("Description");
         _levelUpButton = _container.Q<Button>("LevelUp");
-        _prise = _container.Q<Label>("Цена");
+        _prise = _container.Q<Label>("Prise");
         _levelUpButton.visible = false;
 
         _notEnoughExperience = _container.Q<Label>("NotEnoughExperience");
