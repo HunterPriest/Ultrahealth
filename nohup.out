@@ -1,0 +1,6 @@
+[2024-09-23 10:04:04.300] [info] Using configuration file /home/prohor/.config/waybar/config.jsonc
+[2024-09-23 10:04:04.302] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop
+[2024-09-23 10:04:04.302] [info] Using CSS file /home/prohor/.config/waybar/style.css
+[2024-09-23 10:04:04.305] [info] Hyprland IPC starting
+[2024-09-23 10:04:04.306] [info] Loading persistent workspaces from Hyprland workspace rules
+[2024-09-23 10:04:04.323] [info] Bar configured (width: 1920, height: 28) for output: HDMI-A-1

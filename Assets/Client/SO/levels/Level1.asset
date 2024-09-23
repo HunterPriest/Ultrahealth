@@ -16,23 +16,23 @@ MonoBehaviour:
   _levelGradeTime:
     _serializedList:
     - Key: 0
-      Value: 60
-    - Key: 1
       Value: 70
-    - Key: 2
+    - Key: 1
       Value: 80
-    - Key: 3
+    - Key: 2
       Value: 90
-    - Key: 4
+    - Key: 3
       Value: 100
+    - Key: 4
+      Value: 110
   _levelEnemiesKillCount:
     _serializedList:
     - Key: 0
-      Value: 5
+      Value: 13
     - Key: 1
-      Value: 4
+      Value: 9
     - Key: 2
-      Value: 3
+      Value: 5
     - Key: 3
       Value: 2
     - Key: 4
@@ -40,23 +40,23 @@ MonoBehaviour:
   _levelCombo:
     _serializedList:
     - Key: 0
-      Value: 50
+      Value: 25
     - Key: 1
-      Value: 40
-    - Key: 2
-      Value: 30
-    - Key: 3
       Value: 20
-    - Key: 4
+    - Key: 2
+      Value: 15
+    - Key: 3
       Value: 10
+    - Key: 4
+      Value: 5
   _levelExp:
     _serializedList:
     - Key: 0
-      Value: 5000
-    - Key: 1
-      Value: 2500
-    - Key: 2
       Value: 1000
+    - Key: 1
+      Value: 750
+    - Key: 2
+      Value: 700
     - Key: 3
       Value: 500
     - Key: 4

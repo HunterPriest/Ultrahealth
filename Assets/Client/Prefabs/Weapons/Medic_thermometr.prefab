@@ -12107,7 +12107,7 @@ MonoBehaviour:
   weaponAnimations: {fileID: 4241267395592049480}
   _shakeAnimationConfig: {fileID: 11400000, guid: 38d7465dfabd48b45a28a8e4e260d8b5, type: 2}
   _settings:
-    _damage: 5
+    _damage: 10
     _distance: 100
 --- !u!114 &4241267395592049480
 MonoBehaviour:

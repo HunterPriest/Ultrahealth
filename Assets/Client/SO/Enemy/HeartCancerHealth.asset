@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064b11b9ea452434eb288b0e35163cd1, type: 3}
   m_Name: HeartCancerHealth
   m_EditorClassIdentifier: 
-  _maxHealth: 500
+  _maxHealth: 300

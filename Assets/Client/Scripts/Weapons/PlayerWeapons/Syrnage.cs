@@ -44,6 +44,13 @@ public class Syrnage : PlayerWeapon
         UpdateState(WeaponState.Idle);
     }
 
+    public override void Attack()
+    {
+        if(currentState == WeaponState.Reload)
+            return;
+        base.Attack();
+    }
+
     private void Accept(IWeaponVisitor weaponVisitor, RaycastHit hit)
     {
         weaponVisitor?.Visit(this, hit);

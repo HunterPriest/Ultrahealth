@@ -55,7 +55,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void Dash()
     {        
-        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenDashing <= 0) && _isDashing)
+        if(_playerUnit.stamina <= 0 || (_playerUnit.stamina - _movementSettings.staminaConsumedWhenDashing <= 0) || _isDashing)
         {
             return;
         }
