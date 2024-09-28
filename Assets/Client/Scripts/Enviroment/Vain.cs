@@ -12,7 +12,7 @@ public class Vain : MonoBehaviour
 
     private void OnValidate()
     {
-        _material = GetComponent<Renderer>().material;
+        _material = GetComponent<Renderer>().sharedMaterial;
 
         _minVertexResolution = _material.GetFloat("Vector1_B2CC132F") - (_vertexResolutionRange / 2);
         _maxVertexResolution = _material.GetFloat("Vector1_B2CC132F") + (_vertexResolutionRange / 2);

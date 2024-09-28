@@ -1191,6 +1191,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 758469345562845570, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
+      propertyPath: m_AdditionalVertexStreams
+      value: 
+      objectReference: {fileID: 706977562}
+    - target: {fileID: 758469345562845570, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1835178195}
@@ -1269,7 +1273,7 @@ PrefabInstance:
     - target: {fileID: 8364773773141789684, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 706977562}
+      objectReference: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1805,7 +1809,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 3
   _timeRange: 5
-  _material: {fileID: 1979733013}
 --- !u!114 &461184274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2807,7 +2810,7 @@ MonoBehaviour:
     m_Mesh: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!1 &464023801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4265848094809772314, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
@@ -2827,7 +2830,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 2
   _timeRange: 5
-  _material: {fileID: 109070904}
 --- !u!114 &464023803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3829,7 +3831,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 1969642521}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!1 &469475766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3900,6 +3902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 758469345562845570, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
+      propertyPath: m_AdditionalVertexStreams
+      value: 
+      objectReference: {fileID: 1969642521}
     - target: {fileID: 758469345562845570, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3975,7 +3981,7 @@ PrefabInstance:
     - target: {fileID: 8364773773141789684, guid: cc86de01fdd0c764a95b6c315168e595, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1969642521}
+      objectReference: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5064,7 +5070,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 3
   _timeRange: 5
-  _material: {fileID: 685297418}
 --- !u!114 &922445781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6066,7 +6071,7 @@ MonoBehaviour:
     m_Mesh: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!850595691 &959537810
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -6443,6 +6448,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 19e1775e0162387408a846a5e92cc2c2, type: 2}
     - target: {fileID: 1752596290462124818, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
+      propertyPath: m_AdditionalVertexStreams
+      value: 
+      objectReference: {fileID: 1680629750}
+    - target: {fileID: 1752596290462124818, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 572458052}
@@ -6453,7 +6462,7 @@ PrefabInstance:
     - target: {fileID: 5175689995293726164, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1680629750}
+      objectReference: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
     - target: {fileID: 5630735064537146831, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 240.00002
@@ -9752,7 +9761,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 1520376919}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!114 &1159822324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9767,7 +9776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 4
   _timeRange: 5
-  _material: {fileID: 2022040621}
 --- !u!1001 &1176507258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10247,7 +10255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 3
   _timeRange: 5
-  _material: {fileID: 1732332064}
 --- !u!114 &1427951954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11781,7 +11788,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 8314571269056883277, guid: b735babcf59a222409090d77e49f87a0, type: 3}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 8314571269056883277, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!1 &1447686615
 GameObject:
   m_ObjectHideFlags: 0
@@ -14926,7 +14933,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!114 &1464111986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14941,7 +14948,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 4
   _timeRange: 5
-  _material: {fileID: 1319176853}
 --- !u!1 &1467648471
 GameObject:
   m_ObjectHideFlags: 0
@@ -16018,6 +16024,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 19e1775e0162387408a846a5e92cc2c2, type: 2}
     - target: {fileID: 1752596290462124818, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
+      propertyPath: m_AdditionalVertexStreams
+      value: 
+      objectReference: {fileID: 1520376919}
+    - target: {fileID: 1752596290462124818, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2022040621}
@@ -16028,7 +16038,7 @@ PrefabInstance:
     - target: {fileID: 5175689995293726164, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1520376919}
+      objectReference: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
     - target: {fileID: 5630735064537146831, guid: c2bdb0b61e4b02346bf996aa72c282f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 257
@@ -20400,7 +20410,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 1680629750}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 8792586484180348971, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!114 &1854991661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20415,7 +20425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 4
   _timeRange: 5
-  _material: {fileID: 572458052}
 --- !u!1 &1858302368
 GameObject:
   m_ObjectHideFlags: 0
@@ -20590,7 +20599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vertexResolutionRange: 3
   _timeRange: 5
-  _material: {fileID: 1835178195}
 --- !u!114 &1926497795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21592,7 +21600,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 706977562}
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: -2124705421725058983, guid: b735babcf59a222409090d77e49f87a0, type: 3}
-  m_Mode: 0
+  m_Mode: 1
 --- !u!1 &1945211964
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class CurrentSave
 
     public void AddEnemyToDictionary(EnemyDirectorySO enemyDirectorySO)
     {
+        if (playerSave.killEnemies == null) playerSave.killEnemies = new List<EnemyDirectorySO>();
         if (playerSave.killEnemies.Contains(enemyDirectorySO) != true || playerSave.killEnemies == null)
             playerSave.killEnemies.Add(enemyDirectorySO);
     }
