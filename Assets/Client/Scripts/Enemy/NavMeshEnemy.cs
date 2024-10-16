@@ -19,7 +19,7 @@ public class NavMeshEnemy : Enemy
     private NavMeshAgent _agent;
     private EnemyUnit _unit;
 
-    protected override void OnValidate()
+    protected override void StartStart()
     {
         Init();
     }
@@ -32,7 +32,7 @@ public class NavMeshEnemy : Enemy
 
     private void Init()
     {
-        base.OnValidate();
+        base.StartStart();
         _agent = GetComponent<NavMeshAgent>();
         _animations = GetComponent<EnemyAnimations>();
         _playerDetector = new PlayerDetector(_enemyBehaviourConfiguration, _playerLayer, transform);

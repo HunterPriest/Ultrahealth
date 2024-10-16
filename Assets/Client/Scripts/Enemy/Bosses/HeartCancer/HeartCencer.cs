@@ -21,9 +21,9 @@ public class HeartCencer : Boss
         _gameUI = gameUI;
     }
 
-    protected override void OnValidate()
+    protected override void StartStart()
     {
-        base.OnValidate();
+        base.StartStart();
         _idle = new HeartCancerIdle();
         currentState = _idle;
         bossUnit.SetDamageable(false);

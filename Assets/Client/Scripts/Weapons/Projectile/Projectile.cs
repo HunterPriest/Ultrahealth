@@ -8,7 +8,7 @@ public abstract class Projectile : MonoBehaviour
 
     public float damage => _damage;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
     }

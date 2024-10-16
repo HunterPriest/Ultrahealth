@@ -10,7 +10,7 @@ public class Vain : MonoBehaviour
     private Material _material;
     private float _currentTime;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         _material = GetComponent<Renderer>().sharedMaterial;
 

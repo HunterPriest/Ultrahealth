@@ -4,9 +4,9 @@ public abstract class Boss : Enemy
 {
     [SerializeField] protected BossUnit bossUnit;
 
-    protected override void OnValidate()
+    protected override void StartStart()
     {
-        base.OnValidate();
+        base.StartStart();
         bossUnit = GetComponent<BossUnit>();
     }
     public abstract void Acivate();

@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
     private bool _isBlocked = false;
     private bool _isOpen = false;
 
-    private void OnValidate()
+    private void OnEnable()
     {
         _point1 = _part1.position;
         _point1.y += _offset;

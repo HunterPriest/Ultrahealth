@@ -10,10 +10,11 @@ public class Enemy : Character
 
     public Action OnDead;
 
-    protected virtual void OnValidate() {   }
+    protected virtual void StartStart() {   }
 
     public virtual void Initialize(Transform playerTransform, ComboCounter comboCounterm, KillCounter killCounter)
-    { 
+    {
+        StartStart();
         OnDead += killCounter.AddKill;
     }
 
